@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <div class="section">
-  <h2>📜 Aza’raan Pacifico Override Script</h2>
-  <p>This script forcefully overrides any usage of <code>Pacifico</code> in Google Docs and related applications (Slides, Sheets, Drawings, Forms, Drive, etc.), replacing it with the <strong>Aza’raan glyph font</strong>. This ensures glyph consistency across all text styled with Pacifico.</p>
+  <h2>📜 Aza’raan Pacifico Override Script (with Column Content Targeting)</h2>
+  <p>This script not only overrides all uses of <code>Pacifico</code> with the Aza'raan glyph font, but also ensures that <strong>table columns</strong> labeled with language-specific headers (e.g., "Glyph", "Aza’raan Word", "Possessive", "Example", etc.) forcefully render their <em>content</em> in the custom Aza’raan typeface.</p>
 
   <div class="block">
     <strong>🧩 JavaScript Override Code:</strong>
     <pre><code style="white-space: pre-wrap;">// ==UserScript==
-// @name         Aza'raan Pacifico Font Override
+// @name         Aza'raan Pacifico Font + Table Content Override
 // @namespace    https://github.com/thetransgendertrex
-// @version      1.0
-// @description  Overrides "Pacifico" font with custom Aza'raan font in Google Docs, Sheets, Slides, Forms, and Drive
+// @version      2.0
+// @description  Overrides "Pacifico" font with Aza'raan font and targets specific table columns to apply it forcibly to content
 // @match        *://docs.google.com/*
 // @match        *://drive.google.com/*
 // @match        *://slides.google.com/*
@@ -19,22 +19,15 @@
 // @grant        none
 // ==/UserScript==
 
-(function() {
-  const observer = new MutationObserver(() => {
-    const elements = document.querySelectorAll('[style*="font-family: Pacifico"]');
-    elements.forEach(el => {
-      el.style.fontFamily = "'Azaraan', cursive !important";
-    });
-  });
+(function () {
+  const AZARAAN_FONT = "'Azaraan', cursive !important";
+  const TARGET_HEADERS = [
+    "Glyph", "Aza'raan Word", "Aza'raan", "Subj", "Obj", "Poss", "Reflexive",
+    "example", "Example Root", "Example Result", "Plural Identity", "Subject",
+    "Object", "Possessive", "Example(s)", "Time Format", "Aza'raan Hour", "Aza'raan Name"
+  ];
 
-  observer.observe(document.body, {
-    childList: true,
-    subtree: true,
-    attributes: true,
-    attributeFilter: ['style']
-  });
-
-  // Inject Azaraan font
+  // Inject Aza'raan font
   const fontLink = document.createElement('link');
   fontLink.href = 'https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Language%20Font%20CSS.css';
   fontLink.rel = 'stylesheet';
@@ -48,13 +41,53 @@
     }
   `;
   document.head.appendChild(fontFace);
+
+  // Mutation observer to replace Pacifico and override target table content
+  const observer = new MutationObserver(() => {
+    // Replace all uses of Pacifico font
+    const pacificoElements = document.querySelectorAll('[style*="font-family: Pacifico"]');
+    pacificoElements.forEach(el => {
+      el.style.fontFamily = AZARAAN_FONT;
+    });
+
+    // Apply font to specific table columns
+    document.querySelectorAll("table").forEach(table => {
+      const headers = Array.from(table.querySelectorAll("thead th"));
+      headers.forEach((th, index) => {
+        const headerText = th.textContent.trim().toLowerCase();
+        if (TARGET_HEADERS.map(h => h.toLowerCase()).includes(headerText)) {
+          // Apply Azaraan font to this column
+          table.querySelectorAll(`tbody tr`).forEach(row => {
+            const cell = row.cells[index];
+            if (cell) {
+              cell.style.fontFamily = AZARAAN_FONT;
+            }
+          });
+        }
+      });
+    });
+  });
+
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true,
+    attributes: true,
+    characterData: true
+  });
 })();
 </code></pre>
 
-    <p class="note">💡 <strong>Pro Tip:</strong> Save this as a userscript in a browser extension like <a href="https://www.tampermonkey.net/" target="_blank">Tampermonkey</a> or <a href="https://violentmonkey.github.io/" target="_blank">Violentmonkey</a> to enable auto-replacement of Pacifico with Aza’raan.</p>
+    <p class="note">💡 <strong>Pro Tip:</strong> Use <a href="https://www.tampermonkey.net/" target="_blank">Tampermonkey</a> or <a href="https://violentmonkey.github.io/" target="_blank">Violentmonkey</a> to run this override script in your browser for Docs, Sheets, and beyond.</p>
   </div>
 
-  <h3>🔎 Targeted Applications:</h3>
+  <h3>📌 What’s New:</h3>
+  <ul>
+    <li>🔤 Replaces <strong>content</strong> in target-labeled table columns—not just the font tag</li>
+    <li>💬 Leaves headers untouched for clarity</li>
+    <li>📚 Built-in list of linguistically meaningful headers tied to Aza'raan grammar tables</li>
+  </ul>
+
+  <h3>🎯 Targeted Applications:</h3>
   <ul>
     <li>📝 Google Docs</li>
     <li>📊 Google Sheets</li>
@@ -63,11 +96,10 @@
     <li>📁 Google Drive</li>
   </ul>
 
-  <p>Anywhere Pacifico appears, the Aza’raan glyphs will now shine through.</p>
-
-  <h3>🎯 Why Target “Pacifico”?</h3>
-  <p>Pacifico is rarely used in professional documents, making it a perfect candidate for override without disrupting expected formatting. It allows easy toggling between English-readable text and Aza’raan glyphs by simply applying the Pacifico style.</p>
+  <h3>✨ Why This Matters:</h3>
+  <p>Table-based grammars and lexicons often label key columns like "Glyph" or "Subj". This script guarantees that their contents display correctly and beautifully in the Aza’raan script, even if the rest of the doc remains untouched.</p>
 </div>
+
 </head>
 <body>
 
