@@ -60,4 +60,12 @@ Created by William Saville (#TheTransgenderTRex). Supports full glyphic language
   *:not([style*="Pacifico"]):not(.docs-texteventtarget-font-Pacifico) {
     font-family: inherit !important;
   }
+/*
+  Aza’ra™ and Aza’raan™ are original works by William Blake Saville (aka #TheTransgenderTRex).
+  Learn more about the language's lore: 
+  https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/refs/heads/main/README.md
+
+  For project updates and ways to support the creator—an autistic, bedridden, low-income trans man—visit:
+  http://www.linktr.ee/thetransgendertrex
+*/
 }
