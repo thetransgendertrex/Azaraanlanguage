@@ -1,6 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+<div class="section">
+  <h2>📜 Aza’raan Pacifico Override Script</h2>
+  <p>This script forcefully overrides any usage of <code>Pacifico</code> in Google Docs and related applications (Slides, Sheets, Drawings, Forms, Drive, etc.), replacing it with the <strong>Aza’raan glyph font</strong>. This ensures glyph consistency across all text styled with Pacifico.</p>
 
+  <div class="block">
+    <strong>🧩 JavaScript Override Code:</strong>
+    <pre><code style="white-space: pre-wrap;">// ==UserScript==
+// @name         Aza'raan Pacifico Font Override
+// @namespace    https://github.com/thetransgendertrex
+// @version      1.0
+// @description  Overrides "Pacifico" font with custom Aza'raan font in Google Docs, Sheets, Slides, Forms, and Drive
+// @match        *://docs.google.com/*
+// @match        *://drive.google.com/*
+// @match        *://slides.google.com/*
+// @match        *://docs.google.com/forms/*
+// @match        *://docs.google.com/spreadsheets/*
+// @grant        none
+// ==/UserScript==
+
+(function() {
+  const observer = new MutationObserver(() => {
+    const elements = document.querySelectorAll('[style*="font-family: Pacifico"]');
+    elements.forEach(el => {
+      el.style.fontFamily = "'Azaraan', cursive !important";
+    });
+  });
+
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true,
+    attributes: true,
+    attributeFilter: ['style']
+  });
+
+  // Inject Azaraan font
+  const fontLink = document.createElement('link');
+  fontLink.href = 'https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Language%20Font%20CSS.css';
+  fontLink.rel = 'stylesheet';
+  document.head.appendChild(fontLink);
+
+  const fontFace = document.createElement('style');
+  fontFace.innerHTML = `
+    @font-face {
+      font-family: 'Azaraan';
+      src: url('https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Planet%20Language.ttf') format('truetype');
+    }
+  `;
+  document.head.appendChild(fontFace);
+})();
+</code></pre>
+
+    <p class="note">💡 <strong>Pro Tip:</strong> Save this as a userscript in a browser extension like <a href="https://www.tampermonkey.net/" target="_blank">Tampermonkey</a> or <a href="https://violentmonkey.github.io/" target="_blank">Violentmonkey</a> to enable auto-replacement of Pacifico with Aza’raan.</p>
+  </div>
+
+  <h3>🔎 Targeted Applications:</h3>
+  <ul>
+    <li>📝 Google Docs</li>
+    <li>📊 Google Sheets</li>
+    <li>📽️ Google Slides</li>
+    <li>📄 Google Forms</li>
+    <li>📁 Google Drive</li>
+  </ul>
+
+  <p>Anywhere Pacifico appears, the Aza’raan glyphs will now shine through.</p>
+
+  <h3>🎯 Why Target “Pacifico”?</h3>
+  <p>Pacifico is rarely used in professional documents, making it a perfect candidate for override without disrupting expected formatting. It allows easy toggling between English-readable text and Aza’raan glyphs by simply applying the Pacifico style.</p>
+</div>
 </head>
 <body>
 
