@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Azaraan Overrides Pacifico in Google Docs & Drive Apps
 // @namespace    https://github.com/thetransgendertrex
-// @version      3.0.0
-// @description  Replaces all instances of the "Pacifico" font with "Aza'raan" across Google Drive apps without affecting other fonts.
+// @version      3.3.0
+// @description  Replaces all instances of the "Pacifico" font with "Azaraan" across Google Drive apps without affecting other fonts.
 // @author       William Saville (aka #TheTransgenderTRex)
 // @match        https://docs.google.com/*
 // @match        https://slides.google.com/*
@@ -10,26 +10,30 @@
 // @match        https://forms.google.com/*
 // @match        https://drive.google.com/*
 // @match        https://drawings.google.com/*
-// @grant        GM_addStyle
+// @grant        none
 // ==/UserScript==
 
 (function () {
   'use strict';
 
-  // Load the Aza'raan font
-  const azFont = document.createElement('style');
-  azFont.textContent = `
-    @font-face {
-      font-family: 'Azaraan';
-      src: url('https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Planet%20Language.ttf') format('truetype');
-    }
-  `;
-  document.head.appendChild(azFont);
+  // Inject Azaraan @font-face dynamically if not already present
+  if (!document.getElementById("azaraan-font-face")) {
+    const fontFace = document.createElement("style");
+    fontFace.id = "azaraan-font-face";
+    fontFace.textContent = `
+      @font-face {
+        font-family: 'Azaraan';
+        src: url('https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Planet%20Language.ttf') format('truetype');
+        font-display: swap;
+      }
+    `;
+    document.head.appendChild(fontFace);
+  }
 
-  // Define all known selectors that might reference Pacifico
+  // CSS to override Pacifico font-family with Azaraan and set styling
   const style = document.createElement('style');
   style.textContent = `
-    /* Target only Pacifico, not global font reset */
+    /* Target elements styled with Pacifico */
     [style*="font-family:Pacifico"],
     span[style*="font-family:Pacifico"],
     .kix-lineview-content span[style*="Pacifico"],
@@ -50,23 +54,31 @@
     [class*="texteventtarget-font-Pacifico"],
     [aria-label*="Pacifico"] {
       font-family: 'Azaraan' !important;
+      font-size: 2em !important;
+      color: #70389c !important;
+      font-style: normal !important;
+      font-weight: normal !important;
+      line-height: 1.2 !important;
     }
 
-    /* Prevent Aza'raan from applying globally */
+    /* Prevent Azaraan font from applying globally */
     * {
       font-family: inherit !important;
     }
 
-    *:not(input):not(textarea):not(code):not(pre):not(select):not(button) {
+    /* Ensure only Pacifico is overridden */
+    *:not([style*="Pacifico"]):not(.docs-texteventtarget-font-Pacifico) {
       font-family: inherit !important;
     }
   `;
   document.head.appendChild(style);
 
-  // Optional: Rename Pacifico in dropdown (visual only)
+  // MutationObserver to rename "Pacifico" dropdown text visually to "Azaraan"
   const observer = new MutationObserver(() => {
     document.querySelectorAll('[aria-label="Pacifico"]').forEach(el => {
-      el.textContent = 'Aza\'raan';
+      if (el.textContent !== "Azaraan") {
+        el.textContent = "Azaraan";
+      }
     });
   });
 
