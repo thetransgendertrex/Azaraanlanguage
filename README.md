@@ -1,15 +1,24 @@
+<noscript><p><strong>Note:</strong> The custom Aza’raan glyphs require JavaScript and the custom font to be displayed correctly.</p></noscript>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Aza’raan Language Integration Guide</title>
 
-  <!-- Link to External CSS -->
+  <!-- External Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Language%20Font%20CSS.css">
 
   <style>
+    /* Local fallback font-face in case external CSS fails */
+    @font-face {
+      font-family: 'Azaraan';
+      src: url('https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Planet%20Language.ttf') format('truetype');
+    }
+
     body {
-      font-family: Arial, sans-serif;
+      font-family: "Times New Roman", Times, serif;
       margin: 2rem;
       background: #fafafa;
       color: #222;
@@ -17,19 +26,20 @@
     }
 
     h1, h2, h3 {
-      font-family: 'Azaraan', serif;
+      font-family: "Times New Roman", Times, serif;
       color: #4b2e83;
     }
 
-    .azaraan {
-      font-family: 'Azaraan', cursive;
+    .azaraan,
+    [style*="font-family: Pacifico"] {
+      font-family: 'Azaraan', cursive !important;
       font-size: 2em;
       color: #70389c;
     }
 
-    .normal {
+    .pacifico {
       font-family: 'Pacifico', cursive;
-      font-size: 2em;
+      font-size: 1.3em;
       color: #999;
     }
 
@@ -63,6 +73,36 @@
     .monospace {
       font-family: monospace;
     }
+
+    /* Glyph Table Styles */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1em;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      vertical-align: top;
+      text-align: left;
+      font-family: "Times New Roman", Times, serif;
+    }
+
+    th {
+      background-color: #f0f0f0;
+    }
+
+    td.glyph {
+      font-family: 'Azaraan', cursive;
+      font-size: 1.3em;
+      text-align: center;
+    }
+
+    p.note {
+      font-style: italic;
+      margin-bottom: 1em;
+    }
   </style>
 </head>
 <body>
@@ -84,11 +124,11 @@
       <a href="https://github.com/thetransgendertrex/Azaraanlanguage/blob/main/Aza%27raan%20Language%20Font%20CSS.css" target="_blank">Aza'raan Language Font CSS</a><br><br>
       <strong>JavaScript:</strong><br>
       <a href="https://github.com/thetransgendertrex/Azaraanlanguage/blob/main/Aza%27raan%20Language%20Font%20Javascript.js" target="_blank">Aza'raan Language Font Javascript</a><br><br>
-      These replace all uses of "Pacifico" in Google Docs, Slides, and Drive Apps with Aza'raan
+      These replace all uses of "Pacifico" in Google Docs, Slides, Drawings, Forms, sheets, and Drive Apps with Aza'raan.
     </div>
   </div>
 
-  <div class="section">
+ <div class="section">
     <h2>🎙️ The Voice of Aza’ra</h2>
     <p><em>Introduction by William Blake Saville, Creator of Aza’raan</em></p>
     <p>Language is never just a system of words. It is a living current—a vessel of culture, a marker of memory, and a declaration of identity. When I set out to create the language of Aza’ra, I didn’t just want something that sounded beautiful. I wanted something that meant something. Something that held space for transformation, for fluidity, for truth. Thus, Aza’raan was born—a fusion of the mystical, vowel-rich cadence of Aarak and the disciplined, ancient structure of Aramaic.</p>
@@ -128,12 +168,54 @@
     Speak gently.<br>
     Speak proudly.<br>
     And may Aza’raan speak you, too.</strong></p>
+
+    <h2>🌀 Aza’raan Glyph & Symbol Table</h2>
+    <p class="note">Note: All characters in the <strong>Glyph</strong> column are displayed in <span class="azaraan">Aza'raan</span> (replacing Pacifico). The rest remains in standard English for clarity.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Glyph</th>
+          <th>Aramaic Name</th>
+          <th>Latin Equivalent</th>
+          <th>Pronunciation</th>
+          <th>Notes on Usage</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="glyph">A</td><td>Ālaph</td><td>A, a, E, e</td><td>"A" as in "father" or "E" as in "echo"</td><td>Root vowel, stabilizes pronunciation in derived words</td></tr>
+        <tr><td class="glyph">B</td><td>Bēth</td><td>B, b</td><td>"B" as in "book"; softens to "V" in fluid speech</td><td>Can merge into "V" mid-sentence for flow</td></tr>
+        <tr><td class="glyph">C</td><td>Kāph</td><td>C, c, K, k, X, x</td><td>"K" as in "king"; shifts to "Kh" when unstressed</td><td>Central to stress-based mutations</td></tr>
+        <tr><td class="glyph">D</td><td>Dālath</td><td>D, d</td><td>"D" as in "day"; shifts to "TH" (as in "that") when softened</td><td>Critical in archaic verb conjugations</td></tr>
+        <tr><td class="glyph">F</td><td>Pē</td><td>F, f, P, p</td><td>"P" as in "pen"; shifts to "F" when medial or final</td><td>Forms contrast in compound words</td></tr>
+        <tr><td class="glyph">G</td><td>Gāmal</td><td>G, g</td><td>"G" as in "go"; softens to "Gh" in casual speech</td><td>Common in fluid speech transformations</td></tr>
+        <tr><td class="glyph">H</td><td>Hē / Ḥēth → <em>Haḥan</em></td><td>H, h</td><td>"H" as in "house"; deeper articulation as "Ḥ" when stressed</td><td>Marks emphatic stress in poetic forms</td></tr>
+        <tr><td class="glyph">I</td><td>Yodh</td><td>I, i, J, j, Y, y</td><td>"Y" as in "yes"; can take on "I" when used as a vowel</td><td>Transitional vowel in diphthongs</td></tr>
+        <tr><td class="glyph">L</td><td>Lāmadh</td><td>L, l</td><td>"L" as in "love"</td><td>Softens before rounded vowels</td></tr>
+        <tr><td class="glyph">M</td><td>Mim</td><td>M, m</td><td>"M" as in "moon"</td><td>Stable across dialects</td></tr>
+        <tr><td class="glyph">N</td><td>Nun</td><td>N, n</td><td>"N" as in "night"</td><td>Nasalized in specific poetic structures</td></tr>
+        <tr><td class="glyph">O</td><td>Urim</td><td>O, o</td><td>"O" as in "octopus"; also “oo”</td><td>Expresses weight/depth in speech</td></tr>
+        <tr><td class="glyph">Q</td><td>Qoph</td><td>Q, q</td><td>"Q" as in Arabic <em>qāl</em></td><td>Heavy articulation in formal speech</td></tr>
+        <tr><td class="glyph">R</td><td>Rēs</td><td>R, r</td><td>"R" as in "rain"</td><td>Variation marks dialectal shifts</td></tr>
+        <tr><td class="glyph">S</td><td>Sin / Semkath / Ṣādhē → <em>Saṣek</em></td><td>S, s</td><td><strong>S</strong> = sharp “S” as in <em>sea</em>; <strong>s</strong> = “sh” as in <em>shimmer</em></td><td>Each form has distinct phonemic and cultural uses</td></tr>
+        <tr><td class="glyph">T</td><td>Taw / Ṭēth → <em>Taṭan</em></td><td>T, t</td><td>"T" as in "top"; emphatic "Ṭ" as in Arabic <em>ṭar</em></td><td>Strengthens consonantal emphasis</td></tr>
+        <tr><td class="glyph">W</td><td>Waw</td><td>U, u, W, w</td><td>"U" as in "blue"; "W" as in "wind"</td><td>Transitional glide in compounds</td></tr>
+        <tr><td class="glyph">V</td><td>Ṭhāmar</td><td>V, v</td><td>"V" as in "vine"</td><td>Newer glyph tied to immigrant dialects</td></tr>
+        <tr><td class="glyph">Z</td><td>Zayn</td><td>Z, z</td><td>"Z" as in "zebra"</td><td>Maintains stability across dialects</td></tr>
+        <tr><td class="glyph">‘</td><td>ʿAyn</td><td>', ʕ</td><td>Glottalized “Ai” or silent</td><td>Used lyrically or spiritually in Aza’raan</td></tr>
+        <tr><td class="glyph">^</td><td>Na’lu</td><td>Stress next syllable</td><td>NAH-ai-loo</td><td>“Lift the sound forward”</td></tr>
+        <tr><td class="glyph">`</td><td>Ra’ama</td><td>Emphasize previous syllable</td><td>RAH-ah-mah</td><td>“Ground the voice”</td></tr>
+        <tr><td class="glyph">~</td><td>Shayalu</td><td>Fusion / Prolongation</td><td>SHAH-yah-loo</td><td>“Braid together”</td></tr>
+      </tbody>
+    </table>
   </div>
 
   <div class="section">
     <h2>🧪 Demo Area</h2>
-    <p class="normal">This is "Pacifico" as rendered normally.</p>
-    <p class="azaraan">This is "Pacifico" after being replaced with Aza'raan.</p>
+    <p class="pacifico">This is what Pacifico looked like before override.</p>
+    <p>This is Aza'raan rendered from what was once Pacifico:</p>
+    <p class="azaraan">Aza’ralo hue ni tsurayaka laha sa’lai iil'las - yani~hue baneyaka laha p’dai’ra yani.</p> 
+    <p>Which directly translates to the earlier quote: "Aza’raan is not designed to dominate speech—it’s built to liberate it."</p>
   </div>
 
   <!-- Link to External JS -->
