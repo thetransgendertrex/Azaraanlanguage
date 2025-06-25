@@ -5,7 +5,7 @@
   <title>Aza’raan Language Integration Guide</title>
 
   <!-- Link to External CSS -->
-  <link rel="stylesheet" href="https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Language%20Font%20CSS">
+  <link rel="stylesheet" href="https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Language%20Font%20CSS.css">
 
   <style>
     body {
@@ -72,16 +72,18 @@
 
   <div class="section">
     <h2>💾 Font File Location</h2>
-    <p>Language font file: <a href="https://github.com/thetransgendertrex/Azaraanlanguage/blob/main/Aza'raan%20Planet%20Language.ttf" target="_blank">Download Aza'raan.ttf</a></p>
+    <p>Language font file:
+      <a href="https://github.com/thetransgendertrex/Azaraanlanguage/blob/main/Aza%27raan%20Planet%20Language.ttf" target="_blank">Download Aza'raan.ttf</a>
+    </p>
   </div>
 
   <div class="section">
     <h2>🧩 Font Override System</h2>
     <div class="block">
       <strong>CSS:</strong><br>
-      <a href="https://github.com/thetransgendertrex/Azaraanlanguage/blob/main/Aza'raan%20Language%20Font%20CSS" target="_blank">Aza'raan Language Font CSS</a><br><br>
+      <a href="https://github.com/thetransgendertrex/Azaraanlanguage/blob/main/Aza%27raan%20Language%20Font%20CSS.css" target="_blank">Aza'raan Language Font CSS</a><br><br>
       <strong>JavaScript:</strong><br>
-      <a href="https://github.com/thetransgendertrex/Azaraanlanguage/blob/main/Aza'raan%20Language%20Font%20Javascript" target="_blank">Aza'raan Language Font Javascript</a><br><br>
+      <a href="https://github.com/thetransgendertrex/Azaraanlanguage/blob/main/Aza%27raan%20Language%20Font%20Javascript.js" target="_blank">Aza'raan Language Font Javascript</a><br><br>
       These replace all uses of "Pacifico" in Google Docs, Slides, and Drive Apps with Aza'raan—without the need for Stylus or Tampermonkey.
     </div>
   </div>
@@ -135,6 +137,6 @@
   </div>
 
   <!-- Link to External JS -->
-  <script src="https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Language%20Font%20Javascript"></script>
+  <script src="https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Language%20Font%20Javascript.js"></script>
 </body>
 </html>
