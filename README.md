@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Aza’raan Font Override</title>
+</head>
+<body>
 <div class="section">
   <h2>📜 Aza’raan Pacifico Override Script (with Column Content Targeting)</h2>
-  <p>This script not only overrides all uses of <code>Pacifico</code> with the Aza'raan glyph font, but also ensures that <strong>table columns</strong> labeled with language-specific headers (e.g., "Glyph", "Aza’raan Word", "Possessive", "Example", etc.) forcefully render their <em>content</em> in the custom Aza’raan typeface.</p>
+  <p>This script overrides all uses of <code>Pacifico</code> with the Aza'raan glyph font and force-renders specific grammar-related table columns in the custom font for enhanced clarity in Docs, Sheets, and beyond.</p>
 
   <div class="block">
     <strong>🧩 JavaScript Override Code:</strong>
     <pre><code style="white-space: pre-wrap;">// ==UserScript==
-// @name         Aza'raan Pacifico Font + Table Content Override
+// @name         Aza'raan Font & Table Column Enforcer
 // @namespace    https://github.com/thetransgendertrex
-// @version      2.0
-// @description  Overrides "Pacifico" font with Aza'raan font and targets specific table columns to apply it forcibly to content
+// @version      3.0
+// @description  Replaces Pacifico with Aza'raan and enforces font in key grammar/lexicon table columns
 // @match        *://docs.google.com/*
 // @match        *://drive.google.com/*
 // @match        *://slides.google.com/*
@@ -20,6 +27,22 @@
 // ==/UserScript==
 
 (function () {
+  // Load external font CSS
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = 'https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/refs/heads/main/Aza\'raan%20Language%20Font%20CSS';
+  document.head.appendChild(link);
+
+  // Load Aza'raan-specific JS logic
+  const azaJS = document.createElement('script');
+  azaJS.src = 'https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/refs/heads/main/Aza\'raan%20Language%20Font%20Javascript';
+  document.head.appendChild(azaJS);
+
+  // Load override enhancements
+  const overrideScript = document.createElement('script');
+  overrideScript.src = 'https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/refs/heads/main/override.js';
+  document.head.appendChild(overrideScript);
+
   const AZARAAN_FONT = "'Azaraan', cursive !important";
   const TARGET_HEADERS = [
     "Glyph", "Aza'raan Word", "Aza'raan", "Subj", "Obj", "Poss", "Reflexive",
@@ -27,41 +50,21 @@
     "Object", "Possessive", "Example(s)", "Time Format", "Aza'raan Hour", "Aza'raan Name"
   ];
 
-  // Inject Aza'raan font
-  const fontLink = document.createElement('link');
-  fontLink.href = 'https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Language%20Font%20CSS.css';
-  fontLink.rel = 'stylesheet';
-  document.head.appendChild(fontLink);
-
-  const fontFace = document.createElement('style');
-  fontFace.innerHTML = `
-    @font-face {
-      font-family: 'Azaraan';
-      src: url('https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Planet%20Language.ttf') format('truetype');
-    }
-  `;
-  document.head.appendChild(fontFace);
-
-  // Mutation observer to replace Pacifico and override target table content
   const observer = new MutationObserver(() => {
-    // Replace all uses of Pacifico font
-    const pacificoElements = document.querySelectorAll('[style*="font-family: Pacifico"]');
-    pacificoElements.forEach(el => {
+    // Swap Pacifico with Aza'raan glyph font
+    document.querySelectorAll('[style*="font-family: Pacifico"]').forEach(el => {
       el.style.fontFamily = AZARAAN_FONT;
     });
 
-    // Apply font to specific table columns
+    // Scan all tables for headers and apply Aza'raan font to matching columns
     document.querySelectorAll("table").forEach(table => {
       const headers = Array.from(table.querySelectorAll("thead th"));
       headers.forEach((th, index) => {
         const headerText = th.textContent.trim().toLowerCase();
         if (TARGET_HEADERS.map(h => h.toLowerCase()).includes(headerText)) {
-          // Apply Azaraan font to this column
-          table.querySelectorAll(`tbody tr`).forEach(row => {
+          table.querySelectorAll("tbody tr").forEach(row => {
             const cell = row.cells[index];
-            if (cell) {
-              cell.style.fontFamily = AZARAAN_FONT;
-            }
+            if (cell) cell.style.fontFamily = AZARAAN_FONT;
           });
         }
       });
@@ -77,14 +80,14 @@
 })();
 </code></pre>
 
-    <p class="note">💡 <strong>Pro Tip:</strong> Use <a href="https://www.tampermonkey.net/" target="_blank">Tampermonkey</a> or <a href="https://violentmonkey.github.io/" target="_blank">Violentmonkey</a> to run this override script in your browser for Docs, Sheets, and beyond.</p>
+    <p class="note">💡 <strong>Pro Tip:</strong> Use <a href="https://www.tampermonkey.net/" target="_blank">Tampermonkey</a> or <a href="https://violentmonkey.github.io/" target="_blank">Violentmonkey</a> to run this override in your browser.</p>
   </div>
 
   <h3>📌 What’s New:</h3>
   <ul>
-    <li>🔤 Replaces <strong>content</strong> in target-labeled table columns—not just the font tag</li>
-    <li>💬 Leaves headers untouched for clarity</li>
-    <li>📚 Built-in list of linguistically meaningful headers tied to Aza'raan grammar tables</li>
+    <li>🔤 Injects <code>Azaraan</code> font via official hosted stylesheet</li>
+    <li>⚙️ Applies override behavior using standalone script from repo</li>
+    <li>📚 Targets table headers used in grammatical contexts like “Possessive”, “Subject”, and “Glyph”</li>
   </ul>
 
   <h3>🎯 Targeted Applications:</h3>
@@ -97,8 +100,11 @@
   </ul>
 
   <h3>✨ Why This Matters:</h3>
-  <p>Table-based grammars and lexicons often label key columns like "Glyph" or "Subj". This script guarantees that their contents display correctly and beautifully in the Aza’raan script, even if the rest of the doc remains untouched.</p>
+  <p>This script ensures all content referencing the Aza’raan language renders beautifully and accurately in its intended glyph form, especially in structured formats like tables.</p>
 </div>
+</body>
+</html>
+
 
 </head>
 <body>
