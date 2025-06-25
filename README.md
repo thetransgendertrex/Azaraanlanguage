@@ -208,16 +208,26 @@
         <tr><td class="glyph">~</td><td>Shayalu</td><td>Fusion / Prolongation</td><td>SHAH-yah-loo</td><td>“Braid together”</td></tr>
       </tbody>
     </table>
-  </div>
-
+  </div> 
   <div class="section">
-    <h2>🧪 Demo Area</h2>
-    <p class="pacifico">This is what Pacifico looked like before override.</p>
-    <p>This is Aza'raan rendered from what was once Pacifico:</p>
-    <p class="azaraan">Aza’ralo hue ni tsurayaka laha sa’lai iil'las - yani~hue baneyaka laha p’dai’ra yani.</p> 
-    <p>Which directly translates to the earlier quote: "Aza’raan is not designed to dominate speech—it’s built to liberate it."</p>
-  </div>
+    <h2>🧪 Demo Area: Font Behavior Preview</h2>
 
+    <p><strong>This section shows a side-by-side comparison of how text looks in <a href="https://fonts.google.com/specimen/Pacifico" target="_blank">Pacifico</a> vs. how it appears after being overridden with the custom Aza’raan font I created.</strong> This helps visualize the transformation within Google Docs and related apps.</p>
+
+    <h3>🌸 Original Pacifico Example</h3>
+    <p class="pacifico" style="font-family: 'Pacifico', cursive !important; font-size: 1.6em; color: #666;">
+      This is what Pacifico looked like before override.
+    </p>
+
+    <h3>🔮 Aza'raan Font Preview (Overrides Pacifico)</h3>
+    <p class="azaraan" style="font-family: 'Azaraan', cursive !important; font-size: 2em; color: #70389c;">
+      Aza’ralo hue ni tsurayaka laha sa’lai iil'las - yani~hue baneyaka laha p’dai’ra yani.
+    </p>
+
+    <p><em>This line is written in the custom <a href="https://github.com/thetransgendertrex/Azaraanlanguage/blob/main/Aza%27raan%20Planet%20Language.ttf" target="_blank">Aza’raan font</a> I designed to fully replace Pacifico in supported Google Drive applications.</em></p>
+
+    <p>Translated, it means: <strong>“Aza’raan is not designed to dominate speech—it’s built to liberate it.”</strong></p>
+  </div>
   <!-- Link to External JS -->
   <script src="https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Language%20Font%20Javascript.js"></script>
 </body>
