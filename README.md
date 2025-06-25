@@ -123,7 +123,7 @@
       <strong>CSS:</strong><br>
       <a href="https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/refs/heads/main/Aza'raan%20Language%20Font%20CSS" target="_blank">Aza'raan Language Font CSS</a><br><br>
       <strong>JavaScript:</strong><br>
-      <a href="https://github.com/thetransgendertrex/Azaraanlanguage/blob/main/Aza%27raan%20Language%20Font%20Javascript.js" target="_blank">Aza'raan Language Font Javascript</a><br><br>
+      <a href="https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/refs/heads/main/Aza'raan%20Language%20Font%20Javascript" target="_blank">Aza'raan Language Font Javascript</a><br><br>
       These replace all uses of "Pacifico" in Google Docs, Slides, Drawings, Forms, sheets, and Drive Apps with Aza'raan.
     </div>
   </div>
