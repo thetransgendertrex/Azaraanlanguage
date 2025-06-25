@@ -1,5 +1,3 @@
-<noscript><p><strong>Note:</strong> The custom Aza’raan glyphs require JavaScript and the custom font to be displayed correctly.</p></noscript>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -105,31 +103,38 @@
     }
   </style>
 </head>
+
 <body>
 
-  <h1>🔡 Aza'raan Overrides Pacifico in Google Docs & Drive Apps</h1>
-  <p><strong>By William Saville</strong> (aka <strong>#TheTransgenderTRex</strong>)</p>
+<noscript><p><strong>Note:</strong> The custom Aza’raan glyphs require JavaScript and the custom font to be displayed correctly.</p></noscript>
 
-  <div class="section">
-    <h2>💾 Font File Location</h2>
-    <p>Language font file:
-      <a href="https://github.com/thetransgendertrex/Azaraanlanguage/blob/main/Aza%27raan%20Planet%20Language.ttf" target="_blank">Download Aza'raan.ttf</a>
-    </p>
+<h1>🔡 Aza'raan Overrides Pacifico in Google Docs & Drive Apps</h1>
+<p><strong>By William Saville</strong> (aka <strong>#TheTransgenderTRex</strong>)</p>
+
+<div class="section">
+  <h2>💾 Font File Location</h2>
+  <p>Language font file:
+    <a href="https://github.com/thetransgendertrex/Azaraanlanguage/blob/main/Aza%27raan%20Planet%20Language.ttf" target="_blank">Download Aza'raan.ttf</a>
+  </p>
+</div>
+
+<div class="section">
+  <h2>🧩 Font Override System</h2>
+  <div class="block">
+    <strong>CSS:</strong><br>
+    <a href="https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/refs/heads/main/Aza'raan%20Language%20Font%20CSS" target="_blank">Aza'raan Language Font CSS</a><br><br>
+    <strong>JavaScript:</strong><br>
+    <a href="https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/refs/heads/main/Aza'raan%20Language%20Font%20Javascript" target="_blank">Aza'raan Language Font Javascript</a><br><br>
+    <strong>Chrome Extension Script:</strong><br>
+    <a href="https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/refs/heads/main/override.js" target="_blank">override.js</a><br><br>
+    <strong>Manifest File:</strong><br>
+    <a href="https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/refs/heads/main/Manifest.json" target="_blank">Manifest.json</a><br><br>
+    These replace all uses of "Pacifico" in Google Docs, Slides, Drawings, Forms, Sheets, and Drive Apps with Aza'raan.
   </div>
+</div>
 
-  <div class="section">
-    <h2>🧩 Font Override System</h2>
-    <div class="block">
-      <strong>CSS:</strong><br>
-      <a href="https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/refs/heads/main/Aza'raan%20Language%20Font%20CSS" target="_blank">Aza'raan Language Font CSS</a><br><br>
-      <strong>JavaScript:</strong><br>
-      <a href="https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/refs/heads/main/Aza'raan%20Language%20Font%20Javascript" target="_blank">Aza'raan Language Font Javascript</a><br><br>
-      These replace all uses of "Pacifico" in Google Docs, Slides, Drawings, Forms, sheets, and Drive Apps with Aza'raan.
-    </div>
-  </div>
-
- <div class="section">
-    <h2>🎙️ The Voice of Aza’ra</h2>
+<div class="section">
+      <h2>🎙️ The Voice of Aza’ra</h2>
     <p><em>Introduction by William Blake Saville, Creator of Aza’raan</em></p>
     <p>Language is never just a system of words. It is a living current—a vessel of culture, a marker of memory, and a declaration of identity. When I set out to create the language of Aza’ra, I didn’t just want something that sounded beautiful. I wanted something that meant something. Something that held space for transformation, for fluidity, for truth. Thus, Aza’raan was born—a fusion of the mystical, vowel-rich cadence of Aarak and the disciplined, ancient structure of Aramaic.</p>
 
@@ -154,7 +159,7 @@
 
     <h3>✍️ A System That Respects the Self</h3>
     <ul>
-      <li><strong>Shayalu (*):</strong> lets words flow naturally.</li>
+      <li><strong>Shayalu (~):</strong> lets words flow naturally.</li>
       <li><strong>Particles:</strong> <code>va</code> (emphasis), <code>ni</code> (negation).</li>
       <li><strong>Honorifics:</strong> like <code>Do-</code> for respectful roles—never before pronouns.</li>
     </ul>
@@ -167,7 +172,7 @@
     <p><strong>So welcome.<br>
     Speak gently.<br>
     Speak proudly.<br>
-    And may Aza’raan speak you, too.</strong></p>
+    And may Aza’raan speak to you.</strong></p>
 
     <h2>🌀 Aza’raan Glyph & Symbol Table</h2>
     <p class="note">Note: All characters in the <strong>Glyph</strong> column are displayed in <span class="azaraan">Aza'raan</span> (replacing Pacifico). The rest remains in standard English for clarity.</p>
@@ -204,7 +209,7 @@
         <tr><td class="glyph">Z</td><td>Zayn</td><td>Z, z</td><td>"Z" as in "zebra"</td><td>Maintains stability across dialects</td></tr>
         <tr><td class="glyph">‘</td><td>ʿAyn</td><td>', ʕ</td><td>Glottalized “Ai” or silent</td><td>Used lyrically or spiritually in Aza’raan</td></tr>
         <tr><td class="glyph">^</td><td>Na’lu</td><td>Stress next syllable</td><td>NAH-ai-loo</td><td>“Lift the sound forward”</td></tr>
-        <tr><td class="glyph">`</td><td>Ra’ama</td><td>Emphasize previous syllable</td><td>RAH-ah-mah</td><td>“Ground the voice”</td></tr>
+        <tr><td class="glyph"></td><td>Ra’ama</td><td>Emphasize previous syllable</td><td>RAH-ah-mah</td><td>“Ground the voice”</td></tr>
         <tr><td class="glyph">~</td><td>Shayalu</td><td>Fusion / Prolongation</td><td>SHAH-yah-loo</td><td>“Braid together”</td></tr>
       </tbody>
     </table>
@@ -226,6 +231,7 @@
 
     <p><em>This line is written in the custom <a href="https://github.com/thetransgendertrex/Azaraanlanguage/blob/main/Aza%27raan%20Planet%20Language.ttf" target="_blank">Aza’raan font</a> I designed to fully replace Pacifico in supported Google Drive applications.</em></p>
 
-    <p>Translated, it means: <strong>“Aza’raan is not designed to dominate speech—it’s built to liberate it.”</strong></p>
+    <p>Translated, it means: <strong>“Aza’raan is not designed to dominate speech - it’s built to liberate it.” Which is the quote from above.</strong></p> 
+
 </body>
-</html>
+</html> 
