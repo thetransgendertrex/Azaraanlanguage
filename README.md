@@ -221,7 +221,7 @@
 
     <h3>🔮 Aza'raan Font Preview (Overrides Pacifico)</h3>
     <p class="azaraan" style="font-family: 'Azaraan', cursive !important; font-size: 2em; color: #70389c;">
-      Aza’ralo hue ni tsurayaka laha sa’lai iil'las - yani~hue baneyaka laha p’dai’ra yani.
+      Aza’ralo hue ni tsurayaka laha sa’lai miil'las - yani~hue baneyaka laha p’dai’ra yani.
     </p>
 
     <p><em>This line is written in the custom <a href="https://github.com/thetransgendertrex/Azaraanlanguage/blob/main/Aza%27raan%20Planet%20Language.ttf" target="_blank">Aza’raan font</a> I designed to fully replace Pacifico in supported Google Drive applications.</em></p>
