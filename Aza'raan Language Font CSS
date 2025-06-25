@@ -1,29 +1,183 @@
-/* ==UserStyle==
-@name           Azaraan Overrides Pacifico in Google Docs & Drive Apps
-@namespace      github.com/thetransgendertrex
-@version        3.3.0
-@description    Replaces the "Pacifico" font with the custom "Azaraan" glyph-based font across Google Docs, Sheets, Slides, Drawings, Forms, and Drive apps. When "Pacifico" is selected, Azaraan renders instead with correct styling and minimal impact on other fonts.
+/* 🌑 Unified Moonpunk + Cyber-Glyphic Theme */
 
-Created by William Saville (#TheTransgenderTRex). Supports full glyphic language replacement preserving readability and user choice.
-==/UserStyle== */
+/* ===== VARIABLES ===== */
+:root {
+  --moonlight: #c0f7f2;
+  --dreamlight: #b59fff;
+  --glacial: #d1ecf6;
+  --moss: #7ec98d;
+  --coral: #f2b8a0;
+  --ember: #ffae66;
+  --obsidian: #1e1f26;
+  --silver: #dfeaf0;
+  --cyan: #00f6ff;
+  --highlight: #ffffff;
+  --glow: #82f2f2;
+  --prism: linear-gradient(135deg, #b59fff, #c0f7f2, #7ec98d, #f2b8a0);
+}
 
-/* 🎨 Load the custom Azaraan font */
+/* ===== BODY ===== */
+body {
+  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+  background: radial-gradient(circle at top, var(--obsidian) 0%, #0b0b0b 100%),
+              url('https://gallery.yopriceville.com/var/resizes/Free-Clipart-Pictures/Decorative-Elements-PNG/Silver_Gear_Transparent_PNG_Clip_Art.png?m=1507171942'),
+              url('https://gallery.yopriceville.com/var/resizes/Free-Clipart-Pictures/Decorative-Elements-PNG/Gear_Transparent_Clip_Art.png?m=1507171935'),
+              url('https://pngimg.com/uploads/gear/gear_PNG109875.png');
+  background-repeat: repeat;
+  background-size: 60px, 45px, 50px;
+  background-position: top left, bottom right, center center;
+  background-attachment: fixed;
+  color: var(--moonlight);
+  margin: 0;
+  padding: 2rem;
+  line-height: 1.7;
+  scroll-behavior: smooth;
+}
+
+/* ===== HEADINGS ===== */
+h1, h2, h3 {
+  font-family: 'Cinzel', serif;
+  color: var(--dreamlight);
+  text-shadow: 0 0 8px var(--dreamlight);
+}
+h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+h2 {
+  font-size: 2rem;
+  margin-top: 2rem;
+  border-bottom: 1px solid var(--glacial);
+  padding-bottom: 0.5rem;
+}
+h3 {
+  font-size: 1.5rem;
+  color: var(--silver);
+  margin-top: 1.5rem;
+}
+
+/* ===== PARAGRAPH & TEXT ===== */
+p {
+  margin-bottom: 1.2rem;
+  color: var(--silver);
+}
+li {
+  color: var(--silver);
+}
+a {
+  color: var(--ember);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--coral);
+}
+a:hover {
+  color: var(--coral);
+  border-bottom-style: solid;
+}
+
+/* ===== BLOCKQUOTE ===== */
+blockquote {
+  font-style: italic;
+  color: var(--moss);
+  border-left: 4px solid var(--glacial);
+  padding-left: 1rem;
+  margin: 2rem 0;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 6px;
+}
+
+/* ===== CODE ===== */
+code, pre {
+  background: #111;
+  color: var(--glacial);
+  font-family: 'Courier New', monospace;
+  border: 1px solid #444;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+}
+pre {
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+/* ===== LISTS ===== */
+ul {
+  padding-left: 1.5rem;
+  list-style-type: none;
+}
+ul li::before {
+  content: "🌙";
+  color: var(--dreamlight);
+  margin-right: 0.5rem;
+}
+
+/* ===== SECTION ===== */
+section, .section {
+  margin-bottom: 3rem;
+  border-left: 4px solid var(--moss);
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 12px;
+  box-shadow: inset 0 0 12px rgba(120, 255, 247, 0.1);
+}
+.section .block {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  border: 1px solid #555;
+  border-radius: 6px;
+}
+.section .note {
+  background: rgba(0, 255, 255, 0.1);
+  border-left: 4px solid var(--cyan);
+  padding: 1rem;
+  margin-top: 1rem;
+  color: var(--highlight);
+}
+
+/* ===== HORIZONTAL RULE ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--moss);
+  margin: 3rem 0;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  margin-top: 5rem;
+  font-size: 0.9rem;
+  color: var(--glacial);
+  text-align: center;
+  opacity: 0.5;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes pulse-glow {
+  0% { text-shadow: 0 0 4px var(--dreamlight); }
+  50% { text-shadow: 0 0 12px var(--dreamlight), 0 0 24px var(--moss); }
+  100% { text-shadow: 0 0 4px var(--dreamlight); }
+}
+.glow {
+  animation: pulse-glow 5s infinite;
+}
+.prismatic {
+  background: var(--prism);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+/* ===== AZARAAN FONT OVERRIDE ===== */
 @font-face {
   font-family: 'Azaraan';
-  src: url('https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Planet%20Language.ttf
-') format('truetype');
+  src: url('https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Planet%20Language.ttf') format('truetype');
   font-display: swap;
 }
 
-/* 🌐 Apply only inside Google Drive-based apps */
 @-moz-document url-prefix("https://docs.google.com/"),
                url-prefix("https://slides.google.com/"),
                url-prefix("https://sheets.google.com/"),
                url-prefix("https://drawings.google.com/"),
                url-prefix("https://forms.google.com/"),
                url-prefix("https://drive.google.com/") {
-
-  /* 🎯 Replace all instances of Pacifico with Azaraan, applying consistent styling */
   [style*="font-family:Pacifico"],
   span[style*="font-family:Pacifico"],
   .kix-lineview-content span[style*="Pacifico"],
@@ -45,21 +199,20 @@ Created by William Saville (#TheTransgenderTRex). Supports full glyphic language
   [aria-label*="Pacifico"] {
     font-family: 'Azaraan' !important;
     font-size: 2em !important;
-    color: #70389c !important;
+    color: var(--dreamlight) !important;
     font-style: normal !important;
     font-weight: normal !important;
     line-height: 1.2 !important;
   }
 
-  /* 🛡 Prevent global font override of unrelated fonts */
   * {
     font-family: inherit !important;
   }
 
-  /* 🧼 Ensure only Pacifico font is overridden */
   *:not([style*="Pacifico"]):not(.docs-texteventtarget-font-Pacifico) {
     font-family: inherit !important;
   }
+}
 /*
   Aza’ra™ and Aza’raan™ are original works by William Blake Saville (aka #TheTransgenderTRex).
   Learn more about the language's lore: 
@@ -68,4 +221,3 @@ Created by William Saville (#TheTransgenderTRex). Supports full glyphic language
   For project updates and ways to support the creator—an autistic, bedridden, low-income trans man—visit:
   http://www.linktr.ee/thetransgendertrex
 */
-}
