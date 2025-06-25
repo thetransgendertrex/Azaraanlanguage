@@ -161,6 +161,7 @@ footer {
 .prismatic {
   background: var(--prism);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
 }
