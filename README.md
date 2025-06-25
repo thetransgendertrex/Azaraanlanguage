@@ -104,8 +104,6 @@
 </div>
 </body>
 </html>
-
-
 </head>
 <body>
 
@@ -3025,9 +3023,26 @@
     </tbody>
   </table>
 </section>
+<!-- 🌟 Conclusion Section -->
+<footer class="section" style="text-align: center; margin-top: 4rem; padding: 2rem; border-top: 1px solid #555; font-size: 1rem; color: #c0f7f2;">
+  <h2 style="color: #b59fff; text-shadow: 0 0 6px #b59fff;">🌌 Thank You for Exploring Aza’ra</h2>
+  <p>
+    Your curiosity means everything. Whether you’re a linguist, gamer, worldbuilder, or dreamer—thank you for taking the time to explore the language, glyphs, and soul of <strong>Aza’ra</strong> and the <em>Aza’raan</em> script.
+  </p>
+  <p>
+    This living language is a gift of story, structure, and survival—and you’re now part of its legacy.
+  </p>
+  <p>
+    🧠 Learn more about the lore, linguistic design, and metaphysical themes in the official <a href="https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/refs/heads/main/README.md" target="_blank" style="color:#00f6ff; border-bottom: 1px dotted #00f6ff;">README</a>.
+  </p>
+  <p>
+    💜 Support the creator—<strong>William Blake Saville</strong> (aka <code>#TheTransgenderTRex</code>)—an autistic, low-income, bedridden trans man, via <a href="http://www.linktr.ee/thetransgendertrex" target="_blank" style="color:#ffae66; border-bottom: 1px dotted #ffae66;">Linktree</a>.
+  </p>
+</footer>
+
 </body>
 <!-- 
-© Aza’ra™ and Aza’raan™ Language System
+© Aza’ra™ and Aza’raan™ Language System  
 Created by William Blake Saville (aka #TheTransgenderTRex)
 
 To explore Aza’raan’s lore and purpose, visit the README:
@@ -3036,4 +3051,4 @@ https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/refs/heads/
 For updates, full lore, and to support a low-income, autistic, bedridden trans man:
 http://www.linktr.ee/thetransgendertrex
 -->
-</html> 
+</html>
