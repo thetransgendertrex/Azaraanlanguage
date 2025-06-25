@@ -101,5 +101,40 @@
       <li><strong>The Aaraks</strong>, whose language flowed like song—long vowels, open syllables, natural rhythm.</li>
       <li><strong>The Aramaics</strong>, who brought glyphic clarity, symbolic meaning, and spiritual cadence.</li>
     </ul>
-    <p>When Aarak fell into ruin—its sun drained by invaders, its crust shattered by flares—it was the Aramaics who helped anchor its fragments in the sky, weaving the magical Veil that held the planet together. In the wake of that cataclysm, the survivors renamed their world <strong>Aza’
+    <p>When Aarak fell into ruin—its sun drained by invaders, its crust shattered by flares—it was the Aramaics who helped anchor its fragments in the sky, weaving the magical Veil that held the planet together. In the wake of that cataclysm, the survivors renamed their world <strong>Aza’ra</strong>, meaning “to help.”</p>
 
+    <h3>🔡 Sound with Soul: Phonology that Means Something</h3>
+    <ul>
+      <li>Capital <strong>S</strong> is a sharp /s/ as in <em>sea</em>.</li>
+      <li>Lowercase <strong>s</strong> is a soft /ʃ/ as in <em>shimmer</em>.</li>
+      <li>Glottal stop <code>‘</code> is sometimes silent, or becomes <code>‘Ai</code> — a shimmer of divine breath.</li>
+    </ul>
+
+    <h3>✍️ A System That Respects the Self</h3>
+    <ul>
+      <li><strong>Shayalu (*):</strong> lets words flow naturally.</li>
+      <li><strong>Particles:</strong> <code>va</code> (emphasis), <code>ni</code> (negation).</li>
+      <li><strong>Honorifics:</strong> like <code>Do-</code> for respectful roles—never before pronouns.</li>
+    </ul>
+
+    <h3>💞 Built for Inclusivity</h3>
+    <p>Aza’raan refuses grammatical gender by default. Pronouns are introduced and affirmed, not assumed. The language evolves with the speaker. It holds space for your becoming.</p>
+
+    <blockquote><strong>If you’re reading this, you’re not just learning a language. You’re stepping into a world where names are sacred, voice is power, and every sentence can carry your truth forward.</strong></blockquote>
+
+    <p><strong>So welcome.<br>
+    Speak gently.<br>
+    Speak proudly.<br>
+    And may Aza’raan speak you, too.</strong></p>
+  </div>
+
+  <div class="section">
+    <h2>🧪 Demo Area</h2>
+    <p class="normal">This is "Pacifico" as rendered normally.</p>
+    <p class="azaraan">This is "Pacifico" after being replaced with Aza'raan.</p>
+  </div>
+
+  <!-- Link to External JS -->
+  <script src="https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Language%20Font%20Javascript"></script>
+</body>
+</html>
