@@ -10,7 +10,8 @@ Created by William Saville (#TheTransgenderTRex). Supports full glyphic language
 /* 🎨 Load the custom Azaraan font */
 @font-face {
   font-family: 'Azaraan';
-  src: url('https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Planet%20Language.ttf') format('truetype');
+  src: url('https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Planet%20Language.ttf
+') format('truetype');
   font-display: swap;
 }
 
