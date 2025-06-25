@@ -1,23 +1,20 @@
 /* ==UserStyle==
 @name           Azaraan Overrides Pacifico in Google Docs & Drive Apps
 @namespace      github.com/thetransgendertrex
-@version        3.0.0
-@description Replaces the "Pacifico" font with the custom "Aza'raan" font across all supported Google Drive applications (e.g., Docs, Sheets, Slides). All other fonts remain unaffected. When a user selects "Pacifico" from the font menu, the "Aza'raan" font is rendered and typed instead. 
+@version        3.3.0
+@description    Replaces the "Pacifico" font with the custom "Azaraan" glyph-based font across Google Docs, Sheets, Slides, Drawings, Forms, and Drive apps. When "Pacifico" is selected, Azaraan renders instead with correct styling and minimal impact on other fonts.
 
-The dropdown menu will display "Aza'raan" (written using its native glyphs) in place of "Pacifico", ensuring complete substitution. Once selected, users can fully type in the Aza'raan script, and any existing text can be converted by applying the Aza'raan font via the same dropdown.
-
-This font acts as a direct replacement for Pacifico only and does not interfere with any other fonts or styles within Google applications. Aza'raan is a custom glyph-based fantasy language developed by William Saville (aka #TheTransgenderTRex) for the fictional universe of Aza'ra. It is inspired by and partially derived from Aramaic. 
-
-Due to its glyph-based structure and visual complexity, it is essential that no other fonts are affected. Users typically write in English using standard fonts, then switch to Aza'raan by selecting it from the dropdown to apply the correct glyph rendering. This controlled replacement ensures readability and proper linguistic expression.
+Created by William Saville (#TheTransgenderTRex). Supports full glyphic language replacement preserving readability and user choice.
 ==/UserStyle== */
 
-/* Load the custom Azaraan font */
+/* 🎨 Load the custom Azaraan font */
 @font-face {
   font-family: 'Azaraan';
   src: url('https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Planet%20Language.ttf') format('truetype');
+  font-display: swap;
 }
 
-/* Apply only to Google Drive apps */
+/* 🌐 Apply only inside Google Drive-based apps */
 @-moz-document url-prefix("https://docs.google.com/"),
                url-prefix("https://slides.google.com/"),
                url-prefix("https://sheets.google.com/"),
@@ -25,7 +22,7 @@ Due to its glyph-based structure and visual complexity, it is essential that no 
                url-prefix("https://forms.google.com/"),
                url-prefix("https://drive.google.com/") {
 
-  /* 🌐 Replace Pacifico globally with Azaraan */
+  /* 🎯 Replace all instances of Pacifico with Azaraan, applying consistent styling */
   [style*="font-family:Pacifico"],
   span[style*="font-family:Pacifico"],
   .kix-lineview-content span[style*="Pacifico"],
@@ -40,25 +37,26 @@ Due to its glyph-based structure and visual complexity, it is essential that no 
   .a-s-T[style*="font-family:Pacifico"],
   .a-s-fa-T[style*="font-family:Pacifico"],
   .docs-texteventtarget-font-PACIFICO,
-  .docs-texteventtarget-font-Pacifico {
-    font-family: 'Azaraan' !important;
-  }
-
-  /* 🎯 Additional override for internal dynamic Pacifico fonts */
+  .docs-texteventtarget-font-Pacifico,
   [class*="font-Pacifico"],
   [class*="Font-Pacifico"],
   [class*="texteventtarget-font-Pacifico"],
   [aria-label*="Pacifico"] {
     font-family: 'Azaraan' !important;
+    font-size: 2em !important;
+    color: #70389c !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    line-height: 1.2 !important;
   }
 
-  /* 🛡 Prevent Azaraan from being applied globally – keep all other fonts default */
+  /* 🛡 Prevent global font override of unrelated fonts */
   * {
-    font-family: inherit;
+    font-family: inherit !important;
   }
 
-  /* 🧼 Ensure Pacifico is fully replaced, even without inline style */
-  *:not(input):not(textarea):not(code):not(pre):not(select):not(button) {
-    font-family: inherit;
+  /* 🧼 Ensure only Pacifico font is overridden */
+  *:not([style*="Pacifico"]):not(.docs-texteventtarget-font-Pacifico) {
+    font-family: inherit !important;
   }
 }
