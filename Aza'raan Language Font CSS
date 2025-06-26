@@ -270,9 +270,9 @@ footer {
     padding: 1.2rem 0.8rem;
   }
 }
-/* === Comic Sans Override (GitHub index.html and README.md only) === */
+/* === Comic Sans Override (GitHub index.html and lore.html only) === */
 body[data-doc-name*="index"],
-body[data-doc-name*="readme"] {
+body[data-doc-name*="lore"] {
   font-family: 'Comic Sans MS', cursive, sans-serif !important;
 }
 
