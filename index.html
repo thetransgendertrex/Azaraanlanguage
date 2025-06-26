@@ -1,31 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<section id="responsive-message" class="responsive-highlight">
-  <h2>📱 Aza'raan on Mobile & Tablet</h2>
-  <p>This section adjusts beautifully across devices. Try resizing your window to see the responsive effects take place—fonts, padding, and layout all adapt smoothly to your screen.</p>
-</section>
 <head>
   <meta charset="UTF-8" />
-  <title>Aza’raan Font + Moonpunk Theme</title>
+  <title>Welcome To The World Of Aza'ra!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
 
-  <!-- Aza’raan Font CSS (linked and backed by local font-face) -->
+  <!-- Optional external Aza'raan CSS if desired -->
   <link rel="stylesheet" href="https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Language%20Font%20CSS.css" />
 
+  <!-- Steamwreck Font (only used for title) -->
   <style>
-    /* === Font Face for Aza’raan === */
     @font-face {
-      font-family: 'Azaraan';
-      src: url('https://github.com/thetransgendertrex/Azaraanlanguage/blob/main/Aza%27raan%20Planet%20Language.ttf?raw=true') format('truetype');
+      font-family: 'Steamwreck';
+      src: url('https://www.fontspace.com/media/font-files/s/t/steamwreck/Steamwreck.ttf') format('truetype');
       font-weight: normal;
       font-style: normal;
       font-display: swap;
     }
 
-    /* === Color Variables === */
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-family: 'Steamwreck', serif !important;
+      font-size: 2.8rem;
+      text-align: center;
+      color: #333;
+      margin-bottom: 2rem;
+    }
+
+    h2, h3, h4, h5 {
+      font-family: 'Cinzel', serif;
+    }
+
+    section {
+      max-width: 800px;
+      margin: auto;
+      line-height: 1.6;
+    }
+
     :root {
       --moonlight: #c0f7f2;
       --dreamlight: #b59fff;
@@ -41,7 +60,6 @@
       --prism: linear-gradient(135deg, #b59fff, #c0f7f2, #7ec98d, #f2b8a0);
     }
 
-    /* === Base Styles === */
     body {
       font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
       background: radial-gradient(circle at top, var(--obsidian) 0%, #0b0b0b 100%),
@@ -59,7 +77,7 @@
       scroll-behavior: smooth;
     }
 
-    h1, h2, h3 {
+    h1, h2, h3, h4 {
       font-family: 'Cinzel', serif;
       text-shadow: 0 0 8px var(--dreamlight);
     }
@@ -130,7 +148,7 @@
     .azaraan-word,
     .azaraan-phrase,
     .azaraan-fusion-form {
-      font-family: 'Azaraan', cursive !important;
+      font-family: 'Azaraan', truetype !important;
       font-size: 1.6rem;
       display: block;
       margin-bottom: 1rem;
@@ -193,37 +211,8 @@
 </head>
 
 <body>
-  <h1 class="glow">🌙 Aza’raan Font + Moonpunk Theme</h1>
+  <h1 class="glow">🌙 Aza’raan Font Google Application</h1>
   <p>This page combines the Aza'raan glyphic font with a Moonpunk–Cyber-Glyphic visual theme, designed for use in both <code>index.html</code> and <code>README.md</code> contexts.</p>
-
-  <section class="section">
-    <h2>📜 Aza’raan Pacifico Override Script</h2>
-    <p>This script forces Google Docs and related apps to use Aza’raan glyphs whenever <code>Pacifico</code> is selected.</p>
-
-    <div class="block">
-<pre><code>// ==UserScript==
-// @name         Aza'raan Font Integration
-// @namespace    https://github.com/thetransgendertrex
-// @version      4.0
-// @description  Replace Pacifico with Aza'raan and enable glyph typing across Google Docs, Sheets, Slides, Forms, and Drive.
-// @match        *://docs.google.com/*
-// @match        *://drive.google.com/*
-// @match        *://slides.google.com/*
-// @match        *://docs.google.com/forms/*
-// @match        *://docs.google.com/spreadsheets/*
-// @grant        none
-// ==/UserScript==</code></pre>
-    </div>
-
-    <h3>📁 Supported Google Applications</h3>
-    <ul>
-      <li>📄 Google Docs</li>
-      <li>📊 Google Sheets</li>
-      <li>📽️ Google Slides</li>
-      <li>📋 Google Forms</li>
-      <li>📁 Google Drive</li>
-    </ul>
-
     <h3>📦 Aza’raan Font Resources</h3>
     <ul>
       <li><a href="https://github.com/thetransgendertrex/Azaraanlanguage/blob/main/Aza%27raan%20Planet%20Language.ttf" target="_blank">Download Aza'raan.ttf</a></li>
@@ -233,8 +222,7 @@
       <li><a href="https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Manifest.json" target="_blank">Manifest.json</a></li>
     </ul>
   </section>
-
-  <section class="section">
+  <section class="font-sample">
     <h2>🔠 Font Sample</h2>
     <p class="azaraan-word">Eryphiren<span class="times-roman"> — First month of the Aza’raan calendar</span></p>
     <p class="azaraan-phrase">Yui Ranam rakhemaeri Ranthnami<span class="times-roman"> — "The demi-male loved himself"</span></p>
@@ -243,7 +231,7 @@
 </body>
 <div class="section">
       <h2>🎙️ The Voice of Aza’ra</h2>
-    <p><em>Introduction by William Blake Saville, Creator of Aza’raan</em></p>
+    <p><em>Introduction by William Blake Saville, AKA #TheTransgenderTRex, Creator of all things related to the planet of Aza’ra</em></p>
     <p>Language is never just a system of words. It is a living current—a vessel of culture, a marker of memory, and a declaration of identity. When I set out to create the language of Aza’ra, I didn’t just want something that sounded beautiful. I wanted something that meant something. Something that held space for transformation, for fluidity, for truth. Thus, Aza’raan was born—a fusion of the mystical, vowel-rich cadence of Aarak and the disciplined, ancient structure of Aramaic.</p>
 
     <p>Aza’raan is not designed to dominate speech—it’s built to liberate it.</p>
@@ -376,7 +364,7 @@
   </div>
 </section>
 
-  <h2>✒️ Aza’raan Punctuation System</h2>
+  <h2>✒️ Aza’raan Punctuation and Currency System</h2>
   <table>
     <thead>
       <tr>
