@@ -1,53 +1,83 @@
-(function () {
-  'use strict';
+(() => {
+  const FONT_NAME = "'Azaraan', cursive !important";
+  const CLASS_SELECTORS = ['.azaraan-word', '.azaraan-phrase', '.azaraan-fusion-form'];
 
-  // Load the Aza'raan font
-  const azFont = document.createElement('style');
-  azFont.textContent = `
-    @font-face {
-      font-family: 'Azaraan';
-      src: url('https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Planet%20Language.ttf') format('truetype');
+  // Inject font-face and stylesheet once
+  const injectOnce = (id, tag, props) => {
+    if (!document.getElementById(id)) {
+      const el = document.createElement(tag);
+      el.id = id;
+      Object.assign(el, props);
+      document.head.appendChild(el);
     }
-  `;
-  document.head.appendChild(azFont);
+  };
 
-  // Style override
-  const style = document.createElement('style');
-  style.textContent = `
+  injectOnce('azaraan-font-css', 'link', {
+    rel: 'stylesheet',
+    href: 'https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Language%20Font%20CSS.css'
+  });
+
+  injectOnce('azaraan-font-face', 'style', {
+    textContent: `
+      @font-face {
+        font-family: 'Azaraan';
+        src: url('https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Planet%20Language.ttf') format('truetype');
+        font-display: swap;
+      }
+    `
+  });
+
+  // Observe and replace "Pacifico" font usage
+  const overrideFont = () => {
+    document.querySelectorAll('[style*="font-family: Pacifico"]').forEach(el => el.style.fontFamily = FONT_NAME);
+    CLASS_SELECTORS.forEach(sel => document.querySelectorAll(sel).forEach(el => el.style.fontFamily = FONT_NAME));
+    document.querySelectorAll('[aria-label="Pacifico"]').forEach(el => { if (el.textContent !== "Azaraan") el.textContent = "Azaraan"; });
+  };
+
+  const observer = new MutationObserver(overrideFont);
+  observer.observe(document.body, { childList: true, subtree: true, attributes: true });
+
+  // Force global replacement with fallback CSS
+  const fallbackStyle = document.createElement('style');
+  fallbackStyle.textContent = `
     [style*="font-family:Pacifico"],
-    span[style*="font-family:Pacifico"],
-    .kix-lineview-content span[style*="Pacifico"],
-    .texteditor-text-input[style*="font-family:Pacifico"],
-    .punch-viewer-content span[style*="font-family:Pacifico"],
-    .cell-input[style*="font-family:Pacifico"],
-    .grid-container span[style*="font-family:Pacifico"],
-    .drawing-view text[style*="font-family:Pacifico"],
-    .kix-canvas-tile-content text[style*="font-family:Pacifico"],
-    .quantumWizTextinputPaperinputInput[style*="font-family:Pacifico"],
-    .freebirdFormviewerViewItemsItemItemTitle[style*="font-family:Pacifico"],
-    .a-s-T[style*="font-family:Pacifico"],
-    .a-s-fa-T[style*="font-family:Pacifico"],
-    .docs-texteventtarget-font-PACIFICO,
-    .docs-texteventtarget-font-Pacifico,
     [class*="font-Pacifico"],
-    [class*="Font-Pacifico"],
-    [class*="texteventtarget-font-Pacifico"],
-    [aria-label*="Pacifico"] {
+    [aria-label*="Pacifico"],
+    .docs-texteventtarget-font-Pacifico {
       font-family: 'Azaraan' !important;
       font-size: 2em !important;
-      color: #70389c !important;
+      color: teal !important;
       font-style: normal !important;
       font-weight: normal !important;
       line-height: 1.2 !important;
     }
-  `;
-  document.head.appendChild(style);
 
-  // Rename font in dropdown (just cosmetic)
-  const observer = new MutationObserver(() => {
-    document.querySelectorAll('[aria-label="Pacifico"]').forEach(el => {
-      el.textContent = "Aza'raan";
-    });
-  });
-  observer.observe(document.body, { childList: true, subtree: true });
+    .azaraan-word, .azaraan-phrase, .azaraan-fusion-form {
+      font-family: 'Azaraan', cursive !important;
+    }
+  `;
+  document.head.appendChild(fallbackStyle);
+
+  // Apply Aza'raan font once on load
+  CLASS_SELECTORS.forEach(sel => document.querySelectorAll(sel).forEach(el => el.style.fontFamily = FONT_NAME));
+
+  // Apply theme colors to :root if not already applied
+  const cssVars = {
+    '--moonlight': '#c0f7f2',
+    '--dreamlight': '#b59fff',
+    '--glacial': '#d1ecf6',
+    '--moss': '#7ec98d',
+    '--coral': '#f2b8a0',
+    '--ember': '#ffae66',
+    '--obsidian': '#1e1f26',
+    '--silver': '#dfeaf0',
+    '--cyan': '#00f6ff',
+    '--highlight': '#ffffff',
+    '--glow': '#82f2f2',
+    '--prism': 'linear-gradient(135deg, #b59fff, #c0f7f2, #7ec98d, #f2b8a0)'
+  };
+  const root = document.documentElement;
+  for (const [k, v] of Object.entries(cssVars)) {
+    root.style.setProperty(k, v);
+  }
 })();
