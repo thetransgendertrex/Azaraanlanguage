@@ -29,7 +29,7 @@ body::before {
   filter: brightness(0.85) contrast(1.05);
 }
 
-/* Optional overlay to subtly darken the image for text readability */
+/* overlay to subtly darken the image for text readability */
 body::after {
   content: "";
   position: fixed;
