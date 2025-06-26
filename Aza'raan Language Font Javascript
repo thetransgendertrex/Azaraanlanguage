@@ -144,150 +144,128 @@ document.addEventListener('DOMContentLoaded', function () {
     display: inline-block;
   }
 
-  a:hover, a:focus, .button-link:hover {
-    background-color: rgba(0, 0, 0, 0.6);
-    color: var(--cyan);
-    border: 2px solid var(--silver);
-  }
+a:hover, a:focus, .button-link:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: var(--cyan);
+  border: 2px solid var(--silver);
+}
 
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  background-color: rgba(255, 255, 255, 0.94);
+  border: 2px solid var(--cyan);
+  color: #000000;
+  font-family: 'Times New Roman', serif;
+  border-radius: 8px;
+  backdrop-filter: blur(1px);
+}
+
+th, td {
+  padding: 1rem;
+  text-align: center;
+  vertical-align: middle;
+  opacity: 1;
+  border-bottom: 1px solid var(--cyan);
+}
+
+th {
+  font-size: 2rem;
+  font-weight: bold;
+  border-bottom: 2px solid var(--cyan);
+  text-transform: uppercase;
+}
+
+td {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+td.no-bold,
+td.override,
+td[class*="note"],
+td[class*="phonetic"] {
+  font-weight: normal;
+  font-size: 1.2rem;
+}
+
+footer {
+  background: white;
+  border-top: 2px solid var(--cyan);
+  color: var(--black);
+  text-align: center;
+  font-family: 'Times New Roman', serif;
+  font-size: 0.9rem;
+  padding: 1rem;
+  margin-top: 5rem;
+  border-radius: 0 0 8px 8px;
+  font-weight: bold;
+  height: 150px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  direction: rtl;
+  scrollbar-color: var(--cyan) silver;
+  scrollbar-width: thin;
+}
+
+footer * {
+  direction: ltr;
+  text-align: center;
+}
+
+footer::-webkit-scrollbar {
+  width: 12px;
+}
+
+footer::-webkit-scrollbar-track {
+  background: silver;
+  border-radius: 8px;
+}
+
+footer::-webkit-scrollbar-thumb {
+  background-color: var(--cyan);
+  border-radius: 8px;
+  border: 2px solid silver;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  table th {
+    font-size: 1.6rem;
+  }
+  table td {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 767px) {
   table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 2rem;
-    background-color: #ffffff;
-    border: 2px solid var(--cyan);
-    color: #000000;
-    font-family: 'Times New Roman', serif;
-    border-radius: 8px;
-    opacity: 1;
-  }
-
-  th, td {
-    padding: 1rem;
-    text-align: left;
-    border-bottom: 1px solid var(--cyan);
-    opacity: 1;
-  }
-
-  th {
-    font-size: 1.125rem;
-    font-weight: bold;
-    border-bottom: 2px solid var(--cyan);
-  }
-
-  td {
-    font-size: 0.9375rem;
-  }
-
-  footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: white;
-    color: #111;
-    text-align: center;
-    font-family: 'Times New Roman', serif;
     font-size: 0.9rem;
-    padding: 2rem 1rem;
-    border-top: 2px solid #00ffee;
-    z-index: 10;
-    font-weight: bold;
-    border-radius: 0 0 8px 8px;
+    display: block;
+    overflow-x: auto;
   }
-
-  @media (min-width: 1025px) {
-    body::before {
-      background-size: cover;
-    }
+  table th, table td {
+    padding: 0.5rem;
+    min-width: 120px;
+    font-size: 1.1rem;
   }
-
-  @media (min-width: 768px) and (max-width: 1024px) {
-    body::before {
-      background-size: contain;
-      background-position: center top;
-    }
+  td.no-bold,
+  td.override,
+  td[class*="note"],
+  td[class*="phonetic"] {
+    font-size: 1rem;
   }
-
-  @media (max-width: 767px) {
-    body::before {
-      background-size: contain;
-      background-position: center top;
-    }
+  footer {
+    font-size: 0.8rem;
+    padding: 1.2rem 0.8rem;
+    height: 150px;
   }
+}
 
-  @media (max-width: 1024px) {
-    body {
-      padding: 1.5rem;
-      font-size: 1rem;
-    }
-
-    h1 { font-size: 2.2rem; padding: 0.75rem 1rem; }
-    h2 { font-size: 1.75rem; }
-    h3 { font-size: 1.3rem; }
-
-    section, .section {
-      padding: 1rem;
-      margin-bottom: 2rem;
-    }
-
-    table th, table td {
-      padding: 0.75rem;
-      font-size: 0.95rem;
-    }
-
-    a, footer a {
-      font-size: 0.95rem;
-      padding: 0.3em 0.65em;
-    }
-  }
-
-  @media (max-width: 767px) {
-    body {
-      padding: 1rem;
-      font-size: 0.95rem;
-    }
-
-    h1 { font-size: 1.8rem; padding: 0.6rem 0.8rem; }
-    h2 { font-size: 1.4rem; }
-    h3 { font-size: 1.1rem; }
-
-    section, .section {
-      padding: 0.8rem;
-      margin-bottom: 1.5rem;
-    }
-
-    table {
-      font-size: 0.9rem;
-      display: block;
-      overflow-x: auto;
-    }
-
-    table th, table td {
-      padding: 0.5rem;
-      min-width: 120px;
-    }
-
-    ul {
-      padding-left: 1rem;
-    }
-
-    a, footer a {
-      font-size: 0.9rem;
-      padding: 0.25em 0.5em;
-      margin: 0.2rem 0;
-    }
-
-    footer {
-      font-size: 0.8rem;
-      padding: 1.2rem 0.8rem;
-    }
-  }
-
-  body[data-doc-name*="index"],
-  body[data-doc-name*="lore"] {
-    font-family: 'Comic Sans MS', cursive, sans-serif !important;
-  }
+body[data-doc-name*="index"],
+body[data-doc-name*="lore"] {
+  font-family: 'Comic Sans MS', cursive, sans-serif !important;
+}
 
   .azaraan-word {
     font-family: 'Azaraan', cursive;
