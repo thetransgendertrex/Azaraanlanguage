@@ -184,53 +184,138 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 2rem;
-  background-color: #ffffff; /* solid */
+  background-color: rgba(255, 255, 255, 0.94); /* subtle transparency */
   border: 2px solid var(--cyan);
   color: #000000;
   font-family: 'Times New Roman', serif;
   border-radius: 8px;
-  opacity: 1; /* force solid visibility */
+  backdrop-filter: blur(1px); /* subtle background diffusion */
 }
 
 th, td {
   padding: 1rem;
-  text-align: left;
+  text-align: center; /* center all content */
+  vertical-align: middle;
+  opacity: 1;
   border-bottom: 1px solid var(--cyan);
-  opacity: 1; /* text fully opaque */
 }
 
+/* Column headers */
 th {
-  font-size: 1.125rem;
+  font-size: 2rem;       /* h1 size */
   font-weight: bold;
   border-bottom: 2px solid var(--cyan);
+  text-transform: uppercase;
 }
 
+/* Table contents */
 td {
-  font-size: 0.9375rem;
+  font-size: 1.5rem;      /* h2 size */
+  font-weight: bold;
 }
 
-/* Footer stays fixed at bottom */
-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
+/* Optional: Allow opt-out with specific classes */
+td.no-bold,
+td.override,
+td[class*="note"],
+td[class*="phonetic"] {
+  font-weight: normal;
+  font-size: 1.2rem; /* slightly reduced for annotations or side info */
+}
+
+/* === TABLES === */
+table {
   width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  background-color: rgba(255, 255, 255, 0.94); /* subtle transparency */
+  border: 2px solid var(--cyan);
+  color: #000000;
+  font-family: 'Times New Roman', serif;
+  border-radius: 8px;
+  backdrop-filter: blur(1px);
+}
+
+th, td {
+  padding: 1rem;
+  text-align: center;
+  vertical-align: middle;
+  opacity: 1;
+  border-bottom: 1px solid var(--cyan);
+}
+
+/* Column headers */
+th {
+  font-size: 2rem;
+  font-weight: bold;
+  border-bottom: 2px solid var(--cyan);
+  text-transform: uppercase;
+}
+
+/* Table contents */
+td {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Opt-out classes */
+td.no-bold,
+td.override,
+td[class*="note"],
+td[class*="phonetic"] {
+  font-weight: normal;
+  font-size: 1.2rem;
+}
+
+/* === FOOTER === */
+footer {
   background: white;
-  color: #111;
+  border-top: 2px solid var(--cyan);
+  color: var(--black);
   text-align: center;
   font-family: 'Times New Roman', serif;
   font-size: 0.9rem;
-  padding: 2rem 1rem;
-  border-top: 2px solid #00ffee;
-  z-index: 10;
-  font-weight: bold;
+  padding: 1rem;
+  margin-top: 5rem;
   border-radius: 0 0 8px 8px;
+  font-weight: bold;
+  height: 150px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  direction: rtl;
+}
+
+/* Reset text direction for children */
+footer * {
+  direction: ltr;
+  text-align: center;
+}
+
+/* Custom Scrollbar */
+footer::-webkit-scrollbar {
+  width: 12px;
+}
+
+footer::-webkit-scrollbar-track {
+  background: silver;
+  border-radius: 8px;
+}
+
+footer::-webkit-scrollbar-thumb {
+  background-color: var(--cyan);
+  border-radius: 8px;
+  border: 2px solid silver;
+}
+
+footer {
+  scrollbar-color: var(--cyan) silver;
+  scrollbar-width: thin;
 }
 
 /* === RESPONSIVE === */
 @media (min-width: 1025px) {
   body::before {
-    background-size: cover; /* fill entire viewport */
+    background-size: cover;
   }
 }
 
@@ -239,54 +324,20 @@ footer {
     background-size: contain;
     background-position: center top;
   }
+
+  table th {
+    font-size: 1.6rem;
+  }
+
+  table td {
+    font-size: 1.3rem;
+  }
 }
 
 @media (max-width: 767px) {
   body::before {
     background-size: contain;
     background-position: center top;
-  }
-}
-
-@media (max-width: 1024px) {
-  body {
-    padding: 1.5rem;
-    font-size: 1rem;
-  }
-
-  h1 { font-size: 2.2rem; padding: 0.75rem 1rem; }
-  h2 { font-size: 1.75rem; }
-  h3 { font-size: 1.3rem; }
-
-  section, .section {
-    padding: 1rem;
-    margin-bottom: 2rem;
-  }
-
-  table th, table td {
-    padding: 0.75rem;
-    font-size: 0.95rem;
-  }
-
-  a, footer a {
-    font-size: 0.95rem;
-    padding: 0.3em 0.65em;
-  }
-}
-
-@media (max-width: 767px) {
-  body {
-    padding: 1rem;
-    font-size: 0.95rem;
-  }
-
-  h1 { font-size: 1.8rem; padding: 0.6rem 0.8rem; }
-  h2 { font-size: 1.4rem; }
-  h3 { font-size: 1.1rem; }
-
-  section, .section {
-    padding: 0.8rem;
-    margin-bottom: 1.5rem;
   }
 
   table {
@@ -298,21 +349,20 @@ footer {
   table th, table td {
     padding: 0.5rem;
     min-width: 120px;
+    font-size: 1.1rem;
   }
 
-  ul {
-    padding-left: 1rem;
-  }
-
-  a, footer a {
-    font-size: 0.9rem;
-    padding: 0.25em 0.5em;
-    margin: 0.2rem 0;
+  td.no-bold,
+  td.override,
+  td[class*="note"],
+  td[class*="phonetic"] {
+    font-size: 1rem;
   }
 
   footer {
     font-size: 0.8rem;
     padding: 1.2rem 0.8rem;
+    height: 150px;
   }
 }
 
@@ -392,8 +442,233 @@ div[aria-label="Font"] div[style*="Pacifico"] {
    <p style="font-family: 'Comic Sans MS', cursive; color: #00ffff; text-shadow: 0 0 0.3px #014d4e; font-size: 4rem;">
       Eryphiren
     </p>
-    <p class="times-roman"> — First month of the Aza’raan calendar</p>
+    <p class="times-roman"> — First month of the Aza’raan calendar, “Eryphiren”</p>
   </p>
+<section id="eryphiren-month">
+  <h2>📅 Aza’raan Month: Eryphiren</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Month Name</th>
+        <th>Pronunciation</th>
+        <th>Naming Origin</th>
+        <th>Essence & Purpose</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Eryphiren</strong></td>
+        <td><em>Eh-rif-i-ren</em></td>
+        <td>Eryndria + Zephyra (Growth + Wind Magic)</td>
+        <td>Celebrates blossoming potential—nature’s vitality harmonizing with the arcane wind.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="zephyra">
+  <h2>🛐 Zephyra — Mistress of the Aether</h2>
+  <ul>
+<li><strong>Name in Aza’raan:</strong><p style="font-family: 'Comic Sans MS', cursive; color: #00ffff; text-shadow: 0 0 0.3px #014d4e; font-size: 4rem;">Zafira<p/></li>
+    <li><strong>Pronunciation:</strong> ZEH-fy-ruh (rolled r)</li>
+    <li><strong>Gender Identity:</strong> Cisgender Female (Ala → Ah-lah)</li>
+    <li><strong>Pronouns:</strong> Al / Alt / Alad (Ahl / Ahl-t / Ah-lad)</li>
+    <li><strong>Domains:</strong> Sky, Magic, Wind</li>
+    <li><strong>Symbol:</strong> A sail caught in a swirl of clouds</li>
+  </ul>
+
+  <h3>📖 Lore</h3>
+  <p>
+    Zephyra rides the celestial wind—an ethereal force of change, mystery, and inspiration. Alad divine essence is felt in every whispering gust and storm-carried dream. Draped in aether-silk, with fans of divine force and glowing wind tattoos, Al commands the breath between moments.
+  </p>
+
+  <h3>⚙️ Class: Tempest Ascendant</h3>
+  <ul>
+    <li><strong>Role:</strong> Living embodiment of the storm</li>
+    <li><strong>Sub-Classes:</strong>
+      <ul>
+        <li>🗡 <strong>Rogue Variant</strong> – Agile lightning duelist
+          <ul><li>Chain strikes, melee speed, thunder finishers</li></ul>
+        </li>
+        <li>⚖ <strong>Vanguard Variant</strong> – Wind-borne control caster
+          <ul><li>Wind spells + battlefield evasion</li></ul>
+        </li>
+        <li>⚡ <strong>Sorcerer Variant</strong> – AoE stormcaster
+          <ul><li>Aerial magic, gusts, lightning waves</li></ul>
+        </li>
+      </ul>
+    </li>
+    <li><strong>Class Flavor:</strong>
+      <ul>
+        <li>Movement fuels power</li>
+        <li>Casts while airborne</li>
+        <li>Uses stormshrines for buffs</li>
+        <li>Scales with Focus and Finesse</li>
+        <li>Signature: flowing robes, aerial dodges, lightning arcs</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3>✨ Magic Schools: Zephyra</h3>
+  <ul>
+    <li><strong>Elemental (Air)</strong>
+      <ul>
+        <li>Vanguard: Gust shields, air evasion</li>
+        <li>Sorcerer: AoE storms, wind bursts</li>
+      </ul>
+    </li>
+    <li><strong>Arcane</strong>
+      <ul>
+        <li>Vanguard: Blink traps, kinetic shields</li>
+        <li>Sorcerer: Mana bolts, scaling pulse spells</li>
+      </ul>
+    </li>
+    <li><strong>Chaos</strong>
+      <ul>
+        <li>Vanguard: Random terrain shifts</li>
+        <li>Sorcerer: Storm spirals, time-stutter effects</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3>🙏 Religions of Zephyra</h3>
+  <ul>
+    <li><strong>The Aetherian Forge</strong> — ⦿ Combines sky magic and craftsmanship</li>
+    <li><strong>The Eternal Storm</strong> — ⦿ Celebrates chaos and rebirth through wind</li>
+    <li><strong>The Eternal Aegis Belief</strong> — ⦿ Justice riding on celestial currents</li>
+  </ul>
+
+  <h3>⚖ Ritual Practices</h3>
+  <ul>
+    <li>⚫ Tempest’s Meditation – Reflection in the heart of storms</li>
+    <li>⚫ Skyward Offerings – Trust cast into the wind</li>
+    <li>⚫ Feathers of Freedom – Rites of liberation and courage</li>
+  </ul>
+</section>
+
+<section id="eryndria">
+  <h2>🛐 Eryndria — The Mother of Growth</h2>
+  <ul>
+<li><strong>Name in Aza’raan:</strong><p style="font-family: 'Comic Sans MS', cursive; color: #00ffff; text-shadow: 0 0 0.3px #014d4e; font-size: 4rem;">Arindria<p/></li>
+    <li><strong>Pronunciation:</strong> er-een-dree-uh (rolled r)</li>
+    <li><strong>Gender Identity:</strong> Transgender Female (Tasen → tah-seen)</li>
+    <li><strong>Pronouns:</strong> Tas / Tasth / Tasad (tahs / tahs-th / tah-sahd)</li>
+    <li><strong>Domains:</strong> Nature, Fertility, Rebirth, Transitions</li>
+    <li><strong>Symbol:</strong> A blooming tree</li>
+  </ul>
+
+  <h3>📖 Lore</h3>
+  <p>
+    Eryndria brings life to ash and bloom to sorrow. From Tasad robes of moss and blossoms to Tasad scythe and Seed of Renewal, Tasad presence reshapes despair into promise. Wherever Tas walks, nature quickens—life follows.
+  </p>
+
+  <h3>⚙️ Class: Thornweaver</h3>
+  <ul>
+    <li><strong>Role:</strong> Sacred gardener of destruction and rebirth</li>
+    <li><strong>Sub-Classes:</strong>
+      <ul>
+        <li>🛡 <strong>Rogue Variant</strong> – Bark-armored protector
+          <ul><li>Reactive thorns, shielding allies</li></ul>
+        </li>
+        <li>🍃 <strong>Vanguard Variant</strong> – Grove healer
+          <ul><li>Terrain-based support, healing zones</li></ul>
+        </li>
+        <li>🌿 <strong>Sorcerer Variant</strong> – Verdant avatar
+          <ul><li>Wide-area growth, entanglement, AoE heals</li></ul>
+        </li>
+      </ul>
+    </li>
+    <li><strong>Class Flavor:</strong>
+      <ul>
+        <li>Eco-magic, terrain manipulation</li>
+        <li>Seed mines, thorn shields, regrowth miracles</li>
+        <li>Focused on revival and nature synergy</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3>✨ Magic Schools: Eryndria</h3>
+  <ul>
+    <li><strong>Elemental (Earth)</strong>
+      <ul>
+        <li>Vanguard: Living rock armor</li>
+        <li>Sorcerer: Terrain disruption</li>
+      </ul>
+    </li>
+    <li><strong>Nature</strong>
+      <ul>
+        <li>Vanguard: Thorn retaliation</li>
+        <li>Sorcerer: Summon plant life, healing flora</li>
+      </ul>
+    </li>
+    <li><strong>Spirit</strong>
+      <ul>
+        <li>Vanguard: Tethered soul shielding</li>
+        <li>Sorcerer: Resonance pulses, ancestral healing</li>
+      </ul>
+    </li>
+    <li><strong>Mystic</strong>
+      <ul>
+        <li>Vanguard: Sigils, slow-fields</li>
+        <li>Sorcerer: Psionic healing bursts</li>
+      </ul>
+    </li>
+    <li><strong>Holy</strong>
+      <ul>
+        <li>Vanguard: Radiant protection</li>
+        <li>Sorcerer: Full-field miracle waves</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3>🙏 Religions of Eryndria</h3>
+  <ul>
+    <li><strong>The Tides of Rebirth</strong> — ⦿ Fusion of land and sea with Morrigaen</li>
+    <li><strong>The Twilight Keepers</strong> — ⦿ Growth hidden in shadows</li>
+    <li><strong>The Rebirth of Flame</strong> — ⦿ Renewal through fire with Vraekthos</li>
+  </ul>
+
+  <h3>⚖ Ritual Practices</h3>
+  <ul>
+    <li>⚫ The Eternal Seed Planting – Growth amid adversity</li>
+    <li>⚫ The Blooming Rite – Seasonal offerings</li>
+    <li>⚫ The Cycle’s Embrace – Life-alignment meditations</li>
+  </ul>
+</section>
+
+<section id="earth-deity-inspirations">
+  <h2>📜 Earth Deities That Inspired Their Archetypes</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Zephyra (Sky, Wind)</th>
+        <th>Eryndria (Life, Growth)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>⚫ Aeolus (Greek)</td>
+        <td>⚫ Demeter (Greek)</td>
+      </tr>
+      <tr>
+        <td>⚫ Vayu (Hindu)</td>
+        <td>⚫ Gaia (Greek)</td>
+      </tr>
+      <tr>
+        <td>⚫ Thor (Norse)</td>
+        <td>⚫ Freyja (Norse, Fertility)</td>
+      </tr>
+      <tr>
+        <td>⚫ Uranus (Greek)</td>
+        <td>⚫ Osiris (Egyptian)</td>
+      </tr>
+      <tr>
+        <td>⚫ Nut (Egyptian)</td>
+        <td>⚫ Shakti (Hindu)</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
   <p>
     <p style="font-family: 'Comic Sans MS', cursive; color: #00ffff; text-shadow: 0 0 0.3px #014d4e; font-size: 4rem;">
       Yui Ranam rakhemaeri Ranthnami
@@ -980,16 +1255,15 @@ div[aria-label="Font"] div[style*="Pacifico"] {
   <div class="section">
     <h2>🧪 Demo Area: Font Behavior Preview</h2>
 
-    <p><strong>This section shows a side-by-side comparison of how text looks in <a href="https://fonts.google.com/specimen/Pacifico" target="_blank">Pacifico</a> vs. how it appears after being overridden with the custom Aza’raan font I created.</strong> This helps visualize the transformation within Google Docs and related apps.</p>
+    <p><strong>This section shows a side-by-side comparison of how text looks in Pacifico vs. how it appears after being overridden with the custom Aza’raan font I created.</strong> This helps visualize the transformation within Google Docs and related apps.</p>
 
     <h3>🌸 Original Pacifico Example</h3>
     <p class="pacifico" style="font-family: 'Pacifico', cursive !important; font-size: 1.6em; color: #840000;">
-      This is what Pacifico looked like before override.
+      This is what Pacifico looked like before the override.
     </p>
 
 <h3>🔮 Aza'raan Font Preview (Overrides Pacifico)</h3>
-<p class="comic-sans-override" style="font-size: 2em; color: #008c8c;">
-  Aza’ralo hue ni tsurayaka laha sa’lai miil'las - yani~hue baneyaka laha p’dai’ra yani.
+<p style="font-family: 'Comic Sans MS', cursive; color: #00FFFF; text-shadow: 0 0 2px #191970; font-size: 4rem;">Aza’ralo hue ni tsurayaka laha sa’lai miil'las - yani~hue baneyaka laha p’dai’ra yani.
 </p>
 
     <p><em>This line is written in the custom <a href="https://github.com/thetransgendertrex/Azaraanlanguage/blob/main/Aza%27raan%20Planet%20Language.ttf" target="_blank">Aza’raan font</a> I designed to fully replace Pacifico in supported Google Drive applications.</em></p>
