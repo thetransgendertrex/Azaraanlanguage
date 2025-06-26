@@ -1,0 +1,3651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Welcome To The World Of Aza'ra!</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- External Moonpunk + Aza'raan Font Styles -->
+<link rel="stylesheet" href="https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Language%20Font%20CSS.css" />
+<style>
+/* === FORCE AZA'RAAN FONT FOR COMIC SANS === */
+@font-face {
+font-family: 'AzaraanOverride';
+src: url('https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Planet%20Language.ttf') format('truetype');
+}
+[style*="Comic Sans MS"],
+.comic-sans,
+[style*="'Comic Sans MS'"],
+[style*='"Comic Sans MS"'] {
+font-family: 'AzaraanOverride' !important;
+}
+/* === FORCE AZA'RAAN FONT FOR COMIC SANS === */
+@font-face {
+font-family: 'AzaraanOverride';
+src: url('https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Planet%20Language.ttf') format('truetype');
+}
+[style*="Comic Sans MS"],
+.comic-sans,
+[style*="'Comic Sans MS'"],
+[style*='"Comic Sans MS"'] {
+font-family: 'AzaraanOverride' !important;
+}
+/* === MOONPUNK VARIABLES === */
+:root {
+--black: #000000;
+--cyan: #00ffff;
+--silver: #c0c0c0;
+--moonpunk-primary: #a8e4ff;
+--moonpunk-primary-shadow: 1.2px 1.2px #347694;
+--moonpunk-secondary: #ffc0cb;
+--moonpunk-secondary-shadow: 1px 1px #914452;
+--moonpunk-tertiary: #aaffc3;
+--moonpunk-tertiary-shadow: 0.8px 0.8px #0a5420;
+--moonpunk-quaternary: #e6ccff;
+--moonpunk-quaternary-shadow: 0.6px 0.6px #531f63;
+--text-body: #ffffff;
+--text-body-shadow: 0.4px 0.4px #4a5d23;
+}
+/* === BASE STYLES === */
+body {
+background-color: var(--black);
+color: var(--text-body);
+font-family: 'Times New Roman', serif;
+line-height: 1.6;
+padding: 2rem;
+}
+h1, h2, h3, h4 {
+font-family: serif;
+margin-bottom: 0.5em;
+text-shadow: var(--text-body-shadow);
+}
+h1 {
+color: var(--moonpunk-primary);
+text-shadow: var(--moonpunk-primary-shadow);
+font-size: 2.75rem;
+border-bottom: 2px solid var(--cyan);
+padding-bottom: 0.5rem;
+}
+h2 {
+color: var(--moonpunk-secondary);
+text-shadow: var(--moonpunk-secondary-shadow);
+font-size: 2rem;
+}
+h3 {
+color: var(--moonpunk-tertiary);
+text-shadow: var(--moonpunk-tertiary-shadow);
+font-size: 1.5rem;
+}
+h4 {
+color: var(--moonpunk-quaternary);
+text-shadow: var(--moonpunk-quaternary-shadow);
+font-size: 1.25rem;
+}
+/* === AZARAAN FONT DEMO === */
+.azaraan, .comic-sans-override {
+font-family: 'AzaraanOverride', cursive;
+color: #014d4e;
+text-shadow: 0 0 2px var(--cyan);
+}
+/* === BUTTONS & LINKS === */
+a, footer a, .button-link {
+background-color: var(--cyan);
+color: var(--black);
+font-family: 'Times New Roman', serif;
+font-weight: 600;
+text-decoration: none;
+padding: 0.35em 0.75em;
+border-radius: 5px;
+border: 2px solid var(--silver);
+transition: all 0.3s ease;
+cursor: pointer;
+font-size: 1rem;
+user-select: none;
+margin: 0.3rem 0;
+display: inline-block;
+}
+a:hover, a:focus, .button-link:hover {
+background-color: var(--black);
+color: var(--cyan);
+border: 2px solid var(--silver);
+}
+/* === TABLE STYLING === */
+table {
+width: 100%;
+border-collapse: collapse;
+margin-top: 2rem;
+background-color: #ffffff;
+border: 2px solid var(--cyan);
+color: #000000;
+font-family: 'Times New Roman', serif;
+border-radius: 8px;
+}
+th, td {
+padding: 1rem;
+text-align: left;
+border-bottom: 1px solid var(--cyan);
+}
+th {
+font-size: 1.125rem;
+font-weight: bold;
+border-bottom: 2px solid var(--cyan);
+}
+td {
+font-size: 0.9375rem;
+}
+/* === FOOTER === */
+footer {
+background: white;
+border-top: 2px solid var(--cyan);
+color: var(--black);
+text-align: center;
+font-family: 'Times New Roman', serif;
+font-size: 0.9rem;
+padding: 2rem 1rem;
+margin-top: 5rem;
+border-radius: 0 0 8px 8px;
+font-weight: bold;
+}
+/* === RESPONSIVE === */
+@media (max-width: 1024px) {
+body { padding: 1.5rem; font-size: 1rem; }
+h1 { font-size: 2.2rem; padding: 0.75rem 1rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.3rem; }
+section { padding: 1rem; margin-bottom: 2rem; }
+table th, table td { padding: 0.75rem; font-size: 0.95rem; }
+a, footer a { font-size: 0.95rem; padding: 0.3em 0.65em; }
+}
+@media (max-width: 767px) {
+body { padding: 1rem; font-size: 0.95rem; }
+h1 { font-size: 1.8rem; padding: 0.6rem 0.8rem; }
+h2 { font-size: 1.4rem; }
+h3 { font-size: 1.1rem; }
+section { padding: 0.8rem; margin-bottom: 1.5rem; }
+table { font-size: 0.9rem; display: block; overflow-x: auto; }
+table th, table td { padding: 0.5rem; min-width: 120px; }
+ul { padding-left: 1rem; }
+a, footer a { font-size: 0.9rem; padding: 0.25em 0.5em; margin: 0.2rem 0; }
+footer { font-size: 0.8rem; padding: 1.2rem 0.8rem; }
+}
+</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Aza'raan Font Universal Override Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- 👇 Load and run override.js FIRST -->
+  <script>
+    // Load remote override.js from GitHub and execute
+    fetch('https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/refs/heads/main/override.js')
+      .then(res => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}: Unable to load override.js`);
+        return res.text();
+      })
+      .then(code => {
+        const script = document.createElement('script');
+        script.textContent = code;
+        document.head.appendChild(script);
+      })
+      .catch(err => {
+        console.error('Failed to load Aza\'raan override script:', err);
+        const errorNotice = document.createElement('p');
+        errorNotice.style.color = 'red';
+        errorNotice.textContent = '⚠️ Failed to load override script. Check console for details.';
+        document.body.appendChild(errorNotice);
+      });
+  </script>
+
+  <!-- External Moonpunk + Aza'raan Font Styles -->
+  <link rel="stylesheet" href="https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Language%20Font%20CSS.css" />
+
+  <style>
+    /* === FORCE AZA'RAAN FONT FOR COMIC SANS === */
+    @font-face {
+      font-family: 'AzaraanOverride';
+      src: url('https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Planet%20Language.ttf') format('truetype');
+    }
+
+    [style*="Comic Sans MS"],
+    .comic-sans,
+    [style*="'Comic Sans MS'"],
+    [style*='"Comic Sans MS"'] {
+      font-family: 'AzaraanOverride' !important;
+    }
+/* ──────────────✦ Global Aesthetic with Moonpunk Image Background ✦──────────────
+Background replaced by AI-generated Moonpunk Settlement image,
+fitting desktop, tablet, and mobile with fixed position and footer fixed at bottom.
+*/
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  color: #cceeff;
+  background: transparent;
+}
+
+/* Background image fixed behind everything */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+  background-image: url("https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza'ra%20Moonpunk%20Settlement%20(AI%20Generated)");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; /* cover to fill the screen without distortion */
+  filter: brightness(0.85) contrast(1.05);
+}
+
+/* Subtly darken the image for text readability */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background: radial-gradient(ellipse at center, rgba(11,29,38,0.5) 0%, rgba(4,13,18,0.8) 100%);
+  pointer-events: none;
+}
+
+/* === VARIABLES === */
+:root {
+  --black: #000000;
+  --cyan: #00ffff;
+  --silver: #c0c0c0;
+
+  --moonpunk-primary: #a8e4ff;
+  --moonpunk-primary-shadow: 1.2px 1.2px #347694;
+
+  --moonpunk-secondary: #ffc0cb;
+  --moonpunk-secondary-shadow: 1px 1px #914452;
+
+  --moonpunk-tertiary: #aaffc3;
+  --moonpunk-tertiary-shadow: 0.8px 0.8px #0a5420;
+
+  --moonpunk-quaternary: #e6ccff;
+  --moonpunk-quaternary-shadow: 0.6px 0.6px #531f63;
+
+  --text-body: #ffffff;
+  --text-body-shadow: 0.4px 0.4px #4a5d23;
+}
+
+/* === BASE STYLES === */
+body {
+  /* foreground content */
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: var(--text-body);
+  font-family: 'Times New Roman', serif;
+  line-height: 1.6;
+  padding: 2rem;
+  overflow-y: scroll;
+  z-index: 0; /* ensure in front of background */
+}
+
+h1, h2, h3, h4 {
+  font-family: serif;
+  margin-bottom: 0.5em;
+  text-shadow: var(--text-body-shadow);
+  opacity: 1; /* keep text fully opaque */
+}
+
+h1 {
+  color: var(--moonpunk-primary);
+  text-shadow: var(--moonpunk-primary-shadow);
+  font-size: 2.75rem;
+  border-bottom: 2px solid var(--cyan);
+  padding-bottom: 0.5rem;
+}
+
+h2 {
+  color: var(--moonpunk-secondary);
+  text-shadow: var(--moonpunk-secondary-shadow);
+  font-size: 2rem;
+}
+
+h3 {
+  color: var(--moonpunk-tertiary);
+  text-shadow: var(--moonpunk-tertiary-shadow);
+  font-size: 1.5rem;
+}
+
+h4 {
+  color: var(--moonpunk-quaternary);
+  text-shadow: var(--moonpunk-quaternary-shadow);
+  font-size: 1.25rem;
+}
+
+/* === LINKS & BUTTONS === */
+a, footer a, .button-link {
+  background-color: rgba(0, 255, 255, 0.6);
+  color: var(--black);
+  font-family: 'Times New Roman', serif;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.35em 0.75em;
+  border-radius: 5px;
+  border: 2px solid var(--silver);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-size: 1rem;
+  user-select: none;
+  margin: 0.3rem 0;
+  display: inline-block;
+}
+
+a:hover, a:focus, .button-link:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: var(--cyan);
+  border: 2px solid var(--silver);
+}
+
+/* === TABLES === */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  background-color: #ffffff; /* solid */
+  border: 2px solid var(--cyan);
+  color: #000000;
+  font-family: 'Times New Roman', serif;
+  border-radius: 8px;
+  opacity: 1; /* force solid visibility */
+}
+
+th, td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--cyan);
+  opacity: 1; /* text fully opaque */
+}
+
+th {
+  font-size: 1.125rem;
+  font-weight: bold;
+  border-bottom: 2px solid var(--cyan);
+}
+
+td {
+  font-size: 0.9375rem;
+}
+
+/* Footer stays fixed at bottom */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  color: #111;
+  text-align: center;
+  font-family: 'Times New Roman', serif;
+  font-size: 0.9rem;
+  padding: 2rem 1rem;
+  border-top: 2px solid #00ffee;
+  z-index: 10;
+  font-weight: bold;
+  border-radius: 0 0 8px 8px;
+}
+
+/* === RESPONSIVE === */
+@media (min-width: 1025px) {
+  body::before {
+    background-size: cover; /* fill entire viewport */
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  body::before {
+    background-size: contain;
+    background-position: center top;
+  }
+}
+
+@media (max-width: 767px) {
+  body::before {
+    background-size: contain;
+    background-position: center top;
+  }
+}
+
+@media (max-width: 1024px) {
+  body {
+    padding: 1.5rem;
+    font-size: 1rem;
+  }
+
+  h1 { font-size: 2.2rem; padding: 0.75rem 1rem; }
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.3rem; }
+
+  section, .section {
+    padding: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  table th, table td {
+    padding: 0.75rem;
+    font-size: 0.95rem;
+  }
+
+  a, footer a {
+    font-size: 0.95rem;
+    padding: 0.3em 0.65em;
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+
+  h1 { font-size: 1.8rem; padding: 0.6rem 0.8rem; }
+  h2 { font-size: 1.4rem; }
+  h3 { font-size: 1.1rem; }
+
+  section, .section {
+    padding: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  table {
+    font-size: 0.9rem;
+    display: block;
+    overflow-x: auto;
+  }
+
+  table th, table td {
+    padding: 0.5rem;
+    min-width: 120px;
+  }
+
+  ul {
+    padding-left: 1rem;
+  }
+
+  a, footer a {
+    font-size: 0.9rem;
+    padding: 0.25em 0.5em;
+    margin: 0.2rem 0;
+  }
+
+  footer {
+    font-size: 0.8rem;
+    padding: 1.2rem 0.8rem;
+  }
+}
+
+/* === Comic Sans Override (GitHub index.html and lore.html only) === */
+body[data-doc-name*="index"],
+body[data-doc-name*="lore"] {
+  font-family: 'Comic Sans MS', cursive, sans-serif !important;
+}
+
+/* === Aza'raan Font Substitution for Individual Words or Phrases === */
+.azaraan-word {
+  font-family: 'Azaraan', cursive;
+  color: #014d4e;
+  text-shadow: 0 0 2px var(--cyan);
+}
+
+/* === Google Apps: Replace Pacifico with Aza'raan in Font Dropdown === */
+/* Affects visible Pacifico items so "Aza'raan" appears in its glyph form */
+div[aria-label="Font"] span[style*="Pacifico"],
+div[aria-label="Font"] div[style*="Pacifico"] {
+  font-family: 'Azaraan', cursive !important;
+  font-size: 18px !important;
+  color: #000000;
+}
+</style>
+
+</head>
+
+<body>
+  <section id="azaraan-font-override-demo">
+    <h2>Aza'raan Font Universal Override Demo</h2>
+
+    <p style="font-family: 'Comic Sans MS', cursive;">
+      This text uses Comic Sans but should be overridden by Aza'raan on GitHub index/lore pages.
+    </p>
+
+    <p style="font-family: Pacifico, cursive;">
+      This text uses Pacifico but should be overridden by Aza'raan on Google Apps domains.
+    </p>
+
+    <p>This text uses the default font.</p>
+
+    <!-- FONT DEMO -->
+    <p>
+      <span class="comic-sans-override">(sample word)</span>
+      <span class="times-roman"> — This demonstrates how all Comic Sans text is now rendered using the Aza’raan font due to the applied override.</span>
+    </p>
+<section>
+<section id="Introduction">
+<h1>Welcome To The World Of Aza'ra!</h1>
+<section id="responsive-message" class="responsive-highlight">
+<h2>📱 Aza'raan on Mobile & Tablet</h2>
+<p>This section adjusts beautifully across devices. Try resizing your window to see the responsive effects take place—fonts, padding, and layout all adapt smoothly to your screen.</p>
+</section>
+<h1 class="glow">🌙 Aza’raan Font Google Application</h1>
+<p>This page combines the Aza'raan glyphic font with a Moonpunk–Cyber-Glyphic visual theme, designed for use in both <code>index.html</code> and <code>lore</code> contexts.</p>
+<h3>📦 Aza’raan Font Resources</h3>
+    <ul>
+      <li><a href="https://github.com/thetransgendertrex/Azaraanlanguage/blob/main/Aza%27raan%20Planet%20Language.ttf" target="_blank">Download Aza'raan.ttf</a></li>
+      <li><a href="https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Language%20Font%20CSS.css" target="_blank">Font CSS</a></li>
+      <li><a href="https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Language%20Font%20Javascript" target="_blank">Font JS</a></li>
+      <li><a href="https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/override.js" target="_blank">Override Script</a></li>
+      <li><a href="https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Manifest.json" target="_blank">Manifest.json</a></li>
+      <li><a href="https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza'ra%20Moonpunk%20Settlement%20(AI%20Generated)" target="_blank">Aza'raa Moonpunk Settlement</a></li>
+    </ul>
+</section>
+
+<section>
+</head>
+  <h2>🌍 Welcome to Aza’ra</h2>
+
+  <h3>🕰️ Historical Context: The Cataclysm and the Birth of Aza’ra</h3>
+  <h4>⚡ 1351 BCE — The Cataclysm</h4>
+  <p>
+    Once known as <strong>Aarak</strong>, this radiant world brimmed with magic and life—until an alien race, driven by desperation, drained its sun. The resulting solar flares cracked the planet’s crust, fracturing it into drifting landmasses and collapsing civilizations.
+  </p>
+
+  <h4>🌌 Arrival of the Aramaics</h4>
+  <p>
+    Amidst the chaos, three nomadic magicians from Earth—known as the <strong>Aramaics</strong>—arrived through unstable portal magic. Though initially distrusted, they built a fragile alliance with Aarak’s people and exchanged arcane knowledge. In a final act of preservation, they conjured <strong>The Veil</strong>, a radiant arcane barrier using Earth’s magic, encasing Aarak’s largest surviving fragments to hold them against the cosmic Void.
+  </p>
+
+  <h4>🕊️ Birth of Aza’ra and Cultural Unification</h4>
+  <p>
+    The Veil's creation stabilized the broken world, but came with a cost—it continues to siphon magic from Earth, weakening the Aramaics’ homeland. The survivors, bound by shared trauma and purpose, renamed their reborn world <strong>Aza’ra</strong>, meaning “to help” in Aramaic. From the Veil’s protective shimmer rose a new world built on unity, memory, and magic.
+  </p>
+
+  <h3>✨ The Shape of Aza’ra</h3>
+  <p>
+    Aza’ra is a vast, disc-shaped world suspended in the cosmic Void. Beneath it narrows into a crystalline spear that anchors it to arcane ley currents, while above, fragments of broken land float as skyborne isles—ancient ruins and thriving ecosystems held aloft by the Veil’s magic.
+  </p>
+  <p>
+    The <strong>Veil</strong> spans 13,482 km above Aza’ra and governs more than atmosphere—it regulates gravity, time, and the arcane flow. At the disc’s center lies <strong>Eryndria Harbors</strong>, the planet’s cultural and navigational heart beneath the Veil’s zenith.
+  </p>
+
+  <h3>🗺️ Continental Overview</h3>
+  <table border="1" cellspacing="0" cellpadding="6">
+    <thead>
+      <tr>
+        <th>Continent</th>
+        <th>Estimated Area (million km²)</th>
+        <th>Estimated Dimensions (km)</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Tzaphaer</strong></td>
+        <td>~230–250</td>
+        <td>~28,292 × 25,261</td>
+        <td>Balanced arcane currents, ancient ruins</td>
+      </tr>
+      <tr>
+        <td><strong>Dakaroth</strong></td>
+        <td>~225–240</td>
+        <td>~27,281 × 23,240</td>
+        <td>Mountain-locked terrain, warrior culture</td>
+      </tr>
+      <tr>
+        <td><strong>Arzuhan</strong></td>
+        <td>~250–270</td>
+        <td>~34,354 × 22,229</td>
+        <td>Lush landscapes, introspective traditions</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    The continents are separated by oceanic mists and airborne rifts. Above them float remnants of Aarak, now stabilized through arcane magnetism. These islands serve as sacred sites, arcane vaults, and homes to rare skyborne life.
+  </p>
+</section>
+
+<section id="locations-distances">
+  <h2>🗺️ Major Locations, Cities, and Distances</h2>
+
+  <h3>🌐 Planetary Scale Comparisons</h3>
+  <table>
+    <thead>
+      <tr><th>Feature</th><th>Adjusted Distance / Estimate</th><th>World</th><th>Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Earth Circumference</td><td>40,075 km</td><td>Earth</td><td>Standard terrestrial measure</td></tr>
+      <tr><td>Aza’ra Circumference Estimate</td><td>~85,000 km</td><td>Aza’ra</td><td>~2.1× Earth</td></tr>
+      <tr><td>Earth Diameter</td><td>12,742 km</td><td>Earth</td><td></td></tr>
+      <tr><td>Aza’ra Diameter Estimate</td><td>~27,000 km</td><td>Aza’ra</td><td>~2.1× Earth</td></tr>
+      <tr><td>Earth Surface Area</td><td>510 million km²</td><td>Earth</td><td></td></tr>
+      <tr><td>Aza’ra Surface Area Estimate</td><td>850–900 million km²</td><td>Aza’ra</td><td>~2.1× Earth</td></tr>
+    </tbody>
+  </table>
+
+  <h3>🧭 Distances from Eryndria Harbor</h3>
+  <table>
+    <thead>
+      <tr><th>Location</th><th>Distance (km)</th><th>Hemisphere</th><th>Continent</th><th>Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>City of Lytheris</td><td>~210,810</td><td>Western / Northern</td><td>Tzaphaer</td><td>Inland, NW coastal influence</td></tr>
+      <tr><td>The Shattered Sea</td><td>~94,195</td><td>Central / Southern</td><td>Arzuhan</td><td>SE of Eryndria, open sea</td></tr>
+      <tr><td>Mt. Vraekthos</td><td>~310,384</td><td>Western / Central</td><td>Tzaphaer</td><td>Volcanic interior</td></tr>
+      <tr><td>City of the Mourned Gods</td><td>~133,137</td><td>Western / Northern</td><td>Tzaphaer</td><td>Near Veilgate</td></tr>
+      <tr><td>The Nyxthorn Peaks</td><td>~277,261</td><td>Western / Central</td><td>Tzaphaer</td><td>Near Mt. Vraekthos</td></tr>
+      <tr><td>Vraekthos Mountains</td><td>~288,249</td><td>Western / Central</td><td>Tzaphaer</td><td>SE of Nyxthorn</td></tr>
+      <tr><td>Floating Capital (Phyra)</td><td>~177,504 (+2 km elevation)</td><td>Eastern / Northern</td><td>Arzuhan</td><td>Elevated from 16,167 base</td></tr>
+      <tr><td>Free City of Dakaroth</td><td>~260,463</td><td>Western / Northern</td><td>Dakaroth</td><td>Mountain-locked</td></tr>
+      <tr><td>Raethelia</td><td>~161,056</td><td>Eastern / Southern</td><td>Arzuhan</td><td>Coastal</td></tr>
+      <tr><td>Emberhold</td><td>~282,443</td><td>Western / Northern</td><td>Dakaroth</td><td>Near Mt. Raethelis</td></tr>
+    </tbody>
+  </table>
+
+  <h3>🏙️ Inter-City Distance Table (km)</h3>
+  <p>Distances between major cities across Aza’ra. Useful for regional plotting, portal travel, or trade route planning.</p>
+  <table>
+    <thead>
+      <tr>
+        <th>From \ To</th><th>Lytheris</th><th>Mourned Gods</th><th>Morrigaen</th><th>Nocturnis</th><th>Ashen Throne</th><th>Crimsonspire</th><th>Phyra</th><th>Raethelia</th><th>Dakaroth</th><th>Emberhold</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>City of Lytheris</td><td>—</td><td>87,760</td><td>167,841</td><td>232,517</td><td>244,989</td><td>264,405</td><td>320,191</td><td>307,974</td><td>278,388</td><td>289,157</td></tr>
+      <tr><td>City of the Mourned Gods</td><td>87,760</td><td>—</td><td>137,125</td><td>196,942</td><td>207,667</td><td>229,411</td><td>290,063</td><td>276,108</td><td>251,796</td><td>264,002</td></tr>
+      <tr><td>Pirate City Morrigaen</td><td>167,841</td><td>137,125</td><td>—</td><td>164,538</td><td>172,206</td><td>198,253</td><td>263,881</td><td>248,927</td><td>225,519</td><td>237,793</td></tr>
+      <tr><td>Nocturnis</td><td>232,517</td><td>196,942</td><td>164,538</td><td>—</td><td>115,185</td><td>122,864</td><td>206,988</td><td>222,154</td><td>194,315</td><td>209,778</td></tr>
+      <tr><td>Ashen Throne</td><td>244,989</td><td>207,667</td><td>172,206</td><td>115,185</td><td>—</td><td>97,633</td><td>189,519</td><td>203,701</td><td>176,844</td><td>191,206</td></tr>
+      <tr><td>Crimsonspire</td><td>264,405</td><td>229,411</td><td>198,253</td><td>122,864</td><td>97,633</td><td>—</td><td>174,368</td><td>190,217</td><td>163,494</td><td>178,826</td></tr>
+      <tr><td>Phyra</td><td>320,191</td><td>290,063</td><td>263,881</td><td>206,988</td><td>189,519</td><td>174,368</td><td>—</td><td>206,154</td><td>189,771</td><td>200,865</td></tr>
+      <tr><td>Raethelia</td><td>307,974</td><td>276,108</td><td>248,927</td><td>222,154</td><td>203,701</td><td>190,217</td><td>206,154</td><td>—</td><td>167,644</td><td>180,483</td></tr>
+      <tr><td>Free City of Dakaroth</td><td>278,388</td><td>251,796</td><td>225,519</td><td>194,315</td><td>176,844</td><td>163,494</td><td>189,771</td><td>167,644</td><td>—</td><td>21,980</td></tr>
+      <tr><td>Emberhold</td><td>289,157</td><td>264,002</td><td>237,793</td><td>209,778</td><td>191,206</td><td>178,826</td><td>200,865</td><td>180,483</td><td>21,980</td><td>—</td></tr>
+    </tbody>
+  </table>
+
+    <h3>🏚️ Regional Settlements (Selected Samples)</h3>
+  <p>Distance from regional anchors (Nocturnis, Ashen Throne, Crimson Spire, Raethelia, Emberhold, and Phyra).</p>
+
+  <details>
+    <summary><strong>Nyxara Settlements → Nocturnis</strong></summary>
+    <ul>
+      <li>Flamewatch – ~13,164 km</li>
+      <li>Twilightfield – ~20,843 km</li>
+      <li>Moonport – ~32,910 km</li>
+    </ul>
+  </details>
+
+  <details>
+    <summary><strong>Vraekthos Settlements → Ashen Throne</strong></summary>
+    <ul>
+      <li>Emberglow – ~13,164 km</li>
+      <li>Veilhollow – ~24,134 km</li>
+    </ul>
+  </details>
+
+  <details>
+    <summary><strong>Phalorra Settlements → Crimson Spire</strong></summary>
+    <ul>
+      <li>Veilwatch – ~12,067 km</li>
+      <li>Crimsonpeak – ~19,746 km</li>
+    </ul>
+  </details>
+
+  <details>
+    <summary><strong>IronForge Settlements → Raethelia</strong></summary>
+    <ul>
+      <li>Stormgate – ~14,025 km</li>
+      <li>Zephyrstone – ~31,875 km</li>
+    </ul>
+  </details>
+
+  <details>
+    <summary><strong>Vulkiris Settlements → Emberhold</strong></summary>
+    <ul>
+      <li>Steelwood – ~14,220 km</li>
+      <li>Carbonite Spire – ~68,730 km</li>
+    </ul>
+  </details>
+
+  <details>
+    <summary><strong>Zephyra Settlements → Phyra</strong></summary>
+    <ul>
+      <li>Breezewood – ~14,025 km</li>
+      <li>City of Vael’thwyn – ~26,775 km</li>
+    </ul>
+  </details>
+
+  <h3>🌊 Seas, Regions & Rivers</h3>
+  <table>
+    <thead>
+      <tr><th>Feature</th><th>Dimension</th><th>Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Gulf of Therion</td><td>~11,115 km (Width)</td><td>Horizontal Width</td></tr>
+      <tr><td>IronReach Bay</td><td>~7,073 km (Width)</td><td></td></tr>
+      <tr><td>Raethelia (Radius)</td><td>~24,250 km</td><td>From city center</td></tr>
+      <tr><td>Vaelrim Peaks</td><td>~16,167 × 14,651 km</td><td>Length × Width</td></tr>
+      <tr><td>Raethelis River</td><td>~23,240 km × 1,213 km</td><td>Length × Avg. Width</td></tr>
+      <tr><td>River of Mourning</td><td>~19,198 km × 1,010 km</td><td>Length × Avg. Width</td></tr>
+      <tr><td>Aetheric Expanse</td><td>~26,271 × 13,135 km</td><td>Expansive aether-affected region</td></tr>
+    </tbody>
+  </table>
+</section>
+
+  <h3>🔤 Linguistic Genesis: The Formation of Aza’raan</h3>
+  <p>
+    In their cultural fusion, the Aramaics and Aaraks crafted a new shared language: <strong>Aza’raan</strong>. It honors both peoples by merging:
+  </p>
+  <ul>
+    <li><strong>Aarak’s phonetics:</strong> vowel-dense, flowing soundscape</li>
+    <li><strong>Aramaic precision:</strong> glyphic form and syntactic depth</li>
+  </ul>
+  <p>
+    The result is a lyrical, expressive tongue with structured grammar and elegant visual script—spoken across all of Aza’ra to unify its peoples.
+  </p>
+
+  <h3>👑 The Kingdom of Zephyra & The Three Bloodlines</h3>
+  <p>
+    In Arzuhan, the first kingdom—<strong>Zephyra</strong>—was formed to bring stability to Aza’ra. The Aramaics knew that protection required order, so they helped establish three intertwined noble lines:
+  </p>
+  <ul>
+    <li><strong>Royal Bloodline</strong> — Descended from the eldest Aramaic and the last king of Aarak</li>
+    <li><strong>Arbiter Bloodline</strong> — Appointed to verify and advise future rulers; stemmed from the middle magician</li>
+    <li><strong>Protector Bloodline</strong> — Sworn guardians of monarchs and arbiters; traced to the youngest magician</li>
+  </ul>
+
+  <h3>🔑 The Key of Kings</h3>
+  <p>
+    To resolve disputes of succession, the <strong>Key of Kings</strong> was forged—an artifact infused with the blood of the eldest magician, the last king of Aarak, and the middle magician. It was shaped by <em>Kaelthar, the Eternal Forgemaster</em>, blessed by <em>Raethelis, the Radiant Arbiter</em>, and imbued with divine essence by <em>Therion, the Lightbringer</em>.
+  </p>
+  <p>
+    Entrusted to the Arbiter bloodline, the Key alone determines the rightful sovereign during conflicts between heirs.
+  </p>
+
+  <p><strong>Aza’ra</strong> is no longer a fractured relic. It is a realm of rebirth—woven from loss, united through magic, and destined to thrive beneath the Veil’s shimmering protection.</p>
+</section>
+<section id="disclaimer">
+  <h3>Disclaimer</h3>
+  <p>
+    The settlement names used throughout this document are English translations of the original Aza'ra names.
+    They do not represent the actual names as spoken or written in the native Aza'raan language.
+  </p>
+</section>
+</section>
+<section id="Tzaphaer">
+  <h2>🌋 Tzaphaer — The Scarred Land</h2>
+  <p><strong>Pronunciation:</strong> Taz-af-airr (rolled “r”)</p>
+  <p><strong>Position:</strong> Westernmost continent, spanning part of the central worldband</p>
+  <p><strong>Primary Moon:</strong> W’iosamn (rises NW, arcs SW, orbits beneath)</p>
+  <p><strong>Environment:</strong> High radiation exposure</p>
+  <p>
+    Tzaphaer is a realm of twilight skies, elemental volatility, and mythic echoes—a continent scarred by tragedy and steeped in mystery. Born from cataclysmic destruction in 312 CE during the aftermath of a Dark Matter and antimatter hybrid bomb, its northern lands bear deep wounds that define its stark contrasts: twilight and flame, secrets and survival.
+  </p>
+  <p>
+    Fractured beauty marks this land where shattered timelines and unstable leylines ripple across its terrain. Arcane scars pulse with ancient energy—unpredictable, potent, and woven into the very fabric of the continent. Dense forests conceal psion-reactive zones and fractured magic fields, making the wilds both dangerous and wondrous.
+  </p>
+  <p>
+    The skies shimmer with residual dark matter, casting eerie twilight hues that hang over volcanic fury and fae upheaval. Tzaphaer’s lands are carved by elemental volatility, where ancient divine wars have left mythic echoes that resonate through time and space.
+  </p>
+  <p>
+    As the westernmost continent, Tzaphaer serves as a nexus for portals connecting Earth to Aza’ra, more so than any other landmass—especially through its fractured kingdoms of Phalorra, Vraekthos, and Nyxara. Despite the cataclysm’s devastation, hidden potential, ancient power, and enigmatic civilizations endure, thriving amid temporal instability and arcane resonance.
+  </p>
+
+  <h3>👑 Major Kingdoms of Tzaphaer</h3>
+  <div>
+  <h4>🕯️ Kingdom of Nyxara — Realm of Eternal Dusk</h4>
+  <p><strong>Location:</strong> Southernmost Tzaphaer, furthest from the Detonation epicenter</p>
+
+  <h5>Atmosphere &amp; Theme</h5>
+  <ul>
+    <li>Twilight-shrouded lands radiated by residual corruption</li>
+    <li>Themes of transformation, identity dissolution, mysticism of the unknown</li>
+    <li>Realm infused with shadow magic, psionics, illusion, necromancy, and secrecy</li>
+    <li>Arcane contamination has twisted wildlife and landscape</li>
+  </ul>
+
+  <p><strong>Deity:</strong> Nyxara: God of Night, Secrets, Chaos, and Transitions</p>
+  <p><strong>Capital City:</strong> Nocturnis — The Eclipsed City</p>
+  <ul>
+    <li>A living cathedral of obsidian and glyphs</li>
+    <li>Center of mystics, necromancers, illusionists, and scholars of the unseen</li>
+  </ul>
+
+  <h5>Settlements &amp; Portal Connections</h5>
+  <table border="1" cellspacing="0" cellpadding="6">
+    <thead>
+      <tr>
+        <th>Settlement</th>
+        <th>Type</th>
+        <th>Portal Connections &amp; Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Nocturnis</td><td>Capital, Central</td><td></td></tr>
+      <tr><td>Flamewatch</td><td>Small Town, Central</td><td>🌀 Sedona, Arizona — Vortex energy and sacred red rock formations</td></tr>
+      <tr><td>Nightspire</td><td>Small Town, Central</td><td>🌀 Bighorn Medicine Wheel, Wyoming — High-altitude stone circle of unknown origin</td></tr>
+      <tr><td>Shadowkeep</td><td>Township, Eastern</td><td></td></tr>
+      <tr><td>Moonbrook</td><td>Village, Northern</td><td></td></tr>
+      <tr><td>Nightport</td><td>Township, Northwest</td><td></td></tr>
+      <tr><td>Twilightvale</td><td>Large Town, Northern</td><td>🌀 Chichen Itza, Mexico — Mayan pyramid and celestial observatory</td></tr>
+      <tr><td>Nightfall</td><td>Village, Central</td><td></td></tr>
+      <tr><td>Twilightfield</td><td>Village, Northeastern</td><td>🌀 Aztlan, Mexico (Collapsed) — Former celestial bridge location</td></tr>
+      <tr><td>Gloomhaven</td><td>Village, Western</td><td></td></tr>
+      <tr><td>Shadowvale</td><td>Village, Southeastern</td><td>🌀 The Black Forest, Germany — Grim magical woodland portal</td></tr>
+      <tr><td>Darkcrest</td><td>Small Town, Southern</td><td>🌀 Carpathian Mountains, Romania — Vampire and fae legends</td></tr>
+      <tr><td>Darkwood</td><td>Village, Southwestern</td><td></td></tr>
+      <tr><td>Shadowgate</td><td>Small Town, Southeastern</td><td>🌀 Nazca Lines, Peru — Massive geoglyphs portal</td></tr>
+      <tr><td>Ashenport</td><td>Small Town, Southeast</td><td></td></tr>
+      <tr><td>Blightshore</td><td>Village, Eastern</td><td></td></tr>
+      <tr><td>Seasong Isle</td><td>Township, Northeast</td><td></td></tr>
+      <tr><td>Cindermine</td><td>Village, Central</td><td>🌀 Ajanta Caves, India — Carved sanctuaries portal</td></tr>
+      <tr><td>Flamepeak</td><td>Township, Southern</td><td>🌀 Mount Fuji, Japan — Spiritual volcano and sky access portal</td></tr>
+      <tr><td>Moonport</td><td>Small Town, Northern</td><td></td></tr>
+    </tbody>
+  </table>
+
+  <h4>Summary</h4>
+  <p>
+    Nyxara is a mysterious kingdom where eternal dusk reigns, shadows twist reality, and secrets abound. It is a domain of deep arcane mysticism, inhabited by necromancers, illusionists, and seekers of forbidden knowledge. The land is heavily influenced by shadow magic and psionics, creating an environment of eerie transformation and arcane corruption.
+  </p>
+  <p>
+    Portals connect its many settlements to legendary, mystical, and ancient sites across the world, reinforcing its role as a nexus of hidden truths and otherworldly power.
+  </p>
+<div>
+  <h2>🔥 Kingdom of Vraekthos — Fire-Forged Dominion</h2>
+
+  <h3>📍 Location</h3>
+  <p><strong>Central Tzaphaer</strong> — midway between the detonation epicenter and the outer rim</p>
+
+  <h4>Geographical Position</h4>
+  <p><strong>South of:</strong></p>
+  <ul>
+    <li>Kingdom of Phalorra (constant war, former territories)</li>
+    <li>The City of the Mourned Gods (East)</li>
+    <li>The Pirate City of Morrigaen (West)</li>
+    <li>The City of Lytheris (North-Central)</li>
+  </ul>
+  <p><strong>North of:</strong></p>
+  <ul>
+    <li>Kingdom of Nyxara</li>
+  </ul>
+
+  <h3>🌋 Atmosphere &amp; Terrain</h3>
+  <ul>
+    <li>Volcanic ridges, ashen wastelands, lava-choked valleys</li>
+    <li>Jagged obsidian cliffs, churning lava flows, skies perpetually veiled in ash</li>
+    <li>Terrain scarred by elemental fury and apocalyptic transformation</li>
+  </ul>
+
+  <h3>🏰 Capital City</h3>
+  <p><strong>Ashen Throne</strong> — A caldera fortress built within an active volcano, serving as a crucible of survival and elemental mastery. Roads have melted into magma veins; borders are marked by molten rivers.</p>
+
+  <h3>⚒️ Culture &amp; Themes</h3>
+  <ul>
+    <li>Elemental resilience, martial industry, and survivalist ethos</li>
+    <li>Mastery of fire magic, metalcraft, forge-magic, and alchemical innovation</li>
+    <li>Brutal efficiency and honor through endurance</li>
+    <li>Ruled by King Xalvador Pyrosin, the Ember Tyrant</li>
+    <li>War-guilds and volcanic fortresses dominate social and military structure</li>
+  </ul>
+
+  <h3>🏘️ Settlements &amp; Portal Connections</h3>
+  <table border="1" cellspacing="0" cellpadding="6">
+    <thead>
+      <tr>
+        <th>Settlement</th>
+        <th>Type</th>
+        <th>Portal Connections &amp; Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Ashen Throne</td><td>Capital, Central</td><td>🌀 Cahokia Mounds, Illinois<br>🌀 Mount Tiamat, Mesopotamia</td></tr>
+      <tr><td>Mt. Vraekthos</td><td>Volcanic Highlands, Central</td><td>🌀 Crater Lake, Oregon<br>🌀 Mount Mazama, Oregon</td></tr>
+      <tr><td>Emberglow</td><td>Large Town, Eastern</td><td>🌀 Salar de Uyuni, Bolivia</td></tr>
+      <tr><td>Ashenstone</td><td>Township, Southern</td><td>🌀 Petra, Jordan</td></tr>
+      <tr><td>Flamecrest</td><td>Village, Southwest</td><td>🌀 Wadi Rum, Jordan</td></tr>
+      <tr><td>Ashengate</td><td>Small Town, Southwest</td><td>🌀 Mount Ararat, Turkey</td></tr>
+      <tr><td>Emberbay</td><td>Village, Southwest</td><td></td></tr>
+      <tr><td>Blightbay</td><td>Village, Southwest</td><td>🌀 Moai Bay, Chile<br>🌀 Easter Island (Rapa Nui)</td></tr>
+      <tr><td>Blightfall</td><td>Village, Northwest</td><td></td></tr>
+      <tr><td>Emberwood</td><td>Village, Northern</td><td>🌀 Taklamakan Desert, China</td></tr>
+      <tr><td>Flameport</td><td>Village, Northern</td><td></td></tr>
+      <tr><td>Sacrifice Ridge</td><td>Village, Northern</td><td>🌀 Mount Kailash, Tibet</td></tr>
+      <tr><td>Veilhollow</td><td>Large Town, Western</td><td>🌀 Tiwanaku, Bolivia</td></tr>
+    </tbody>
+  </table>
+
+  <h3>🌀 Standalone Portals (Not directly tied to settlements)</h3>
+  <ul>
+    <li><strong>Mount Tiamat, Mesopotamia</strong> — Ancient portal linked to ruins near Ashen Throne; now inactive</li>
+    <li><strong>Mount Mazama, Oregon</strong> — Dormant anchor for Mt. Vraekthos volcanic region</li>
+    <li><strong>Crater Lake, Oregon</strong> — Active portal key for elemental rites in volcanic highlands</li>
+  </ul>
+
+  <h3>📖 Summary</h3>
+  <p><strong>Vraekthos</strong> is a kingdom forged in fire and volcanic fury. Its people embody resilience and mastery over elemental flame, enduring a harsh landscape marked by destruction and rebirth. The capital <strong>Ashen Throne</strong> serves as both a seat of power and a forge of unyielding spirit under King Xalvador Pyrosin. The kingdom maintains vital portal links to legendary and mythic locations worldwide, grounding its elemental might and survivalist culture.</p>
+<div>
+  <h2>🩸 Kingdom of Phalorra — The Divided Heart</h2>
+
+  <h3>📍 Location</h3>
+  <p><strong>Northeastern Tzaphaer</strong>, closest to the Detonation zone</p>
+
+  <h3>🏰 Capital</h3>
+  <p><strong>Crimson Spire</strong></p>
+
+  <h3>🌄 Terrain &amp; Environment</h3>
+  <p>
+    Diverse zones ranging from frozen peaks to burning deserts. Despite devastation by radiation, Phalorra endures through technological adaptation, cultural resilience, and a balance of sacred ritual and underground dealings.
+  </p>
+
+  <h3>🎭 Themes &amp; Culture</h3>
+  <ul>
+    <li>Technological adaptation and cultural tenacity</li>
+    <li>Defense, trade dominance, and sacred traditions</li>
+    <li>Life amid environmental extremes</li>
+    <li>Tense semi-war with neighboring kingdom Vraekthos, marked by shifting territorial control</li>
+  </ul>
+
+  <h3>📜 Historical Emergence</h3>
+  <ul>
+    <li><strong>315–338 CE</strong> — Emergence of Phalorra in the aftermath of the blast zone</li>
+    <li>Founded as a militant theocracy centered on a goddess of blood and sacrifice</li>
+    <li>By 338 CE, evolved into a religious-military power opposed to Vraekthos</li>
+  </ul>
+
+  <h3>🏘️ Major Settlements &amp; Leyline Connections</h3>
+  <table border="1" cellspacing="0" cellpadding="6">
+    <thead>
+      <tr>
+        <th>Settlement</th>
+        <th>Type</th>
+        <th>Leyline / Portal Connection</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Crimson Spire</td>
+        <td>Kingdom Capital</td>
+        <td>🌀 Stonehenge, England — Leyline nexus and solstice marker</td>
+      </tr>
+      <tr>
+        <td>Veilwatch</td>
+        <td>Western Village</td>
+        <td>🌀 Orkney Islands, Scotland — Ancient stone circles predating Stonehenge</td>
+      </tr>
+      <tr>
+        <td>Bloodmoor</td>
+        <td>Eastern Village</td>
+        <td>
+          🌀 Dolmens of Antequera, Spain — Tombs aligned with celestial events<br>
+          🌀 Tartessos, Spain (Collapsed) — Vanished Bronze Age city; portal once located here
+        </td>
+      </tr>
+      <tr>
+        <td>Bloodkeep</td>
+        <td>Eastern Township</td>
+        <td>🌀 Mount Hermon (Syria/Lebanon) — Linked to Watchers in lore</td>
+      </tr>
+      <tr>
+        <td>Crimson Hollow</td>
+        <td>Northern Village</td>
+        <td>🌀 Fort Ancient, Ohio — Prehistoric effigy mound aligned with solstices</td>
+      </tr>
+      <tr>
+        <td>Crimsonport</td>
+        <td>Northern Small Town</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Bloodgate</td>
+        <td>Central Small Town</td>
+        <td>
+          🌀 Serpent Mound, Ohio — Prehistoric earthwork complex<br>
+          🌀 Thera (Santorini, Collapsed) — Lost Minoan island; portal once located here
+        </td>
+      </tr>
+      <tr>
+        <td>Veilwood</td>
+        <td>Western Small Town</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Crimsonpeak</td>
+        <td>Southern Township</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Veilgrove Forest</td>
+        <td>Wild Region</td>
+        <td>🌀 Pine Barrens, New Jersey — Arcane energies hidden in haunted forest</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>🏙️ District Breakdown of Crimson Spire (Capital)</h3>
+  <ul>
+    <li><strong>Central:</strong> Palace, skyship docks, guild halls</li>
+    <li><strong>Northern:</strong> Frozen mining zones, rune-carving enclaves</li>
+    <li><strong>Eastern:</strong> Military industries, Bloodkeep command center</li>
+    <li><strong>Southern:</strong> Temples, agriculture, ancestral rites</li>
+    <li><strong>Western:</strong> Trade routes, espionage rings, black markets</li>
+  </ul>
+
+  <h3>⚔️ Political Context</h3>
+  <p>
+    Originally part of the kingdom of Vraekthos, Phalorra broke away after the Detonation. Since then, it has been locked in a semi-war with Vraekthos—territories are gained and lost in a continuous, unstable flux.
+  </p>
+</section>
+
+<section>
+  <h2>🏴 Independent Cities of Tzaphaer</h2>
+  <p>These sovereign city-states operate outside of the kingdom system, offering neutrality, rebellion, or mystic reverence.</p>
+
+  <article>
+    <h3>🏙️ Lytheris – The Crossroads of Peace and Secrets</h3>
+    <p>Lytheris, once a radiant center of arcane knowledge and diplomacy, now exists as a fractured realm of illusions, shifting timelines, and magical instability. Located in Tzaphaer, closest to the Hybrid Bomb's detonation, the city survives not through strength, but through perception, memory, and will. Refugees, scholars, and shadow-walkers gather here, drawn to its paradox of ruin and resilience.</p>
+
+    <h4>🌀 Portals of Lytheris</h4>
+    <p><strong>🌍 Active Portal (as of 492 CE):</strong><br>
+    <em>The Selenic Gate of Whispering Glass</em><br>
+    <strong>Location on Earth:</strong> Lake Baikal, Siberia (Russia)</p>
+    <ul>
+      <li><strong>Access:</strong> Requires a mirror-forged lens, a true memory in disappearing ink, and silence.</li>
+      <li><strong>Traits:</strong> Opens under moonlight at the Refraction Obelisk; connects to a place where time and memory freeze but endure. Travelers often return altered, unsure of their own timeline.</li>
+      <li><strong>Status:</strong> Stable but unpredictable.</li>
+    </ul>
+
+    <p><strong>💀 Collapsed Portal:</strong><br>
+    <em>The Maw of Serene Ends</em><br>
+    <strong>Location on Earth:</strong> Ushuaia, Argentina</p>
+    <ul>
+      <li><strong>Origin:</strong> The Crescent Scar, where five timelines once overlapped.</li>
+      <li><strong>Traits:</strong> Linked to the concept of endings, identity, and forgotten dreams. It collapsed during the Hybrid Bomb's detonation in 312 CE.</li>
+      <li><strong>Residual Effects:</strong> Birds that speak extinct languages, time-reversing stardust, and dreams of impossible coasts.</li>
+      <li><strong>Status:</strong> Destroyed but mythically remembered.</li>
+    </ul>
+  </article>
+
+  <article>
+    <h3>🏴 Morrigaen – The Pirate City</h3>
+    <p>A storm-lashed coastal haven of arcane piracy and black-market trade on Tzaphaer, Morrigaen thrives beyond the reach of law. Governed by pirate lords and tidewitches, it is a sanctuary for exiles, mercenaries, and magic-bound smugglers.</p>
+
+    <h4>🌀 Portal: The Maelgrim Eye</h4>
+    <p><strong>🌍 Earth Anchor:</strong> Naumkeag (Salem, Massachusetts, USA)</p>
+    <ul>
+      <li><strong>Aza’ra Anchor:</strong> Tidecaller’s Throne</li>
+      <li><strong>Type:</strong> Tidebound Gate — Hidden within a moon-aligned sea vortex</li>
+      <li><strong>Access:</strong> Activated by a sailor’s blood-oath during a moonstorm</li>
+      <li><strong>Description:</strong> Connects Morrigaen to the misty coast of Naumkeag. A site of prophecy, tragedy, and magical resonance.</li>
+    </ul>
+
+    <blockquote>
+      <strong>🌊 The Gate’s Prophecy</strong><br>
+      “From salt to sorrow, from wind to witchfire—<br>
+      One day, they will burn what they fear.<br>
+      But the sea remembers, and the tide always turns.<br>
+      Where witches fall, sea-daughters shall rise.”
+    </blockquote>
+  </article>
+
+  <article>
+    <h3>🏛 City of the Mourned Gods</h3>
+    <p><strong>Location:</strong> Central-Eastern Tzaphaer, within the Phalorran Wall Mountains, overlooking the River of Mourning.</p>
+    <p><strong>Overview:</strong> A necropolis of divine memory and temporal distortion. The last home of forgotten gods, where time unravels and faith lingers.</p>
+
+    <h4>⚰️ Underworld of Aza’ra</h4>
+    <ul>
+      <li><strong>The Veilgate:</strong> Beneath the Shrine of Anubrios, sealed by Tears of the Moon. Accessed through the Rite of Three Hours.</li>
+      <li><strong>Avya ("Pain"):</strong> Cleansing realm of reckoning and purification.</li>
+      <li><strong>Shlama ("Peace"):</strong> Luminous sanctuary for balanced souls.</li>
+      <li><strong>Guides:</strong> Volsariis (memory streams), Veiled Couriers (psychopomps of Nyxariel)</li>
+    </ul>
+
+    <h5>🌍 Earth Portal: Mount Osore, Japan</h5>
+    <p>Located on the Shimokita Peninsula, it connects to the Mourned Gods via volcanic storms and psychic resonance. Both sites reflect humanity’s deep myths about death and spiritual passage.</p>
+
+    <blockquote>
+      <strong>🕯 Poetic Invocation</strong><br>
+      Beyond the breath of the last bell’s toll,<br>
+      Beneath the shrine where gods no longer wake,<br>
+      The soul descends through obsidian gate,<br>
+      To face the light, the fire, the fate.
+    </blockquote>
+  </article>
+</section>
+
+<section id="arzuhan">
+  <h2>🌬️ Arzuhan — Continent of Sky Kingdoms, Arcane Winds, and Floating Legacies</h2>
+  <p>
+    <strong>Pronunciation:</strong> <em>Arr-zoo-hahn</em> (rolled “r”)<br />
+    <strong>Location:</strong> Easternmost continent<br />
+    <strong>Primary Moon:</strong> 🌙 <em>Arvalla</em> (rises NE, arcs over Arzuhan &amp; SW Tzaphaer)
+  </p>
+
+  <p>
+    A continent of floating cities, leyline ruptures, and skybound civilizations shaped by arcane instability. Magical landscapes, storm-forged artifacts, and semi-sentient flora dominate. Portals to Earth connect through Middle Eastern, Oceanic, and European sites.
+  </p>
+
+  <h3>✨ Key Features</h3>
+  <ul>
+    <li>Floating cities &amp; sky-leyline anchors</li>
+    <li>Aerotech innovation: windships, gliders, storm artifacts</li>
+    <li>Arcane universities &amp; sky rituals</li>
+    <li>Azharyths (sky dragons) &amp; elemental guardians</li>
+    <li>Arcane fallout zones &amp; resource scarcity solutions (skyfarming, hydroponics)</li>
+  </ul>
+
+  <h3>🌀 Major Powers</h3>
+  <div>
+  <h4>⚒️ Kingdom of IronForge</h4>
+  <p>
+    <strong>Capital:</strong> Raethelia<br />
+    <strong>Government:</strong> Council of Reclaimers (Forge-Lord, Arcane Steward, Riftwarden, Veiled Hand)
+  </p>
+
+  <p>
+    <strong>Terrain:</strong> Southeastern mountain kingdom fueled by lightning, balancing arcane tradition and storm-infused industry.
+  </p>
+
+  <p><strong>Notable:</strong></p>
+  <ul>
+    <li>Library of Alexandria preserved beneath Raethelia via interplanar rescue (48 BCE–391 CE)</li>
+    <li>Cultural innovations: elemental metallurgy, skyforges, stormwright monasteries, glider rituals</li>
+    <li>Strategic: elemental weapon stockpiles, portal security, relic monitoring</li>
+  </ul>
+
+  <h3>🛡️ Earth Portals &amp; Interplanar Sites</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Earth Location</th>
+        <th>IronForge Site</th>
+        <th>Status</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Pompeii, Italy</td>
+        <td>Raethelia</td>
+        <td>Severed</td>
+        <td>Buried portal post-eruption (79 AD)</td>
+      </tr>
+      <tr>
+        <td>Alexandria, Egypt</td>
+        <td>Raethelia</td>
+        <td>Temporal Fold</td>
+        <td>Library rescue; active only during rare alignments</td>
+      </tr>
+      <tr>
+        <td>Lake Baikal, Russia</td>
+        <td>Skyfall</td>
+        <td>Refuge</td>
+        <td>Arcane sanctuary in frozen crater-lake</td>
+      </tr>
+      <tr>
+        <td>Göbeklitepe, Turkey</td>
+        <td>Skycliff</td>
+        <td>Active</td>
+        <td>Pre-divergence leyline observatory</td>
+      </tr>
+      <tr>
+        <td>Ziggurat of Ur, Iraq</td>
+        <td>Stormhammer</td>
+        <td>Active</td>
+        <td>Temple-fortress guarding portal &amp; relics</td>
+      </tr>
+      <tr>
+        <td>Dazhonglong Caverns, CN</td>
+        <td>Raethemar</td>
+        <td>Collapsed</td>
+        <td>Sacred dragon tunnels, now unstable</td>
+      </tr>
+      <tr>
+        <td>Waipoua Forest, NZ</td>
+        <td>Hammerwood</td>
+        <td>Active</td>
+        <td>Living ironwood grove, enchanted crafting</td>
+      </tr>
+      <tr>
+        <td>Nan Madol, Micronesia</td>
+        <td>Skyport</td>
+        <td>Active</td>
+        <td>Reef-city anchoring elemental trade fleets</td>
+      </tr>
+      <tr>
+        <td>Uluru, Australia</td>
+        <td>Skyforge</td>
+        <td>Active</td>
+        <td>Arcane academy linked to Dreamtime &amp; aether studies</td>
+      </tr>
+      <tr>
+        <td>Ubar, Arabia</td>
+        <td>Zephyrelis</td>
+        <td>Severed</td>
+        <td>Lost to cursed sandstorm ley backlash</td>
+      </tr>
+      <tr>
+        <td>City of Brass (Lore)</td>
+        <td>Cogspire</td>
+        <td>Severed</td>
+        <td>Sealed jinn-ruled time pocket</td>
+      </tr>
+      <tr>
+        <td>Mount Paektu, Korea/CN</td>
+        <td>Cloudrest</td>
+        <td>Destroyed</td>
+        <td>Shrine-city lost in 946 AD eruption</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>🧭 IronForge Settlements by Region</h3>
+  <ul>
+    <li><strong>Southern:</strong> Raethelia (capital), Windhaven, Skyfall, Skycliff, Stormhammer, Raethemar</li>
+    <li><strong>Central:</strong> Skyport (main skyship dock)</li>
+    <li><strong>Western / Central-Western:</strong> Stormgate, Hammerwood</li>
+    <li><strong>Eastern:</strong> Stormwatch, Skyforge, Zephyrelis, Cogspire</li>
+    <li><strong>Northern / Northeastern:</strong> Cloudrest, Cloudhaven, Zephyrstone</li>
+  </ul>
+
+  <h3>⚙️ IronForge Ethos</h3>
+  <blockquote>
+    “IronForge endures, not because it resists change—but because it tempers it.”
+  </blockquote>
+  <p>
+    This arcane-industrial kingdom preserves lost Earth knowledge, tempers chaos with invention, and channels the storm as both weapon and wisdom.
+  </p>
+<div>
+  <h2>🌪️ Kingdom of Zephyra</h2>
+  <p><em>Where wind carries wisdom and skies touch other worlds.</em></p>
+
+  <p>
+    Zephyra is a luminous, skyborne kingdom of floating aeries, interplanar bridges, and arcane innovation. Known for its philosophical scholars, stormcallers, and majestic sky-dragons (Azharyths), it thrives on magical industries, enchanted forges, and skyship trade. Cities float on leyline energy or nest under radiant domes, connected by portals to Earth and beyond.
+  </p>
+
+  <h3>🏛 Capital: Phyra (Central Region)</h3>
+  <ul>
+    <li>Suspended 2 km above Selkhanis River and Valerim Peaks</li>
+    <li>Known as the Floating Crown, a vast levitating landmass (43,128 sq km)</li>
+    <li>Buildings grow and breathe with bioluminescent alloys, woven stoneglass, and living wood</li>
+    <li>Powered by lunar panels and elemental wind turbines shaped like glyphs</li>
+    <li>Features skyrails, steam-trams, skyships, and prismatic public walkways</li>
+    <li>Trade hub: Silver Bazaar; portal hub: Phoenix Flight Station</li>
+    <li>Cultural life: music, festivals, arcane research, and skycraft</li>
+  </ul>
+
+  <h3>⚜️ Government &amp; Factions</h3>
+  <ul>
+    <li>Monarch: Skyborne Sovereign Kainathis Vaelora</li>
+    <li>Council of Winds: 12 representatives from cities, guilds, elemental orders</li>
+    <li>Aetherian Tribunal: Oversees arcane law</li>
+    <li>Political factions: Skyward Concord, Free Zephyrian Assembly, Windforged Syndicate, Children of the Everstorm, Nightveil Covenant</li>
+  </ul>
+
+  <h3>🏙️ Major Zephyra Settlements &amp; Regions</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Region</th>
+        <th>Settlements &amp; Portals</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Northwestern</td><td>Breezewood, Galecrest</td></tr>
+      <tr><td>Northern</td><td>Aetherfield, Cloudspire (Portal: Rocamadour, France)</td></tr>
+      <tr><td>Central North</td><td>Breezefield, Stormvale (Portal: Montségur, France)</td></tr>
+      <tr><td>Central</td><td>Windspire</td></tr>
+      <tr><td>Central West</td><td>Breezeport</td></tr>
+      <tr><td>Central East</td><td>Windgate</td></tr>
+      <tr><td>Eastern</td><td>Skykeep (Portal: Machu Picchu, Peru)</td></tr>
+      <tr><td>Southeastern</td><td>Vael’thwyn (Interplanar capital, Earth portal city)</td></tr>
+      <tr><td>Northern</td><td>Eryndriavale</td></tr>
+    </tbody>
+  </table>
+
+  <p><strong>Large towns:</strong> Stormvale, Stormgate</p>
+  <p><strong>Townships:</strong> Windspire, Skykeep</p>
+  <p><strong>Cities:</strong> Phyra (capital), Vael’thwyn</p>
+
+  <h3>🌐 Earth Portal Connections to Zephyra</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Zephyra Site</th>
+        <th>Earth Location</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Cloudspire</td><td>Rocamadour, France</td></tr>
+      <tr><td>Stormvale</td><td>Montségur, France</td></tr>
+      <tr><td>Skykeep</td><td>Machu Picchu, Peru</td></tr>
+      <tr><td>Vael’thwyn</td><td>Riftgate Complex, Zephyra</td></tr>
+      <tr><td>Thalmyr Willowdeep</td><td>Newgrange, Ireland</td></tr>
+      <tr><td>Crookbend Thicket</td><td>Derinkuyu, Turkey</td></tr>
+      <tr><td>Wyrmroot Vale</td><td>Valley of Flowers, India</td></tr>
+      <tr><td>Akage Forest</td><td>Saugus, Massachusetts</td></tr>
+      <tr><td>Eryndrel Heights</td><td>Mount Desert Island, Maine</td></tr>
+      <tr><td>Saithis Straits</td><td>Great Salt Lake, Utah</td></tr>
+      <tr><td>Dellshade Enclave</td><td>Chaco Canyon, New Mexico</td></tr>
+      <tr><td>Valerim Peaks</td><td>Banff, Alberta, Canada</td></tr>
+      <tr><td>Spireleaf Wilds</td><td>Palenque, Mexico</td></tr>
+      <tr><td>Puzzlefen Grove</td><td>Pantanal, Brazil</td></tr>
+      <tr><td>Valerim Rainforest</td><td>Amazon Rainforest, Brazil</td></tr>
+    </tbody>
+  </table>
+
+  <h3>🌊 Independent Arcane Metropolis: City of Eryndria</h3>
+  <p>
+    A bi-leveled city resting above and below the waters of Eryndria Harbors and River. Featuring glass towers and coral-like domes, Eryndria is arcane-affiliated and formerly connected by portals to Glastonbury Tor (England → Avalon myth). It remains independent from Zephyra’s governance.
+  </p>
+</section>
+</section>
+<section id="dakaroth">
+  <h2>⚒️ Dakaroth</h2>
+  <p>
+    <strong>Land of Stone, Steel, and Forgotten Fire</strong><br />
+    Pronunciation: Dak-ah-rroth (rolled “r”)<br />
+    Position: Northernmost continent of Aza’ra<br />
+    Primary Moon: 🌙 Duvaen — rises first over Dakaroth, bathing mountains in crimson glow.
+  </p>
+
+  <p>
+    Once the seat of the Iron Dominion’s brutal reign, Dakaroth is a continent forged in war, revolution, and invention. Towering glaciers overshadow arcano-industrial cities while ancient fire gods stir below. The fallen Dominion’s ruins power the Kingdom of Vulkiris’s smog-choked forges and gear-driven cities. Amid tectonic unrest, arcane radiation, and The Veil’s pulse, Dakaroth remains a land of fireborn resilience, mechanical ingenuity, and divine embers.
+  </p>
+
+  <h3>🔥 Capital City: Emberhold (Kingdom of Vulkiris)</h3>
+  <ul>
+    <li>Formerly IronHeart, built in Mount Raethelis’s caldera</li>
+    <li>Skyline of spiraling skybridges, cog-elevators, molten canals</li>
+    <li>Home to steamsmith guilds, alchemist sects, and divine relic black markets</li>
+    <li><strong>Portal:</strong> Mount Penglai, China → Emberhold (Severed)</li>
+  </ul>
+
+  <h3>⚙️ Regional Settlements</h3>
+
+  <h4>Southern Region (Lumber, minerals, defense)</h4>
+  <ul>
+    <li>Steelwood: Steam-powered lumber town</li>
+    <li><strong>Portal:</strong> Angkor Wat, Cambodia → Mt. Raethelis (subterranean tunnel)</li>
+    <li>Ironfist: Fortress-town with repurposed Dominion cannons</li>
+    <li>Steelhaven: Industrial village</li>
+    <li>Gearstone: Mineral refinery</li>
+    <li>Geardeep: Semi-submerged gear-city</li>
+    <li><strong>Portal:</strong> Lake Okeechobee, Florida → Geardeep</li>
+  </ul>
+
+  <h4>Western Region (Trade, cogcraft, volcanic extraction)</h4>
+  <ul>
+    <li>Gearford: Harbor with technomancer guilds</li>
+    <li><strong>Portal:</strong> Isle Royale, Michigan → Gearford</li>
+    <li>Ironhold: Magnetic ore mining cliffs</li>
+    <li>Gearhaven: Cogcraft guild capital</li>
+    <li>Forgepeak: Forges above lava veins</li>
+  </ul>
+
+  <h4>Central Region (Dominion ruins, transport)</h4>
+  <ul>
+    <li>Ironclad: Fortified city with arcano-defense bastions</li>
+    <li>Steelport: Trade and skytrain nexus</li>
+    <li>Steelcrest: Armorers’ guild</li>
+    <li><strong>Portal:</strong> Lihue, Hawaii → Steelcrest</li>
+    <li>CarboniteSpire: Glacial crystalline city</li>
+    <li><strong>Portal:</strong> Himalayas → CarboniteSpire</li>
+  </ul>
+
+  <h4>Northern Region (Weapon forges, divine metallurgy)</h4>
+  <ul>
+    <li>Anvilton: Blacksmith village on divine metals</li>
+    <li>Forgewood: Forest-forge settlement</li>
+    <li>Hammerkeep: Forge atop fire god corpse</li>
+    <li><strong>Portal:</strong> Giant’s Causeway, Northern Ireland → Hammerkeep</li>
+    <li>Emberfield: Mineral outpost</li>
+    <li>Anvilcrest: Monastic forge-town</li>
+    <li><strong>Portal:</strong> Skellig Michael, Ireland → Anvilcrest</li>
+  </ul>
+
+  <h4>Northeastern Region (Alchemy, rustland tech)</h4>
+  <ul>
+    <li>Steamvale: Last steam turbine city</li>
+    <li>Bronzewood: Enchanted bronze trade</li>
+    <li>Muckmarsh: Rogue alchemists’ swamp</li>
+    <li>Emberstone: Fireproof alloy smithy</li>
+    <li>Rustbrook: Haunted scrap city</li>
+  </ul>
+
+  <h4>Eastern Region (Inventors, rare ores)</h4>
+  <ul>
+    <li>Forgegate: Inventor capital</li>
+    <li><strong>Portal:</strong> Lake Bled, Slovenia → Forgegate</li>
+    <li>Rhodium Hill: Rare ore village</li>
+    <li>Hammerfall: Classified arcano-machinery underground</li>
+  </ul>
+
+  <h3>🌀 Non-Settlement Portal Sites</h3>
+  <ul>
+    <li>Kaelthar Straits — Trøllkonufingur, Faroe Islands</li>
+    <li>Raethelis Lake — Lake Titicaca, Bolivia/Peru</li>
+    <li>Therion Grove — Mount Roraima, Venezuela</li>
+    <li>Aetheron Expanse — Tayos Cave, Ecuador</li>
+    <li>Kaelthar Wood (Collapsed) — Cueva de los Tayos Lower Chamber</li>
+    <li>Mount Aetheron (Severed) — Serpent’s Spire, Mongolia</li>
+  </ul>
+
+  <h4>Submerged Severed Sites</h4>
+  <ul>
+    <li>Helike, Greece (near Kaelthar Wood)</li>
+    <li>Cantre’r Gwaelod, Wales (Aetheric Expanse)</li>
+  </ul>
+
+  <h3>🏙️ Free City of Dakaroth</h3>
+  <p><strong>Population:</strong> 4.74 million</p>
+  <p>
+    Independent coastal metropolis, never conquered by Iron Dominion. Center of justice, moon magic, military strategy, and post-apocalyptic resilience. Diverse population including Memoraths, Dril’thars, aerial Poyehnis, psionic Aza’raans, Dragonborn, Dreamborn.
+  </p>
+
+  <h4>Key Locations</h4>
+  <ul>
+    <li>Radiant Bastion: Fortress-temple of Raethelis</li>
+    <li>Emberhall Archives: Battle records &amp; arcane rulings</li>
+    <li>Golden Market: Magical goods hub</li>
+    <li>Solaris Alchemy: Sun-magic elixirs</li>
+    <li>Dakaroth Skyport &amp; Grand Station: Phoenix Flight &amp; Iron Golem trade routes</li>
+  </ul>
+
+  <h3>🌌 Portal to Earth</h3>
+  <p>
+    <strong>Aza’ra Location:</strong> Emberhall Archives, Chamber of Forgotten Verdicts<br />
+    <strong>Earth Anchor Point:</strong> The House on the Rock, Spring Green, Wisconsin, USA<br />
+    Portal veiled within museum’s illusions; used mainly by scholars and agents of Selkhanis for fate-thread recovery and law enforcement.
+  </p>
+
+  <h3>🌄 Geography &amp; Mystical Traits</h3>
+  <ul>
+    <li>Glacial mountains and magma rifts</li>
+    <li>Elemental maelstroms over tectonic faultlines</li>
+    <li>Subterranean fire god remnants and Dominion secrets</li>
+    <li>Volcanic rebirth zones glowing with radiant energy</li>
+    <li>Aether-warped ruins with spiraling time distortions</li>
+  </ul>
+</section>
+</section>
+<section id="The Consequences Of The Iron Dominion"> 
+  
+  <h1>⚙️ The Legacy of the Iron Dominion</h1>
+  <p>
+    The Iron Dominion was more than a regime—it was an ideology that demanded the union of magic and machinery to reshape reality itself. Its capital, Ironheart, was a beacon of technological worship, built on doctrines honoring divine creators like Kaelthar and Aetheron. The Dominion sought perfection through control, absorbing lesser kingdoms and spreading its vision of industrial unity.
+  </p>
+
+  <p>
+    Their ambition led to their downfall. In a catastrophic attempt to dominate the continent of Tzaphaer, the Dominion deployed a hybrid antimatter/dark matter bomb. The explosion shattered the continent, unleashing storms of radiation and chaos. The resulting devastation marked the end of the Dominion and reshaped global balance. While their cities fell, their technologies—like the fearsome Thundercoil—live on, both as marvels and warnings.
+  </p>
+
+  <p>
+    Remnants of the Dominion’s elite now hide or operate within new factions, and the Order of the Hidden Veil continues to pull strings in secret. Though fallen, the Dominion’s legacy—its machinery, alchemy, and warped ideology—still influences Aza'ra.
+  </p>
+
+  <h2>🌍 The Changing World of Aza’ra</h2>
+  <h3>🔥 Emberhold: City of Fire and Invention</h3>
+  <p>
+    Once known as Ironheart, Emberhold is a symbol of Vulkiris’s rebirth—an arcano-industrial marvel built within a volcanic caldera. Magma flows beneath reinforced glass streets as towering foundries craft lightning-infused weaponry. Its skyline rises with brass skybridges and hissing steamworks, embodying innovation born from destruction.
+  </p>
+  <p>
+    Society here is a fusion of old-world militarism and merit-based progress, ruled by a council within the obsidian Emberkeep. Inventors, alchemists, and relic dealers thrive, while shadowy forces like the Order of the Hidden Veil manipulate events from below. Emberhold is not just a city—it is a crucible where ambition fuels invention and danger.
+  </p>
+  <p> 
+    After the Dominion’s fall, much of Aza’ra adapted to life under arcane and environmental duress. Radiation storms and magical entropy plague the land, prompting most of Aza’ra’s population to live within protective domes. Skyships and magi-trains are the norm for long-distance travel, while settlements blend steampunk infrastructure with evolving aesthetics.
+  </p>
+
+  <h2>🌙 Moonpunk: Aza’ra’s Living Future</h2>
+  <p>
+    Moonpunk is not just a style—it is a cultural response to catastrophe, a philosophy rooted in resonance, memory, and regenerative magic. It emerged from the ashes of ruined lands like Tzaphaer and now thrives across domed cities and wild settlements alike.
+  </p>
+
+  <h3>🌱 Verdant Domes</h3>
+  <p>
+    Protective sanctuaries made from biotecture, dreamlight-infused walls, and umbral pylons. These structures shield against radiation and reality tears, while being maintained by arbormancers and harmonic engineers.
+  </p>
+
+  <h3>🌲 Leyline & Forest Settlements</h3>
+  <p>
+    Outside the domes, communities live in symbiosis with nature. Tree-hung homes, bioluminescent terraces, and song-responsive architecture echo with ancestral presence and elemental magic.
+  </p>
+
+  <h3>🏘️ Regional Moonpunk Identity</h3>
+  <ul>
+    <li><strong>Tzaphaer:</strong> Spirit gardens and myth-tech in domes</li>
+    <li><strong>Free City of Dakaroth:</strong> Glacial sanctuaries with reflective tech</li>
+    <li><strong>Vulkiris:</strong> Magma-glass domes and repurposed Dominion tech</li>
+    <li><strong>Eryndria:</strong> Coral sanctuaries glowing with ocean memory</li>
+    <li><strong>Zephyra:</strong> Crystalline sky terraces infused with dreamlight</li>
+    <li><strong>IronForge:</strong> Ley-forges and moss-bound workshops</li>
+  </ul>
+
+  <h3>✨ Magic, Memory & Myth-Tech</h3>
+  <p>
+    Moonpunk magic is woven through ritual and resonance. Thought-spirits drift in lanterns, crystal runes serve as emotional processors, and dome harmonics maintain balance. Disruption of these systems can invite chaos or ancestral wrath.
+  </p>
+
+  <h3>🌬️ Technology & Transport</h3>
+  <p>
+    Lunar panels, herbal trams, leyline lifts, and emotional song-gates power these societies. Tools are treated as sacred companions, and transport methods are infused with ritual, not industry.
+  </p>
+
+  <h3>🌎 Moonpunk Philosophy</h3>
+  <ul>
+    <li><strong>Symbiosis:</strong> Technology, magic, and nature co-exist.</li>
+    <li><strong>Time:</strong> Nonlinear, spiral, memory-driven.</li>
+    <li><strong>Progress:</strong> Measured in beauty, balance, and belonging.</li>
+    <li><strong>Access:</strong> Granted through resonance, not domination.</li>
+  </ul>
+
+  <h2>🌀 Final Essence</h2>
+  <p>
+    Moonpunk is the healing soul of Aza’ra—a culture of remembrance, ritual, and radiant resistance. In domes of silver light and forests of whispering trees, it offers a future not of conquest, but of communion.
+  </p>
+  <blockquote>
+    <em>"Where others burn, we bloom. Where they conquer, we commune. Where they extract, we remember."</em>
+  </blockquote>
+</section>
+</section>
+<section id="skyships">
+  <h1>Skyships, the Majestic Titans of the Skies</h1> 
+  <p>
+    Skyships are awe-inspiring vessels, their metallic hulls a masterful fusion of brass, copper, and riveted steel, adorned with intricate filigree and arcane etchings that pulse with latent power. These airborne leviathans sail effortlessly through the heavens, driven by the alchemical fusion of aether-infused combustion and complex, gear-driven propulsion mechanisms that hum with controlled energy.
+  </p>
+  <p>
+    Their enchanted sails, woven from etheric silk and embedded with luminous cyan runes, glow like captured lightning against the endless sky, shifting in response to unseen currents of magic. The rhythmic hiss of steam vents and the soft chime of aetheric stabilizers accompany their flight, giving them an almost living presence—as though the ships themselves whisper to the winds.
+  </p>
+  <p>
+    Whether navigating through storm-lashed tempests or soaring above the crystalline spires of floating cities, skyships stand as a testament to Aza'ra’s most brilliant artificers, merging steampunk innovation with celestial mastery.
+  </p>
+  <p>
+    When approaching domed settlements, these skyships descend with regal precision, landing at fortified outskirts where their forms undergo a breathtaking metamorphosis. Hull plates shift, wheels extend from hidden compartments, and the once-soaring vessels reconfigure into heavily armored, wheeled transports.
+  </p>
+  <p>
+    In this terrestrial form, they drive through reinforced access tunnels—tubes of steel and crystal lined with anti-radiation shielding that pulse with cleansing energy. As they pass through, arcane emitters scrub the skyships clean of atmospheric contaminants and lingering radiation, ensuring safe entry into the settlement.
+  </p>
+  <p>
+    At the tunnel’s end, the ships emerge beneath the protective dome—gleaming clean, their exteriors purified—as they glide toward designated terminals to offload and receive passengers. After completing their exchange, the vessels reverse course, rolling back through the same shielded corridors.
+  </p>
+  <p>
+    Once clear of the tunnels and out beneath open sky, gears grind and magic whirs as they transform once more, rising from the ground and unfolding into their celestial shape. With sails unfurled and runes aglow, they ascend, vanishing into the clouds with all the grandeur of the gods that once walked the world.
+  </p>
+  <p>
+    <strong>Skyships are more than mere transportation</strong>—they are monuments of motion, living relics of Aza'ra’s golden ingenuity, bridging earth and sky in elegant, unyielding harmony.
+  </p>
+</section>
+</section>
+<section id="trains">
+  <h1>Trains, the Iron-Bound Titans of the Land</h1> 
+  <p>
+    Trains, the iron-bound titans of the land, roar across the landscape with a mechanical grandeur befitting the lifeblood of Aza'ra’s civilization. Their ornate brass-plated engines, crowned with rotating gears and intricate clockwork piping, exhale plumes of shimmering, copper-tinted steam that coil like specters against the sky. Windows of reinforced glass glow faintly with internal alchemical lighting, casting warm, amber hues that flicker against their riveted hulls as they thunder over vast plains, through shadowed forests, and into the hearts of bustling metropoles.
+  </p>
+  <p>
+    As the journey nears its destination, these behemoths descend below the surface, shifting from overland travel to subterranean subway systems. Deep beneath the irradiated crust, armored tunnels guide them into domed settlements—protected enclaves sealed from the ravages of the surface. Before entering, each train passes through a specialized anti-radiation barrier built into the tunnel’s threshold. These energy fields scrub residual radiation from the train’s hull, cleansing it before it approaches the inner sanctum of the settlement.
+  </p>
+  <p>
+    Once within, it halts briefly to offload and collect passengers beneath vaulted glass ceilings and softly humming shield generators. To accommodate trains from multiple directions—whether approaching from the east or west, north or south—dual shielding systems are positioned at opposite ends of the line. After completing its stop, the train continues its course, driving through the second barrier to exit the protected zone, its journey recommencing beneath the earth or soaring once more into the open world.
+  </p>
+  <p>
+    Yet, where the ground falls away and floating isles fracture the natural flow of the rails, the <strong>Phantom Rails</strong> defy all limitations. At these celestial crossings, <strong>Aether Gates</strong>—colossal, gear-driven portals adorned with shifting runic dials—activate with a resounding clang as the train dives headlong into their swirling, luminescent depths.
+  </p>
+  <p>
+    For a fleeting moment, passengers glimpse the cosmic expanse beyond reality, the great unknown stretching out in golden arcs and mechanical constellations, before the locomotive emerges onto distant rails suspended high above the world. With a final hiss of pressurized steam and a resounding chime of shifting gears, the train glides forward, seamlessly continuing its journey across land and sky alike, forever bound to the ticking heart of progress.
+  </p>
+</section>
+</section>
+<section id="Language-Rules">
+  <h1>🔡 Aza’raan Alphabet Overview</h1>
+  <p>Each glyph in Aza’raan is:</p>
+  <ul>
+    <li>⚫ Based on Aramaic script 🕎</li>
+    <li>⦿ Typed using Latin equivalents</li>
+    <li>⦿ Rendered in a custom font via Calligraphr</li>
+    <li>⦿ Rooted in phonetic logic from Aarak and Aramaic</li>
+  </ul>
+
+  <h2>✍️ Core Features of the Aza’raan Language</h2>
+
+  <h3>🌐 ORTHOGRAPHY</h3>
+  <ul>
+    <li>Script: Custom glyphs adapted from Aramaic forms</li>
+    <li>Direction: Left to right, top to bottom</li>
+    <li>Capitalization: Proper nouns, pronouns, sentence starts</li>
+  </ul>
+
+  <h3>🔉 PHONOLOGY</h3>
+  <ul>
+    <li>Consonants: b, d, f, g, h, j, k, l, m, n, p, r, s, t</li>
+    <li>Vowels: a, e, i, o, u, y (with long forms: aa, ee, ii, oo, uu)</li>
+    <li>Glottal Stop: <code>'Ai</code> — sacred, rhythm-based sound</li>
+  </ul>
+
+  <p><strong>Example:</strong> Traditional → <code>Aza’ra</code> (ʿAyn silent); Evolved → <code>W’iosamn</code> (vocalized ‘Ai)</p>
+
+  <h3>🔡 ALPHABET EXAMPLES</h3>
+  <table>
+    <thead>
+      <tr><th>Glyph</th><th>Name</th><th>Latin Key</th><th>Sound</th><th>Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>A</td><td>Ālaphí</td><td>A, E</td><td>/a/, /e/</td><td>Root vowel; anchors pronunciation</td></tr>
+      <tr><td>H</td><td>Haḥan</td><td>H</td><td>/h/, /ħ/</td><td>Emphatic stress sound</td></tr>
+      <tr><td>O</td><td>Ūrí</td><td>O</td><td>/o/, /uː/</td><td>Resonance and depth</td></tr>
+      <tr><td>R</td><td>Rēs</td><td>R</td><td>Trilled /r/</td><td>Dialect-sensitive</td></tr>
+      <tr><td>‘</td><td>ʿAyn</td><td>’</td><td>‘Ai or silent</td><td>Spiritual cadence and heritage</td></tr>
+      <tr><td>^</td><td>Na’lu</td><td>—</td><td>Emphasis</td><td>Stresses next syllable</td></tr>
+      <tr><td>`</td><td>Ra’ama</td><td>—</td><td>Emphasis</td><td>Stresses previous syllable</td></tr>
+    </tbody>
+  </table>
+
+  <h2>🧠 Grammar & Syntax</h2>
+
+  <h3>🧾 Sentence Structure</h3>
+  <p>Subject–Verb–Object (SVO). Fusion markers like <code>~</code> connect pronouns and verbs: <code>Anoki~hue</code> = “I am”.</p>
+
+  <h3>🧬 Morphology</h3>
+  <ul>
+    <li>Agglutinative: ideas formed via suffix chains</li>
+    <li>No grammatical gender—identity shown through pronouns</li>
+    <li>Emphasis on rhythm and fluidity</li>
+  </ul>
+
+  <h2>📖 Language as Identity</h2>
+  <p>Aza’raan is not only spoken—it is experienced. It reaffirms the self with every utterance. The glottal <code>'Ai</code> is sacred. Accent markers shape tone and oral nuance. No identity is assumed—each is invited, affirmed, and spoken into being.</p>
+
+  <h2>🧬 Conclusion: Aza’ra’s Legacy</h2>
+  <ul>
+    <li>A sacred artifact of magic, grief, and resilience</li>
+    <li>A bridge across shattered cultures and time</li>
+    <li>A living language for truth, identity, and soul</li>
+  </ul>
+  <p>In Aza’raan, every syllable binds skyborne ruins and grounded peoples—not just by word, but by spirit.</p>
+</section>
+<section>
+<section id="Alphabet-And-Symbols">
+  <h2>🧬 Aza’raan Alphabet Table</h2>
+        <tr>
+          <th>Glyph</th>
+          <th>Aramaic Name</th>
+          <th>Aza'raan Name</th>
+          <th>Pronunciation</th>
+          <th>Latin Equivalents</th>
+          <th>Aza'raan (Latin Phonetics)</th>
+          <th>English Sound</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>A</td><td>Ālaph (א)</td><td><span class="comic-sans-override">;">Alaphii</span></td><td>AH-lah-fee</td><td>A, a, E, e</td><td>Ālaphí</td><td>"A" in "father" or "E" in "echo"</td><td>⚫ Root vowel; ⦿ stabilizer; ⦿ from Aarak "Aii"</td></tr>
+        <tr><td>B</td><td>Bēth (𐡁)</td><td><span class="comic-sans-override">;">Beth'</span></td><td>BAYTH</td><td>B, b</td><td>Bēth</td><td>"B" in "book"</td><td>⦿ Softens to "V"</td></tr>
+        <tr><td>C</td><td>Kāph (𐡊)</td><td><span class="comic-sans-override">;">Kaph</span></td><td>KAHF</td><td>C, c, K, k, X, x</td><td>Kāph</td><td>"K" in "king"</td><td>⦿ "Kh" unstressed</td></tr>
+        <tr><td>D</td><td>Dālath (𐡃)</td><td><span class="comic-sans-override">;">Dala</span></td><td>DAH-lah</td><td>D, d</td><td>Dāla</td><td>"D" in "day"</td><td>⦿ "TH" as in "that"</td></tr>
+        <tr><td>F</td><td>Pē (𐡐)</td><td><span class="comic-sans-override">;">Pe'</span></td><td>PAY-ai</td><td>F, f, P, p</td><td>Pē'ai</td><td>"P" in "pen"</td><td>⦿ "F" mid/final</td></tr>
+        <tr><td>G</td><td>Gāmal (𐡂)</td><td><span class="comic-sans-override">;">Gama</span></td><td>GAH-mah</td><td>G, g</td><td>Gāma</td><td>"G" in "go"</td><td>⦿ "Gh" casual speech</td></tr>
+        <tr><td>H</td><td>Hē / Ḥēth (𐡇/𐡄 )<br>→ Haḥan</td><td><span class="comic-sans-override">;">Hahan</span></td><td>HAH-khahn</td><td>H, h</td><td>Haḥan</td><td>"H" in "house"</td><td>⦿ Poetic emphasis</td></tr>
+        <tr><td>I</td><td>Yodh (𐡉)</td><td><span class="comic-sans-override">;">Yod</span></td><td>Yohd</td><td>I, i, J, j, Y, y</td><td>Yodh</td><td>"Y" in "yes"</td><td>⦿ "I" as vowel</td></tr>
+        <tr><td>L</td><td>Lāmadh (𐡋)</td><td><span class="comic-sans-override">;">Lama</span></td><td>LAH-mah</td><td>L, l</td><td>Lāma</td><td>"L" in "love"</td><td>⦿ Rounds before O</td></tr>
+        <tr><td>M</td><td>Mim (𐡌)</td><td><span class="comic-sans-override">;">Mim</span></td><td>Mihn</td><td>M, m</td><td>Mim</td><td>"M" in "moon"</td><td>⚫ Consistent across dialects</td></tr>
+        <tr><td>N</td><td>Nun (𐡍)</td><td><span class="comic-sans-override">;">Nun</span></td><td>Nuhn</td><td>N, n</td><td>Nun</td><td>"N" in "night"</td><td>⦿ Nasal in lyrical meter</td></tr>
+        <tr><td>O</td><td>Ūrim (Aarak Derived)</td><td><span class="comic-sans-override">;">Urii</span></td><td>OO-rehee-ee</td><td>O, o</td><td>Ūrí</td><td>"O" or "oo"</td><td>⦿ Adds vocal weight</td></tr>
+        <tr><td>Q</td><td>Qoph (𐡒)</td><td><span class="comic-sans-override">;">Qop</span></td><td>KOHP</td><td>Q, q</td><td>Qop</td><td>Deep Arabic "qāl"</td><td>⦿ Formal emphasis</td></tr>
+        <tr><td>R</td><td>Rēs (𐡓)</td><td><span class="comic-sans-override">;">Res</span></td><td>Reh-AYSH</td><td>R, r</td><td>Rēsh</td><td>"R" in "rain"</td><td>⦿ Trilled or softened</td></tr>
+        <tr><td>S</td><td>Sin / Semkath / Ṣādhē<br>→ Ʃaṣek / Ṣaṣek</td><td><span class="comic-sans-override">;">Sasek</span></td><td>SHAH-sehk</td><td>S, s</td><td>Ṣaṣek / Ʃaṣek</td><td>"s" or "sh"</td><td>⦿ Lower = "sh"<br>Upper = "ss"</td></tr>
+        <tr><td>T</td><td>Taw / Ṭēth (𐡈/𐡕)<br>→ Taṭan</td><td><span class="comic-sans-override">;">Tatan</span></td><td>TAH-tahn</td><td>T, t</td><td>Taṭan</td><td>"T" in "top"</td><td>⦿ Emphatic "Ṭ"</td></tr>
+        <tr><td>W</td><td>Waw (𐡅)</td><td><span class="comic-sans-override">;">Waw</span></td><td>WAHV</td><td>U, u, W, w</td><td>Wawv</td><td>"W" or "oo"</td><td>⦿ Glide in compounds</td></tr>
+        <tr><td>V</td><td>Ṭhāmar (Aarak Derived)</td><td><span class="comic-sans-override">;">Tham</span></td><td>T-HAHM</td><td>V, v</td><td>Ṭhām</td><td>"V" in "vine"</td><td>⦿ Migrant-influenced</td></tr>
+        <tr><td>Z</td><td>Zayn (𐡆)</td><td><span class="comic-sans-override">;">Zay</span></td><td>Zay</td><td>Z, z</td><td>Zay</td><td>"Z" in "zebra"</td><td>⚫ Stable pronunciation</td></tr>
+        <tr><td>‘</td><td>ʾAyn (𐡏)</td><td><span class="comic-sans-override">;">‘Ayn</span></td><td>AI-ayn</td><td>', ʾ</td><td>‘Aiayn</td><td>Glottal "Ai"</td><td>⦿ Ritual glottal or adapted</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>🜲 Aza’raan Punctuation & Symbol Lexicon</h2>
+         <tr>
+          <th>Symbol</th>
+          <th>Function</th>
+          <th>Aza’raan Name</th>
+          <th>Latin Name</th>
+          <th>Pronunciation</th>
+          <th>Root & Aramaic Meaning</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="comic-sans-override">;">^</span></td><td>Stress next syllable</td><td><span class="comic-sans-override">;">Na’lu</span></td><td>Na’ailu</td><td>NAH-ai-loo</td><td>נעל – to raise</td></tr>
+        <tr><td><span class="comic-sans-override">;"></span></td><td>Stress previous syllable</td><td><span class="comic-sans-override">;">Ra’ama</span></td><td>Ra’aiama</td><td>RAH-ah-mah</td><td>רעם – thunder</td></tr>
+        <tr><td><span class="comic-sans-override">;">~</span></td><td>Fusion / prolongation</td><td><span class="comic-sans-override">;">Sayalu</span></td><td>Shayalu</td><td>SHAH-yah-loo</td><td>שאל – braid</td></tr>
+        <tr><td><span class="comic-sans-override">;">=</span></td><td>Equal / balance</td><td><span class="comic-sans-override">;">Tavari</span></td><td>Tavari</td><td>TAH-vah-ree</td><td>תור – order</td></tr>
+        <tr><td><span class="comic-sans-override">;">-</span></td><td>Name-title linker</td><td><span class="comic-sans-override">;">Hadeka</span></td><td>Hadeka</td><td>HAH-deh-kah</td><td>חדק – bind</td></tr>
+        <tr><td><span class="comic-sans-override">;">.</span></td><td>Sentence stop</td><td><span class="comic-sans-override">;">Sulefa</span></td><td>Sulefa</td><td>SOO-leh-fah</td><td>שלף – pause</td></tr>
+        <tr><td><span class="comic-sans-override">;">:</span></td><td>Ratio / relation</td><td><span class="comic-sans-override">;">Yezara</span></td><td>Yezara</td><td>YEH-zah-rah</td><td>זער – relate</td></tr>
+        <tr><td><span class="comic-sans-override">;">;</span></td><td>Phrase break</td><td><span class="comic-sans-override">;">Yenafa</span></td><td>Yenafa</td><td>YEH-nah-fah</td><td>נפי – ease</td></tr>
+        <tr><td><span class="comic-sans-override">;">,</span></td><td>Transition/comma</td><td><span class="comic-sans-override">;">Safilu</span></td><td>Shafilu</td><td>SHAH-fee-loo</td><td>ספל – shift</td></tr>
+        <tr><td><span class="comic-sans-override">;">\</span></td><td>Formal divider</td><td><span class="comic-sans-override">;">Tamora</span></td><td>Tamora</td><td>TAH-moh-rah</td><td>תמר – delineate</td></tr>
+        <tr><td><span class="comic-sans-override">;">°</span></td><td>Degree/state</td><td><span class="comic-sans-override">;">Gehanu</span></td><td>Gehanu</td><td>GEH-hah-noo</td><td>גהנ – measure</td></tr>
+        <tr><td><span class="comic-sans-override">;">÷</span></td><td>Division/split</td><td><span class="comic-sans-override">;">Pelaka</span></td><td>Pelaka</td><td>PEH-lah-kah</td><td>פלך – segment</td></tr>
+        <tr><td><span class="comic-sans-override">;">%</span></td><td>Fraction</td><td><span class="comic-sans-override">;">Maresu</span></td><td>Mareshu</td><td>MAH-reh-shoo</td><td>מרש – portion</td></tr>
+        <tr><td><span class="comic-sans-override">;">&</span></td><td>Union/connection</td><td><span class="comic-sans-override">;">Waawa</span></td><td>Waawa</td><td>WAAH-wa</td><td>וחד – unite</td></tr>
+        <tr><td><span class="comic-sans-override">;">?</span></td><td>Question</td><td><span class="comic-sans-override">;">Se’ema</span></td><td>She’aiema</td><td>SHEH-ai-mah</td><td>שמע – inquire</td></tr>
+        <tr><td><span class="comic-sans-override">;">!</span></td><td>Exclamation</td><td><span class="comic-sans-override">;">Azmata</span></td><td>Azmata</td><td>AZ-mah-tah</td><td>עזם – cry out</td></tr>
+        <tr><td><span class="comic-sans-override">;">"</span></td><td>Quotation</td><td><span class="comic-sans-override">;">Rokhila</span></td><td>Rokhila</td><td>ROH-khee-lah</td><td>רוח – spirit</td></tr>
+        <tr><td><span class="comic-sans-override">;">( )</span></td><td>Structural framing</td><td><span class="comic-sans-override">;">Talemni</span></td><td>Talemni</td><td>TAH-lehm-nee</td><td>תמן – contain</td></tr>
+        <tr><td><span class="comic-sans-override">;">+</span></td><td>Addition/growth</td><td><span class="comic-sans-override">;">Navaka</span></td><td>Navaka</td><td>NAH-vah-kah</td><td>נבק – expand</td></tr>
+        <tr><td><span class="comic-sans-override">;">@</span></td><td>Copper currency</td><td><span class="comic-sans-override">;">Nugam</span></td><td>Nugam</td><td>NOO-gahm</td><td>נגם – stamp</td></tr>
+        <tr><td><span class="comic-sans-override">;">$</span></td><td>Silver currency</td><td><span class="comic-sans-override">;">Behrum</span></td><td>Behrum</td><td>BEH-room</td><td>ברם – refine</td></tr>
+        <tr><td><span class="comic-sans-override">;">*</span></td><td>Gold currency</td><td><span class="comic-sans-override">;">Guhlor</span></td><td>Guhlor</td><td>GUH-lor</td><td>גלר – gleam</td></tr>
+        <tr><td><span class="comic-sans-override">;">{</span></td><td>Platinum currency</td><td><span class="comic-sans-override">;">Merda</span></td><td>Merda</td><td>MER-dah</td><td>מרד – sanctify</td></tr>
+        <tr><td><span class="comic-sans-override">;">}</span></td><td>Digital currency</td><td><span class="comic-sans-override">;">Zuze</span></td><td>Zuze</td><td>ZOO-zee</td><td>זז / זי – spark / essence</td></tr>
+      </tbody>
+    </table>
+<section>
+</section>
+<section id="pronouns">
+<h1>🙋‍♂️ Pronoun System</h1>
+<p>Inclusive and gender-flexible system for identity affirmation in Aza’raan.</p>
+
+<h2>⚧️ Gender Identities & Pronoun Forms</h2>
+<p>All gendered pronouns in Aza’raan follow a consistent three-part structure:</p>
+<ul>
+  <li><span class="comic-sans-override">;">Subjective</span> → <span class="comic-sans-override">;">Objective</span> → <span class="comic-sans-override">;">Possessive</span></li>
+  <li><span class="comic-sans-override">;">Reflexivity</span> is formed by attaching <strong>“nami”</strong> to the objective form.</li>
+  <li><em>Example:</em> <span class="comic-sans-override">;">Ranam</span> (Demi-Male) → <span class="comic-sans-override">;">Ranth</span> → <span class="comic-sans-override">;">Ranthnami</span></li>
+</ul>
+<p>These pronouns are always used once an individual introduces themselves, replacing any prior use of <span class="comic-sans-override">;">Samir</span> (they/them). Once known, pronouns are always gendered in grammar, regardless of social context.</p>
+
+<h2>🧾 Example Sentences Using Gendered Pronouns</h2>
+
+<div class="sentence-block">
+  <p class="sentence"><span class="comic-sans-override">;">Yui Ranam rakhemaeri Ranthnami.</span></p>
+  <p class="sentence"><em>→ The demi-male loved himself.</em></p>
+</div>
+
+<div class="sentence-block">
+  <p class="sentence"><span class="comic-sans-override">;">Lam hue Alad.</span></p>
+  <p class="sentence"><em>→ She is hers.</em></p>
+</div>
+
+<div class="sentence-block">
+  <p class="sentence"><span class="comic-sans-override">;">Tas niavada azala laha yui zilomaya.</span></p>
+  <p class="sentence"><em>→ She (trans woman) doesn’t go to the river.</em></p>
+<div>
+<h1>⚧️ Gender Identities & Pronouns</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Identity</th>
+      <th>Subjective</th>
+      <th>Pronunciation (Subjective)</th>
+      <th>Objective</th>
+      <th>Possessive</th>
+      <th>Pronunciation (Subj / Obj / Poss)</th>
+      <th>Reflexive</th>
+      <th>Reflexive Pronunciation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Cis Male</td><td><span class="comic-sans-override">;">Razah</span></td><td>Rah-zah (rolled R)</td><td><span class="comic-sans-override">;">Raz</span></td><td><span class="comic-sans-override">;">Racht</span></td><td>Rahz / Rahcht / Rah-zahd</td><td><span class="comic-sans-override">;">Rachtnami</span></td><td>Rahcht-NAH-mee</td></tr>
+    <tr><td>Cis Female</td><td><span class="comic-sans-override">;">Ala</span></td><td>Ah-lah</td><td><span class="comic-sans-override">;">Al</span></td><td><span class="comic-sans-override">;">Alt</span></td><td>Ahl / Ahl-t / Ah-lad</td><td><span class="comic-sans-override">;">Altnami</span></td><td>Ahl-t-NAH-mee</td></tr>
+    <tr><td>Demi-Male</td><td><span class="comic-sans-override">;">Ranam</span></td><td>Rah-nahm (rolled R)</td><td><span class="comic-sans-override">;">Ran</span></td><td><span class="comic-sans-override">;">Ranth</span></td><td>Rahn / Rahn-th / Rah-nod</td><td><span class="comic-sans-override">;">Ranthnami</span></td><td>Rahn-th-NAH-mee</td></tr>
+    <tr><td>Demi-Female</td><td><span class="comic-sans-override">;">Lanam</span></td><td>Lah-nahm</td><td><span class="comic-sans-override">;">Lam</span></td><td><span class="comic-sans-override">;">Lamth</span></td><td>Lahm / Lahmth / Lah-mod</td><td><span class="comic-sans-override">;">Lamthnami</span></td><td>Lahm-th-NAH-mee</td></tr>
+    <tr><td>Nonbinary</td><td><span class="comic-sans-override">;">Maska</span></td><td>Mah-skah</td><td><span class="comic-sans-override">;">Mak</span></td><td><span class="comic-sans-override">;">Makth</span></td><td>Mahk / Mahk-th / Mah-kahd</td><td><span class="comic-sans-override">;">Makthnami</span></td><td>Mahk-th-NAH-mee</td></tr>
+    <tr><td>Trans Male</td><td><span class="comic-sans-override">;">Dabala</span></td><td>Dah-bah-la</td><td><span class="comic-sans-override">;">Dab</span></td><td><span class="comic-sans-override">;">Dabth</span></td><td>Dahb / Dahb-th / Dah-bahd</td><td><span class="comic-sans-override">;">Dabthnami</span></td><td>Dahb-th-NAH-mee</td></tr>
+    <tr><td>Trans Female</td><td><span class="comic-sans-override">;">Tasen</span></td><td>Tah-sen</td><td><span class="comic-sans-override">;">Tas</span></td><td><span class="comic-sans-override">;">Tasth</span></td><td>Tahs / Tahs-th / Tah-sahd</td><td><span class="comic-sans-override">;">Tasthnami</span></td><td>Tahs-th-NAH-mee</td></tr>
+    <tr><td>Genderfluid</td><td><span class="comic-sans-override">;">Pesma</span></td><td>Pes-mah</td><td><span class="comic-sans-override">;">Pem</span></td><td><span class="comic-sans-override">;">Pemth</span></td><td>Pehm / Pehm-th / Peh-mad</td><td><span class="comic-sans-override">;">Pemthnami</span></td><td>Pehm-th-NAH-mee</td></tr>
+    <tr><td>Bigender</td><td><span class="comic-sans-override">;">Lapsa</span></td><td>Lahp-sah</td><td><span class="comic-sans-override">;">Las</span></td><td><span class="comic-sans-override">;">Last</span></td><td>Lahs / Lahst / Lah-sahd</td><td><span class="comic-sans-override">;">Lastnami</span></td><td>Lahst-NAH-mee</td></tr>
+    <tr><td>Gender-Flexible</td><td><span class="comic-sans-override">;">Pasla</span></td><td>Pah-slah</td><td><span class="comic-sans-override">;">Pas</span></td><td><span class="comic-sans-override">;">Pasth</span></td><td>Pahs / Pahs-th / Pah-sahd</td><td><span class="comic-sans-override">;">Pasthnami</span></td><td>Pahs-th-NAH-mee</td></tr>
+    <tr><td>Genderless</td><td><span class="comic-sans-override">;">Akna</span></td><td>Ahk-nah</td><td><span class="comic-sans-override">;">Ak</span></td><td><span class="comic-sans-override">;">Akth</span></td><td>Ahk / Ahk-th / Ah-kahd</td><td><span class="comic-sans-override">;">Akthnami</span></td><td>Ahk-th-NAH-mee</td></tr>
+  </tbody>
+</table>
+<div>
+  <h2>⚪ Aza’raan Pronoun System: Easy Breakdown</h2>
+
+  <h3>⚫ Core Principles</h3>
+  
+  <ul>
+    <li>
+      Reflexive pronouns are formed by adding <code>nami</code> to the objective pronoun
+      <ul>
+        <li>⦾ Comparable to English <em>himself / herself / themself</em></li>
+        <li>⦿ Examples
+          <table>
+            <thead>
+              <tr>
+                <th>Aza’raan Reflexive</th>
+                <th>Identity</th>
+                <th>English Equivalent</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><span class="comic-sans-override">;">Rachtnami</span></td><td>Cis Male</td><td>himself</td></tr>
+              <tr><td><span class="comic-sans-override">;">Altnami</span></td><td>Cis Female</td><td>herself</td></tr>
+              <tr><td><span class="comic-sans-override">;">Ranthnami</span></td><td>Demi-Male</td><td>himself</td></tr>
+              <tr><td><span class="comic-sans-override">;">Lamthnami</span></td><td>Demi-Female</td><td>herself</td></tr>
+              <tr><td><span class="comic-sans-override">;">Makthnami</span></td><td>Nonbinary</td><td>themself</td></tr>
+              <tr><td><span class="comic-sans-override">;">Dabthnami</span></td><td>Trans Male</td><td>himself</td></tr>
+              <tr><td><span class="comic-sans-override">;">Tasthnami</span></td><td>Trans Female</td><td>herself</td></tr>
+              <tr><td><span class="comic-sans-override">;">Pemthnami</span></td><td>Genderfluid</td><td>themself</td></tr>
+              <tr><td><span class="comic-sans-override">;">Lastnami</span></td><td>Bigender</td><td>themself</td></tr>
+              <tr><td><span class="comic-sans-override">;">Pasthnami</span></td><td>Gender-Flexible</td><td>themself</td></tr>
+              <tr><td><span class="comic-sans-override">;">Akthnami</span></td><td>Genderless</td><td>themself</td></tr>
+            </tbody>
+          </table>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <h4>⦿ Reflexive Pronoun Construction Table</h4>
+  <table>
+    <thead>
+      <tr>
+        <th>Gendered Objective</th>
+        <th>Reflexive Form</th>
+        <th>English Meaning</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><span class="comic-sans-override">;">Racht</span> (Cis Male)</td><td><span class="comic-sans-override">;">Rachtnami</span></td><td>himself</td></tr>
+      <tr><td><span class="comic-sans-override">;">Alt</span> (Cis Female)</td><td><span class="comic-sans-override">;">Altnami</span></td><td>herself</td></tr>
+      <tr><td><span class="comic-sans-override">;">Ranth</span> (Demi-Male)</td><td><span class="comic-sans-override">;">Ranthnami</span></td><td>himself</td></tr>
+      <tr><td><span class="comic-sans-override">;">Lamth</span> (Demi-Female)</td><td><span class="comic-sans-override">;">Lamthnami</span></td><td>herself</td></tr>
+      <tr><td><span class="comic-sans-override">;">Makth</span> (Nonbinary)</td><td><span class="comic-sans-override">;">Makthnami</span></td><td>themself</td></tr>
+    </tbody>
+  </table>
+
+  <h4>⦿ Reflexive Pronoun Example</h4>
+  <table>
+    <thead>
+      <tr>
+        <th>Aza’raan Sentence</th>
+        <th>English Translation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><span class="comic-sans-override">;">Mak ‘Asyaaka Maknami</span>.</td><td>They (nonbinary) healed themself.</td></tr>
+    </tbody>
+  </table>
+</section>
+<section>
+<section id="kinships">
+  <h1 class="emoji-title">🧬 Aza’raan Gendered Kinship Table</h1>
+
+  <h2>🧬 Aza’raan Kinship Naming Guide</h2>
+  <p>⚫ A unified system of familial terminology by identity, grammar, and narrative use.</p>
+
+  <h3>⦿ 🌤 Construction Rules</h3>
+
+  <p><strong>🗣️ Relational Suffix (Spoken/Conversational Form)</strong><br>
+  Used in informal speech, possessives, or direct reference.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Kin Role</th>
+        <th>Suffix</th>
+        <th>Meaning</th>
+        <th>Example</th>
+        <th>English Translation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Parent</td><td>’si</td><td>origin / source</td><td><span class="comic-sans-override">;">Raz’si</span></td><td>cisgender male parent / Father</td></tr>
+      <tr><td>Sibling</td><td>’ven</td><td>equal branch</td><td><span class="comic-sans-override">;">Tas’ven</span></td><td>transgender female sibling / Sister</td></tr>
+      <tr><td>Aunt/Uncle</td><td>’dan</td><td>next-gen elder</td><td><span class="comic-sans-override">;">Dab’dan</span></td><td>transgender male uncle</td></tr>
+      <tr><td>Grandparent</td><td>’mar</td><td>ancestral root</td><td><span class="comic-sans-override">;">Mak’mar</span></td><td>nonbinary grandparent</td></tr>
+      <tr><td>Niece/Nephew</td><td>’lai</td><td>descendant leaf</td><td><span class="comic-sans-override">;">Lam’lai</span></td><td>demi-female niece</td></tr>
+    </tbody>
+  </table>
+
+  <p><strong>📜 Formal Compound Form (Names, Records, Ceremonies)</strong><br>
+  Used in official documents, narration, storytelling, or reverent tone.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Kin Role</th>
+        <th>Suffix</th>
+        <th>Meaning</th>
+        <th>Example</th>
+        <th>English Translation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Parent</td><td>an</td><td>Source of the root</td><td><span class="comic-sans-override">;">Razan</span></td><td>cisgender male parent / father</td></tr>
+      <tr><td>Sibling</td><td>mir</td><td>Mirror / counterpart</td><td><span class="comic-sans-override">;">Almir</span></td><td>cisgender female sibling / sister</td></tr>
+      <tr><td>Aunt/Uncle</td><td>arel</td><td>Branch elder</td><td><span class="comic-sans-override">;">Tasarel</span></td><td>transgender female aunt</td></tr>
+      <tr><td>Grandparent</td><td>ira</td><td>Root elder / foundation</td><td><span class="comic-sans-override">;">Makira</span></td><td>nonbinary grandparent</td></tr>
+      <tr><td>Niece/Nephew</td><td>el</td><td>Leaf / newer shoot</td><td><span class="comic-sans-override">;">Aleel</span></td><td>cisgender female niece</td></tr>
+    </tbody>
+  </table>
+
+  <h3>🔀 Plural & Collective Forms</h3>
+  <p><strong>⚫ Ruk’</strong> — familial collective (“we/us/our kin”)</p>
+  <ul>
+    <li><span class="comic-sans-override">;">Ruk’el</span> = our nieces/nephews</li>
+    <li><span class="comic-sans-override">;">Ruk’an</span> = our parents</li>
+  </ul>
+
+  <p><strong>⚫ Samiran</strong> — plural for ungendered or unknown others</p>
+  <ul>
+    <li><span class="comic-sans-override">;">Samiranan</span> = ungendered parents</li>
+    <li><span class="comic-sans-override">;">Samirel</span> = unknown/neutral nieces/nephews</li>
+  </ul>
+
+  <h3>🌀 Spiritual & Reflexive Use</h3>
+  <p>⚫ Kin terms may take <em>nami</em> to express inner or spiritual relation</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Aza’raan Phrase</th>
+        <th>English Translation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><span class="comic-sans-override">;">Razanami Raz’si</span></td><td>His own father (cis male), spiritually or introspectively</td></tr>
+      <tr><td><span class="comic-sans-override">;">Makiranami Mak’mar</span></td><td>Their own grandmother (nonbinary), in ritual or memory</td></tr>
+    </tbody>
+  </table>
+<div>
+  <h2>📘 Example Sentences</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>English Sentence with Aza'raan Words used</th>
+        <th>English Translation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><span class="comic-sans-override">;">Raz Raz’si</span> raised <span class="comic-sans-override">;">Racht</span> well.</td><td>His father raised him well.</td></tr>
+      <tr><td><span class="comic-sans-override">;">Alad Mak’mar</span> is wise beyond words.</td><td>Her (cisgender female) grandparent (nonbinary) is full of wisdom.</td></tr>
+      <tr><td><span class="comic-sans-override">;">Tasad Lam’lai</span> loves to draw.</td><td>Her (transgender female) niece (demi-female) loves to draw.</td></tr>
+      <tr><td><span class="comic-sans-override">;">Tas’ven</span> and <span class="comic-sans-override">;">Raz</span> built this home together.</td><td>Trans female sibling and he (cis male) built this home.</td></tr>
+      <tr><td>I learned storytelling from <span class="comic-sans-override">;">Dab’dan</span>.</td><td>My transgender male uncle taught me.</td></tr>
+      <tr><td><span class="comic-sans-override">;">Razira</span> guided <span class="comic-sans-override">;">Raz</span> to the sacred grove.</td><td>The cis male’s grandfather (cis male) led him there.</td></tr>
+      <tr><td><span class="comic-sans-override">;">Alarel</span> and <span class="comic-sans-override">;">Alira</span> told stories to <span class="comic-sans-override">;">Alel</span>.</td><td>Her cis female aunt and grandmother told stories to her niece.</td></tr>
+      <tr><td><span class="comic-sans-override">;">Samiranan</span> blessed <span class="comic-sans-override">;">Ruk’el</span> during the naming ritual.</td><td>Ungendered parents blessed our nieces/nephews.</td></tr>
+      <tr><td><span class="comic-sans-override">;">Pemmir</span> honored <span class="comic-sans-override">;">Akira</span> by speaking <span class="comic-sans-override">;">Akad</span> truth.</td><td>Genderfluid sibling honored their genderless grandparent’s pronouns and identity.</td></tr>
+      <tr><td><span class="comic-sans-override">;">Akarel</span> and <span class="comic-sans-override">;">Akmir</span> journeyed with <span class="comic-sans-override">;">Akel</span> to <span class="comic-sans-override">;">Akira’s</span> resting place.</td><td>Genderless relatives traveled together to a gravesite.</td></tr>
+    </tbody>
+  </table>
+
+  <p><strong>💡 Notes:</strong></p>
+  <ul>
+    <li>⚫ Formal forms are preferred in writing, titles, rituals, or third-person narration.</li>
+    <li>⚫ Relational suffix forms are ideal for spoken dialogue, quick reference, and possessive use.</li>
+    <li>⚫ This structure supports inclusive and flexible storytelling across the <em>Aza'ra</em> MMORPG, <em>Threads of Fate</em> series, and tabletop systems.</li>
+  </ul>
+
+  <h2><span class="emoji">🫂</span> Plural Pronouns</h2>
+  <table>
+    <caption>English, Aza’raan Word, and Notes</caption>
+    <thead>
+      <tr>
+        <th>English</th>
+        <th>Aza’raan Word</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>“I” + plural marker (-ri)</td>
+        <td><span class="comic-sans-override">;">Anokiral</span></td>
+        <td>Possessive plural form</td>
+      </tr>
+      <tr>
+        <td>Our</td>
+        <td><span class="comic-sans-override">;">Anokiral</span></td>
+        <td>Possessive plural form</td>
+      </tr>
+      <tr>
+        <td>They</td>
+        <td><span class="comic-sans-override">;">Samiran</span></td>
+        <td>Plural form of neutral singular Samir</td>
+      </tr>
+      <tr>
+        <td>Themselves</td>
+        <td><span class="comic-sans-override">;">[Gendered Plural]+nami</span></td>
+        <td>e.g., Makrinami for nonbinary plural reflexive</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2><span class="emoji">🔄</span> Usage of “Nami” with Plural Pronouns</h2>
+  <p>For groups, reflexivity applies similarly with the reflexive suffix attached to plural objective pronouns.<br />
+  Example:<br />
+  <strong>“Makrinami”</strong> = “They (nonbinary plural) themselves.”<br />
+  If the gender is unknown or unintroduced, <strong>Samir</strong> and <strong>Samiran</strong> are used as gender-neutral singular and plural pronouns respectively.</p>
+
+  <h2><span class="emoji">🌱</span> “Nami” — Spiritual &amp; Linguistic Roots</h2>
+  <p>Etymologically from old Aarak dialect, “Nami” ties directly to concepts of “soul,” “essence,” and “core identity.”<br />
+  Used to convey a deep sense of self beyond grammatical person, often invoked in spiritual or introspective language.</p>
+
+  <h2><span class="emoji">🧩</span> Rules for Forming Plural Pronouns in Aza’raan</h2>
+  <ol>
+    <li>
+      <strong>Plural Formation Rule: Add -ri to Base Identity</strong><br />
+      To form plural versions of gendered or identity-based pronouns, append -ri to the singular root.<br />
+      This applies to subject, object, and possessive forms.<br />
+      For example:<br />
+      Razah (Cis Male identity) → Razahri (Cis Male plural identity)<br />
+      Mak → Makri (Nonbinary plural subject)<br />
+      Formula: Singular Identity + -ri = Plural Identity<br />
+      e.g., Ala → Alari, Ranam → Ranamri
+    </li>
+    <li>
+      <strong>Reflexive Rule: Add -nami to Plural Object Root</strong><br />
+      To form reflexive plural pronouns, attach the suffix -nami to the plural object pronoun (usually ending in -thri or -tri).<br />
+      Reflexives always carry spiritual undertones (soul/self).<br />
+      Formula: Plural Object Form + nami<br />
+      e.g., Rachtri → Rachtrinami, Makthri → Makthrinami
+    </li>
+    <li>
+      <strong>Possessive Plural Rule: Add -dri to Base Identity</strong><br />
+      The possessive plural form ends in -dri, continuing from the base root with pluralization.<br />
+      This follows the possessive suffix pattern -ad → -dri in plural.<br />
+      Formula: Root + -dri<br />
+      e.g., Razah → Razadri, Pesma → Pemadri
+    </li>
+    <li>
+      <strong>Neutral / Mixed Plural Rule: Use “Samiran”</strong><br />
+      For groups where gender is unknown, irrelevant, or mixed:<br />
+      Use Samiran for all plural forms (subject, object, possessive).<br />
+      Reflexive form: Samirnami
+    </li>
+    <li>
+      <strong>Pronunciation Consistency</strong><br />
+      Plural forms follow pronunciation of the base identity + suffix.<br />
+      Emphasis often remains on the root; suffixes are pronounced smoothly:<br />
+      Makthrinami = Mahk-th-NAH-mee<br />
+      Altrinami = Ahl-tri-NAH-mee
+    </li>
+  </ol>
+<div>
+  <h2><span class="emoji">✅</span> Summary of Suffix Patterns</h2>
+  <table>
+    <caption>Form / Suffix / Example Root / Example Result</caption>
+    <thead>
+      <tr>
+        <th>Form</th>
+        <th>Suffix</th>
+        <th>Example Root</th>
+        <th>Example Result</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Plural Identity</td><td>-ri</td><td>Razah</td><td>Razahri</td></tr>
+      <tr><td>Subject</td><td>-ri</td><td>Mak</td><td>Makri</td></tr>
+      <tr><td>Object</td><td>-thri / -tri</td><td>Ran / Al</td><td>Ranthri / Altri</td></tr>
+      <tr><td>Possessive</td><td>-dri</td><td>Lam</td><td>Lamodri</td></tr>
+      <tr><td>Reflexive</td><td>-nami</td><td>Makthri</td><td>Makthrinami</td></tr>
+      <tr><td>Neutral Plural</td><td>(fixed)</td><td>Samir</td><td>Samiran / Samirnami</td></tr>
+    </tbody>
+  </table>
+
+  <h2><span class="emoji">🫂</span> Plural Pronoun Table – Aza’raan</h2>
+  <table>
+    <caption>Gender Identity and Corresponding Plural Pronouns</caption>
+    <thead>
+      <tr>
+        <th>Gender Identity</th>
+        <th>Plural Identity</th>
+        <th>Subject</th>
+        <th>Object</th>
+        <th>Possessive</th>
+        <th>Reflexive</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Cis Male</td>
+        <td><span class="comic-sans-override">;">Razahri</span></td>
+        <td><span class="comic-sans-override">;">Razri</span></td>
+        <td><span class="comic-sans-override">;">Rachtri</span></td>
+        <td><span class="comic-sans-override">;">Razadri</span></td>
+        <td><span class="comic-sans-override">;">Rachtrinami</span></td>
+        <td>“Razah” + -ri</td>
+      </tr>
+      <tr>
+        <td>Cis Female</td>
+        <td><span class="comic-sans-override">;">Alari</span></td>
+        <td><span class="comic-sans-override">;">Alri</span></td>
+        <td><span class="comic-sans-override">;">Altri</span></td>
+        <td><span class="comic-sans-override">;">Aladri</span></td>
+        <td><span class="comic-sans-override">;">Altrinami</span></td>
+        <td>“Ala” + -ri</td>
+      </tr>
+      <tr>
+        <td>Demi-Male</td>
+        <td><span class="comic-sans-override">;">Ranamri</span></td>
+        <td><span class="comic-sans-override">;">Ranri</span></td>
+        <td><span class="comic-sans-override">;">Ranthri</span></td>
+        <td><span class="comic-sans-override">;">Ranodri</span></td>
+        <td><span class="comic-sans-override">;">Ranthrinami</span></td>
+        <td>“Ranam” + -ri</td>
+      </tr>
+      <tr>
+        <td>Demi-Female</td>
+        <td><span class="comic-sans-override">;">Lanamri</span></td>
+        <td><span class="comic-sans-override">;">Lamri</span></td>
+        <td><span class="comic-sans-override">;">Lamthri</span></td>
+        <td><span class="comic-sans-override">;">Lamodri</span></td>
+        <td><span class="comic-sans-override">;">Lamthrinami</span></td>
+        <td>“Lanam” + -ri</td>
+      </tr>
+      <tr>
+        <td>Nonbinary</td>
+        <td><span class="comic-sans-override">;">Maskari</span></td>
+        <td><span class="comic-sans-override">;">Makri</span></td>
+        <td><span class="comic-sans-override">;">Makthri</span></td>
+        <td><span class="comic-sans-override">;">Makadri</span></td>
+        <td><span class="comic-sans-override">;">Makthrinami</span></td>
+        <td>“Maska” + -ri</td>
+      </tr>
+      <tr>
+        <td>Trans Male</td>
+        <td><span class="comic-sans-override">;">Dabalari</span></td>
+        <td><span class="comic-sans-override">;">Dabri</span></td>
+        <td><span class="comic-sans-override">;">Dabthri</span></td>
+        <td><span class="comic-sans-override">;">Dabadri</span></td>
+        <td><span class="comic-sans-override">;">Dabthrinami</span></td>
+        <td>“Dabala” + -ri</td>
+      </tr>
+      <tr>
+        <td>Trans Female</td>
+        <td><span class="comic-sans-override">;">Taseni</span></td>
+        <td><span class="comic-sans-override">;">Tasri</span></td>
+        <td><span class="comic-sans-override">;">Tasthri</span></td>
+        <td><span class="comic-sans-override">;">Tasadri</span></td>
+        <td><span class="comic-sans-override">;">Tasthrinami</span></td>
+        <td>“Tasen” + -ri</td>
+      </tr>
+      <tr>
+        <td>Genderfluid</td>
+        <td><span class="comic-sans-override">;">Pesmari</span></td>
+        <td><span class="comic-sans-override">;">Pemri</span></td>
+        <td><span class="comic-sans-override">;">Pemthri</span></td>
+        <td><span class="comic-sans-override">;">Pemadri</span></td>
+        <td><span class="comic-sans-override">;">Pemthrinami</span></td>
+        <td>“Pesma” + -ri</td>
+      </tr>
+      <tr>
+        <td>Bigender</td>
+        <td><span class="comic-sans-override">;">Lapsari</span></td>
+        <td><span class="comic-sans-override">;">Lasri</span></td>
+        <td><span class="comic-sans-override">;">Lasthri</span></td>
+        <td><span class="comic-sans-override">;">Lasadri</span></td>
+        <td><span class="comic-sans-override">;">Lasthrinami</span></td>
+        <td>“Lapsa” + -ri</td>
+      </tr>
+      <tr>
+        <td>Gender-Flexible</td>
+        <td><span class="comic-sans-override">;">Paslari</span></td>
+        <td><span class="comic-sans-override">;">Pasri</span></td>
+        <td><span class="comic-sans-override">;">Pasthri</span></td>
+        <td><span class="comic-sans-override">;">Pasadri</span></td>
+        <td><span class="comic-sans-override">;">Pasthrinami</span></td>
+        <td>“Pasla” + -ri</td>
+      </tr>
+      <tr>
+        <td>Genderless</td>
+        <td><span class="comic-sans-override">;">Aknari</span></td>
+        <td><span class="comic-sans-override">;">Akri</span></td>
+        <td><span class="comic-sans-override">;">Akthri</span></td>
+        <td><span class="comic-sans-override">;">Akadri</span></td>
+        <td><span class="comic-sans-override">;">Akthrinami</span></td>
+        <td>“Akna” + -ri</td>
+      </tr>
+      <tr>
+        <td>Neutral (Mixed)</td>
+        <td><span class="comic-sans-override">;">Samiran</span></td>
+        <td><span class="comic-sans-override">;">Samiran</span></td>
+        <td><span class="comic-sans-override">;">Samiran</span></td>
+        <td><span class="comic-sans-override">;">Samiral</span></td>
+        <td><span class="comic-sans-override">;">Samirnami</span></td>
+        <td>Used when gender is unknown or group is mixed</td>
+      </tr>
+    </tbody>
+  </table>
+<div>
+<h2>🔄 Morphosyntax & Fusion Rules</h2>
+<h3>Aza’raan Morphosyntax vs. English</h3>
+
+<table border="1" cellspacing="0" cellpadding="6">
+  <thead>
+    <tr>
+      <th>English Form</th>
+      <th>Aza’raan Word</th>
+      <th>Latin Letters</th>
+      <th>Pronunciation</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Verb: Present</td>
+      <td><span class="comic-sans-override">;">tazalna</span></td>
+      <td>tazalna</td>
+      <td>tah-ZAHL-nah</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><span class="comic-sans-override">;">tazalka</span></td>
+      <td>tazalka</td>
+      <td>tah-ZAHL-kah</td>
+      <td>Root + <strong>-ka</strong> (past tense marker)</td>
+    </tr>
+    <tr>
+      <td>Verb: Future</td>
+      <td><span class="comic-sans-override">;">tazallo</span></td>
+      <td>tazallo</td>
+      <td>tah-ZAHL-lo</td>
+      <td>Root + <strong>-lo</strong> (future tense marker)</td>
+    </tr>
+    <tr>
+      <td>Verb: Progressive</td>
+      <td><span class="comic-sans-override">;">tazalne</span></td>
+      <td>tazalne</td>
+      <td>tah-ZAHL-nay</td>
+      <td>Root + <strong>-ne</strong> (progressive/ongoing)</td>
+    </tr>
+    <tr>
+      <td>Verb: Am</td>
+      <td><span class="comic-sans-override">;">hue</span></td>
+      <td>hue</td>
+      <td>HOO-eh</td>
+      <td>Can be fused with pronouns</td>
+    </tr>
+    <tr>
+      <td>Verb: Have</td>
+      <td><span class="comic-sans-override">;">itelei</span></td>
+      <td>itelei</td>
+      <td>EE-teh-lay</td>
+      <td>Can be fused with pronouns</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>⚿ Fusion Examples</h3>
+
+<table border="1" cellspacing="0" cellpadding="6">
+  <thead>
+    <tr>
+      <th>🗣️ Aza’raan Fusion</th>
+      <th>🗨️ English Translation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="comic-sans-override">;">Anoki~hue</span></td>
+      <td>I am</td>
+    </tr>
+    <tr>
+      <td><span class="comic-sans-override">;">Anoki~itelei</span></td>
+      <td>I have</td>
+    </tr>
+  </tbody>
+</table>
+<div>
+<h2><span class="emoji">🧑‍🤝‍🧑</span> Pronouns: Basic Forms and Possession</h2>
+  <h3>🗣️ Pronoun Table</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>English Pronoun</th>
+        <th>Aza’raan Pronoun</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>I</td><td>Anoki</td><td>Subject pronoun</td></tr>
+      <tr><td>You (singular)</td><td>Etan</td><td>Subject pronoun</td></tr>
+      <tr><td>He/Him</td><td>Rach
+<section>
+</section>
+<section id="Major-Language-Rules">
+  <h1 class="emoji-title">📜 Major Language Rules of Aza’raan</h1>
+
+  <h2>🗣️ Pronouns & Identity</h2>
+  <p>Aza’raan pronouns are gendered and identity-based, reflecting the rich cultural tapestry of the language.</p>
+  <ul>
+    <li>Pronouns are derived from core identity roots, with suffixes indicating
+<h1>📟 Discourse Rules in Aza'raan</h1>
+
+<h2>Sentence & Contextual Structure</h2>
+<ul>
+  <li>Aza’raan follows a Subject–Verb–Object (SVO) structure across both formal and informal contexts.</li>
+  <li>Emphasizes identity, tone, and intent through fusion markers, particles, and phonological nuance.</li>
+</ul>
+
+<h2>🌟 Register & Style</h2>
+<h3>🫟 Formal Register</h3>
+<ul>
+  <li>SVO structure is strictly maintained.</li>
+  <li>The honorific prefix <strong>Do-</strong> is applied before respected titles or known roles.</li>
+  <li><strong>Never</strong> used directly before pronouns.</li>
+</ul>
+
+<h4>⚿ Examples</h4>
+<table>
+  <thead>
+    <tr><th>Aza’raan Phrase</th><th>English Translation</th><th>Notes</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><span class="comic-sans-override">;">DoKesrah</span></td><td>“Respected King”</td><td>Honorific before title</td></tr>
+    <tr><td><span class="comic-sans-override">;">DoRaethelis</span></td><td>“Respected god”</td><td>Honorific before deity name</td></tr>
+    <tr><td>❌ <span class="comic-sans-override">;">DoEtan</span></td><td>Incorrect usage</td><td>Do- cannot prefix pronouns</td></tr>
+  </tbody>
+</table>
+
+<h3>⚙️ Verb Modification (Formal Speech)</h3>
+<ul>
+  <li><strong>ni-</strong> → Negation</li>
+  <li><strong>va</strong> → Politeness or emphasis</li>
+</ul>
+
+<h4>⚿ Example Sentences</h4>
+<table>
+  <thead>
+    <tr><th>Aza’raan Phrase</th><th>English Translation</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><span class="comic-sans-override">;">Yui DoKesrah ahabaka yani laha Ranod.</span></td><td>“The respected king gave it to him (demi-man).”</td></tr>
+    <tr><td><span class="comic-sans-override">;">Anoki sarirava itelei rasa.</span></td><td>“I truly have power.”</td></tr>
+  </tbody>
+</table>
+<p>→ <em>va</em> intensifies the phrase—strong and assertive.</p>
+
+<h3>💬 Casual / Conversational Register</h3>
+<ul>
+  <li>Still uses SVO, but with more fluidity.</li>
+  <li>Fusion markers (<code>~</code>) are used frequently.</li>
+  <li>Emotional tone guided by <code>va</code> and <code>ni</code>.</li>
+  <li>Contractions and softened expressions allowed.</li>
+</ul>
+
+<h4>⚿ Example</h4>
+<table>
+  <thead>
+    <tr><th>Aza’raan Phrase</th><th>English Translation</th><th>Note on Tone</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><span class="comic-sans-override">;">Anoki~hue</span> <span class="comic-sans-override">;">vatubana.</span></td><td>“I am happy.”</td><td>“va” gives joyful emphasis</td></tr>
+  </tbody>
+</table>
+
+<h2>❓ Question Formation</h2>
+<ul>
+  <li>Begin with <strong>?</strong></li>
+  <li>End with a period</li>
+  <li>Maintain SVO order</li>
+</ul>
+<table>
+  <thead>
+    <tr><th>Aza’raan Phrase</th><th>English Translation</th><th>Notes</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><span class="comic-sans-override">;">?Eyka jaboe etan minu.</span></td><td>“Where are you from?”</td><td></td></tr>
+    <tr><td><span class="comic-sans-override">;">?V’n^sa yui kesrah aza’ra ranth.</span></td><td>“Can the king help him?”</td><td>No honorific = familiarity</td></tr>
+  </tbody>
+</table>
+
+<h2>🖌️ Imperative Sentences (Commands)</h2>
+<table>
+  <thead>
+    <tr><th>Aza’raan Phrase</th><th>English Translation</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><span class="comic-sans-override">;">Avada tubana!</span></td><td>“Create joy!”</td></tr>
+    <tr><td><span class="comic-sans-override">;">Rakhema anoki!</span></td><td>“Love me!”</td></tr>
+  </tbody>
+</table>
+
+<h2>❌ Negative Sentences</h2>
+<ul>
+  <li><code>ni-</code> always comes before the verb.</li>
+</ul>
+<table>
+  <thead>
+    <tr><th>Aza’raan Phrase</th><th>English Translation</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><span class="comic-sans-override">;">Anoki niavada minase`ka.</span></td><td>“I don’t understand.”</td></tr>
+    <tr><td><span class="comic-sans-override">;">Tas niavada azala laha yui zilomaya.</span></td><td>“She (trans woman) doesn’t go to the river.”</td></tr>
+  </tbody>
+</table>
+
+<h2>💕 Fusion & Contraction Rules</h2>
+<p>Fusion marker <code>~</code> smooths speech and speeds up pronoun–verb combos.</p>
+<table>
+  <thead>
+    <tr><th>Fusion Form</th><th>Meaning</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><span class="comic-sans-override">;">Anoki~hue</span></td><td>“I am”</td></tr>
+    <tr><td><span class="comic-sans-override">;">Anoki~itelei</span></td><td>“I have”</td></tr>
+  </tbody>
+</table>
+<p><strong>➡️</strong> Object pronouns follow the verb: <br> <span class="comic-sans-override">;">Anoki rakhema etan.</span> → “I love you.”</p>
+
+<h2>🔠 Politeness, Emphasis, & Respect</h2>
+<table>
+  <thead>
+    <tr><th>🧩 Particle</th><th>🌿 Meaning</th><th>✍️ Usage & Effect</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>va</strong></td><td>emphasis / softness</td><td>Modifies emotional tone</td></tr>
+    <tr><td><strong>ni-</strong></td><td>negation</td><td>Before verbs to negate</td></tr>
+    <tr><td><strong>Do-</strong></td><td>honorific</td><td>Before names/titles, never pronouns</td></tr>
+  </tbody>
+</table>
+
+<h2>🎭 Conditional & Rhetorical Sentences</h2>
+<ul>
+  <li>Begin rhetorical questions with <strong>?</strong></li>
+  <li>Use standard negation and SVO structure for conditionals</li>
+</ul>
+<table>
+  <thead>
+    <tr><th>Aza’raan Phrase</th><th>English Translation</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><span class="comic-sans-override">;">?Midam avada etan khashava.</span></td><td>“What do you think?”</td></tr>
+    <tr><td><span class="comic-sans-override">;">Anoki niavada itelei yani.</span></td><td>“I do not possess it.” → “I don’t have it.”</td></tr>
+  </tbody>
+</table>
+
+<h2>🧠 Semantics: Identity-First Language</h2>
+<ul>
+  <li>No grammatical gender by default</li>
+  <li>Gender & identity introduced via pronouns and honored consistently</li>
+  <li>Prioritizes self-declaration over hierarchy</li>
+</ul>
+
+<h2>💬 Pragmatics: Tone, Emotion, and Intent</h2>
+<table>
+  <thead>
+    <tr><th>🎚️ Tool</th><th>🔍 Purpose</th><th>🧪 Example</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Particles</strong></td><td>Nuance, emphasis, clarity</td><td><code>va = emphasis</code>, <code>ni = negation</code></td></tr>
+    <tr><td><strong>Fusion (~)</strong></td><td>Smooth speech, contractions</td><td><code>Anoki~hue = I am</code></td></tr>
+    <tr><td><strong>Honorifics</strong></td><td>Respect, reverence</td><td><code>DoKesrah = Respected King</code></td></tr>
+  </tbody>
+</table>
+<p><strong>⚠️ Note:</strong> All deities, even forgotten or diminished, are referred to with <strong>Do-</strong> out of cosmic respect.</p>
+</section>
+<section>
+<section id="suffixes-particles">
+  <h2>Aza’raan Suffixes &amp; Particles – Comprehensive Table</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Particle / Suffix</th>
+        <th>Type</th>
+        <th>Function / Meaning</th>
+        <th>Example(s)</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>-ri</td>
+        <td>Suffix</td>
+        <td>Plural marker for subject pronouns/roots</td>
+        <td>Anokiri, Makri, Razri</td>
+        <td>Attached to identity/base for plural subjects</td>
+      </tr>
+      <tr>
+        <td>-thri / -tri</td>
+        <td>Suffix</td>
+        <td>Plural object pronoun form</td>
+        <td>Rachtri, Altri, Makthri</td>
+        <td>Variation depends on root vowel/consonant harmony</td>
+      </tr>
+      <tr>
+        <td>-dri</td>
+        <td>Suffix</td>
+        <td>Plural possessive form</td>
+        <td>Razadri, Makadri</td>
+        <td>Derived from singular possessive (-ad) + plural</td>
+      </tr>
+      <tr>
+        <td>-nami</td>
+        <td>Suffix</td>
+        <td>Reflexive pronoun / spiritual “self”</td>
+        <td>Makthnami, Ranthnami, Nami</td>
+        <td>Attaches to object pronouns or stands alone as “soul”</td>
+      </tr>
+      <tr>
+        <td>-na</td>
+        <td>Suffix</td>
+        <td>Present tense marker (verbs) / poetic possessive</td>
+        <td>tazalna, zilomayana</td>
+        <td>Ongoing or present action</td>
+      </tr>
+      <tr>
+        <td>-ka</td>
+        <td>Suffix</td>
+        <td>Past tense / locative marker</td>
+        <td>tazalka, ziloka</td>
+        <td>Denotes completed action or “at a place”</td>
+      </tr>
+      <tr>
+        <td>-lo</td>
+        <td>Suffix</td>
+        <td>Future tense / instrumental marker</td>
+        <td>tazallo, rakhemalo</td>
+        <td>Indicates futurity or “with/by means of”</td>
+      </tr>
+      <tr>
+        <td>-ne</td>
+        <td>Suffix</td>
+        <td>Progressive / ongoing action marker</td>
+        <td>tazalne</td>
+        <td>Ongoing or continuous present</td>
+      </tr>
+      <tr>
+        <td>-la</td>
+        <td>Suffix</td>
+        <td>Possessive (1st, 2nd, 3rd person)</td>
+        <td>Anokila, Etanla, Samirla</td>
+        <td>“My,” “your,” “their”</td>
+      </tr>
+      <tr>
+        <td>va</td>
+        <td>Particle</td>
+        <td>Emphasis / politeness / affirmation</td>
+        <td>va minaseka, Anoki va itelei</td>
+        <td>Softens or strengthens expression</td>
+      </tr>
+      <tr>
+        <td>ni-</td>
+        <td>Prefix</td>
+        <td>Negation</td>
+        <td>niqama, niavada</td>
+        <td>Always placed before verb roots</td>
+      </tr>
+      <tr>
+        <td>Do-</td>
+        <td>Prefix</td>
+        <td>Honorific for respected titles</td>
+        <td>DoKesrah, DoRaethelis</td>
+        <td>Never used before pronouns</td>
+      </tr>
+      <tr>
+        <td>li</td>
+        <td>Particle</td>
+        <td>Adjective/adverb linker (“like,” “in the manner of”)</td>
+        <td>ziloki li ono</td>
+        <td>Adds descriptive quality</td>
+      </tr>
+      <tr>
+        <td>sa-</td>
+        <td>Particle</td>
+        <td>Classifier for metaphorical or categorical sets</td>
+        <td>sa-mokari</td>
+        <td>Often used in rituals or poetic metaphor</td>
+      </tr>
+      <tr>
+        <td>’si</td>
+        <td>Suffix</td>
+        <td>Informal kinship: Parent (origin)</td>
+        <td>Raz’si, Al’si</td>
+        <td>Used in casual speech</td>
+      </tr>
+      <tr>
+        <td>’ven</td>
+        <td>Suffix</td>
+        <td>Informal kinship: Sibling</td>
+        <td>Tas’ven, Mak’ven</td>
+        <td>“Equal branch” kin</td>
+      </tr>
+      <tr>
+        <td>’dan</td>
+        <td>Suffix</td>
+        <td>Informal kinship: Aunt/Uncle</td>
+        <td>Dab’dan, Ak’dan</td>
+        <td>“Next-generation elder”</td>
+      </tr>
+      <tr>
+        <td>’mar</td>
+        <td>Suffix</td>
+        <td>Informal kinship: Grandparent</td>
+        <td>Mak’mar, Pem’mar</td>
+        <td>“Ancestral root”</td>
+      </tr>
+      <tr>
+        <td>’lai</td>
+        <td>Suffix</td>
+        <td>Informal kinship: Niece/Nephew</td>
+        <td>Lam’lai, Raz’lai</td>
+        <td>“Descendant leaf”</td>
+      </tr>
+      <tr>
+        <td>-an</td>
+        <td>Suffix</td>
+        <td>Formal kinship: Parent</td>
+        <td>Razan, Alan</td>
+        <td>Ceremonial/formal register</td>
+      </tr>
+      <tr>
+        <td>-mir</td>
+        <td>Suffix</td>
+        <td>Formal kinship: Sibling</td>
+        <td>Almir, Pemmir</td>
+        <td>“Mirror / counterpart”</td>
+      </tr>
+      <tr>
+        <td>-arel</td>
+        <td>Suffix</td>
+        <td>Formal kinship: Aunt/Uncle</td>
+        <td>Tasarel, Akarel</td>
+        <td>“Branch elder”</td>
+      </tr>
+      <tr>
+        <td>-ira</td>
+        <td>Suffix</td>
+        <td>Formal kinship: Grandparent</td>
+        <td>Makira, Ranira</td>
+        <td>“Root elder”</td>
+      </tr>
+      <tr>
+        <td>-el</td>
+        <td>Suffix</td>
+        <td>Formal kinship: Niece/Nephew</td>
+        <td>Aleel, Ruk’el</td>
+        <td>“Leaf / younger shoot”</td>
+      </tr>
+      <tr>
+        <td>~ (Shayalu)</td>
+        <td>Fusion Marker</td>
+        <td>Natural contraction of pronoun + verb</td>
+        <td>Anoki~hue, Anoki~itelei</td>
+        <td>Casual/melodic phrasing</td>
+      </tr>
+      <tr>
+        <td>?</td>
+        <td>Particle</td>
+        <td>Question indicator (starts sentence)</td>
+        <td>?Etan tazalka zilomaya.</td>
+        <td>No final punctuation — just start with ?</td>
+      </tr>
+    </tbody>
+  </table>
+<div>
+  <h3><span class="emoji">🌟</span> Morphological Application Table</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Form Type</th>
+        <th>Structure</th>
+        <th>Example</th>
+        <th>Meaning</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Present verb</td>
+        <td>Root + -na</td>
+        <td>tazalna</td>
+        <td>goes</td>
+      </tr>
+      <tr>
+        <td>Past verb</td>
+        <td>Root + -ka</td>
+        <td>tazalka</td>
+        <td>went</td>
+      </tr>
+      <tr>
+        <td>Future verb</td>
+        <td>Root + -lo</td>
+        <td>tazallo</td>
+        <td>will go</td>
+      </tr>
+      <tr>
+        <td>Progressive verb</td>
+        <td>Root + -ne</td>
+        <td>tazalne</td>
+        <td>is going</td>
+      </tr>
+      <tr>
+        <td>Plural pronoun</td>
+        <td>Base + -ri</td>
+        <td>Anoki → Anokiri</td>
+        <td>We / Us</td>
+      </tr>
+      <tr>
+        <td>Possessive (sing.)</td>
+        <td>Base + -la or -ad</td>
+        <td>Etanla, Razad</td>
+        <td>Your / His</td>
+      </tr>
+      <tr>
+        <td>Possessive (plural)</td>
+        <td>Base + -dri</td>
+        <td>Makadri</td>
+        <td>Theirs (nonbinary group)</td>
+      </tr>
+      <tr>
+        <td>Reflexive (sing.)</td>
+        <td>Obj. form + -nami</td>
+        <td>Ranthnami</td>
+        <td>Himself (demi-male)</td>
+      </tr>
+      <tr>
+        <td>Reflexive (plural)</td>
+        <td>Plural object + -nami</td>
+        <td>Makthrinami</td>
+        <td>Themselves (nonbinary plural)</td>
+      </tr>
+    </tbody>
+  </table>
+<div>
+  <h3><span class="emoji">🌀</span> Fusion & Identity Markers</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Construction</th>
+        <th>Fusion</th>
+        <th>Example</th>
+        <th>Translation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Pronoun + “am”</td>
+        <td>Pronoun + ~hue</td>
+        <td>Anoki~hue tubana</td>
+        <td>I am happy</td>
+      </tr>
+      <tr>
+        <td>Pronoun + “have”</td>
+        <td>Pronoun + ~itelei</td>
+        <td>Anoki~itelei rasa</td>
+        <td>I have power</td>
+      </tr>
+      <tr>
+        <td>Verb + Object</td>
+        <td>Verb + direct object</td>
+        <td>Rakhema etan</td>
+        <td>Love you</td>
+      </tr>
+    </tbody>
+  </table>
+<div>
+  <h3><span class="emoji">🔁</span> Derivational Pattern Examples</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Base</th>
+        <th>+ -ri</th>
+        <th>+ -thri/-tri</th>
+        <th>+ -dri</th>
+        <th>+ -nami</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Mak</td>
+        <td>Makri</td>
+        <td>Makthri</td>
+        <td>Makadri</td>
+        <td>Makthnami</td>
+      </tr>
+      <tr>
+        <td>Al</td>
+        <td>Alri</td>
+        <td>Altri</td>
+        <td>Aladri</td>
+        <td>Altnami</td>
+      </tr>
+      <tr>
+        <td>Ran</td>
+        <td>Ranri</td>
+        <td>Ranthri</td>
+        <td>Ranodri</td>
+        <td>Ranthnami</td>
+      </tr>
+      <tr>
+        <td>Anoki</td>
+        <td>Anokiri</td>
+        <td>—</td>
+        <td>—</td>
+        <td>Anokilanami</td>
+      </tr>
+    </tbody>
+  </table>
+  <section>
+<section>
+<section id="azaraan-timekeeping">
+  <h2>🌌 Aza’raan Timekeeping</h2>
+  <p>
+    Aza’ra’s unique time system is based on its three celestial moons, each influencing the rhythm of life across the world. The day is divided into three distinct arcs, each corresponding to a moon, with a total of 21 hours.
+  </p>
+
+  <h3>🌞 The Three Moons of Aza’ra</h3>
+  <p>
+    Each moon has its own significance and influence on the inhabitants of Aza’ra:
+  </p>
+</body>
+  <h3>🌙 The Celestial Moons</h3>
+  <p>
+    Aza’ra has no sun. Instead, three mystical moons orbit within the Veil, dictating light, tides, and time:
+  </p>
+  <ul>
+    <li><strong>Duvaen</strong> — Crimson moon of clarity and rebirth, rising over Dakaroth.</li>
+    <li><strong>W’iosamn</strong> — Luminous force of balance and growth, peaking over Tzaphaer.</li>
+    <li><strong>Arvalla</strong> — Storm-veiled moon of dreams and change, ascending over Arzuhan.</li>
+  </ul>
+
+  <h3>🕰️ The Aza’ran Day Cycle</h3>
+  <p>
+    Aza’ra’s day spans <strong>21 hours</strong>, divided into <strong>three 7-hour arcs</strong>, each named for its moon.
+  </p>
+  <ul>
+    <li><strong>Ae Hours (1Ae–7Ae)</strong> — Morning: clarity, ambition, and new beginnings.</li>
+    <li><strong>W’i Hours (1W’i–7W’i)</strong> — Midday: growth, creativity, and decision-making.</li>
+    <li><strong>La Hours (1La–7La)</strong> — Night: dreams, introspection, and spiritual resonance.</li>
+  </ul>
+  <p>After 7La, the cycle renews as Duvaen rises again.</p>
+</section>
+
+<section>
+  <h2>🕒 Timekeeping in Aza’ra</h2>
+  <table border="1" cellspacing="0" cellpadding="6">
+    <thead>
+      <tr>
+        <th>Hour</th>
+        <th>Time Format</th>
+        <th>Pronunciation</th>
+        <th>Meaning</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1st Hour</td>
+        <td>1Ae</td>
+        <td><span class="pronunciation">Ih-aye</span></td>
+        <td>"Morning at Hour 1"</td>
+      </tr>
+      <tr>
+        <td>7th Hour</td>
+        <td>7Ae</td>
+        <td><span class="pronunciation">Reh-aye</span></td>
+        <td>"Morning at Hour 7"</td>
+      </tr>
+      <tr>
+        <td>8th Hour</td>
+        <td>1W’i</td>
+        <td><span class="pronunciation">Ih-Wee-ai-ee</span></td>
+        <td>"Midday at Hour 1"</td>
+      </tr>
+      <tr>
+        <td>14th Hour</td>
+        <td>7W’i</td>
+        <td><span class="pronunciation">Reh-Wee-ai-ee</span></td>
+        <td>"Midday at Hour 7"</td>
+      </tr>
+      <tr>
+        <td>15th Hour</td>
+        <td>1La</td>
+        <td><span class="pronunciation">Ih-lah</span></td>
+        <td>"Night at Hour 1"</td>
+      </tr>
+      <tr>
+        <td>21st Hour</td>
+        <td>7La</td>
+        <td><span class="pronunciation">Reh-lah</span></td>
+        <td>"Night at Hour 7"</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>🌠 Cultural Associations</h3>
+  <ul>
+    <li><strong>Morning (Ae)</strong> — Renewal, courage, initiative</li>
+    <li><strong>Midday (W’i)</strong> — Balance, clarity, productivity</li>
+    <li><strong>Night (La)</strong> — Dreams, wisdom, rest</li>
+  </ul>
+</section>
+</section>
+<section id="azaraan-hours">
+  <h2>🕰️ Aza’raan Hour System</h2>
+  <p>
+    The Aza’raan day is divided into 21 hours across three lunar cycles—Duvaen (Morning), W’iosamn (Midday), and Arvalla (Night). Each hour has a unique name, pronunciation, associated moon, and spiritual or symbolic significance. Earth time conversions are listed for reference across major time zones.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Aza'raan Hour</th>
+        <th>UTC</th>
+        <th>CA (PDT)</th>
+        <th>IL (CDT)</th>
+        <th>NY (EDT)</th>
+        <th>UK (BST)</th>
+        <th>Palestine (EEST)</th>
+        <th>India (IST)</th>
+        <th>Japan (JST)</th>
+        <th>Pronunciation</th>
+        <th>Moon</th>
+        <th>Notes / Meaning</th>
+        <th>Earth UTC Range</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="comic-sans-override">;">1Ae</span></td>
+        <td>00:40</td>
+        <td>17:40</td>
+        <td>19:40</td>
+        <td>20:40</td>
+        <td>01:40</td>
+        <td>03:40</td>
+        <td>06:10</td>
+        <td>09:40</td>
+        <td>Ih-aye</td>
+        <td>Duvaen</td>
+        <td>Morning – Renewal and sharp awareness</td>
+        <td>00:40–02:25</td>
+      </tr>
+      <tr>
+        <td><span class="comic-sans-override">;">2Ae</span></td>
+        <td>02:24</td>
+        <td>19:24</td>
+        <td>21:24</td>
+        <td>22:24</td>
+        <td>03:24</td>
+        <td>05:24</td>
+        <td>07:54</td>
+        <td>11:24</td>
+        <td>Neh-aye</td>
+        <td>Duvaen</td>
+        <td>Duality and awakening clarity</td>
+        <td>02:25–04:10</td>
+      </tr>
+      <tr>
+        <td><span class="comic-sans-override">;">3Ae</span></td>
+        <td>04:08</td>
+        <td>21:08</td>
+        <td>23:08</td>
+        <td>00:08</td>
+        <td>05:08</td>
+        <td>07:08</td>
+        <td>09:38</td>
+        <td>13:08</td>
+        <td>Duh-aye</td>
+        <td>Duvaen</td>
+        <td>Progress into action</td>
+        <td>04:10–05:55</td>
+      </tr>
+      <tr>
+        <td><span class="comic-sans-override">;">4Ae</span></td>
+        <td>05:52</td>
+        <td>22:52</td>
+        <td>00:52</td>
+        <td>01:52</td>
+        <td>06:52</td>
+        <td>08:52</td>
+        <td>11:22</td>
+        <td>14:52</td>
+        <td>Meh-aye</td>
+        <td>Duvaen</td>
+        <td>Structured activity begins</td>
+        <td>05:55–07:40</td>
+      </tr>
+      <tr>
+        <td><span class="comic-sans-override">;">5Ae</span></td>
+        <td>07:37</td>
+        <td>00:37</td>
+        <td>02:37</td>
+        <td>03:37</td>
+        <td>08:37</td>
+        <td>10:37</td>
+        <td>13:07</td>
+        <td>16:37</td>
+        <td>Goh-aye</td>
+        <td>Duvaen</td>
+        <td>Steady flow of the morning</td>
+        <td>07:40–09:25</td>
+      </tr>
+      <tr>
+        <td><span class="comic-sans-override">;">6Ae</span></td>
+        <td>09:21</td>
+        <td>02:21</td>
+        <td>04:21</td>
+        <td>05:21</td>
+        <td>10:21</td>
+        <td>12:21</td>
+        <td>14:51</td>
+        <td>18:21</td>
+        <td>Ohm-aye</td>
+        <td>Duvaen</td>
+        <td>Cyclical rhythm emerges</td>
+        <td>09:25–11:10</td>
+      </tr>
+      <tr>
+        <td><span class="comic-sans-override">;">7Ae</span></td>
+        <td>11:05</td>
+        <td>04:05</td>
+        <td>06:05</td>
+        <td>07:05</td>
+        <td>12:05</td>
+        <td>14:05</td>
+        <td>16:35</td>
+        <td>20:05</td>
+        <td>Reh-aye</td>
+        <td>Duvaen</td>
+        <td>Transition before midday</td>
+        <td>11:10–12:55</td>
+      </tr>
+
+      <tr>
+        <td><span class="comic-sans-override">;">1W’i</span></td>
+        <td>12:50</td>
+        <td>05:50</td>
+        <td>07:50</td>
+        <td>08:50</td>
+        <td>13:50</td>
+        <td>15:50</td>
+        <td>18:20</td>
+        <td>21:50</td>
+        <td>Ih-wee-ai-ee</td>
+        <td>W’iosamn</td>
+        <td>High energy and brightness</td>
+        <td>12:55–14:40</td>
+      </tr>
+      <tr>
+        <td><span class="comic-sans-override">;">2W’i</span></td>
+        <td>14:34</td>
+        <td>07:34</td>
+        <td>09:34</td>
+        <td>10:34</td>
+        <td>15:34</td>
+        <td>17:34</td>
+        <td>20:04</td>
+        <td>23:34</td>
+        <td>Neh-wee-ai-ee</td>
+        <td>W’iosamn</td>
+        <td>Harmonizing dual tasks</td>
+        <td>14:40–16:25</td>
+      </tr>
+      <tr>
+        <td><span class="comic-sans-override">;">3W’i</span></td>
+        <td>16:18</td>
+        <td>09:18</td>
+        <td>11:18</td>
+        <td>12:18</td>
+        <td>17:18</td>
+        <td>19:18</td>
+        <td>21:48</td>
+        <td>01:18</td>
+        <td>Duh-wee-ai-ee</td>
+        <td>W’iosamn</td>
+        <td>Dynamic momentum peaks</td>
+        <td>16:25–18:10</td>
+      </tr>
+      <tr>
+        <td><span class="comic-sans-override">;">4W’i</span></td>
+        <td>18:02</td>
+        <td>11:02</td>
+        <td>13:02</td>
+        <td>14:02</td>
+        <td>19:02</td>
+        <td>21:02</td>
+        <td>23:32</td>
+        <td>03:02</td>
+        <td>Meh-wee-ai-ee</td>
+        <td>W’iosamn</td>
+        <td>Stability amid intensity</td>
+        <td>18:10–19:55</td>
+      </tr>
+      <tr>
+        <td><span class="comic-sans-override">;">5W’i</span></td>
+        <td>19:47</td>
+        <td>12:47</td>
+        <td>14:47</td>
+        <td>15:47</td>
+        <td>20:47</td>
+        <td>22:47</td>
+        <td>01:17</td>
+        <td>04:47</td>
+        <td>Goh-wee-ai-ee</td>
+        <td>W’iosamn</td>
+        <td>Balanced effort and influence</td>
+        <td>19:55–21:40</td>
+      </tr>
+      <tr>
+        <td><span class="comic-sans-override">;">6W’i</span></td>
+        <td>21:31</td>
+        <td>14:31</td>
+        <td>16:31</td>
+        <td>17:31</td>
+        <td>22:31</td>
+        <td>00:31</td>
+        <td>03:01</td>
+        <td>06:31</td>
+        <td>Ohm-wee-ai-ee</td>
+        <td>W’iosamn</td>
+        <td>Flow and continuation</td>
+        <td>21:40–23:25</td>
+      </tr>
+      <tr>
+        <td><span class="comic-sans-override">;">7W’i</span></td>
+        <td>23:15</td>
+        <td>16:15</td>
+        <td>18:15</td>
+        <td>19:15</td>
+        <td>00:15</td>
+        <td>02:15</td>
+        <td>04:45</td>
+        <td>08:15</td>
+        <td>Reh-wee-ai-ee</td>
+        <td>W’iosamn</td>
+        <td>Final midday phase</td>
+        <td>23:25–01:10</td>
+      </tr>
+
+      <tr>
+        <td><span class="comic-sans-override">;">1La</span></td>
+        <td>01:00</td>
+        <td>18:00</td>
+        <td>20:00</td>
+        <td>21:00</td>
+        <td>02:00</td>
+        <td>04:00</td>
+        <td>06:30</td>
+        <td>10:00</td>
+        <td>Ih-lah</td>
+        <td>Arvalla</td>
+        <td>Mystery and contemplation</td>
+        <td>01:10–02:55</td>
+      </tr>
+      <tr>
+        <td><span class="comic-sans-override">;">2La</span></td>
+        <td>02:44</td>
+        <td>19:44</td>
+        <td>21:44</td>
+        <td>22:44</td>
+        <td>03:44</td>
+        <td>05:44</td>
+        <td>08:14</td>
+        <td>11:44</td>
+        <td>Neh-lah</td>
+        <td>Arvalla</td>
+        <td>Dreams and reflection</td>
+        <td>02:55–04:40</td>
+      </tr>
+      <tr>
+        <td><span class="comic-sans-override">;">3La</span></td>
+        <td>04:28</td>
+        <td>21:28</td>
+        <td>23:28</td>
+        <td>00:28</td>
+        <td>05:28</td>
+        <td>07:28</td>
+        <td>09:58</td>
+        <td>13:28</td>
+        <td>Duh-lah</td>
+        <td>Arvalla</td>
+        <td>Movement within hidden realms</td>
+        <td>04:40–06:25</td>
+      </tr>
+      <tr>
+        <td><span class="comic-sans-override">;">4La</span></td>
+        <td>06:12</td>
+        <td>23:12</td>
+        <td>01:12</td>
+        <td>02:12</td>
+        <td>07:12</td>
+        <td>09:12</td>
+        <td>11:42</td>
+        <td>15:12</td>
+        <td>Meh-lah</td>
+        <td>Arvalla</td>
+        <td>Introspection and silence</td>
+        <td>06:25–08:10</td>
+      </tr>
+      <tr>
+        <td><span class="comic-sans-override">;">5La</span></td>
+        <td>07:57</td>
+        <td>00:57</td>
+        <td>02:57</td>
+        <td>03:57</td>
+        <td>08:57</td>
+        <td>10:57</td>
+        <td>13:27</td>
+        <td>16:57</td>
+        <td>Goh-lah</td>
+        <td>Arvalla</td>
+        <td>Inner clarity and center</td>
+        <td>08:10–09:55</td>
+      </tr>
+      <tr>
+        <td><span class="comic-sans-override">;">6La</span></td>
+        <td>09:41</td>
+        <td>02:41</td>
+        <td>04:41</td>
+        <td>05:41</td>
+        <td>10:41</td>
+        <td>12:41</td>
+        <td>15:11</td>
+        <td>18:41</td>
+        <td>Ohm-lah</td>
+        <td>Arvalla</td>
+        <td>Echoes and time loops</td>
+        <td>09:55–11:40</td>
+      </tr>
+      <tr>
+        <td><span class="comic-sans-override">;">7La</span></td>
+        <td>11:25</td>
+        <td>04:25</td>
+        <td>06:25</td>
+        <td>07:25</td>
+        <td>12:25</td>
+        <td>14:25</td>
+        <td>16:55</td>
+        <td>20:25</td>
+        <td>Reh-lah</td>
+        <td>Arvalla</td>
+        <td>Veil between worlds thins</td>
+        <td>11:40–13:25</td>
+      </tr>
+    </tbody>
+  </table>
+<div>
+  <h2>Aza’raan Days Of The Week</h2>
+  <table border="1" cellspacing="0" cellpadding="6">
+    <thead>
+      <tr>
+        <th>Day</th>
+        <th>Aza'raan Word</th>
+        <th>Pronunciation</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td><span class="comic-sans-override">;">Raethan</span></td>
+        <td>Rae-than</td>
+        <td>Day of Judgment (Dedicated to Raethelis, the Arbiter of Law and Order)</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td><span class="comic-sans-override">;">Kaeltharnis</span></td>
+        <td>Kayl-THAR-nish</td>
+        <td>Day of Craftsmanship and Industry (Honoring Kaelthar, The Eternal Forgemaster)</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td><span class="comic-sans-override">;">Nyxarion</span></td>
+        <td>NICKS-ah-ree-on</td>
+        <td>Day of Time and Transition (Dedicated to Nyxariel, The Eternal Gatherer)</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td><span class="comic-sans-override">;">Zephiren</span></td>
+        <td>ZEH-fi-ren</td>
+        <td>Day of Wind and Magic (Celebrating Zephyra, The Mistress of the Aether)</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td><span class="comic-sans-override">;">Eryndralis</span></td>
+        <td>EH-rin-DRAH-lish</td>
+        <td>Day of Growth and Renewal (Honoring Eryndria, The Verdant Flame)</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td><span class="comic-sans-override">;">Vulkiren</span></td>
+        <td>VUHL-kee-ren</td>
+        <td>Day of Rebellion and Transformation (Inspired by Vulkiris, The Warden of Discord)</td>
+      </tr>
+    </tbody>
+  </table>
+  <div>
+    <h2>🌒 Aza’raan Calendar – 8 Sacred Months</h2>
+    <p>Each month is born from the divine essence of Aza'ra’s sacred moons and patron forces. The names are not remnants—they are original fusions of celestial influence and deific guidance.</p>
+    <table border="1" cellspacing="0" cellpadding="6">
+      <thead>
+        <tr>
+          <th>Month #</th>
+          <th>Aza'raan Name</th>
+          <th>Pronunciation</th>
+          <th>Naming Origin (Fusion Elements)</th>
+          <th>Essence &amp; Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td><span class="comic-sans-override">;">Eryphiren</span></td>
+          <td>Eh-rif-i-ren</td>
+          <td>Growth + Wind Magic (Eryndria + Zephyra)</td>
+          <td>Celebrating blossoming potential, this month channels the vitality of nature with the breath of arcane transformation. Air and life dance as one.</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><span class="comic-sans-override">;">Kaelvalla</span></td>
+          <td>Kayl-val-la</td>
+          <td>Forge + Storm (Kaelthar + Arvalla)</td>
+          <td>A time for creation under pressure. Storms spark inspiration as flame shapes form—this month honors craftsmanship, innovation, and elemental change.</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><span class="comic-sans-override">;">Morrkhanis</span></td>
+          <td>Mor-kha-nish</td>
+          <td>Ocean Depth + Fate (Morrigaen + Selkhanis)</td>
+          <td>Known as the Tide of Truth, this month governs intuition, transitions, and hidden wisdom. Dreams swell with destiny as tides shift the soul’s direction.</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td><span class="comic-sans-override">;">Wiosaneth</span></td>
+          <td>Wee-o-san-eth</td>
+          <td>Balance + Strife (W’iosamn + Vulkiris)</td>
+          <td>The Month of Duality. Harmony and discord hold equal sway. A time to weigh rebellion against order, with the moon casting calm light on internal conflict.</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td><span class="comic-sans-override">;">Myktheron</span></td>
+          <td>My-kthay-ron</td>
+          <td>Secrets + Cosmic Equilibrium (Myrekh + Aetheron)</td>
+          <td>Dedicated to the unseen and the in-between. This month fosters introspection, spiritual alignment, and the veiled balance between opposing forces.</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td><span class="comic-sans-override">;">Nyxarion</span></td>
+          <td>Nicks-ah-ree-on</td>
+          <td>Time + Endings (Nyxariel)</td>
+          <td>The Cycle’s Shadow. Marked by reflection, closure, and renewal, this month encourages preparation for what follows the end.</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td><span class="comic-sans-override">;">Raevulkis</span></td>
+          <td>Rae-vuhl-kis</td>
+          <td>Judgment + Rebellion (Raethelis + Vulkiris)</td>
+          <td>The Month of Reckoning. Righteous fury meets divine law—change through accountability, revolution tempered by clarity.</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td><span class="comic-sans-override">;">Zephkhaelis</span></td>
+          <td>Zeph-kay-lish</td>
+          <td>Wind + Craft (Zephyra + Kaelthar)</td>
+          <td>A season of brilliant invention. Inspired by arcane winds and artisanship, this month marks magical creation and imaginative expansion.</td>
+        </tr>
+      </tbody>
+    </table>
+  <div>
+  <h2>Aza’raan Calendar Structure</h2>
+  <table border="1" cellspacing="0" cellpadding="6">
+    <tbody>
+      <tr><td>Days per Month</td><td>30</td></tr>
+      <tr><td>Months per Year</td><td>8</td></tr>
+      <tr><td>Days per Week</td><td>6</td></tr>
+      <tr><td>Hours per Day</td><td>21 (split into 3 periods)</td></tr>
+      <tr><td>Work Week Structure</td><td>3-day work week per person</td></tr>
+      <tr><td>Workday Length</td><td>7 hours (legal/cultural)</td></tr>
+      <tr><td>Light Source Pattern</td><td>The dying sun emits a consistent dim glow, while the moons dictate the visual cycle, shifting illumination throughout the day.</td></tr>
+    </tbody>
+  </table>
+  <p>
+    <strong>Description:</strong><br>
+    The Aza’raan calendar follows a structured 8-month cycle, with each month containing 30 days. Time operates on a 6-day week, ensuring balance within daily life rhythms. The 21-hour day is divided into three distinct periods, shaping cultural and occupational cycles.<br>
+    The workweek system incorporates 3-day rotations, ensuring sustainability and alignment with natural cycles, reducing strain while maintaining productivity. Additionally, the diminishing sun creates a perpetual twilight, making the phases of Duvaen, W’iosamn, and Arvalla central to daily life and visual perception.
+  </p>
+</section>
+  <h2>Aza’raan Calendar Structure</h2>
+  <table border="1" cellspacing="0" cellpadding="6">
+    <tbody>
+      <tr><td>Days per Month</td><td>30</td></tr>
+      <tr><td>Months per Year</td><td>8</td></tr>
+      <tr><td>Days per Week</td><td>6</td></tr>
+      <tr><td>Hours per Day</td><td>21 (split into 3 periods)</td></tr>
+      <tr><td>Work Week Structure</td><td>3-day work week per person</td></tr>
+      <tr><td>Workday Length</td><td>7 hours (legal/cultural)</td></tr>
+      <tr><td>Light Source Pattern</td><td>The dying sun emits a consistent dim glow, while the moons dictate the visual cycle, shifting illumination throughout the day.</td></tr>
+    </tbody>
+  </table>
+  <p>
+    <strong>Description:</strong><br>
+    The Aza’raan calendar follows a structured 8-month cycle, with each month containing 30 days. Time operates on a 6-day week, ensuring balance within daily life rhythms. The 21-hour day is divided into three distinct periods, shaping cultural and occupational cycles.<br>
+    The workweek system incorporates 3-day rotations, ensuring sustainability and alignment with natural cycles, reducing strain while maintaining productivity. Additionally, the diminishing sun creates a perpetual twilight, making the phases of Duvaen, W’iosamn, and Arvalla central to daily life and visual perception.
+  </p>
+</section>
+<section>
+  <section id="Numbers in Azara">
+    <h2>Numbers in Aza’ra</h2>
+    <p>
+      Numbers in Aza’ra are more than mere symbols; they are echoes of the cosmic forces that shape existence. Rooted in divine balance and celestial cycles, the numerical system embodies structured harmony, flowing seamlessly through language, culture, and ritual.<br>
+      Each numeral carries distinct phonetic and symbolic weight, reflecting the interplay between order and change, stability and progression. Whether marking time, recording history, or shaping ritualistic invocations, numbers in Aza’raan are imbued with meaning, forming a bridge between the tangible and the metaphysical.<br>
+      Below, you’ll find the structured framework of Aza’raan’s numeric system, complete with its linguistic formation, symbolic associations, and phonetic elegance.
+    </p>
+
+    <section id="azaraan-numbers">
+      <h2>🔢 Number Formation in Aza’raan</h2>
+      <p>
+        Aza’raan numbers follow a structured yet melodically fluid system, emphasizing clarity, rhythmic cadence, and symbolic harmony.
+        Each numerical tier carries distinct phonological markers to preserve both meaning and aesthetic resonance.
+      </p>
+
+      <h3>✨ Teen Numbers (11–19)</h3>
+      <p>
+        Teen numbers are formed by prefixing the base unit with <strong><span class="comic-sans-override">;">Za</span>-</strong>, which denotes “ten and…”
+      </p>
+      <p><em>Example:</em> <strong><span class="comic-sans-override">;">Zaneh</span></strong> = 12 (“ten and two”)</p>
+      <p><strong>Pronounced:</strong> Zah-neh</p>
+
+      <h3>🔟 Tens (20–90)</h3>
+      <p>
+        Each multiple of ten carries a unique prefix or suffix, distinguishing it from base numerals and reflecting its tier within the counting system.
+      </p>
+      <table border="1" cellpadding="6" cellspacing="0">
+        <thead>
+          <tr>
+            <th>Number</th>
+            <th>Aza’raan Form</th>
+            <th>Structure</th>
+            <th>Pronunciation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>20</td><td><span class="comic-sans-override">;">‘neh</span></td><td><span class="comic-sans-override">;">‘</span> + neh</td><td>ai-neh</td></tr>
+          <tr><td>30</td><td><span class="comic-sans-override">;">Bduh</span></td><td><span class="comic-sans-override">;">B</span> + duh</td><td>Buh-duh</td></tr>
+          <tr><td>40</td><td><span class="comic-sans-override">;">Hmeh</span></td><td><span class="comic-sans-override">;">H</span> + meh</td><td>Heh-meh</td></tr>
+          <tr><td>50</td><td><span class="comic-sans-override">;">Gohd</span></td><td>goh + <span class="comic-sans-override">;">D</span> (suffix)</td><td>Gowd</td></tr>
+          <tr><td>60</td><td><span class="comic-sans-override">;">Mohm</span></td><td><span class="comic-sans-override">;">M</span> + ohm</td><td>Moh-mm</td></tr>
+          <tr><td>70</td><td><span class="comic-sans-override">;">Vreh</span></td><td><span class="comic-sans-override">;">V</span> + reh</td><td>Vah-reh</td></tr>
+          <tr><td>80</td><td><span class="comic-sans-override">;">Zahf</span></td><td>zah + <span class="comic-sans-override">;">F</span> (suffix)</td><td>Zah-ff</td></tr>
+          <tr><td>90</td><td><span class="comic-sans-override">;">Pshah</span></td><td><span class="comic-sans-override">;">P</span> + shah</td><td>Puh-shah</td></tr>
+        </tbody>
+      </table>
+
+      <h3>💯 Hundreds (100–900)</h3>
+      <p>
+        All hundreds begin with the root <strong><span class="comic-sans-override">;">Janu</span>-</strong>, signifying the "century" base. The unit number follows directly.
+      </p>
+      <p><em>Example:</em> <strong><span class="comic-sans-override">;">Janu^ih</span></strong> = 100 (one hundred)</p>
+      <p><em>Example:</em> <strong><span class="comic-sans-override">;">Janu^duh</span></strong> = 300 (three hundred)</p>
+      <p><strong>Pronounced:</strong> Jah-new-IH, Jah-new-DUH</p>
+
+      <h3>🌄 Thousands (1,000–9,000)</h3>
+      <p>
+        Thousands are constructed by placing the unit number before the suffix <strong>-<span class="comic-sans-override">;">chab</span></strong>, the Aza’raan marker of the thousand tier.
+      </p>
+      <p><em>Example:</em> <strong><span class="comic-sans-override">;">Ih`chab</span></strong> = 1,000</p>
+      <p><em>Example:</em> <strong><span class="comic-sans-override">;">Reh`chab</span></strong> = 7,000</p>
+      <p><strong>Pronounced:</strong> IH-chahb, REH-chahb</p>
+
+      <h3>🌌 Millions</h3>
+      <p>
+        Million-level numbers conclude with the suffix <strong>-<span class="comic-sans-override">;">Ailakur</span></strong>, an elevated term evoking vastness and significance.
+      </p>
+      <p><em>Example:</em> <strong><span class="comic-sans-override">;">Neh`ailakur</span></strong> = 2,000,000</p>
+      <p><strong>Pronounced:</strong> NEH-ail-ah-kur</p>
+
+      <h3>📜 General Formation Rules</h3>
+      <ul>
+        <li><strong>Descending Order:</strong> Numbers are always constructed from largest to smallest unit.
+          <br>→ <em>Example:</em> <strong><span class="comic-sans-override">;">Janu^duh‘neh</span></strong> = 320 (“three hundred and twenty”)
+          <br><strong>Pronounced:</strong> Jah-nu-DUH-ai-neh
+        </li>
+        <li><strong>No Connective Markers:</strong> Number segments are joined directly without conjunctions.</li>
+        <li><strong>Phonological Harmony:</strong> Components are designed to flow fluidly together, preserving Aza’raan’s musical quality in both casual and formal speech.</li>
+        <li><strong>Glottal &amp; Tonal Sensitivity:</strong> Glottal stops and consonant emphasis (e.g., <span class="comic-sans-override">;">‘ai-</span>, <span class="comic-sans-override">;">-f</span>, <span class="comic-sans-override">;">-chab</span>) reflect shifts in magnitude and semantic resonance.</li>
+      </ul>
+    <div>
+    <h3>General Rules for Number Formation</h3>
+    <ul>
+      <li><strong>Descending Order:</strong> Numbers are structured from largest value to smallest (e.g., millions → thousands → hundreds → tens → units).</li>
+      <li><strong>No Extra Markers:</strong> Components are combined directly without connectors.</li>
+      <li><strong>Pronunciation Harmony:</strong> Each component flows seamlessly, maintaining melodic rhythm in speech.</li>
+    </ul>
+  </section>
+<section>
+  <section id="Azaraan-Lexicon-Showcase">
+    <h2>✨ Aza’raan Lexicon Showcase</h2>
+    <p><em>These words exemplify the expressive depth, fusion of cultures, and spiritual cadence of the Aza’raan language.</em></p>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>English Word</th>
+          <th>Aza’raan Word</th>
+          <th>Pronunciation</th>
+          <th>Definition / Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>All</td>
+          <td class="azaraan-word">Kulahmi</td>
+          <td>Koo-lah-mee</td>
+          <td>From <strong>kulah</strong> (whole) + plural modifier <strong>-mi</strong></td>
+        </tr>
+        <tr>
+          <td>Dark / Shadow</td>
+          <td class="azaraan-word">Lomhasa</td>
+          <td>lo-mḥa-sha</td>
+          <td>Physical and spiritual darkness; Aarak + Aramaic fusion</td>
+        </tr>
+        <tr>
+          <td>Destiny / Fate</td>
+          <td class="azaraan-word">Loze’ka</td>
+          <td>Loh-ZAI-kah</td>
+          <td>Fated outcome or cosmic alignment</td>
+        </tr>
+        <tr>
+          <td>Ignite</td>
+          <td class="azaraan-word">Sarafa</td>
+          <td>sah-RAH-fah</td>
+          <td>To spark, burn, or initiate; raw creative power</td>
+        </tr>
+        <tr>
+          <td>Unbreakable</td>
+          <td class="azaraan-word">Nisuraiyaka</td>
+          <td>nee-soo-RAI-yah-kah</td>
+          <td><strong>ni</strong> (not) + <strong>suraiya</strong> (broken) + intensifier</td>
+        </tr>
+        <tr>
+          <td>Dream</td>
+          <td class="azaraan-word">Hahlon</td>
+          <td>HAH-lohn</td>
+          <td>Vision in sleep or prophecy</td>
+        </tr>
+        <tr>
+          <td>Fearless</td>
+          <td class="azaraan-word">Dahalae’ni</td>
+          <td>dah-HAH-lay-nee</td>
+          <td><strong>Dahalae</strong> (fear) + <strong>ni</strong> (not)</td>
+        </tr>
+        <tr>
+          <td>Heart</td>
+          <td class="azaraan-word">Lebeha</td>
+          <td>leh-BEH-hah</td>
+          <td>Emotional/spiritual core</td>
+        </tr>
+        <tr>
+          <td>Lightning</td>
+          <td class="azaraan-word">Barika</td>
+          <td>bah-REE-kah</td>
+          <td>Flash of divine or sky energy</td>
+        </tr>
+        <tr>
+          <td>Recreate</td>
+          <td class="azaraan-word">Baneya-Tuvaya</td>
+          <td>bah-NEH-yah-too-VAH-yah</td>
+          <td>To build again—rebirth and renewal</td>
+        </tr>
+        <tr>
+          <td>Whisper</td>
+          <td class="azaraan-word">Khasasa</td>
+          <td>khah-SAH-sah</td>
+          <td>Sacred murmur or secret knowledge</td>
+        </tr>
+        <tr>
+          <td>Surrender</td>
+          <td class="azaraan-word">Savaqa</td>
+          <td>sah-VAH-kah</td>
+          <td>To release, let go, or yield</td>
+        </tr>
+        <tr>
+          <td>Voice / Word</td>
+          <td class="azaraan-word">Dovrah</td>
+          <td>DOHV-rah</td>
+          <td>Uttered truth; sacred speech</td>
+        </tr>
+        <tr>
+          <td>Understand</td>
+          <td class="azaraan-word">Minaseka</td>
+          <td>mi-na-SHE-ka</td>
+          <td>Deep comprehension—mental and emotional</td>
+        </tr>
+        <tr>
+          <td>Spirit / Ghost</td>
+          <td class="azaraan-word">Ruklim</td>
+          <td>ROOK-leem</td>
+          <td>Disembodied soul; ancestral echo</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+<footer>
+  <section>
+    <h2>🌌 Thank You for Exploring Aza’ra</h2>
+    <p>
+      Your curiosity means everything. Whether you’re a linguist, gamer, worldbuilder, or dreamer—thank you for taking the time to explore the language, glyphs, and soul of <strong>Aza’ra</strong> and the <em>Aza’raan</em> script.
+    </p>
+    <p>
+      This living language is a gift of story, structure, and survival—and you’re now part of its legacy.
+    </p>
+    <p> 
+      💜 Support the creator and learn more about the lore, linguistic design, and metaphysical themes—<strong>William Blake Saville</strong> (aka <code>#TheTransgenderTRex</code>)—an autistic, low-income, bedridden trans man, via 
+      <a href="https://linktr.ee/thetransgendertrex" target="_blank" rel="noopener noreferrer">
+        support the creator
+      </a>
+    </p>
+  </section>
+
+  <!-- 
+    © Aza’ra™ and Aza’raan™ Language System  
+    Created by William Blake Saville (aka #TheTransgenderTRex)
+  -->
+</footer>
+</body>
+</html>
