@@ -179,56 +179,19 @@ a:hover, a:focus, .button-link:hover {
   border: 2px solid var(--silver);
 }
 
-/* === TABLES === */
-table {
+/* === TABLE WRAPPER === */
+.table-wrapper {
   width: 100%;
-  border-collapse: collapse;
-  margin-top: 2rem;
-  background-color: rgba(255, 255, 255, 0.94); /* subtle transparency */
-  border: 2px solid var(--cyan);
-  color: #000000;
-  font-family: 'Times New Roman', serif;
-  border-radius: 8px;
-  backdrop-filter: blur(1px); /* subtle background diffusion */
-}
-
-th, td {
-  padding: 1rem;
-  text-align: center; /* center all content */
-  vertical-align: middle;
-  opacity: 1;
-  border-bottom: 1px solid var(--cyan);
-}
-
-/* Column headers */
-th {
-  font-size: 2rem;       /* h1 size */
-  font-weight: bold;
-  border-bottom: 2px solid var(--cyan);
-  text-transform: uppercase;
-}
-
-/* Table contents */
-td {
-  font-size: 1.5rem;      /* h2 size */
-  font-weight: bold;
-}
-
-/* Optional: Allow opt-out with specific classes */
-td.no-bold,
-td.override,
-td[class*="note"],
-td[class*="phonetic"] {
-  font-weight: normal;
-  font-size: 1.2rem; /* slightly reduced for annotations or side info */
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
 }
 
 /* === TABLES === */
 table {
-  width: 100%;
+  min-width: 100%; /* allows horizontal scroll when needed */
   border-collapse: collapse;
   margin-top: 2rem;
-  background-color: rgba(255, 255, 255, 0.94); /* subtle transparency */
+  background-color: rgba(255, 255, 255, 0.94);
   border: 2px solid var(--cyan);
   color: #000000;
   font-family: 'Times New Roman', serif;
@@ -285,13 +248,11 @@ footer {
   direction: rtl;
 }
 
-/* Reset text direction for children */
 footer * {
   direction: ltr;
   text-align: center;
 }
 
-/* Custom Scrollbar */
 footer::-webkit-scrollbar {
   width: 12px;
 }
@@ -313,16 +274,9 @@ footer {
 }
 
 /* === RESPONSIVE === */
-@media (min-width: 1025px) {
-  body::before {
-    background-size: cover;
-  }
-}
-
 @media (min-width: 768px) and (max-width: 1024px) {
-  body::before {
-    background-size: contain;
-    background-position: center top;
+  .table-wrapper {
+    overflow-x: auto;
   }
 
   table th {
@@ -335,18 +289,18 @@ footer {
 }
 
 @media (max-width: 767px) {
-  body::before {
-    background-size: contain;
-    background-position: center top;
+  .table-wrapper {
+    overflow-x: auto;
   }
 
   table {
     font-size: 0.9rem;
-    display: block;
-    overflow-x: auto;
+    min-width: 100%;
+    display: table;
   }
 
-  table th, table td {
+  table th,
+  table td {
     padding: 0.5rem;
     min-width: 120px;
     font-size: 1.1rem;
@@ -482,7 +436,7 @@ div[aria-label="Font"] div[style*="Pacifico"] {
     Zephyra rides the celestial wind—an ethereal force of change, mystery, and inspiration. Alad divine essence is felt in every whispering gust and storm-carried dream. Draped in aether-silk, with fans of divine force and glowing wind tattoos, Al commands the breath between moments.
   </p>
 
-  <h3>⚙️ Class: Tempest Ascendant</h3>
+  <h3>⚙️ Class: Tempest Ascendant (for “Aza’ra, the MMORPG I’m in the process of inventing)</h3>
   <ul>
     <li><strong>Role:</strong> Living embodiment of the storm</li>
     <li><strong>Sub-Classes:</strong>
@@ -562,7 +516,7 @@ div[aria-label="Font"] div[style*="Pacifico"] {
     Eryndria brings life to ash and bloom to sorrow. From Tasad robes of moss and blossoms to Tasad scythe and Seed of Renewal, Tasad presence reshapes despair into promise. Wherever Tas walks, nature quickens—life follows.
   </p>
 
-  <h3>⚙️ Class: Thornweaver</h3>
+  <h3>⚙️ Class: Thornweaver (for “Aza’ra, the MMORPG I’m in the process of inventing)</h3>
   <ul>
     <li><strong>Role:</strong> Sacred gardener of destruction and rebirth</li>
     <li><strong>Sub-Classes:</strong>
