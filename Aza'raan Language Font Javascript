@@ -1,8 +1,8 @@
-// ==UserScript==
-// @name         Aza'raan Full Font Override (Pacifico + Grammar Columns)
+// ==UserScript1==
+// @name         Aza'raan Full Font Override (Pacifico via Google Applications)
 // @namespace    https://github.com/thetransgendertrex
 // @version      4.0
-// @description  Replaces "Pacifico" with "Azaraan" in Google Docs, Drive apps, and specific grammar table columns based on headers.
+// @description  Replaces "Pacifico" with "Azaraan" in Google Docs, and Drive apps
 // @author       William Saville
 // @match        https://docs.google.com/*
 // @match        https://slides.google.com/*
@@ -11,33 +11,38 @@
 // @match        https://drive.google.com/*
 // @match        https://drawings.google.com/*
 // @grant        none
-// ==/UserScript==
-
+// ==/UserScript1==
+// ==UserScript2==
+// @name         Aza'raan Font Override (index.html & readme.md only)
+// @namespace    https://github.com/thetransgendertrex
+// @version      4.1
+// @description  Pulls Aza'raan font from https://github.com/thetransgendertrex/Azaraanlanguage/blob/main/Aza%27raan%20Planet%20Language.ttf?raw=true to use within targeted classes within index.html and readme.md
+// @author       William Saville
+// @match        *://*/index.html
+// @match        *://*/README.md
+// @grant        none
+// ==/UserScript2==
 (function () {
-  'use strict';
-
-  const AZARAAN_FONT = "'Azaraan', cursive !important";
-  const TARGET_HEADERS = [
-    "Glyph", "Aza'raan Word", "Aza'raan", "Subj", "Obj", "Poss", "Reflexive",
-    "example", "Example Root", "Example Result", "Plural Identity", "Subject",
-    "Object", "Possessive", "Example(s)", "Time Format", "Aza'raan Hour", "Aza'raan Name"
+  const FONT_NAME = "'Azaraan', cursive !important";
+  const FONT_URL = 'https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Planet%20Language.ttf';
+  const CLASS_SELECTORS = [
+    '.azaraan-word',
+    '.azaraan-phrase',
+    '.azaraan-fusion-form'
   ];
 
-  // Inject @font-face for Azaraan
-  if (!document.getElementById("azaraan-font-face")) {
-    const fontFace = document.createElement("style");
-    fontFace.id = "azaraan-font-face";
-    fontFace.textContent = `
-      @font-face {
-        font-family: 'Azaraan';
-        src: url('https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Planet%20Language.ttf') format('truetype');
-        font-display: swap;
-      }
-    `;
-    document.head.appendChild(fontFace);
-  }
+  // Inject font-face definition
+  const fontFace = document.createElement('style');
+  fontFace.textContent = `
+    @font-face {
+      font-family: 'Azaraan';
+      src: url('${FONT_URL}') format('truetype');
+      font-display: swap;
+    }
+  `;
+  document.head.appendChild(fontFace);
 
-  // Inject fallback CSS to replace Pacifico with Azaraan
+  // Inject fallback replacement for Pacifico
   const style = document.createElement('style');
   style.textContent = `
     [style*="font-family:Pacifico"],
@@ -61,42 +66,22 @@
     [aria-label*="Pacifico"] {
       font-family: 'Azaraan' !important;
       font-size: 2em !important;
-      color: #70389c !important;
+      color: rgb(0, 128, 128) !important;
       font-style: normal !important;
       font-weight: normal !important;
       line-height: 1.2 !important;
     }
-
-    *:not([style*="Pacifico"]):not(.docs-texteventtarget-font-Pacifico) {
-      font-family: inherit !important;
-    }
   `;
   document.head.appendChild(style);
 
-  // Mutation observer for column overrides and dropdown label rename
+  // Observe and patch dynamically loaded content
   const observer = new MutationObserver(() => {
-    // Force override all direct uses of Pacifico
-    document.querySelectorAll('[style*="font-family: Pacifico"]').forEach(el => {
-      el.style.fontFamily = AZARAAN_FONT;
-    });
-
-    // Force table column overrides by header label
-    document.querySelectorAll("table").forEach(table => {
-      const headers = Array.from(table.querySelectorAll("thead th"));
-      headers.forEach((th, index) => {
-        const headerText = th.textContent.trim().toLowerCase();
-        if (TARGET_HEADERS.map(h => h.toLowerCase()).includes(headerText)) {
-          table.querySelectorAll("tbody tr").forEach(row => {
-            const cell = row.cells[index];
-            if (cell) {
-              cell.style.fontFamily = AZARAAN_FONT;
-            }
-          });
-        }
+    CLASS_SELECTORS.forEach(selector => {
+      document.querySelectorAll(selector).forEach(el => {
+        el.style.fontFamily = FONT_NAME;
       });
     });
 
-    // Visually rename dropdown label
     document.querySelectorAll('[aria-label="Pacifico"]').forEach(el => {
       if (el.textContent !== "Azaraan") {
         el.textContent = "Azaraan";
@@ -110,4 +95,99 @@
     attributes: true,
     characterData: true
   });
+
+  // Set theme variables
+  const root = document.documentElement;
+  const cssVars = {
+    '--moonlight': '#c0f7f2',
+    '--dreamlight': '#b59fff',
+    '--glacial': '#d1ecf6',
+    '--moss': '#7ec98d',
+    '--coral': '#f2b8a0',
+    '--ember': '#ffae66',
+    '--obsidian': '#1e1f26',
+    '--silver': '#dfeaf0',
+    '--cyan': '#00f6ff',
+    '--highlight': '#ffffff',
+    '--glow': '#82f2f2',
+    '--prism': 'linear-gradient(135deg, #b59fff, #c0f7f2, #7ec98d, #f2b8a0)'
+  };
+  Object.entries(cssVars).forEach(([key, val]) => {
+    root.style.setProperty(key, val);
+  });
+
+  // Initial font application pass
+  function applyAzaraanFont() {
+    CLASS_SELECTORS.forEach(selector => {
+      document.querySelectorAll(selector).forEach(el => {
+        el.style.fontFamily = FONT_NAME;
+      });
+    });
+  }
+  applyAzaraanFont();
+
+  // Responsive styling
+  function applyResponsiveStyles() {
+    const width = window.innerWidth;
+    document.body.style.padding = '';
+    document.body.style.fontSize = '';
+
+    if (width >= 768 && width <= 1024) {
+      document.body.style.padding = '1.5rem';
+      document.body.style.fontSize = '1rem';
+      document.querySelectorAll('h1').forEach(el => {
+        el.style.fontSize = '2.2rem';
+        el.style.padding = '0.75rem 1rem';
+      });
+      document.querySelectorAll('h2').forEach(el => el.style.fontSize = '1.75rem');
+      document.querySelectorAll('h3').forEach(el => el.style.fontSize = '1.3rem');
+      document.querySelectorAll('section, .section').forEach(el => {
+        el.style.padding = '1rem';
+        el.style.marginBottom = '2rem';
+      });
+      document.querySelectorAll('table th, table td').forEach(el => {
+        el.style.padding = '0.75rem';
+        el.style.fontSize = '0.95rem';
+      });
+      document.querySelectorAll('a, footer a').forEach(el => {
+        el.style.fontSize = '0.95rem';
+        el.style.padding = '0.3em 0.65em';
+      });
+    } else if (width < 768) {
+      document.body.style.padding = '1rem';
+      document.body.style.fontSize = '0.95rem';
+      document.querySelectorAll('h1').forEach(el => {
+        el.style.fontSize = '1.8rem';
+        el.style.padding = '0.6rem 0.8rem';
+      });
+      document.querySelectorAll('h2').forEach(el => el.style.fontSize = '1.4rem');
+      document.querySelectorAll('h3').forEach(el => el.style.fontSize = '1.1rem');
+      document.querySelectorAll('section, .section').forEach(el => {
+        el.style.padding = '0.8rem';
+        el.style.marginBottom = '1.5rem';
+      });
+      document.querySelectorAll('table').forEach(el => {
+        el.style.fontSize = '0.9rem';
+        el.style.display = 'block';
+        el.style.overflowX = 'auto';
+      });
+      document.querySelectorAll('table th, table td').forEach(el => {
+        el.style.padding = '0.5rem';
+        el.style.minWidth = '120px';
+      });
+      document.querySelectorAll('ul').forEach(el => el.style.paddingLeft = '1rem');
+      document.querySelectorAll('a, footer a').forEach(el => {
+        el.style.fontSize = '0.9rem';
+        el.style.padding = '0.25em 0.5em';
+        el.style.margin = '0.2rem 0';
+      });
+      document.querySelectorAll('footer').forEach(el => {
+        el.style.fontSize = '0.8rem';
+        el.style.padding = '1.2rem 0.8rem';
+      });
+    }
+  }
+
+  applyResponsiveStyles();
+  window.addEventListener('resize', applyResponsiveStyles);
 })();
