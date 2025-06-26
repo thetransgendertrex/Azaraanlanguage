@@ -1,9 +1,151 @@
+/* ──────────────✦ Global Aesthetic with Moonpunk Image Background ✦──────────────
+Background replaced by AI-generated Moonpunk Settlement image,
+fitting desktop, tablet, and mobile with fixed position and footer fixed at bottom.
+*/
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  color: #cceeff;
+  background: transparent;
+}
+
+/* Background image fixed behind everything */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+  background-image: url("https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza'ra%20Moonpunk%20Settlement%20(AI%20Generated)");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; /* cover to fill the screen without distortion */
+  filter: brightness(0.85) contrast(1.05);
+}
+
+/* overlay to subtly darken the image for text readability */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background: radial-gradient(ellipse at center, rgba(11,29,38,0.5) 0%, rgba(4,13,18,0.8) 100%);
+  pointer-events: none;
+}
+
+/* === VARIABLES === */
+:root {
+  --black: #000000;
+  --cyan: #00ffff;
+  --silver: #c0c0c0;
+
+  --moonpunk-primary: #a8e4ff;
+  --moonpunk-primary-shadow: 1.2px 1.2px #347694;
+
+  --moonpunk-secondary: #ffc0cb;
+  --moonpunk-secondary-shadow: 1px 1px #914452;
+
+  --moonpunk-tertiary: #aaffc3;
+  --moonpunk-tertiary-shadow: 0.8px 0.8px #0a5420;
+
+  --moonpunk-quaternary: #e6ccff;
+  --moonpunk-quaternary-shadow: 0.6px 0.6px #531f63;
+
+  --text-body: #ffffff;
+  --text-body-shadow: 0.4px 0.4px #4a5d23;
+}
+
+/* === BASE STYLES === */
+body {
+  /* foreground content */
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: var(--text-body);
+  font-family: 'Times New Roman', serif;
+  line-height: 1.6;
+  padding: 2rem;
+  overflow-y: scroll;
+  z-index: 0; /* ensure in front of background */
+}
+
+h1, h2, h3, h4 {
+  font-family: serif;
+  margin-bottom: 0.5em;
+  text-shadow: var(--text-body-shadow);
+  opacity: 1; /* keep text fully opaque */
+}
+
+h1 {
+  color: var(--moonpunk-primary);
+  text-shadow: var(--moonpunk-primary-shadow);
+  font-size: 2.75rem;
+  border-bottom: 2px solid var(--cyan);
+  padding-bottom: 0.5rem;
+}
+
+h2 {
+  color: var(--moonpunk-secondary);
+  text-shadow: var(--moonpunk-secondary-shadow);
+  font-size: 2rem;
+}
+
+h3 {
+  color: var(--moonpunk-tertiary);
+  text-shadow: var(--moonpunk-tertiary-shadow);
+  font-size: 1.5rem;
+}
+
+h4 {
+  color: var(--moonpunk-quaternary);
+  text-shadow: var(--moonpunk-quaternary-shadow);
+  font-size: 1.25rem;
+}
+
+/* === LINKS & BUTTONS === */
+a, footer a, .button-link {
+  background-color: rgba(0, 255, 255, 0.6);
+  color: var(--black);
+  font-family: 'Times New Roman', serif;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.35em 0.75em;
+  border-radius: 5px;
+  border: 2px solid var(--silver);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-size: 1rem;
+  user-select: none;
+  margin: 0.3rem 0;
+  display: inline-block;
+}
+
+a:hover, a:focus, .button-link:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: var(--cyan);
+  border: 2px solid var(--silver);
+}
+/* === TABLE WRAPPER === */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+}
+
 /* === TABLES === */
 table {
-  width: 100%;
+  min-width: 100%; /* allows horizontal scroll when needed */
   border-collapse: collapse;
   margin-top: 2rem;
-  background-color: rgba(255, 255, 255, 0.94); /* subtle transparency */
+  background-color: rgba(255, 255, 255, 0.94);
   border: 2px solid var(--cyan);
   color: #000000;
   font-family: 'Times New Roman', serif;
@@ -60,13 +202,11 @@ footer {
   direction: rtl;
 }
 
-/* Reset text direction for children */
 footer * {
   direction: ltr;
   text-align: center;
 }
 
-/* Custom Scrollbar */
 footer::-webkit-scrollbar {
   width: 12px;
 }
@@ -88,16 +228,9 @@ footer {
 }
 
 /* === RESPONSIVE === */
-@media (min-width: 1025px) {
-  body::before {
-    background-size: cover;
-  }
-}
-
 @media (min-width: 768px) and (max-width: 1024px) {
-  body::before {
-    background-size: contain;
-    background-position: center top;
+  .table-wrapper {
+    overflow-x: auto;
   }
 
   table th {
@@ -110,15 +243,14 @@ footer {
 }
 
 @media (max-width: 767px) {
-  body::before {
-    background-size: contain;
-    background-position: center top;
+  .table-wrapper {
+    overflow-x: auto;
   }
 
   table {
     font-size: 0.9rem;
-    display: block;
-    overflow-x: auto;
+    min-width: 100%;
+    display: table;
   }
 
   table th, table td {
@@ -139,4 +271,25 @@ footer {
     padding: 1.2rem 0.8rem;
     height: 150px;
   }
+}
+/* === Comic Sans Override (GitHub index.html and lore.html only) === */
+body[data-doc-name*="index"],
+body[data-doc-name*="lore"] {
+  font-family: 'Comic Sans MS', cursive, sans-serif !important;
+}
+
+/* === Aza'raan Font Substitution for Individual Words or Phrases === */
+.azaraan-word {
+  font-family: 'Azaraan', cursive;
+  color: var(--cyan);
+  text-shadow: 0 0 0.3px #014d4e;
+}
+
+/* === Google Apps: Replace Pacifico with Aza'raan in Font Dropdown === */
+/* Affects visible Pacifico items so "Aza'raan" appears in its glyph form */
+div[aria-label="Font"] span[style*="Pacifico"],
+div[aria-label="Font"] div[style*="Pacifico"] {
+  font-family: 'Azaraan', cursive !important;
+  font-size: 18px !important;
+  color: #000000;
 }
