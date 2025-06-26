@@ -1,51 +1,62 @@
 {
   "manifest_version": 3,
-  "name": "Aza'raan Font Override for Google Apps",
-  "version": "3.3.0",
-  "description": "Overrides the Pacifico font in Google Docs, Sheets, Slides, Forms, Drawings, and Drive with the Aza'raan language font. Built for identity, inclusion, and survival.",
-  "author": "William Blake Saville (aka The Transgender T-Rex)",
+  "name": "Aza’raan Font + Moonpunk Theme",
+  "version": "4.0",
+  "description": "Overrides Pacifico in Google Docs, Sheets, Slides, Forms, and Drive with the Aza’raan glyphic font. Applies a Moonpunk–Cyber-Glyphic interface. Built by William Blake Saville (#TheTransgenderTRex) for identity, inclusion, and survival.",
+  "author": "William Blake Saville (aka #TheTransgenderTRex)",
   "homepage_url": "https://github.com/thetransgendertrex/Azaraanlanguage",
+
   "action": {
-    "default_title": "Aza'raan Language Viewer",
+    "default_title": "Aza’raan Language Viewer",
     "default_popup": "index.html"
   },
+
   "icons": {
-    "48": "icon48.png",
-    "128": "icon128.png"
+    "48": "https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/icon48.png",
+    "128": "https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/icon128.png"
   },
+
   "permissions": [],
+
+  "host_permissions": [
+    "https://docs.google.com/*",
+    "https://drive.google.com/*",
+    "https://slides.google.com/*",
+    "https://forms.google.com/*",
+    "https://sheets.google.com/*",
+    "https://drawings.google.com/*"
+  ],
+
   "content_scripts": [
     {
       "matches": [
         "https://docs.google.com/*",
-        "https://slides.google.com/*",
-        "https://sheets.google.com/*",
-        "https://forms.google.com/*",
         "https://drive.google.com/*",
+        "https://slides.google.com/*",
+        "https://docs.google.com/forms/*",
+        "https://docs.google.com/spreadsheets/*",
         "https://drawings.google.com/*"
       ],
-      "js": [
-        "override.js"
-      ],
-      "css": [
-        "Azaraan-Language-Font-CSS.css"
-      ],
+      "js": ["override.js"],
+      "css": ["Azaraan-Language-Font-CSS.css"],
       "run_at": "document_idle"
     }
   ],
+
   "web_accessible_resources": [
     {
       "resources": [
         "index.html",
+        "README.md",
         "Azaraan-Planet-Language.ttf",
-        "Azaraan-Language-Font-Javascript.js",
-        "override.js",
         "Azaraan-Language-Font-CSS.css",
-        "README.md"
+        "Azaraan-Language-Font-Javascript.js",
+        "override.js"
       ],
       "matches": ["<all_urls>"]
     }
   ],
+
   "content_security_policy": {
     "extension_pages": "script-src 'self'; object-src 'self';"
   }
