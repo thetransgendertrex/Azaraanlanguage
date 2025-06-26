@@ -1,3 +1,47 @@
+/* ──────────────✦ Global Aesthetic with Moonpunk Image Background ✦──────────────
+Background replaced by AI-generated Moonpunk Settlement image,
+fitting desktop, tablet, and mobile with fixed position and footer fixed at bottom.
+*/
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  color: #cceeff;
+  background: transparent;
+}
+
+/* Background image fixed behind everything */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+  background-image: url("https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza'ra%20Moonpunk%20Settlement%20(AI%20Generated)");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; /* cover to fill the screen without distortion */
+  filter: brightness(0.85) contrast(1.05);
+}
+
+/* Optional overlay to subtly darken the image for text readability */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background: radial-gradient(ellipse at center, rgba(11,29,38,0.5) 0%, rgba(4,13,18,0.8) 100%);
+  pointer-events: none;
+}
+
 /* === VARIABLES === */
 :root {
   --black: #000000;
@@ -22,17 +66,22 @@
 
 /* === BASE STYLES === */
 body {
-  background-color: var(--black);
+  /* foreground content */
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.85);
   color: var(--text-body);
   font-family: 'Times New Roman', serif;
   line-height: 1.6;
   padding: 2rem;
+  overflow-y: scroll;
+  z-index: 0; /* ensure in front of background */
 }
 
 h1, h2, h3, h4 {
   font-family: serif;
   margin-bottom: 0.5em;
   text-shadow: var(--text-body-shadow);
+  opacity: 1; /* keep text fully opaque */
 }
 
 h1 {
@@ -63,7 +112,7 @@ h4 {
 
 /* === LINKS & BUTTONS === */
 a, footer a, .button-link {
-  background-color: var(--cyan);
+  background-color: rgba(0, 255, 255, 0.6);
   color: var(--black);
   font-family: 'Times New Roman', serif;
   font-weight: 600;
@@ -80,31 +129,9 @@ a, footer a, .button-link {
 }
 
 a:hover, a:focus, .button-link:hover {
-  background-color: var(--black);
+  background-color: rgba(0, 0, 0, 0.6);
   color: var(--cyan);
   border: 2px solid var(--silver);
-}
-
-/* === AZARAAN FONT SUBSTITUTION === */
-.azaraan-word {
-  font-family: 'Azaraan', cursive;
-  color: #014d4e;
-  text-shadow: 0 0 2px var(--cyan);
-}
-
-/* === Comic Sans Override for INDEX and README only === */
-body[data-doc-name*="index"],
-body[data-doc-name*="readme"] {
-  font-family: 'Comic Sans MS', cursive, sans-serif !important;
-}
-
-/* === Google Apps Font Dropdown Override === */
-div[aria-label="Font"] span[style*="Comic Sans"],
-div[aria-label="Font"] div[style*="Comic Sans"] {
-  font-family: 'Azaraan', cursive !important;
-  font-size: 16px !important;
-  color: #014d4e;
-  text-shadow: 0 0 2px var(--cyan);
 }
 
 /* === TABLES === */
@@ -112,17 +139,19 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 2rem;
-  background-color: #ffffff;
+  background-color: #ffffff; /* solid */
   border: 2px solid var(--cyan);
   color: #000000;
   font-family: 'Times New Roman', serif;
   border-radius: 8px;
+  opacity: 1; /* force solid visibility */
 }
 
 th, td {
   padding: 1rem;
   text-align: left;
   border-bottom: 1px solid var(--cyan);
+  opacity: 1; /* text fully opaque */
 }
 
 th {
@@ -135,21 +164,45 @@ td {
   font-size: 0.9375rem;
 }
 
-/* === FOOTER === */
+/* Footer stays fixed at bottom */
 footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   background: white;
-  border-top: 2px solid var(--cyan);
-  color: var(--black);
+  color: #111;
   text-align: center;
   font-family: 'Times New Roman', serif;
   font-size: 0.9rem;
   padding: 2rem 1rem;
-  margin-top: 5rem;
-  border-radius: 0 0 8px 8px;
+  border-top: 2px solid #00ffee;
+  z-index: 10;
   font-weight: bold;
+  border-radius: 0 0 8px 8px;
 }
 
 /* === RESPONSIVE === */
+@media (min-width: 1025px) {
+  body::before {
+    background-size: cover; /* fill entire viewport */
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  body::before {
+    background-size: contain;
+    background-position: center top;
+  }
+}
+
+@media (max-width: 767px) {
+  body::before {
+    background-size: contain;
+    background-position: center top;
+  }
+}
+
 @media (max-width: 1024px) {
   body {
     padding: 1.5rem;
@@ -216,4 +269,25 @@ footer {
     font-size: 0.8rem;
     padding: 1.2rem 0.8rem;
   }
+}
+/* === Comic Sans Override (GitHub index.html and README.md only) === */
+body[data-doc-name*="index"],
+body[data-doc-name*="readme"] {
+  font-family: 'Comic Sans MS', cursive, sans-serif !important;
+}
+
+/* === Aza'raan Font Substitution for Individual Words or Phrases === */
+.azaraan-word {
+  font-family: 'Azaraan', cursive;
+  color: #014d4e;
+  text-shadow: 0 0 2px var(--cyan);
+}
+
+/* === Google Apps: Replace Pacifico with Aza'raan in Font Dropdown === */
+/* Affects visible Pacifico items so "Aza'raan" appears in its glyph form */
+div[aria-label="Font"] span[style*="Pacifico"],
+div[aria-label="Font"] div[style*="Pacifico"] {
+  font-family: 'Azaraan', cursive !important;
+  font-size: 18px !important;
+  color: #000000;
 }
