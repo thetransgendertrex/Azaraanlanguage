@@ -46,17 +46,28 @@
   "web_accessible_resources": [
     {
       "resources": [
+        "https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/index.html",
+        "https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/lore.html",
+        "https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Azaraan-Planet-Language.ttf",
+        "https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Azaraan-Language-Font-CSS.css",
+        "https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Azaraan-Language-Font-Javascript.js",
+        "https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/override.js",
+        "https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27ra%20Moonpunk%20Settlement%20(AI%20Generated).JPG"
+      ]
+    },
+    {
+      "resources": [
         "index.html",
-        "README.md",
-        "Azaraan-Planet-Language.ttf",
-        "Azaraan-Language-Font-CSS.css",
-        "Azaraan-Language-Font-Javascript.js",
-        "override.js"
+        "lore.html",
+        "Azaaran_language.js",
+        "Azaaran_language.css",
+        "Aza'ra Moonpunk Settlement (AI Generated).JPG",
+        "Override.js",
+        "Azaraan_Planet_Language.ttf"
       ],
       "matches": ["<all_urls>"]
     }
   ],
-
   "content_security_policy": {
     "extension_pages": "script-src 'self'; object-src 'self';"
   }
