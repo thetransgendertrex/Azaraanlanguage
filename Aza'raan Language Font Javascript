@@ -1,8 +1,8 @@
-// ==UserScript1==
-// @name         Aza'raan Full Font Override (Pacifico via Google Applications)
+// ==UserScript==
+// @name         Aza'raan Font + Table Styling + Responsive Layout
 // @namespace    https://github.com/thetransgendertrex
-// @version      4.0
-// @description  Replaces "Pacifico" with "Azaraan" in Google Docs, and Drive apps
+// @version      5.0
+// @description  Replaces Pacifico with Azaraan, applies moonpunk theme vars, and injects strict table + responsive layout styles
 // @author       William Saville
 // @match        https://docs.google.com/*
 // @match        https://slides.google.com/*
@@ -10,18 +10,10 @@
 // @match        https://forms.google.com/*
 // @match        https://drive.google.com/*
 // @match        https://drawings.google.com/*
-// @grant        none
-// ==/UserScript1==
-// ==UserScript2==
-// @name         Aza'raan Font Override (index.html & readme.md only)
-// @namespace    https://github.com/thetransgendertrex
-// @version      4.1
-// @description  Pulls Aza'raan font from https://github.com/thetransgendertrex/Azaraanlanguage/blob/main/Aza%27raan%20Planet%20Language.ttf?raw=true to use within targeted classes within index.html and readme.md
-// @author       William Saville
 // @match        *://*/index.html
 // @match        *://*/README.md
 // @grant        none
-// ==/UserScript2==
+// ==/UserScript==
 (function () {
   const FONT_NAME = "'Azaraan', cursive !important";
   const FONT_URL = 'https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Planet%20Language.ttf';
@@ -31,7 +23,7 @@
     '.azaraan-fusion-form'
   ];
 
-  // Inject font-face definition
+  // Inject @font-face
   const fontFace = document.createElement('style');
   fontFace.textContent = `
     @font-face {
@@ -42,7 +34,7 @@
   `;
   document.head.appendChild(fontFace);
 
-  // Inject fallback replacement for Pacifico
+  // Inject Pacifico override + table styles
   const style = document.createElement('style');
   style.textContent = `
     [style*="font-family:Pacifico"],
@@ -71,24 +63,55 @@
       font-weight: normal !important;
       line-height: 1.2 !important;
     }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2rem;
+      background-color: #ffffff;
+      border: 2px solid var(--cyan);
+      color: #000000;
+      font-family: 'Times New Roman', serif;
+      box-shadow: none;
+      border-radius: 8px;
+    }
+
+    th, td {
+      padding: 1rem;
+      text-align: left;
+      color: #000000;
+      border-bottom: 1px solid var(--cyan);
+    }
+
+    th {
+      font-size: 1.125rem;
+      background-color: #ffffff;
+      font-weight: bold;
+      border-bottom: 2px solid var(--cyan);
+    }
+
+    td {
+      font-size: 0.9375rem;
+      background-color: #ffffff;
+    }
+
+    tr:hover {
+      background-color: rgba(0, 255, 255, 0.1);
+    }
   `;
   document.head.appendChild(style);
 
-  // Observe and patch dynamically loaded content
+  // Observe and apply Azaraan class styles
   const observer = new MutationObserver(() => {
     CLASS_SELECTORS.forEach(selector => {
       document.querySelectorAll(selector).forEach(el => {
         el.style.fontFamily = FONT_NAME;
       });
     });
-
     document.querySelectorAll('[aria-label="Pacifico"]').forEach(el => {
-      if (el.textContent !== "Azaraan") {
-        el.textContent = "Azaraan";
-      }
+      if (el.textContent !== "Azaraan") el.textContent = "Azaraan";
     });
   });
-
   observer.observe(document.body, {
     childList: true,
     subtree: true,
@@ -96,7 +119,7 @@
     characterData: true
   });
 
-  // Set theme variables
+  // Set Moonpunk color variables
   const root = document.documentElement;
   const cssVars = {
     '--moonlight': '#c0f7f2',
@@ -116,7 +139,7 @@
     root.style.setProperty(key, val);
   });
 
-  // Initial font application pass
+  // Apply Azaraan font to static matches
   function applyAzaraanFont() {
     CLASS_SELECTORS.forEach(selector => {
       document.querySelectorAll(selector).forEach(el => {
@@ -126,7 +149,7 @@
   }
   applyAzaraanFont();
 
-  // Responsive styling
+  // Responsive layout styling
   function applyResponsiveStyles() {
     const width = window.innerWidth;
     document.body.style.padding = '';
