@@ -1,27 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<section id="responsive-message" class="responsive-highlight">
-  <h2>📱 Aza'raan on Mobile & Tablet</h2>
-  <p>This section adjusts beautifully across devices. Try resizing your window to see the responsive effects take place—fonts, padding, and layout all adapt smoothly to your screen.</p>
-</section>
 <head>
   <meta charset="UTF-8" />
-  <title>Aza’raan Font + Moonpunk Theme</title>
+  <title>Welcome To The World Of Aza'ra!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
 
-  <!-- Aza’raan Font CSS (linked and backed by local font-face) -->
+  <!-- Optional external Aza'raan CSS if desired -->
   <link rel="stylesheet" href="https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Language%20Font%20CSS.css" />
 
+  <!-- Steamwreck Font (only used for title) -->
   <style>
     @font-face {
-      font-family: 'Azaraan';
-      src: url('https://github.com/thetransgendertrex/Azaraanlanguage/blob/main/Aza%27raan%20Planet%20Language.ttf?raw=true') format('truetype');
+      font-family: 'Steamwreck';
+      src: url('https://www.fontspace.com/media/font-files/s/t/steamwreck/Steamwreck.ttf') format('truetype');
       font-weight: normal;
       font-style: normal;
       font-display: swap;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-family: 'Steamwreck', serif !important;
+      font-size: 2.8rem;
+      text-align: center;
+      color: #333;
+      margin-bottom: 2rem;
+    }
+
+    h2, h3, h4, h5 {
+      font-family: 'Cinzel', serif;
+    }
+
+    section {
+      max-width: 800px;
+      margin: auto;
+      line-height: 1.6;
     }
 
     :root {
@@ -56,7 +77,7 @@
       scroll-behavior: smooth;
     }
 
-    h1, h2, h3 {
+    h1, h2, h3, h4 {
       font-family: 'Cinzel', serif;
       text-shadow: 0 0 8px var(--dreamlight);
     }
@@ -127,7 +148,7 @@
     .azaraan-word,
     .azaraan-phrase,
     .azaraan-fusion-form {
-      font-family: 'Azaraan', cursive !important;
+      font-family: 'Azaraan', truetype !important;
       font-size: 1.6rem;
       display: block;
       margin-bottom: 1rem;
@@ -187,6 +208,39 @@
       font-weight: bold;
     }
   </style>
+</head>
+
+<body>
+  <h1>Welcome To The World Of Aza'ra!</h1>
+
+  <section id="responsive-message" class="responsive-highlight">
+    <h2>📱 Aza'raan on Mobile & Tablet</h2>
+    <p>This section adjusts beautifully across devices. Try resizing your window to see the responsive effects take place—fonts, padding, and layout all adapt smoothly to your screen.</p>
+  </section>
+
+  <p>The Aza’raan font override is loading...</p>
+
+  <script>
+    // Load remote override.js from GitHub and execute
+    fetch('https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/refs/heads/main/override.js')
+      .then(res => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}: Unable to load override.js`);
+        return res.text();
+      })
+      .then(code => {
+        const script = document.createElement('script');
+        script.textContent = code;
+        document.head.appendChild(script);
+      })
+      .catch(err => {
+        console.error('Failed to load Aza\'raan override script:', err);
+        const errorNotice = document.createElement('p');
+        errorNotice.style.color = 'red';
+        errorNotice.textContent = '⚠️ Failed to load override script. Check console for details.';
+        document.body.appendChild(errorNotice);
+      });
+  </script>
+</body>
 </head>
 
 <body>
