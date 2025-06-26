@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         Aza'raan Font + Table Styling + Responsive Layout
+// @name         Aza'raan Layout & Theme Only (Fonts via External Override)
 // @namespace    https://github.com/thetransgendertrex
-// @version      5.0
-// @description  Replaces Pacifico with Azaraan, applies moonpunk theme vars, and injects strict table + responsive layout styles
+// @version      1.1
+// @description  Applies Moonpunk variables and layout/styling; delegates all font overrides to override.js
 // @author       William Saville
 // @match        https://docs.google.com/*
 // @match        https://slides.google.com/*
@@ -14,56 +14,37 @@
 // @match        *://*/README.md
 // @grant        none
 // ==/UserScript==
+
 (function () {
-  const FONT_NAME = "'Azaraan', cursive !important";
-  const FONT_URL = 'https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Planet%20Language.ttf';
-  const CLASS_SELECTORS = [
-    '.azaraan-word',
-    '.azaraan-phrase',
-    '.azaraan-fusion-form'
-  ];
+  // Inject external font override logic
+  const overrideScript = document.createElement('script');
+  overrideScript.src = 'https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/refs/heads/main/override.js';
+  overrideScript.type = 'text/javascript';
+  document.head.appendChild(overrideScript);
 
-  // Inject @font-face
-  const fontFace = document.createElement('style');
-  fontFace.textContent = `
-    @font-face {
-      font-family: 'Azaraan';
-      src: url('${FONT_URL}') format('truetype');
-      font-display: swap;
-    }
-  `;
-  document.head.appendChild(fontFace);
+  // Set Moonpunk theme variables
+  const root = document.documentElement;
+  const cssVars = {
+    '--moonlight': '#c0f7f2',
+    '--dreamlight': '#b59fff',
+    '--glacial': '#d1ecf6',
+    '--moss': '#7ec98d',
+    '--coral': '#f2b8a0',
+    '--ember': '#ffae66',
+    '--obsidian': '#1e1f26',
+    '--silver': '#dfeaf0',
+    '--cyan': '#00f6ff',
+    '--highlight': '#ffffff',
+    '--glow': '#82f2f2',
+    '--prism': 'linear-gradient(135deg, #b59fff, #c0f7f2, #7ec98d, #f2b8a0)'
+  };
+  Object.entries(cssVars).forEach(([key, val]) => {
+    root.style.setProperty(key, val);
+  });
 
-  // Inject Pacifico override + table styles
+  // Inject layout + table styling (fonts excluded)
   const style = document.createElement('style');
   style.textContent = `
-    [style*="font-family:Pacifico"],
-    span[style*="font-family:Pacifico"],
-    .kix-lineview-content span[style*="Pacifico"],
-    .texteditor-text-input[style*="font-family:Pacifico"],
-    .punch-viewer-content span[style*="font-family:Pacifico"],
-    .cell-input[style*="font-family:Pacifico"],
-    .grid-container span[style*="font-family:Pacifico"],
-    .drawing-view text[style*="font-family:Pacifico"],
-    .kix-canvas-tile-content text[style*="font-family:Pacifico"],
-    .quantumWizTextinputPaperinputInput[style*="font-family:Pacifico"],
-    .freebirdFormviewerViewItemsItemItemTitle[style*="font-family:Pacifico"],
-    .a-s-T[style*="font-family:Pacifico"],
-    .a-s-fa-T[style*="font-family:Pacifico"],
-    .docs-texteventtarget-font-PACIFICO,
-    .docs-texteventtarget-font-Pacifico,
-    [class*="font-Pacifico"],
-    [class*="Font-Pacifico"],
-    [class*="texteventtarget-font-Pacifico"],
-    [aria-label*="Pacifico"] {
-      font-family: 'Azaraan' !important;
-      font-size: 2em !important;
-      color: rgb(0, 128, 128) !important;
-      font-style: normal !important;
-      font-weight: normal !important;
-      line-height: 1.2 !important;
-    }
-
     table {
       width: 100%;
       border-collapse: collapse;
@@ -72,7 +53,6 @@
       border: 2px solid var(--cyan);
       color: #000000;
       font-family: 'Times New Roman', serif;
-      box-shadow: none;
       border-radius: 8px;
     }
 
@@ -101,55 +81,7 @@
   `;
   document.head.appendChild(style);
 
-  // Observe and apply Azaraan class styles
-  const observer = new MutationObserver(() => {
-    CLASS_SELECTORS.forEach(selector => {
-      document.querySelectorAll(selector).forEach(el => {
-        el.style.fontFamily = FONT_NAME;
-      });
-    });
-    document.querySelectorAll('[aria-label="Pacifico"]').forEach(el => {
-      if (el.textContent !== "Azaraan") el.textContent = "Azaraan";
-    });
-  });
-  observer.observe(document.body, {
-    childList: true,
-    subtree: true,
-    attributes: true,
-    characterData: true
-  });
-
-  // Set Moonpunk color variables
-  const root = document.documentElement;
-  const cssVars = {
-    '--moonlight': '#c0f7f2',
-    '--dreamlight': '#b59fff',
-    '--glacial': '#d1ecf6',
-    '--moss': '#7ec98d',
-    '--coral': '#f2b8a0',
-    '--ember': '#ffae66',
-    '--obsidian': '#1e1f26',
-    '--silver': '#dfeaf0',
-    '--cyan': '#00f6ff',
-    '--highlight': '#ffffff',
-    '--glow': '#82f2f2',
-    '--prism': 'linear-gradient(135deg, #b59fff, #c0f7f2, #7ec98d, #f2b8a0)'
-  };
-  Object.entries(cssVars).forEach(([key, val]) => {
-    root.style.setProperty(key, val);
-  });
-
-  // Apply Azaraan font to static matches
-  function applyAzaraanFont() {
-    CLASS_SELECTORS.forEach(selector => {
-      document.querySelectorAll(selector).forEach(el => {
-        el.style.fontFamily = FONT_NAME;
-      });
-    });
-  }
-  applyAzaraanFont();
-
-  // Responsive layout styling
+  // Responsive layout adjustment (no font manipulation)
   function applyResponsiveStyles() {
     const width = window.innerWidth;
     document.body.style.padding = '';
@@ -158,55 +90,16 @@
     if (width >= 768 && width <= 1024) {
       document.body.style.padding = '1.5rem';
       document.body.style.fontSize = '1rem';
-      document.querySelectorAll('h1').forEach(el => {
-        el.style.fontSize = '2.2rem';
-        el.style.padding = '0.75rem 1rem';
-      });
-      document.querySelectorAll('h2').forEach(el => el.style.fontSize = '1.75rem');
-      document.querySelectorAll('h3').forEach(el => el.style.fontSize = '1.3rem');
-      document.querySelectorAll('section, .section').forEach(el => {
-        el.style.padding = '1rem';
-        el.style.marginBottom = '2rem';
-      });
-      document.querySelectorAll('table th, table td').forEach(el => {
-        el.style.padding = '0.75rem';
-        el.style.fontSize = '0.95rem';
-      });
-      document.querySelectorAll('a, footer a').forEach(el => {
-        el.style.fontSize = '0.95rem';
-        el.style.padding = '0.3em 0.65em';
-      });
     } else if (width < 768) {
       document.body.style.padding = '1rem';
       document.body.style.fontSize = '0.95rem';
-      document.querySelectorAll('h1').forEach(el => {
-        el.style.fontSize = '1.8rem';
-        el.style.padding = '0.6rem 0.8rem';
-      });
-      document.querySelectorAll('h2').forEach(el => el.style.fontSize = '1.4rem');
-      document.querySelectorAll('h3').forEach(el => el.style.fontSize = '1.1rem');
-      document.querySelectorAll('section, .section').forEach(el => {
-        el.style.padding = '0.8rem';
-        el.style.marginBottom = '1.5rem';
-      });
       document.querySelectorAll('table').forEach(el => {
-        el.style.fontSize = '0.9rem';
         el.style.display = 'block';
         el.style.overflowX = 'auto';
       });
       document.querySelectorAll('table th, table td').forEach(el => {
-        el.style.padding = '0.5rem';
         el.style.minWidth = '120px';
-      });
-      document.querySelectorAll('ul').forEach(el => el.style.paddingLeft = '1rem');
-      document.querySelectorAll('a, footer a').forEach(el => {
-        el.style.fontSize = '0.9rem';
-        el.style.padding = '0.25em 0.5em';
-        el.style.margin = '0.2rem 0';
-      });
-      document.querySelectorAll('footer').forEach(el => {
-        el.style.fontSize = '0.8rem';
-        el.style.padding = '1.2rem 0.8rem';
+        el.style.padding = '0.5rem';
       });
     }
   }
