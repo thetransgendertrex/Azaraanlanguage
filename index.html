@@ -3,7 +3,6 @@
 <section id="responsive-message" class="responsive-highlight">
   <h2>📱 Aza'raan on Mobile & Tablet</h2>
   <p>This section adjusts beautifully across devices. Try resizing your window to see the responsive effects take place—fonts, padding, and layout all adapt smoothly to your screen.</p>
-  <a href="#more-info">Learn More</a>
 </section>
 <head>
   <meta charset="UTF-8" />
