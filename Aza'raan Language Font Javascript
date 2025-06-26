@@ -11,7 +11,7 @@
 // @match        https://drive.google.com/*
 // @match        https://drawings.google.com/*
 // @match        *://*/index.html
-// @match        *://*/README.md
+// @match        *://*/lore.html
 // @grant        none
 // ==/UserScript==
 
@@ -285,7 +285,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   body[data-doc-name*="index"],
-  body[data-doc-name*="readme"] {
+  body[data-doc-name*="lore"] {
     font-family: 'Comic Sans MS', cursive, sans-serif !important;
   }
 
