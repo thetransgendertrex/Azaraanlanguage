@@ -1,177 +1,148 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Aza'raan Font Universal Override Demo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+// ==UserScript==
+// @name         Aza'raan Layout & Theme Only (Fonts via External Override)
+// @namespace    https://github.com/thetransgendertrex
+// @version      1.1
+// @description  Applies Moonpunk variables and layout/styling; delegates all font overrides to override.js
+// @author       William Saville
+// @match        https://docs.google.com/*
+// @match        https://slides.google.com/*
+// @match        https://sheets.google.com/*
+// @match        https://forms.google.com/*
+// @match        https://drive.google.com/*
+// @match        https://drawings.google.com/*
+// @match        *://*/index.html
+// @match        *://*/lore.html
+// @grant        none
+// ==/UserScript==
 
-  <!-- 👇 Load and run override.js FIRST -->
-  <script>
-    // Load remote override.js from GitHub and execute
-    fetch('https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/refs/heads/main/override.js')
-      .then(res => {
-        if (!res.ok) throw new Error(`HTTP ${res.status}: Unable to load override.js`);
-        return res.text();
-      })
-      .then(code => {
-        const script = document.createElement('script');
-        script.textContent = code;
-        document.head.appendChild(script);
-      })
-      .catch(err => {
-        console.error('Failed to load Aza\'raan override script:', err);
-        const errorNotice = document.createElement('p');
-        errorNotice.style.color = 'red';
-        errorNotice.textContent = '⚠️ Failed to load override script. Check console for details.';
-        document.body.appendChild(errorNotice);
-      });
-  </script>
+document.addEventListener('DOMContentLoaded', function () {
+  // Inject external font override logic
+  const overrideScript = document.createElement('script');
+  overrideScript.src = 'https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/refs/heads/main/override.js';
+  overrideScript.type = 'text/javascript';
+  document.head.appendChild(overrideScript);
 
-  <!-- External Moonpunk + Aza'raan Font Styles -->
-  <link rel="stylesheet" href="https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Language%20Font%20CSS.css" />
+ const css = `
+  /* ──────────────✦ Global Aesthetic with Moonpunk Image Background ✦────────────── */
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+    color: #cceeff;
+    background: transparent;
+  }
 
-  <style>
-    /* === FORCE AZA'RAAN FONT FOR COMIC SANS === */
-    @font-face {
-      font-family: 'AzaraanOverride';
-      src: url('https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Planet%20Language.ttf') format('truetype');
-    }
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
+    background-image: url("https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27ra%20Moonpunk%20Settlement%20(AI%20Generated)");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    filter: brightness(0.85) contrast(1.05);
+  }
 
-    [style*="Comic Sans MS"],
-    .comic-sans,
-    [style*="'Comic Sans MS'"],
-    [style*='"Comic Sans MS"'] {
-      font-family: 'AzaraanOverride' !important;
-    }
-/* ──────────────✦ Global Aesthetic with Moonpunk Image Background ✦──────────────
-Background replaced by AI-generated Moonpunk Settlement image,
-fitting desktop, tablet, and mobile with fixed position and footer fixed at bottom.
-*/
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-  font-family: 'Segoe UI', sans-serif;
-  color: #cceeff;
-  background: transparent;
-}
+  body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background: radial-gradient(ellipse at center, rgba(11,29,38,0.5) 0%, rgba(4,13,18,0.8) 100%);
+    pointer-events: none;
+  }
 
-/* Background image fixed behind everything */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -2;
-  background-image: url("https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza'ra%20Moonpunk%20Settlement%20(AI%20Generated)");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover; /* cover to fill the screen without distortion */
-  filter: brightness(0.85) contrast(1.05);
-}
+  :root {
+    --black: #000000;
+    --cyan: #00ffff;
+    --silver: #c0c0c0;
 
-/* Subtly darken the image for text readability */
-body::after {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  background: radial-gradient(ellipse at center, rgba(11,29,38,0.5) 0%, rgba(4,13,18,0.8) 100%);
-  pointer-events: none;
-}
+    --moonpunk-primary: #a8e4ff;
+    --moonpunk-primary-shadow: 1.2px 1.2px #347694;
 
-/* === VARIABLES === */
-:root {
-  --black: #000000;
-  --cyan: #00ffff;
-  --silver: #c0c0c0;
+    --moonpunk-secondary: #ffc0cb;
+    --moonpunk-secondary-shadow: 1px 1px #914452;
 
-  --moonpunk-primary: #a8e4ff;
-  --moonpunk-primary-shadow: 1.2px 1.2px #347694;
+    --moonpunk-tertiary: #aaffc3;
+    --moonpunk-tertiary-shadow: 0.8px 0.8px #0a5420;
 
-  --moonpunk-secondary: #ffc0cb;
-  --moonpunk-secondary-shadow: 1px 1px #914452;
+    --moonpunk-quaternary: #e6ccff;
+    --moonpunk-quaternary-shadow: 0.6px 0.6px #531f63;
 
-  --moonpunk-tertiary: #aaffc3;
-  --moonpunk-tertiary-shadow: 0.8px 0.8px #0a5420;
+    --text-body: #ffffff;
+    --text-body-shadow: 0.4px 0.4px #4a5d23;
+  }
 
-  --moonpunk-quaternary: #e6ccff;
-  --moonpunk-quaternary-shadow: 0.6px 0.6px #531f63;
+  body {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: var(--text-body);
+    font-family: 'Times New Roman', serif;
+    line-height: 1.6;
+    padding: 2rem;
+    overflow-y: scroll;
+    z-index: 0;
+  }
 
-  --text-body: #ffffff;
-  --text-body-shadow: 0.4px 0.4px #4a5d23;
-}
+  h1, h2, h3, h4 {
+    font-family: serif;
+    margin-bottom: 0.5em;
+    text-shadow: var(--text-body-shadow);
+    opacity: 1;
+  }
 
-/* === BASE STYLES === */
-body {
-  /* foreground content */
-  position: relative;
-  background-color: rgba(0, 0, 0, 0.85);
-  color: var(--text-body);
-  font-family: 'Times New Roman', serif;
-  line-height: 1.6;
-  padding: 2rem;
-  overflow-y: scroll;
-  z-index: 0; /* ensure in front of background */
-}
+  h1 {
+    color: var(--moonpunk-primary);
+    text-shadow: var(--moonpunk-primary-shadow);
+    font-size: 2.75rem;
+    border-bottom: 2px solid var(--cyan);
+    padding-bottom: 0.5rem;
+  }
 
-h1, h2, h3, h4 {
-  font-family: serif;
-  margin-bottom: 0.5em;
-  text-shadow: var(--text-body-shadow);
-  opacity: 1; /* keep text fully opaque */
-}
+  h2 {
+    color: var(--moonpunk-secondary);
+    text-shadow: var(--moonpunk-secondary-shadow);
+    font-size: 2rem;
+  }
 
-h1 {
-  color: var(--moonpunk-primary);
-  text-shadow: var(--moonpunk-primary-shadow);
-  font-size: 2.75rem;
-  border-bottom: 2px solid var(--cyan);
-  padding-bottom: 0.5rem;
-}
+  h3 {
+    color: var(--moonpunk-tertiary);
+    text-shadow: var(--moonpunk-tertiary-shadow);
+    font-size: 1.5rem;
+  }
 
-h2 {
-  color: var(--moonpunk-secondary);
-  text-shadow: var(--moonpunk-secondary-shadow);
-  font-size: 2rem;
-}
+  h4 {
+    color: var(--moonpunk-quaternary);
+    text-shadow: var(--moonpunk-quaternary-shadow);
+    font-size: 1.25rem;
+  }
 
-h3 {
-  color: var(--moonpunk-tertiary);
-  text-shadow: var(--moonpunk-tertiary-shadow);
-  font-size: 1.5rem;
-}
-
-h4 {
-  color: var(--moonpunk-quaternary);
-  text-shadow: var(--moonpunk-quaternary-shadow);
-  font-size: 1.25rem;
-}
-
-/* === LINKS & BUTTONS === */
-a, footer a, .button-link {
-  background-color: rgba(0, 255, 255, 0.6);
-  color: var(--black);
-  font-family: 'Times New Roman', serif;
-  font-weight: 600;
-  text-decoration: none;
-  padding: 0.35em 0.75em;
-  border-radius: 5px;
-  border: 2px solid var(--silver);
-  transition: all 0.3s ease;
-  cursor: pointer;
-  font-size: 1rem;
-  user-select: none;
-  margin: 0.3rem 0;
-  display: inline-block;
-}
+  a, footer a, .button-link {
+    background-color: rgba(0, 255, 255, 0.6);
+    color: var(--black);
+    font-family: 'Times New Roman', serif;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0.35em 0.75em;
+    border-radius: 5px;
+    border: 2px solid var(--silver);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-size: 1rem;
+    user-select: none;
+    margin: 0.3rem 0;
+    display: inline-block;
+  }
 
 a:hover, a:focus, .button-link:hover {
   background-color: rgba(0, 0, 0, 0.6);
@@ -179,1140 +150,144 @@ a:hover, a:focus, .button-link:hover {
   border: 2px solid var(--silver);
 }
 
-/* === TABLES === */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 2rem;
-  background-color: rgba(255, 255, 255, 0.94); /* subtle transparency */
-  border: 2px solid var(--cyan);
-  color: #000000;
-  font-family: 'Times New Roman', serif;
-  border-radius: 8px;
-  backdrop-filter: blur(1px); /* subtle background diffusion */
-}
-
-th, td {
-  padding: 1rem;
-  text-align: center; /* center all content */
-  vertical-align: middle;
-  opacity: 1;
-  border-bottom: 1px solid var(--cyan);
-}
-
-/* Column headers */
-th {
-  font-size: 2rem;       /* h1 size */
-  font-weight: bold;
-  border-bottom: 2px solid var(--cyan);
-  text-transform: uppercase;
-}
-
-/* Table contents */
-td {
-  font-size: 1.5rem;      /* h2 size */
-  font-weight: bold;
-}
-
-/* Optional: Allow opt-out with specific classes */
-td.no-bold,
-td.override,
-td[class*="note"],
-td[class*="phonetic"] {
-  font-weight: normal;
-  font-size: 1.2rem; /* slightly reduced for annotations or side info */
-}
-
-/* === TABLES === */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 2rem;
-  background-color: rgba(255, 255, 255, 0.94); /* subtle transparency */
-  border: 2px solid var(--cyan);
-  color: #000000;
-  font-family: 'Times New Roman', serif;
-  border-radius: 8px;
-  backdrop-filter: blur(1px);
-}
-
-th, td {
-  padding: 1rem;
-  text-align: center;
-  vertical-align: middle;
-  opacity: 1;
-  border-bottom: 1px solid var(--cyan);
-}
-
-/* Column headers */
-th {
-  font-size: 2rem;
-  font-weight: bold;
-  border-bottom: 2px solid var(--cyan);
-  text-transform: uppercase;
-}
-
-/* Table contents */
-td {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-/* Opt-out classes */
-td.no-bold,
-td.override,
-td[class*="note"],
-td[class*="phonetic"] {
-  font-weight: normal;
-  font-size: 1.2rem;
-}
-
-/* === FOOTER === */
-footer {
-  background: white;
-  border-top: 2px solid var(--cyan);
-  color: var(--black);
-  text-align: center;
-  font-family: 'Times New Roman', serif;
-  font-size: 0.9rem;
-  padding: 1rem;
-  margin-top: 5rem;
-  border-radius: 0 0 8px 8px;
-  font-weight: bold;
-  height: 150px;
-  overflow-y: auto;
-  overflow-x: hidden;
-  direction: rtl;
-}
-
-/* Reset text direction for children */
-footer * {
-  direction: ltr;
-  text-align: center;
-}
-
-/* Custom Scrollbar */
-footer::-webkit-scrollbar {
-  width: 12px;
-}
-
-footer::-webkit-scrollbar-track {
-  background: silver;
-  border-radius: 8px;
-}
-
-footer::-webkit-scrollbar-thumb {
-  background-color: var(--cyan);
-  border-radius: 8px;
-  border: 2px solid silver;
-}
-
-footer {
-  scrollbar-color: var(--cyan) silver;
-  scrollbar-width: thin;
-}
-
-/* === RESPONSIVE === */
-@media (min-width: 1025px) {
-  body::before {
-    background-size: cover;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1024px) {
-  body::before {
-    background-size: contain;
-    background-position: center top;
-  }
-
-  table th {
-    font-size: 1.6rem;
-  }
-
-  table td {
-    font-size: 1.3rem;
-  }
-}
-
-@media (max-width: 767px) {
-  body::before {
-    background-size: contain;
-    background-position: center top;
+/* Move the table and footer CSS into the main css template literal */
+  .table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   table {
-    font-size: 0.9rem;
-    display: block;
-    overflow-x: auto;
+    min-width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+    background-color: rgba(255, 255, 255, 0.94);
+    border: 2px solid var(--cyan);
+    color: #000000;
+    font-family: 'Times New Roman', serif;
+    border-radius: 8px;
+    backdrop-filter: blur(1px);
   }
 
-  table th, table td {
-    padding: 0.5rem;
-    min-width: 120px;
-    font-size: 1.1rem;
+  th, td {
+    padding: 1rem;
+    text-align: center;
+    vertical-align: middle;
+    opacity: 1;
+    border-bottom: 1px solid var(--cyan);
+  }
+
+  th {
+    font-size: 2rem;
+    font-weight: bold;
+    border-bottom: 2px solid var(--cyan);
+    text-transform: uppercase;
+  }
+
+  td {
+    font-size: 1.5rem;
+    font-weight: bold;
   }
 
   td.no-bold,
   td.override,
   td[class*="note"],
   td[class*="phonetic"] {
-    font-size: 1rem;
+    font-weight: normal;
+    font-size: 1.2rem;
+  }
+
+  /* === FOOTER === */
+  footer {
+    background: white;
+    border-top: 2px solid var(--cyan);
+    color: var(--black);
+    text-align: center;
+    font-family: 'Times New Roman', serif;
+    font-size: 0.9rem;
+    padding: 1rem;
+    margin-top: 5rem;
+    border-radius: 0 0 8px 8px;
+    font-weight: bold;
+    height: 150px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    direction: rtl;
+  }
+
+  footer * {
+    direction: ltr;
+    text-align: center;
+  }
+
+  footer::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  footer::-webkit-scrollbar-track {
+    background: silver;
+    border-radius: 8px;
+  }
+
+  footer::-webkit-scrollbar-thumb {
+    background-color: var(--cyan);
+    border-radius: 8px;
+    border: 2px solid silver;
   }
 
   footer {
-    font-size: 0.8rem;
-    padding: 1.2rem 0.8rem;
-    height: 150px;
+    scrollbar-color: var(--cyan) silver;
+    scrollbar-width: thin;
   }
-}
 
-/* === Comic Sans Override (GitHub index.html and lore.html only) === */
-body[data-doc-name*="index"],
-body[data-doc-name*="lore"] {
-  font-family: 'Comic Sans MS', cursive, sans-serif !important;
-}
+  /* === RESPONSIVE === */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .table-wrapper {
+      overflow-x: auto;
+    }
 
-/* === Comic Sans Custom Paragraph Style === */
-.comic-sans-p {
-  font-family: 'Comic Sans MS', cursive, sans-serif !important;
-  color: #014d4e;
-  text-shadow: 0 0 1.2px #00ffff;
-  font-size: 2rem; /* Matches h2 size */
-}
+    table th {
+      font-size: 1.6rem;
+    }
 
-/* === Google Apps: Replace Pacifico with Aza'raan in Font Dropdown === */
-/* Affects visible Pacifico items so "Aza'raan" appears in its glyph form */
-div[aria-label="Font"] span[style*="Pacifico"],
-div[aria-label="Font"] div[style*="Pacifico"] {
-  font-family: 'Azaraan', cursive !important;
-  font-size: 18px !important;
-  color: #000000;
-}
-</style>
-</head>
+    table td {
+      font-size: 1.3rem;
+    }
+  }
 
-<body>
-  <section id="azaraan-font-override-demo">
-<h2>Aza'raan Font Universal Override Demo</h2>
+  @media (max-width: 767px) {
+    .table-wrapper {
+      overflow-x: auto;
+    }
 
-<p style="font-family: 'Comic Sans MS', cursive; color: #00ffff; text-shadow: 0 0 0.3px #014d4e; font-size: 2rem;">
-  This text uses Comic Sans but should be overridden by Aza'raan on GitHub index/lore pages.
-</p>
+    table {
+      font-size: 0.9rem;
+      min-width: 100%;
+      display: table;
+    }
 
-<p>The above was a test, and said “This text uses Comic Sans but should be overridden by Aza'raan on GitHub index/lore pages.”</p>
+    table th, table td {
+      padding: 0.5rem;
+      min-width: 120px;
+      font-size: 1.1rem;
+    }
 
-<p style="font-family: Pacifico, cursive;">
-  This text uses Pacifico but should be overridden by Aza'raan on Google Apps domains.
-</p>
+    td.no-bold,
+    td.override,
+    td[class*="note"],
+    td[class*="phonetic"] {
+      font-size: 1rem;
+    }
 
-<p>This text uses the default font.</p>
+    footer {
+      font-size: 0.8rem;
+      padding: 1.2rem 0.8rem;
+      height: 150px;
+    }
+  }
+`;
 
-    <!-- FONT DEMO -->
-    <p>
-      <p style="font-family: 'Comic Sans MS', cursive; color: #00ffff; text-shadow: 0 0 0.3px #014d4e; font-size: 4rem;">Anoki rakhema etan Jasper</p>
-      <p class="times-roman"> — This demonstrates how all Comic Sans text is now rendered using the Aza’raan font due to the applied override, the above translates to “I love you Jasper, which is my fiance's name.</p>
-    </p>
-<section>
-<section id="Introduction">
-</head>
-  <h1>Welcome To The World Of Aza'ra!</h1>
-
-  <section id="responsive-message" class="responsive-highlight">
-    <h2>📱 Aza'raan on Mobile & Tablet</h2>
-    <p>This section adjusts beautifully across devices. Try resizing your window to see the responsive effects take place—fonts, padding, and layout all adapt smoothly to your screen.</p>
-  </section>
-</body>
-</head>
-<body>
-  <h1 class="glow">🌙 Aza’raan Font Google Application</h1>
-  <p>This page combines the Aza'raan glyphic font with a Moonpunk–Cyber-Glyphic visual theme, designed for use in both <code>index.html</code> and <code>lore.html</code> contexts.</p>
-    <h3>📦 Aza’raan Font and Program Resources</h3>
-    <ul>
-      <li><a href="https://github.com/thetransgendertrex/Azaraanlanguage/blob/main/Aza%27raan%20Planet%20Language.ttf" target="_blank">Download Aza'raan.ttf</a></li>
-      <li><a href="https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Language%20Font%20CSS.css" target="_blank">Font CSS</a></li>
-      <li><a href="https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Language%20Font%20Javascript" target="_blank">Font JS</a></li>
-      <li><a href="https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/override.js" target="_blank">Override Script</a></li>
-      <li><a href="https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Manifest.json" target="_blank">Manifest.json</a></li>
-      <li><a href="https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza'ra%20Moonpunk%20Settlement%20(AI%20Generated)" target="_blank">Aza'raa Moonpunk Settlement</a></li>
-    </ul>
-</section>
-<section class="font-sample">
-  <h2>🔠 Font Sample</h2>
-  <p>
-   <p style="font-family: 'Comic Sans MS', cursive; color: #00ffff; text-shadow: 0 0 0.3px #014d4e; font-size: 4rem;">
-      Eryphiren
-    </p>
-    <p class="times-roman"> — First month of the Aza’raan calendar, “Eryphiren”</p>
-  </p>
-<section id="eryphiren-month">
-  <h2>📅 Aza’raan Month: Eryphiren</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Month Name</th>
-        <th>Pronunciation</th>
-        <th>Naming Origin</th>
-        <th>Essence & Purpose</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><strong>Eryphiren</strong></td>
-        <td><em>Eh-rif-i-ren</em></td>
-        <td>Eryndria + Zephyra (Growth + Wind Magic)</td>
-        <td>Celebrates blossoming potential—nature’s vitality harmonizing with the arcane wind.</td>
-      </tr>
-    </tbody>
-  </table>
-</section>
-
-<section id="zephyra">
-  <h2>🛐 Zephyra — Mistress of the Aether</h2>
-  <ul>
-<li><strong>Name in Aza’raan:</strong><p style="font-family: 'Comic Sans MS', cursive; color: #00ffff; text-shadow: 0 0 0.3px #014d4e; font-size: 4rem;">Zafira<p/></li>
-    <li><strong>Pronunciation:</strong> ZEH-fy-ruh (rolled r)</li>
-    <li><strong>Gender Identity:</strong> Cisgender Female (Ala → Ah-lah)</li>
-    <li><strong>Pronouns:</strong> Al / Alt / Alad (Ahl / Ahl-t / Ah-lad)</li>
-    <li><strong>Domains:</strong> Sky, Magic, Wind</li>
-    <li><strong>Symbol:</strong> A sail caught in a swirl of clouds</li>
-  </ul>
-
-  <h3>📖 Lore</h3>
-  <p>
-    Zephyra rides the celestial wind—an ethereal force of change, mystery, and inspiration. Alad divine essence is felt in every whispering gust and storm-carried dream. Draped in aether-silk, with fans of divine force and glowing wind tattoos, Al commands the breath between moments.
-  </p>
-
-  <h3>⚙️ Class: Tempest Ascendant (for “Aza’ra, the MMORPG I’m in the process of inventing)</h3>
-  <ul>
-    <li><strong>Role:</strong> Living embodiment of the storm</li>
-    <li><strong>Sub-Classes:</strong>
-      <ul>
-        <li>🗡 <strong>Rogue Variant</strong> – Agile lightning duelist
-          <ul><li>Chain strikes, melee speed, thunder finishers</li></ul>
-        </li>
-        <li>⚖ <strong>Vanguard Variant</strong> – Wind-borne control caster
-          <ul><li>Wind spells + battlefield evasion</li></ul>
-        </li>
-        <li>⚡ <strong>Sorcerer Variant</strong> – AoE stormcaster
-          <ul><li>Aerial magic, gusts, lightning waves</li></ul>
-        </li>
-      </ul>
-    </li>
-    <li><strong>Class Flavor:</strong>
-      <ul>
-        <li>Movement fuels power</li>
-        <li>Casts while airborne</li>
-        <li>Uses stormshrines for buffs</li>
-        <li>Scales with Focus and Finesse</li>
-        <li>Signature: flowing robes, aerial dodges, lightning arcs</li>
-      </ul>
-    </li>
-  </ul>
-
-  <h3>✨ Magic Schools: Zephyra</h3>
-  <ul>
-    <li><strong>Elemental (Air)</strong>
-      <ul>
-        <li>Vanguard: Gust shields, air evasion</li>
-        <li>Sorcerer: AoE storms, wind bursts</li>
-      </ul>
-    </li>
-    <li><strong>Arcane</strong>
-      <ul>
-        <li>Vanguard: Blink traps, kinetic shields</li>
-        <li>Sorcerer: Mana bolts, scaling pulse spells</li>
-      </ul>
-    </li>
-    <li><strong>Chaos</strong>
-      <ul>
-        <li>Vanguard: Random terrain shifts</li>
-        <li>Sorcerer: Storm spirals, time-stutter effects</li>
-      </ul>
-    </li>
-  </ul>
-
-  <h3>🙏 Religions of Zephyra</h3>
-  <ul>
-    <li><strong>The Aetherian Forge</strong> — ⦿ Combines sky magic and craftsmanship</li>
-    <li><strong>The Eternal Storm</strong> — ⦿ Celebrates chaos and rebirth through wind</li>
-    <li><strong>The Eternal Aegis Belief</strong> — ⦿ Justice riding on celestial currents</li>
-  </ul>
-
-  <h3>⚖ Ritual Practices</h3>
-  <ul>
-    <li>⚫ Tempest’s Meditation – Reflection in the heart of storms</li>
-    <li>⚫ Skyward Offerings – Trust cast into the wind</li>
-    <li>⚫ Feathers of Freedom – Rites of liberation and courage</li>
-  </ul>
-</section>
-
-<section id="eryndria">
-  <h2>🛐 Eryndria — The Mother of Growth</h2>
-  <ul>
-<li><strong>Name in Aza’raan:</strong><p style="font-family: 'Comic Sans MS', cursive; color: #00ffff; text-shadow: 0 0 0.3px #014d4e; font-size: 4rem;">Arindria<p/></li>
-    <li><strong>Pronunciation:</strong> er-een-dree-uh (rolled r)</li>
-    <li><strong>Gender Identity:</strong> Transgender Female (Tasen → tah-seen)</li>
-    <li><strong>Pronouns:</strong> Tas / Tasth / Tasad (tahs / tahs-th / tah-sahd)</li>
-    <li><strong>Domains:</strong> Nature, Fertility, Rebirth, Transitions</li>
-    <li><strong>Symbol:</strong> A blooming tree</li>
-  </ul>
-
-  <h3>📖 Lore</h3>
-  <p>
-    Eryndria brings life to ash and bloom to sorrow. From Tasad robes of moss and blossoms to Tasad scythe and Seed of Renewal, Tasad presence reshapes despair into promise. Wherever Tas walks, nature quickens—life follows.
-  </p>
-
-  <h3>⚙️ Class: Thornweaver (for “Aza’ra, the MMORPG I’m in the process of inventing)</h3>
-  <ul>
-    <li><strong>Role:</strong> Sacred gardener of destruction and rebirth</li>
-    <li><strong>Sub-Classes:</strong>
-      <ul>
-        <li>🛡 <strong>Rogue Variant</strong> – Bark-armored protector
-          <ul><li>Reactive thorns, shielding allies</li></ul>
-        </li>
-        <li>🍃 <strong>Vanguard Variant</strong> – Grove healer
-          <ul><li>Terrain-based support, healing zones</li></ul>
-        </li>
-        <li>🌿 <strong>Sorcerer Variant</strong> – Verdant avatar
-          <ul><li>Wide-area growth, entanglement, AoE heals</li></ul>
-        </li>
-      </ul>
-    </li>
-    <li><strong>Class Flavor:</strong>
-      <ul>
-        <li>Eco-magic, terrain manipulation</li>
-        <li>Seed mines, thorn shields, regrowth miracles</li>
-        <li>Focused on revival and nature synergy</li>
-      </ul>
-    </li>
-  </ul>
-
-  <h3>✨ Magic Schools: Eryndria</h3>
-  <ul>
-    <li><strong>Elemental (Earth)</strong>
-      <ul>
-        <li>Vanguard: Living rock armor</li>
-        <li>Sorcerer: Terrain disruption</li>
-      </ul>
-    </li>
-    <li><strong>Nature</strong>
-      <ul>
-        <li>Vanguard: Thorn retaliation</li>
-        <li>Sorcerer: Summon plant life, healing flora</li>
-      </ul>
-    </li>
-    <li><strong>Spirit</strong>
-      <ul>
-        <li>Vanguard: Tethered soul shielding</li>
-        <li>Sorcerer: Resonance pulses, ancestral healing</li>
-      </ul>
-    </li>
-    <li><strong>Mystic</strong>
-      <ul>
-        <li>Vanguard: Sigils, slow-fields</li>
-        <li>Sorcerer: Psionic healing bursts</li>
-      </ul>
-    </li>
-    <li><strong>Holy</strong>
-      <ul>
-        <li>Vanguard: Radiant protection</li>
-        <li>Sorcerer: Full-field miracle waves</li>
-      </ul>
-    </li>
-  </ul>
-
-  <h3>🙏 Religions of Eryndria</h3>
-  <ul>
-    <li><strong>The Tides of Rebirth</strong> — ⦿ Fusion of land and sea with Morrigaen</li>
-    <li><strong>The Twilight Keepers</strong> — ⦿ Growth hidden in shadows</li>
-    <li><strong>The Rebirth of Flame</strong> — ⦿ Renewal through fire with Vraekthos</li>
-  </ul>
-
-  <h3>⚖ Ritual Practices</h3>
-  <ul>
-    <li>⚫ The Eternal Seed Planting – Growth amid adversity</li>
-    <li>⚫ The Blooming Rite – Seasonal offerings</li>
-    <li>⚫ The Cycle’s Embrace – Life-alignment meditations</li>
-  </ul>
-</section>
-
-<section id="earth-deity-inspirations">
-  <h2>📜 Earth Deities That Inspired Their Archetypes</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Zephyra (Sky, Wind)</th>
-        <th>Eryndria (Life, Growth)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>⚫ Aeolus (Greek)</td>
-        <td>⚫ Demeter (Greek)</td>
-      </tr>
-      <tr>
-        <td>⚫ Vayu (Hindu)</td>
-        <td>⚫ Gaia (Greek)</td>
-      </tr>
-      <tr>
-        <td>⚫ Thor (Norse)</td>
-        <td>⚫ Freyja (Norse, Fertility)</td>
-      </tr>
-      <tr>
-        <td>⚫ Uranus (Greek)</td>
-        <td>⚫ Osiris (Egyptian)</td>
-      </tr>
-      <tr>
-        <td>⚫ Nut (Egyptian)</td>
-        <td>⚫ Shakti (Hindu)</td>
-      </tr>
-    </tbody>
-  </table>
-</section>
-  <p>
-    <p style="font-family: 'Comic Sans MS', cursive; color: #00ffff; text-shadow: 0 0 0.3px #014d4e; font-size: 4rem;">
-      Yui Ranam rakhemaeri Ranthnami
-    </p>
-    <p class="times-roman"> — "The demi-male loved himself"</p>
-  </p>
-
-  <p>
-    <p style="font-family: 'Comic Sans MS', cursive; color: #00ffff; text-shadow: 0 0 0.3px #014d4e; font-size: 4rem;">
-      Anoki~itelei
-    </p>
-    <p class="times-roman"> — "I have"</p>
-  </p>
-</section>
-</body>
-<div class="section">
-      <h2>🎙️ The Voice of Aza’ra</h2>
-    <p><em>Introduction by William Blake Saville, AKA #TheTransgenderTRex, Creator of all things related to the planet of Aza’ra</em></p>
-    <p>Language is never just a system of words. It is a living current—a vessel of culture, a marker of memory, and a declaration of identity. When I set out to create the language of Aza’ra, I didn’t just want something that sounded beautiful. I wanted something that meant something. Something that held space for transformation, for fluidity, for truth. Thus, Aza’raan was born—a fusion of the mystical, vowel-rich cadence of Aarak and the disciplined, ancient structure of Aramaic.</p>
-
-    <p>Aza’raan is not designed to dominate speech—it’s built to liberate it.</p>
-
-    <p>Where other languages often bind identity to static labels, Aza’raan affirms it as fluid and sacred. Every sentence is an act of remembering. Every name spoken is a reclamation. In this world, people introduce themselves not once, but always—because who you are should never be assumed, only honored.</p>
-
-    <h3>🌀 A Language Forged in Survival and Unity</h3>
-    <p>Aza’raan carries the legacy of two peoples:</p>
-    <ul>
-      <li><strong>The Aaraks</strong>, whose language flowed like song—long vowels, open syllables, natural rhythm.</li>
-      <li><strong>The Aramaics</strong>, who brought glyphic clarity, symbolic meaning, and spiritual cadence.</li>
-    </ul>
-    <p>When Aarak fell into ruin—its sun drained by invaders, its crust shattered by flares—it was the Aramaics who helped anchor its fragments in the sky, weaving the magical Veil that held the planet together. In the wake of that cataclysm, the survivors renamed their world <strong>Aza’ra</strong>, meaning “to help.”</p>
-
- <section id="Language-Rules">
-  <h1>🔡 Linguistic Genesis: The Formation of Aza’raan</h1>
-  <p>🌍 From Aarak + Aramaic → Aza’raan</p>
-  <p>Aza’raan emerged as a shared language—a living testament to the merging of peoples. It combined:</p>
-  <p>Aarak’s phonetic signature: a flowing, vowel-dense soundscape where open syllables, long vowels, and melodic phrasing shaped every word.</p>
-  <p>Aramaic structural precision: glyphic form, syntactic discipline, and symbolic depth.</p>
-  <p>While the Aramaics offered a scriptural foundation, the Aaraks’ grammar rules prevailed. Words were designed to flow naturally, avoiding harsh consonant clusters, and favoring simplicity and rhythm over complexity or irregularity.</p>
-
-  <h2>✍️ Core Features of the Aza’raan Language</h2>
-
-  <h3>🌐 Orthography</h3>
-  <ul>
-    <li>Script: Custom glyphs adapted from Aramaic forms, tailored to Aarak phonemes.</li>
-    <li>Writing Direction: Left to right, top to bottom.</li>
-    <li>Capitalization: Reserved for proper nouns, pronouns, and sentence starts—emphasizing identity and clarity over grammatical tradition.</li>
-  </ul>
-
-  <h3>🔉 Phonology</h3>
-  <ul>
-    <li>Consonants: b, d, f, g, h, j, k, l, m, n, p, r, s, t</li>
-    <li>Vowels: a, e, i, o, u, y (with extended forms: aa, ee, ii, oo, uu)</li>
-    <li>Vowel Dominance: Every word in Aza’raan favors open syllables, gliding vowels, and tonal rhythm. Consonants support the flow rather than interrupt it.</li>
-    <li>Glottal Stop: <code>'Ai</code><br>
-      Aarak’s only glottal sound—expressed as 'Ai—was both sacred and structural, used to shape breathing, cadence, and spiritual emphasis.<br>
-      In Aza’raan, the Aramaic ʿAyn was adapted: once silent, it now often vocalizes as 'Ai in native speech.</li>
-  </ul>
-
-  <p><strong>Pronunciation Shift Example:</strong></p>
-  <p>Traditional Aramaic: Aza’ra → Az-uh-ruh (ʿAyn is silent)</p>
-  <p>Aza’raan-native: W’iosamn → Wuh-ai-ee-sahmn (‘Ai is voiced)</p>
-
-  <h2>🔡 Aza’raan Alphabet Overview</h2>
-  <p>Each glyph in Aza’raan is:</p>
-  <ul>
-    <li>⚫ Based on Aramaic script 🕎</li>
-    <li>⦿ Typed using Latin equivalents</li>
-    <li>⦿ Rendered in a custom font via Calligraphr</li>
-    <li>⦿ Rooted in phonetic logic from Aarak and Aramaic</li>
-  </ul>
-
-  <table border="1" cellpadding="6" cellspacing="0">
-    <thead>
-      <tr>
-        <th>Glyph</th>
-        <th>Name</th>
-        <th>Latin Equivalent</th>
-        <th>Sound</th>
-        <th>Notes</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">A</p></td>
-        <td>Ālaphí</td>
-        <td>A, E</td>
-        <td>/a/, /e/</td>
-        <td>Root vowel; anchors pronunciation</td>
-      </tr>
-      <tr>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">H</p></td>
-        <td>Haḥan</td>
-        <td>H</td>
-        <td>/h/, /ħ/</td>
-        <td>Emphatic stress sound</td>
-      </tr>
-      <tr>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">O</p></td>
-        <td>Ūrí</td>
-        <td>O</td>
-        <td>/o/, /uː/</td>
-        <td>Conveys resonance and depth</td>
-      </tr>
-      <tr>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">R</p></td>
-        <td>Rēs</td>
-        <td>R</td>
-        <td>Trilled /r/</td>
-        <td>Dialect-sensitive articulation</td>
-      </tr>
-      <tr>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">‘</p></td>
-        <td>ʿAyn</td>
-        <td>’</td>
-        <td>‘Ai / silent</td>
-        <td>Spiritual cadence and ancestral heritage</td>
-      </tr>
-      <tr>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">^</p></td>
-        <td>Na’lu</td>
-        <td>—</td>
-        <td>N/A</td>
-        <td>Emphasizes the <strong>next</strong> syllable</td>
-      </tr>
-      <tr>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">`</p></td>
-        <td>Ra’ama</td>
-        <td>—</td>
-        <td>N/A</td>
-        <td>Emphasizes the <strong>previous</strong> syllable</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <h2>📖 Language as Identity</h2>
-  <p>Aza’raan is not only spoken—it is experienced.</p>
-  <p>Names are spoken daily—not just for recognition, but as a reaffirmation of self.</p>
-  <p>The glottal ‘Ai is a spiritual breath woven into speech, grounding it in intention.</p>
-  <p>Accent markers (^, `) shape emotional nuance and storytelling rhythm.</p>
-  <p>Inclusivity is syntactic:</p>
-  <ul>
-    <li>No identity is assumed.</li>
-    <li>No voice is left unspoken.</li>
-    <li>Each speaker shapes their space in the world through their name and cadence.</li>
-  </ul>
-  <hr>
-
-  <h2>🧠 Grammar & Syntax</h2>
-
-  <h3>🧾 Sentence Structure</h3>
-  <p>Subject–Verb–Object (SVO). Fusion markers like <code>~</code> connect pronouns and verbs: <code>Anoki~hue</code> = “I am”.</p>
-
-  <h3>🧬 Morphology</h3>
-  <ul>
-    <li>Agglutinative: ideas formed via suffix chains</li>
-    <li>No grammatical gender—identity shown through pronouns</li>
-    <li>Emphasis on rhythm and fluidity</li>
-  </ul>
-</section>
-
-<section id="azaraan-alphabet">
-  <h2>🧬 Aza’raan Alphabet Table</h2>
-  <table border="1" cellpadding="6" cellspacing="0">
-    <thead>
-      <tr>
-        <th>Glyph</th>
-        <th>Aramaic Name</th>
-        <th>Aza'raan Name</th>
-        <th>Pronunciation</th>
-        <th>Latin Equivalents</th>
-        <th>Aza'raan (Latin Phonetics)</th>
-        <th>English Sound</th>
-        <th>Notes</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">A</p></td>
-        <td>Ālaph (א)</td>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">Alaphii</p></td>
-        <td>AH-lah-fee</td>
-        <td>A, a, E, e</td>
-        <td>Ālaphí</td>
-        <td>"A" in "father" or "E" in "echo"</td>
-        <td>⚫ Root vowel; ⦿ stabilizer; ⦿ from Aarak "Aii"</td>
-      </tr>
-      <tr>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">B</p></td>
-        <td>Bēth (𐡁)</td>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">Beth'</p></td>
-        <td>BAYTH</td>
-        <td>B, b</td>
-        <td>Bēth</td>
-        <td>"B" in "book" ⦿ softens to "V"</td>
-        <td>⚫ Blends into "V" in fluid speech</td>
-      </tr>
-      <tr>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">C</p></td>
-        <td>Kāph (𐡊)</td>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">Kaph</p></td>
-        <td>KAHF</td>
-        <td>C, c, K, k, X, x</td>
-        <td>Kāph</td>
-        <td>"K" in "king" ⦿ "Kh" when unstressed</td>
-        <td>⚫ Affects word stress and mutation</td>
-      </tr>
-      <tr>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">D</p></td>
-        <td>Dālath (𐡃)</td>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">Dala</p></td>
-        <td>DAH-lah</td>
-        <td>D, d</td>
-        <td>Dāla</td>
-        <td>"D" in "day" ⦿ "TH" as in "that"</td>
-        <td>⚫ Essential in archaic conjugation</td>
-      </tr>
-      <tr>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">F</p></td>
-        <td>Pē (𐡐)</td>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">Pe'</p></td>
-        <td>PAY-ai</td>
-        <td>F, f, P, p</td>
-        <td>Pē'ai</td>
-        <td>"P" in "pen" ⦿ "F" mid/final</td>
-        <td>⚫ Differentiates compound word tone</td>
-      </tr>
-      <tr>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">G</p></td>
-        <td>Gāmal (𐡂)</td>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">Gama</p></td>
-        <td>GAH-mah</td>
-        <td>G, g</td>
-        <td>Gāma</td>
-        <td>"G" in "go" ⦿ "Gh" in casual</td>
-        <td>⚫ Common in elision</td>
-      </tr>
-      <tr>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">H</p></td>
-        <td>Hē (𐡄) / Ḥēth (𐡇)</td>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">Hahan</p></td>
-        <td>HAH-khahn</td>
-        <td>H, h</td>
-        <td>Haḥan</td>
-        <td>"H" in "house" or throaty "Ḥ"</td>
-        <td>⚫ Poetic emphasis marker</td>
-      </tr>
-      <tr>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">I</p></td>
-        <td>Yodh (𐡉)</td>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">Yod</p></td>
-        <td>Yohd</td>
-        <td>I, i, J, j, Y, y</td>
-        <td>Yodh</td>
-        <td>"Y" in "yes" ⦿ vowel use as "I"</td>
-        <td>⚫ Diphthong transitioner</td>
-      </tr>
-      <tr>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">L</p></td>
-        <td>Lāmadh (𐡋)</td>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">Lama</p></td>
-        <td>LAH-mah</td>
-        <td>L, l</td>
-        <td>Lāma</td>
-        <td>"L" in "love"</td>
-        <td>⚫ Rounds before O sounds</td>
-      </tr>
-      <tr>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">M</p></td>
-        <td>Mim (𐡌)</td>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">Mim</p></td>
-        <td>Mihn</td>
-        <td>M, m</td>
-        <td>Mim</td>
-        <td>"M" in "moon"</td>
-        <td>⚫ Consistent across dialects</td>
-      </tr>
-      <tr>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">N</p></td>
-        <td>Nun (𐡍)</td>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">Nun</p></td>
-        <td>Nuhn</td>
-        <td>N, n</td>
-        <td>Nun</td>
-        <td>"N" in "night"</td>
-        <td>⚫ Nasal in lyrical meter</td>
-      </tr>
-      <tr>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">O</p></td>
-        <td>Ūrim (Aarak)</td>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">Urii</p></td>
-        <td>OO-rehee-ee</td>
-        <td>O, o</td>
-        <td>Ūrí</td>
-        <td>"O" in "octopus" or "oo"</td>
-        <td>⚫ Adds vocal weight</td>
-      </tr>
-      <tr>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">Q</p></td>
-        <td>Qoph (𐡒)</td>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">Qop</p></td>
-        <td>KOHP</td>
-        <td>Q, q</td>
-        <td>Qop</td>
-        <td>Deep "Q" as Arabic "qāl"</td>
-        <td>⚫ Formal pronunciation weight</td>
-      </tr>
-      <tr>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">R</p></td>
-        <td>Rēs (𐡓)</td>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">Res</p></td>
-        <td>Reh-AYSH</td>
-        <td>R, r</td>
-        <td>Rēsh</td>
-        <td>"R" in "rain" ⦿ trilled/softened</td>
-        <td>⚫ Varies with region</td>
-      </tr>
-      <tr>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">S</p></td>
-        <td>Sin(𐡔)/Semkath(𐡎)/Ṣādhē(𐡑)</td>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">Sasek</p></td>
-        <td>SHAH-sehk</td>
-        <td>S, s</td>
-        <td>Ṣaṣek / Ʃaṣek</td>
-        <td>"ss" or "sh"</td>
-        <td>⚫ Upper = "ss", Lower = "sh"</td>
-      </tr>
-      <tr>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">T</p></td>
-        <td>Taw(𐡕)/Ṭēth (𐡕)</td>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">Tatan</p></td>
-        <td>TAH-tahn</td>
-        <td>T, t</td>
-        <td>Taṭan</td>
-        <td>"T" in "top" ⦿ emphatic "Ṭ"</td>
-        <td>⚫ Hardens consonants</td>
-      </tr>
-      <tr>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">W</p></td>
-        <td>Waw (𐡅)</td>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">Waw</p></td>
-        <td>WAHV</td>
-        <td>U, u, W, w</td>
-        <td>Wawv</td>
-        <td>"U" in "blue", "W" in "wind"</td>
-        <td>⚫ Glide in compounds</td>
-      </tr>
-      <tr>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">V</p></td>
-        <td>Ṭhāmar (Aarak)</td>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">Tham</p></td>
-        <td>T-HAHM</td>
-        <td>V, v</td>
-        <td>Ṭhām</td>
-        <td>"V" in "vine"</td>
-        <td>⚫ Adopted via Adamah dialects</td>
-      </tr>
-      <tr>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">Z</p></td>
-        <td>Zayn (𐡆)</td>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">Zay</p></td>
-        <td>Zay</td>
-        <td>Z, z</td>
-        <td>Zay</td>
-        <td>"Z" in "zebra"</td>
-        <td>⚫ Stable across dialects</td>
-      </tr>
-      <tr>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">‘</p></td>
-        <td>ʾAyn (𐡏)</td>
-        <td>‘Ayn</td>
-        <td>AI-ayn</td>
-        <td>‘, ʔ</td>
-        <td>‘Aiayn</td>
-        <td>Glottal "Ai"</td>
-        <td>⚫ Aramaic soundless or glottalized adapted Aarak "'Ai"</td>
-      </tr>
-    </tbody>
-  </table>
-</section>
-<section id="azaraan-symbols">
-  <h2>🜲 Aza’raan Punctuation & Symbol Lexicon</h2>
-  <table border="1" cellpadding="6" cellspacing="0">
-    <thead>
-      <tr>
-        <th>Symbol</th>
-        <th>Function</th>
-        <th>Aza’raan Name</th>
-        <th>Latin Name</th>
-        <th>Pronunciation</th>
-        <th>Root & Aramaic Meaning</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">^</p></td>
-        <td>Stress next syllable</td>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">Na’lu</p></td>
-        <td>Na’ailu</td>
-        <td>NAH-ai-loo</td>
-        <td>נעל (nʿl) – to raise</td>
-      </tr>
-      <tr>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">`</p></td>
-        <td>Stress previous syllable</td>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">Ra’ama</p></td>
-        <td>Ra’aiama</td>
-        <td>RAH-ah-mah</td>
-        <td>רעם (rʿm) – thunder</td>
-      </tr>
-      <tr>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">~</p></td>
-        <td>Fusion / prolongation</td>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">Sayalu</p></td>
-        <td>Shayalu</td>
-        <td>SHAH-yah-loo</td>
-        <td>שאל (šyl) – braid</td>
-      </tr>
-      <tr>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">=</p></td>
-        <td>Equal / balance</td>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">Tavari</p></td>
-        <td>Tavari</td>
-        <td>TAH-vah-ree</td>
-        <td>תור (twr) – order</td>
-      </tr>
-      <tr>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">-</p></td>
-        <td>Name-title linker</td>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">Hadeka</p></td>
-        <td>Hadeka</td>
-        <td>HAH-deh-kah</td>
-        <td>חדק (ḥdk) – bind</td>
-      </tr>
-      <tr>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">.</p></td>
-        <td>Sentence stop</td>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">Sulefa</p></td>
-        <td>Sulefa</td>
-        <td>SOO-leh-fah</td>
-        <td>שלף (slp) – pause</td>
-      </tr>
-      <tr>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">:</p></td>
-        <td>Ratio / relation</td>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">Yezara</p></td>
-        <td>Yezara</td>
-        <td>YEH-zah-rah</td>
-        <td>זער (zʿr) – relate</td>
-      </tr>
-      <tr>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">;</p></td>
-        <td>Phrase break</td>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">Yenafa</p></td>
-        <td>Yenafa</td>
-        <td>YEH-nah-fah</td>
-        <td>נפי (npy) – ease</td>
-      </tr>
-      <tr>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">,</p></td>
-        <td>Transition / comma</td>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">Safilu</p></td>
-        <td>Shafilu</td>
-        <td>SHAH-fee-loo</td>
-        <td>ספל (sfl) – shift</td>
-      </tr>
-      <tr>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">°</p></td>
-        <td>Degree / state</td>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">Gehanu</p></td>
-        <td>Gehanu</td>
-        <td>GEH-hah-noo</td>
-        <td>גהנ (ghn) – measure</td>
-      </tr>
-      <tr>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">÷</p></td>
-        <td>Division/content split. Used with ʾAyn for formal division</td>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">Pelaka</p></td>
-        <td>Pelaka</td>
-        <td>PEH-lah-kah</td>
-        <td>פלך (plk) – segment</td>
-      </tr>
-      <tr>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">%</p></td>
-        <td>Fraction / percentage</td>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">Maresu</p></td>
-        <td>Mareshu</td>
-        <td>MAH-reh-shoo</td>
-        <td>מרש (mrš) – portion</td>
-      </tr>
-      <tr>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">&</p></td>
-        <td>Union / connection</td>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">Waawa</p></td>
-        <td>Waawa</td>
-        <td>WAAH-wa</td>
-        <td>וחד (wḥd) – unite</td>
-      </tr>
-      <tr>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">?</p></td>
-        <td>Question</td>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">Se’ema</p></td>
-        <td>She’aiema</td>
-        <td>SHEH-ai-mah</td>
-        <td>שמע (šʿm) – inquire</td>
-      </tr>
-      <tr>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">!</p></td>
-        <td>Exclamation / emphasis</td>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">Azmata</p></td>
-        <td>Azmata</td>
-        <td>AZ-mah-tah</td>
-        <td>עזם (ʿzm) – cry out</td>
-      </tr>
-      <tr>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">"</p></td>
-        <td>Quotation / speech</td>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">Rokhila</p></td>
-        <td>Rokhila</td>
-        <td>ROH-khee-lah</td>
-        <td>רוח (rwḥ) – spirit</td>
-      </tr>
-      <tr>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">( )</p></td>
-        <td>Structural framing</td>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">Talemni</p></td>
-        <td>Talemni</td>
-        <td>TAH-lehm-nee</td>
-        <td>תמן (tmn) – contain</td>
-      </tr>
-      <tr>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">+</p></td>
-        <td>Addition / growth</td>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">Navaka</p></td>
-        <td>Navaka</td>
-        <td>NAH-vah-kah</td>
-        <td>נבק (nbq) – expand</td>
-      </tr>
-      <tr>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">@</p></td>
-        <td>Copper currency</td>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">Nugam</p></td>
-        <td>Nugam</td>
-        <td>NOO-gahm</td>
-        <td>נגם (ngm) – stamp</td>
-      </tr>
-      <tr>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">$</p></td>
-        <td>Silver currency</td>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">Behrum</p></td>
-        <td>Behrum</td>
-        <td>BEH-room</td>
-        <td>ברם (brm) – refine</td>
-      </tr>
-      <tr>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">*</p></td>
-        <td>Gold currency</td>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">Guhlor</p></td>
-        <td>Guhlor</td>
-        <td>GUH-lor</td>
-        <td>גלר (glr) – gleam</td>
-      </tr>
-      <tr>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">{</p></td>
-        <td>Platinum currency</td>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">Merda</p></td>
-        <td>Merda</td>
-        <td>MER-dah</td>
-        <td>מרד (mrd) – sanctify</td>
-      </tr>
-      <tr>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">}</p></td>
-        <td>Digital currency</td>
-        <td><p style="font-family: 'Comic Sans MS', cursive; color: black; text-shadow: 0 0 2px #00ffff; font-size: 4rem;">Zuze</p></td>
-        <td>Zuze</td>
-        <td>ZOO-zee</td>
-        <td>זז (zz), זי (zy) – spark/essence</td>
-      </tr>
-    </tbody>
-  </table>
-</section>
-
-  </div> 
-  <div class="section">
-    <h2>🧪 Demo Area: Font Behavior Preview</h2>
-
-    <p><strong>This section shows a side-by-side comparison of how text looks in Pacifico vs. how it appears after being overridden with the custom Aza’raan font I created.</strong> This helps visualize the transformation within Google Docs and related apps.</p>
-
-    <h3>🌸 Original Pacifico Example</h3>
-    <p class="pacifico" style="font-family: 'Pacifico', cursive !important; font-size: 1.6em; color: #840000;">
-      This is what Pacifico looked like before the override.
-    </p>
-
-<h3>🔮 Aza'raan Font Preview (Overrides Pacifico)</h3>
-<p style="font-family: 'Comic Sans MS', cursive; color: #00FFFF; text-shadow: 0 0 2px #191970; font-size: 4rem;">Aza’ralo hue ni tsurayaka laha sa’lai miil'las - yani~hue baneyaka laha p’dai’ra yani.
-</p>
-
-    <p><em>This line is written in the custom <a href="https://github.com/thetransgendertrex/Azaraanlanguage/blob/main/Aza%27raan%20Planet%20Language.ttf" target="_blank">Aza’raan font</a> I designed to fully replace Pacifico in supported Google Drive applications.</em></p>
-
-    <p>Translated, it means: <strong>“Aza’raan is not designed to dominate speech - it’s built to liberate it.” Which is the quote from above.</strong></p> 
-
-</body>
-
-  <p>
-    🧠 Learn more about the lore, linguistic design, and metaphysical themes in the official 
-    <a href="https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/refs/heads/main/lore.html" target="_blank">lore</a>.
-  </p>
-  <p>
-    💜 Support the creator—<strong>William Blake Saville</strong> (aka <code>#TheTransgenderTRex</code>)—an autistic, low-income, bedridden trans man, via 
-    <a href="http://www.linktr.ee/thetransgendertrex" target="_blank">Linktree</a>.
-  </p>
-</section>
-
-<head>
-  <meta charset="UTF-8">
-  <title>Aza’raan Language</title>
-</head>
-<body>
-  <section class="section">
-    <h2>🌌 About the Aza’raan Language System</h2>
-    <p>
-      <strong>Aza’ra™</strong> and the <strong>Aza’raan™ Language System</strong> were created by <em>William Blake Saville</em> 
-      (<code>#TheTransgenderTRex</code>)—an autistic, low-income, bedridden trans man.
-    </p>
-    <p>
-      This living language embodies story, structure, and survival, blending Moonpunk resilience with a glyphic future.
-    </p>
-    <p>
-      📖 To explore the language’s partial lore and purpose, view the 
-      <a href="https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/refs/heads/main/lore.html" target="_blank">
-        official lore
-      </a>.
-    </p>
-    <p>
-      💜 To support the creator and keep the dream alive, visit 
-<a href="https://linktr.ee/thetransgendertrex" target="_blank" rel="noopener noreferrer">
-  support the creator
-      </a>.
-    </p>
-  </section>
-
-  <footer>
-    <hr>
-    <p>© Aza’ra™ and Aza’raan™ Language System — Crafted with purpose by William Blake Saville (<code>#TheTransgenderTRex</code>)</p>
-  </footer>
-</body>
-</html>
+const styleTag = document.createElement('style');
+styleTag.textContent = css;
+document.head.appendChild(styleTag);
+});
