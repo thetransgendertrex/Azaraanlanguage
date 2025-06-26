@@ -1,165 +1,113 @@
-/* === Steamwreck Font for Title Use Only === */
-@font-face {
-  font-family: 'Steamwreck';
-  src: url('https://www.fontspace.com/media/font-files/s/t/steamwreck/Steamwreck.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* === Cinzel for Heading 1 and Heading 2 === */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
-
-/* === Azaraan Font (Used When Explicitly Targeted) === */
-@font-face {
-  font-family: 'Azaraan';
-  src: url('https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Planet%20Language.ttf') format('truetype');
-  font-display: swap;
-}
-
-/* === Root Variables === */
+/* === VARIABLES === */
 :root {
-  --moonlight: #c0f7f2;
-  --dreamlight: #b59fff;
-  --glacial: #d1ecf6;
-  --moss: #7ec98d;
-  --coral: #f2b8a0;
-  --ember: #ffae66;
-  --obsidian: #1e1f26;
-  --silver: #dfeaf0;
-  --cyan: #00f6ff;
-  --highlight: #ffffff;
-  --glow: #82f2f2;
-  --prism: linear-gradient(135deg, #b59fff, #c0f7f2, #7ec98d, #f2b8a0);
+  --black: #000000;
+  --cyan: #00ffff;
+  --silver: #c0c0c0;
+
+  --moonpunk-primary: #a8e4ff;
+  --moonpunk-primary-shadow: 1.2px 1.2px #347694;
+
+  --moonpunk-secondary: #ffc0cb;
+  --moonpunk-secondary-shadow: 1px 1px #914452;
+
+  --moonpunk-tertiary: #aaffc3;
+  --moonpunk-tertiary-shadow: 0.8px 0.8px #0a5420;
+
+  --moonpunk-quaternary: #e6ccff;
+  --moonpunk-quaternary-shadow: 0.6px 0.6px #531f63;
+
+  --text-body: #ffffff;
+  --text-body-shadow: 0.4px 0.4px #4a5d23;
 }
 
-/* === Universal Styling === */
+/* === BASE STYLES === */
 body {
+  background-color: var(--black);
+  color: var(--text-body);
   font-family: 'Times New Roman', serif;
-  background: radial-gradient(circle at top, var(--obsidian) 0%, #0b0b0b 100%),
-              url('https://gallery.yopriceville.com/var/resizes/Free-Clipart-Pictures/Decorative-Elements-PNG/Silver_Gear_Transparent_PNG_Clip_Art.png?m=1507171942'),
-              url('https://gallery.yopriceville.com/var/resizes/Free-Clipart-Pictures/Decorative-Elements-PNG/Gear_Transparent_Clip_Art.png?m=1507171935'),
-              url('https://pngimg.com/uploads/gear/gear_PNG109875.png');
-  background-repeat: repeat;
-  background-size: 60px, 45px, 50px;
-  background-position: top left, bottom right, center center;
-  background-attachment: fixed;
-  color: var(--moonlight);
-  margin: 0;
+  line-height: 1.6;
   padding: 2rem;
-  line-height: 1.7;
-  scroll-behavior: smooth;
 }
 
-/* === Typography === */
-h1, h2 {
-  font-family: 'Cinzel', serif;
-  color: var(--cyan);
-  text-shadow: 0 0 8px var(--dreamlight);
-}
-
-h3, h4 {
+h1, h2, h3, h4 {
   font-family: serif;
-  color: var(--silver);
-  text-shadow: 0 0 6px var(--glacial);
+  margin-bottom: 0.5em;
+  text-shadow: var(--text-body-shadow);
 }
 
 h1 {
-  font-size: 2.8rem;
-  margin-bottom: 1rem;
-  background: white;
-  border: 2px solid var(--cyan);
-  padding: 1rem 1.5rem;
-  border-radius: 8px;
-  font-weight: bold;
-}
-
-h2 {
-  font-size: 2rem;
-  margin-top: 2rem;
-  border-bottom: 1px solid var(--glacial);
+  color: var(--moonpunk-primary);
+  text-shadow: var(--moonpunk-primary-shadow);
+  font-size: 2.75rem;
+  border-bottom: 2px solid var(--cyan);
   padding-bottom: 0.5rem;
 }
 
+h2 {
+  color: var(--moonpunk-secondary);
+  text-shadow: var(--moonpunk-secondary-shadow);
+  font-size: 2rem;
+}
+
 h3 {
+  color: var(--moonpunk-tertiary);
+  text-shadow: var(--moonpunk-tertiary-shadow);
   font-size: 1.5rem;
-  margin-top: 1.5rem;
 }
 
 h4 {
+  color: var(--moonpunk-quaternary);
+  text-shadow: var(--moonpunk-quaternary-shadow);
   font-size: 1.25rem;
-  margin-top: 1rem;
 }
 
-p, li {
-  font-family: 'Times New Roman', serif;
-  color: var(--silver);
-}
-
-ul {
-  padding-left: 1.5rem;
-  list-style: none;
-}
-ul li::before {
-  content: "🌙";
-  margin-right: 0.5rem;
-  color: var(--dreamlight);
-}
-
-/* === Links === */
-a, footer a {
-  background-color: black;
-  color: var(--cyan);
+/* === LINKS & BUTTONS === */
+a, footer a, .button-link {
+  background-color: var(--cyan);
+  color: var(--black);
   font-family: 'Times New Roman', serif;
   font-weight: 600;
   text-decoration: none;
   padding: 0.35em 0.75em;
   border-radius: 5px;
-  border: 2px solid var(--cyan);
+  border: 2px solid var(--silver);
   transition: all 0.3s ease;
   cursor: pointer;
   font-size: 1rem;
   user-select: none;
   margin: 0.3rem 0;
-}
-a:hover, a:focus {
-  background-color: var(--cyan);
-  color: black;
+  display: inline-block;
 }
 
-/* === Blockquotes, Code === */
-blockquote {
-  font-style: italic;
-  color: var(--moss);
-  border-left: 4px solid var(--glacial);
-  padding-left: 1rem;
-  margin: 2rem 0;
-  background: rgba(255, 255, 255, 0.03);
-  border-radius: 6px;
+a:hover, a:focus, .button-link:hover {
+  background-color: var(--black);
+  color: var(--cyan);
+  border: 2px solid var(--silver);
 }
 
-code, pre {
-  background: #111;
-  color: var(--glacial);
-  font-family: 'Courier New', monospace;
-  padding: 1rem;
-  border-radius: 8px;
-  border: 1px solid #444;
-  overflow-x: auto;
+/* === AZARAAN FONT SUBSTITUTION === */
+.azaraan-word {
+  font-family: 'Azaraan', cursive;
+  color: #014d4e;
+  text-shadow: 0 0 2px var(--cyan);
 }
 
-/* === Sections === */
-section, .section {
-  font-family: 'Times New Roman', serif;
-  margin-bottom: 3rem;
-  border-left: 4px solid var(--moss);
-  padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.02);
-  border-radius: 12px;
-  box-shadow: inset 0 0 12px rgba(120, 255, 247, 0.1);
+/* === Comic Sans Override for INDEX and README only === */
+body[data-doc-name*="index"],
+body[data-doc-name*="readme"] {
+  font-family: 'Comic Sans MS', cursive, sans-serif !important;
 }
 
-/* === Tables === */
+/* === Google Apps Font Dropdown Override === */
+div[aria-label="Font"] span[style*="Comic Sans"],
+div[aria-label="Font"] div[style*="Comic Sans"] {
+  font-family: 'Azaraan', cursive !important;
+  font-size: 16px !important;
+  color: #014d4e;
+  text-shadow: 0 0 2px var(--cyan);
+}
+
+/* === TABLES === */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -169,48 +117,29 @@ table {
   color: #000000;
   font-family: 'Times New Roman', serif;
   border-radius: 8px;
-  box-shadow: none;
 }
+
 th, td {
   padding: 1rem;
   text-align: left;
   border-bottom: 1px solid var(--cyan);
 }
+
 th {
   font-size: 1.125rem;
   font-weight: bold;
   border-bottom: 2px solid var(--cyan);
 }
+
 td {
   font-size: 0.9375rem;
 }
-tr:hover {
-  background-color: rgba(0, 255, 255, 0.1);
-}
 
-/* === Azaraan Styling (Targeted Words) === */
-.azaraan-word,
-.azaraan-phrase,
-.azaraan-fusion-form {
-  font-family: 'Azaraan', cursive !important;
-  font-size: 1.6rem;
-  display: block;
-  margin-bottom: 1rem;
-}
-
-.times-roman {
-  font-family: 'Times New Roman', serif;
-  font-size: 1rem;
-  color: #ccc;
-  display: inline-block;
-  margin-left: 0.5rem;
-}
-
-/* === Footer === */
+/* === FOOTER === */
 footer {
   background: white;
   border-top: 2px solid var(--cyan);
-  color: var(--cyan);
+  color: var(--black);
   text-align: center;
   font-family: 'Times New Roman', serif;
   font-size: 0.9rem;
@@ -220,42 +149,16 @@ footer {
   font-weight: bold;
 }
 
-/* === Visual Effects === */
-@keyframes pulse-glow {
-  0% { text-shadow: 0 0 4px var(--dreamlight); }
-  50% { text-shadow: 0 0 12px var(--dreamlight), 0 0 24px var(--moss); }
-  100% { text-shadow: 0 0 4px var(--dreamlight); }
-}
-.glow {
-  animation: pulse-glow 5s infinite;
-}
-.prismatic {
-  background: var(--prism);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: bold;
-}
-
-/* === Responsive Tweaks === */
-@media (max-width: 1024px) and (min-width: 768px) {
+/* === RESPONSIVE === */
+@media (max-width: 1024px) {
   body {
     padding: 1.5rem;
     font-size: 1rem;
   }
 
-  h1 {
-    font-size: 2.2rem;
-    padding: 0.75rem 1rem;
-  }
-
-  h2 {
-    font-size: 1.75rem;
-  }
-
-  h3 {
-    font-size: 1.3rem;
-  }
+  h1 { font-size: 2.2rem; padding: 0.75rem 1rem; }
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.3rem; }
 
   section, .section {
     padding: 1rem;
@@ -279,18 +182,9 @@ footer {
     font-size: 0.95rem;
   }
 
-  h1 {
-    font-size: 1.8rem;
-    padding: 0.6rem 0.8rem;
-  }
-
-  h2 {
-    font-size: 1.4rem;
-  }
-
-  h3 {
-    font-size: 1.1rem;
-  }
+  h1 { font-size: 1.8rem; padding: 0.6rem 0.8rem; }
+  h2 { font-size: 1.4rem; }
+  h3 { font-size: 1.1rem; }
 
   section, .section {
     padding: 0.8rem;
@@ -323,130 +217,3 @@ footer {
     padding: 1.2rem 0.8rem;
   }
 }
-/* Load the Aza'raan font from GitHub */
-@font-face {
-  font-family: 'AzaraanOverride';
-  src: url('https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Planet%20Language.ttf') format('truetype');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Azaraan';
-  src: url('https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Planet%20Language.ttf') format('truetype');
-  font-display: swap;
-}
-
-/* Apply Aza'raan font to custom HTML classes */
-.azaraan-word,
-.azaraan-phrase,
-.azaraan-fusion-form {
-  font-family: 'AzaraanOverride' !important;
-  font-style: normal !important;
-  font-weight: normal !important;
-  letter-spacing: normal !important;
-  text-transform: none !important;
-  direction: ltr !important;
-  unicode-bidi: isolate !important;
-  color: inherit !important;
-}
-
-/* Override Pacifico font globally (for Google apps and others) */
-* {
-  font-family: 'Azaraan' !important;
-}
-
-/* Fix font dropdown label elements in Google apps that use Pacifico */
-div[aria-label="Font"] span[style*="Pacifico"],
-div[aria-label="Font"] div[style*="Pacifico"] {
-  font-family: 'Azaraan' !important;
-  font-size: 16px !important;
-}
-/* === Tablet Styles (768px–1024px) === */
-@media (max-width: 1024px) and (min-width: 768px) {
-  body {
-    padding: 1.5rem;
-    font-size: 1rem;
-  }
-
-  h1 {
-    font-size: 2.2rem;
-    padding: 0.75rem 1rem;
-  }
-
-  h2 {
-    font-size: 1.75rem;
-  }
-
-  h3 {
-    font-size: 1.3rem;
-  }
-
-  section, .section {
-    padding: 1rem;
-    margin-bottom: 2rem;
-  }
-
-  table th,
-  table td {
-    padding: 0.75rem;
-    font-size: 0.95rem;
-  }
-
-  a, footer a {
-    font-size: 0.95rem;
-    padding: 0.3em 0.65em;
-  }
-}
-
-/* === Mobile Styles (below 768px) === */
-@media (max-width: 767px) {
-  body {
-    padding: 1rem;
-    font-size: 0.95rem;
-  }
-
-  h1 {
-    font-size: 1.8rem;
-    padding: 0.6rem 0.8rem;
-  }
-
-  h2 {
-    font-size: 1.4rem;
-  }
-
-  h3 {
-    font-size: 1.1rem;
-  }
-
-  section, .section {
-    padding: 0.8rem;
-    margin-bottom: 1.5rem;
-  }
-
-  table {
-    font-size: 0.9rem;
-    display: block;
-    overflow-x: auto;
-  }
-
-  table th,
-  table td {
-    padding: 0.5rem;
-    min-width: 120px;
-  }
-
-  ul {
-    padding-left: 1rem;
-  }
-
-  a, footer a {
-    font-size: 0.9rem;
-    padding: 0.25em 0.5em;
-    margin: 0.2rem 0;
-  }
-
-    footer {
-      font-size: 0.8rem;
-      padding: 1.2rem 0.8rem;
-    }
-  }
