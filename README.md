@@ -1,225 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="UTF-8" />
+<title>Welcome To The World Of Aza'ra!</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- External Moonpunk + Aza'raan Font Styles -->
+<link rel="stylesheet" href="https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Language%20Font%20CSS.css" />
+<style>
+/* === FORCE AZA'RAAN FONT FOR COMIC SANS === */
+@font-face {
+font-family: 'AzaraanOverride';
+src: url('https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Planet%20Language.ttf') format('truetype');
+}
+[style*="Comic Sans MS"],
+.comic-sans,
+[style*="'Comic Sans MS'"],
+[style*='"Comic Sans MS"'] {
+font-family: 'AzaraanOverride' !important;
+}
+/* === FORCE AZA'RAAN FONT FOR COMIC SANS === */
+@font-face {
+font-family: 'AzaraanOverride';
+src: url('https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Planet%20Language.ttf') format('truetype');
+}
+[style*="Comic Sans MS"],
+.comic-sans,
+[style*="'Comic Sans MS'"],
+[style*='"Comic Sans MS"'] {
+font-family: 'AzaraanOverride' !important;
+}
+/* === MOONPUNK VARIABLES === */
+:root {
+--black: #000000;
+--cyan: #00ffff;
+--silver: #c0c0c0;
+--moonpunk-primary: #a8e4ff;
+--moonpunk-primary-shadow: 1.2px 1.2px #347694;
+--moonpunk-secondary: #ffc0cb;
+--moonpunk-secondary-shadow: 1px 1px #914452;
+--moonpunk-tertiary: #aaffc3;
+--moonpunk-tertiary-shadow: 0.8px 0.8px #0a5420;
+--moonpunk-quaternary: #e6ccff;
+--moonpunk-quaternary-shadow: 0.6px 0.6px #531f63;
+--text-body: #ffffff;
+--text-body-shadow: 0.4px 0.4px #4a5d23;
+}
+/* === BASE STYLES === */
+body {
+background-color: var(--black);
+color: var(--text-body);
+font-family: 'Times New Roman', serif;
+line-height: 1.6;
+padding: 2rem;
+}
+h1, h2, h3, h4 {
+font-family: serif;
+margin-bottom: 0.5em;
+text-shadow: var(--text-body-shadow);
+}
+h1 {
+color: var(--moonpunk-primary);
+text-shadow: var(--moonpunk-primary-shadow);
+font-size: 2.75rem;
+border-bottom: 2px solid var(--cyan);
+padding-bottom: 0.5rem;
+}
+h2 {
+color: var(--moonpunk-secondary);
+text-shadow: var(--moonpunk-secondary-shadow);
+font-size: 2rem;
+}
+h3 {
+color: var(--moonpunk-tertiary);
+text-shadow: var(--moonpunk-tertiary-shadow);
+font-size: 1.5rem;
+}
+h4 {
+color: var(--moonpunk-quaternary);
+text-shadow: var(--moonpunk-quaternary-shadow);
+font-size: 1.25rem;
+}
+/* === AZARAAN FONT DEMO === */
+.azaraan, .comic-sans-override {
+font-family: 'AzaraanOverride', cursive;
+color: #014d4e;
+text-shadow: 0 0 2px var(--cyan);
+}
+/* === BUTTONS & LINKS === */
+a, footer a, .button-link {
+background-color: var(--cyan);
+color: var(--black);
+font-family: 'Times New Roman', serif;
+font-weight: 600;
+text-decoration: none;
+padding: 0.35em 0.75em;
+border-radius: 5px;
+border: 2px solid var(--silver);
+transition: all 0.3s ease;
+cursor: pointer;
+font-size: 1rem;
+user-select: none;
+margin: 0.3rem 0;
+display: inline-block;
+}
+a:hover, a:focus, .button-link:hover {
+background-color: var(--black);
+color: var(--cyan);
+border: 2px solid var(--silver);
+}
+/* === TABLE STYLING === */
+table {
+width: 100%;
+border-collapse: collapse;
+margin-top: 2rem;
+background-color: #ffffff;
+border: 2px solid var(--cyan);
+color: #000000;
+font-family: 'Times New Roman', serif;
+border-radius: 8px;
+}
+th, td {
+padding: 1rem;
+text-align: left;
+border-bottom: 1px solid var(--cyan);
+}
+th {
+font-size: 1.125rem;
+font-weight: bold;
+border-bottom: 2px solid var(--cyan);
+}
+td {
+font-size: 0.9375rem;
+}
+/* === FOOTER === */
+footer {
+background: white;
+border-top: 2px solid var(--cyan);
+color: var(--black);
+text-align: center;
+font-family: 'Times New Roman', serif;
+font-size: 0.9rem;
+padding: 2rem 1rem;
+margin-top: 5rem;
+border-radius: 0 0 8px 8px;
+font-weight: bold;
+}
+/* === RESPONSIVE === */
+@media (max-width: 1024px) {
+body { padding: 1.5rem; font-size: 1rem; }
+h1 { font-size: 2.2rem; padding: 0.75rem 1rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.3rem; }
+section { padding: 1rem; margin-bottom: 2rem; }
+table th, table td { padding: 0.75rem; font-size: 0.95rem; }
+a, footer a { font-size: 0.95rem; padding: 0.3em 0.65em; }
+}
+@media (max-width: 767px) {
+body { padding: 1rem; font-size: 0.95rem; }
+h1 { font-size: 1.8rem; padding: 0.6rem 0.8rem; }
+h2 { font-size: 1.4rem; }
+h3 { font-size: 1.1rem; }
+section { padding: 0.8rem; margin-bottom: 1.5rem; }
+table { font-size: 0.9rem; display: block; overflow-x: auto; }
+table th, table td { padding: 0.5rem; min-width: 120px; }
+ul { padding-left: 1rem; }
+a, footer a { font-size: 0.9rem; padding: 0.25em 0.5em; margin: 0.2rem 0; }
+footer { font-size: 0.8rem; padding: 1.2rem 0.8rem; }
+}
+</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="UTF-8" />
-  <title>Welcome To The World Of Aza'ra!</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aza'raan Font Universal Override Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
-
-  <!-- Optional external Aza'raan CSS if desired -->
-  <link rel="stylesheet" href="https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Language%20Font%20CSS.css" />
-
-  <!-- Steamwreck Font (only used for title) -->
-  <style>
-    @font-face {
-      font-family: 'Steamwreck';
-      src: url('https://www.fontspace.com/media/font-files/s/t/steamwreck/Steamwreck.ttf') format('truetype');
-      font-weight: normal;
-      font-style: normal;
-      font-display: swap;
-    }
-
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      padding: 2rem;
-    }
-
-    h1 {
-      font-family: 'Steamwreck', serif !important;
-      font-size: 2.8rem;
-      text-align: center;
-      color: #333;
-      margin-bottom: 2rem;
-    }
-
-    h2, h3, h4, h5 {
-      font-family: 'Cinzel', serif;
-    }
-
-    section {
-      max-width: 800px;
-      margin: auto;
-      line-height: 1.6;
-    }
-
-    :root {
-      --moonlight: #c0f7f2;
-      --dreamlight: #b59fff;
-      --glacial: #d1ecf6;
-      --moss: #7ec98d;
-      --coral: #f2b8a0;
-      --ember: #ffae66;
-      --obsidian: #1e1f26;
-      --silver: #dfeaf0;
-      --cyan: #00f6ff;
-      --highlight: #ffffff;
-      --glow: #82f2f2;
-      --prism: linear-gradient(135deg, #b59fff, #c0f7f2, #7ec98d, #f2b8a0);
-    }
-
-    body {
-      font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
-      background: radial-gradient(circle at top, var(--obsidian) 0%, #0b0b0b 100%),
-                  url('https://gallery.yopriceville.com/var/resizes/Free-Clipart-Pictures/Decorative-Elements-PNG/Silver_Gear_Transparent_PNG_Clip_Art.png?m=1507171942'),
-                  url('https://gallery.yopriceville.com/var/resizes/Free-Clipart-Pictures/Decorative-Elements-PNG/Gear_Transparent_Clip_Art.png?m=1507171935'),
-                  url('https://pngimg.com/uploads/gear/gear_PNG109875.png');
-      background-repeat: repeat;
-      background-size: 60px, 45px, 50px;
-      background-position: top left, bottom right, center center;
-      background-attachment: fixed;
-      color: var(--moonlight);
-      margin: 0;
-      padding: 2rem;
-      line-height: 1.7;
-      scroll-behavior: smooth;
-    }
-
-    h1, h2, h3, h4 {
-      font-family: 'Cinzel', serif;
-      text-shadow: 0 0 8px var(--dreamlight);
-    }
-
-    h1 {
-      font-size: 2.8rem;
-      margin-bottom: 1rem;
-      background: white;
-      border: 2px solid var(--cyan);
-      padding: 1rem 1.5rem;
-      border-radius: 8px;
-      color: var(--cyan);
-      font-weight: bold;
-    }
-
-    h2 {
-      font-size: 2rem;
-      margin-top: 2rem;
-      border-bottom: 1px solid var(--glacial);
-      padding-bottom: 0.5rem;
-      color: var(--dreamlight);
-    }
-
-    h3 {
-      font-size: 1.5rem;
-      margin-top: 1.5rem;
-      color: var(--silver);
-    }
-
-    a {
-      background-color: black;
-      color: var(--cyan);
-      font-family: 'Times New Roman', serif;
-      font-weight: 600;
-      text-decoration: none;
-      padding: 0.35em 0.75em;
-      border-radius: 5px;
-      border: 2px solid var(--cyan);
-      transition: all 0.3s ease;
-      cursor: pointer;
-      font-size: 1rem;
-      user-select: none;
-    }
-
-    a:hover, a:focus {
-      background-color: var(--cyan);
-      color: black;
-      outline: none;
-    }
-
-    section, .section {
-      margin-bottom: 3rem;
-      border-left: 4px solid var(--moss);
-      padding: 1.5rem;
-      background: rgba(255, 255, 255, 0.02);
-      border-radius: 12px;
-      box-shadow: inset 0 0 12px rgba(120, 255, 247, 0.1);
-    }
-
-    .block {
-      background: rgba(0, 0, 0, 0.5);
-      padding: 1rem;
-      border: 1px solid #555;
-      border-radius: 6px;
-      font-family: 'Courier New', monospace;
-    }
-
-    .azaraan-word,
-    .azaraan-phrase,
-    .azaraan-fusion-form {
-      font-family: 'Azaraan', truetype !important;
-      font-size: 1.6rem;
-      display: block;
-      margin-bottom: 1rem;
-    }
-
-    .times-roman {
-      font-family: 'Times New Roman', serif;
-      font-size: 1rem;
-      color: #ccc;
-      display: inline-block;
-      margin-left: 0.5rem;
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 1.5rem;
-    }
-
-    ul li::before {
-      content: "🌙";
-      margin-right: 0.5rem;
-      color: var(--dreamlight);
-    }
-
-    pre {
-      background: #111;
-      color: var(--glacial);
-      overflow-x: auto;
-      padding: 1rem;
-      border-radius: 8px;
-    }
-
-    code {
-      font-family: 'Courier New', monospace;
-    }
-
-    .glow {
-      animation: pulse-glow 5s infinite;
-    }
-
-    @keyframes pulse-glow {
-      0% { text-shadow: 0 0 4px var(--dreamlight); }
-      50% { text-shadow: 0 0 12px var(--dreamlight), 0 0 24px var(--moss); }
-      100% { text-shadow: 0 0 4px var(--dreamlight); }
-    }
-
-    footer {
-      background: white;
-      border-top: 2px solid var(--cyan);
-      color: var(--cyan);
-      text-align: center;
-      font-family: 'Times New Roman', serif;
-      font-size: 0.9rem;
-      padding: 2rem 1rem;
-      margin-top: 5rem;
-      border-radius: 0 0 8px 8px;
-      font-weight: bold;
-    }
-  </style>
-</head>
-
-<body>
-  <h1>Welcome To The World Of Aza'ra!</h1>
-
-  <section id="responsive-message" class="responsive-highlight">
-    <h2>📱 Aza'raan on Mobile & Tablet</h2>
-    <p>This section adjusts beautifully across devices. Try resizing your window to see the responsive effects take place—fonts, padding, and layout all adapt smoothly to your screen.</p>
-  </section>
-
-  <p>The Aza’raan font override is loading...</p>
-
+  <!-- 👇 Load and run override.js FIRST -->
   <script>
     // Load remote override.js from GitHub and execute
     fetch('https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/refs/heads/main/override.js')
@@ -240,11 +196,362 @@
         document.body.appendChild(errorNotice);
       });
   </script>
-</body>
+
+  <!-- External Moonpunk + Aza'raan Font Styles -->
+  <link rel="stylesheet" href="https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Language%20Font%20CSS.css" />
+
+  <style>
+    /* === FORCE AZA'RAAN FONT FOR COMIC SANS === */
+    @font-face {
+      font-family: 'AzaraanOverride';
+      src: url('https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Planet%20Language.ttf') format('truetype');
+    }
+
+    [style*="Comic Sans MS"],
+    .comic-sans,
+    [style*="'Comic Sans MS'"],
+    [style*='"Comic Sans MS"'] {
+      font-family: 'AzaraanOverride' !important;
+    }
+/* ──────────────✦ Global Aesthetic with Moonpunk Image Background ✦──────────────
+Background replaced by AI-generated Moonpunk Settlement image,
+fitting desktop, tablet, and mobile with fixed position and footer fixed at bottom.
+*/
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  color: #cceeff;
+  background: transparent;
+}
+
+/* Background image fixed behind everything */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+  background-image: url("https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza'ra%20Moonpunk%20Settlement%20(AI%20Generated)");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; /* cover to fill the screen without distortion */
+  filter: brightness(0.85) contrast(1.05);
+}
+
+/* Subtly darken the image for text readability */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background: radial-gradient(ellipse at center, rgba(11,29,38,0.5) 0%, rgba(4,13,18,0.8) 100%);
+  pointer-events: none;
+}
+
+/* === VARIABLES === */
+:root {
+  --black: #000000;
+  --cyan: #00ffff;
+  --silver: #c0c0c0;
+
+  --moonpunk-primary: #a8e4ff;
+  --moonpunk-primary-shadow: 1.2px 1.2px #347694;
+
+  --moonpunk-secondary: #ffc0cb;
+  --moonpunk-secondary-shadow: 1px 1px #914452;
+
+  --moonpunk-tertiary: #aaffc3;
+  --moonpunk-tertiary-shadow: 0.8px 0.8px #0a5420;
+
+  --moonpunk-quaternary: #e6ccff;
+  --moonpunk-quaternary-shadow: 0.6px 0.6px #531f63;
+
+  --text-body: #ffffff;
+  --text-body-shadow: 0.4px 0.4px #4a5d23;
+}
+
+/* === BASE STYLES === */
+body {
+  /* foreground content */
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: var(--text-body);
+  font-family: 'Times New Roman', serif;
+  line-height: 1.6;
+  padding: 2rem;
+  overflow-y: scroll;
+  z-index: 0; /* ensure in front of background */
+}
+
+h1, h2, h3, h4 {
+  font-family: serif;
+  margin-bottom: 0.5em;
+  text-shadow: var(--text-body-shadow);
+  opacity: 1; /* keep text fully opaque */
+}
+
+h1 {
+  color: var(--moonpunk-primary);
+  text-shadow: var(--moonpunk-primary-shadow);
+  font-size: 2.75rem;
+  border-bottom: 2px solid var(--cyan);
+  padding-bottom: 0.5rem;
+}
+
+h2 {
+  color: var(--moonpunk-secondary);
+  text-shadow: var(--moonpunk-secondary-shadow);
+  font-size: 2rem;
+}
+
+h3 {
+  color: var(--moonpunk-tertiary);
+  text-shadow: var(--moonpunk-tertiary-shadow);
+  font-size: 1.5rem;
+}
+
+h4 {
+  color: var(--moonpunk-quaternary);
+  text-shadow: var(--moonpunk-quaternary-shadow);
+  font-size: 1.25rem;
+}
+
+/* === LINKS & BUTTONS === */
+a, footer a, .button-link {
+  background-color: rgba(0, 255, 255, 0.6);
+  color: var(--black);
+  font-family: 'Times New Roman', serif;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.35em 0.75em;
+  border-radius: 5px;
+  border: 2px solid var(--silver);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-size: 1rem;
+  user-select: none;
+  margin: 0.3rem 0;
+  display: inline-block;
+}
+
+a:hover, a:focus, .button-link:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: var(--cyan);
+  border: 2px solid var(--silver);
+}
+
+/* === TABLES === */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  background-color: #ffffff; /* solid */
+  border: 2px solid var(--cyan);
+  color: #000000;
+  font-family: 'Times New Roman', serif;
+  border-radius: 8px;
+  opacity: 1; /* force solid visibility */
+}
+
+th, td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--cyan);
+  opacity: 1; /* text fully opaque */
+}
+
+th {
+  font-size: 1.125rem;
+  font-weight: bold;
+  border-bottom: 2px solid var(--cyan);
+}
+
+td {
+  font-size: 0.9375rem;
+}
+
+/* Footer stays fixed at bottom */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  color: #111;
+  text-align: center;
+  font-family: 'Times New Roman', serif;
+  font-size: 0.9rem;
+  padding: 2rem 1rem;
+  border-top: 2px solid #00ffee;
+  z-index: 10;
+  font-weight: bold;
+  border-radius: 0 0 8px 8px;
+}
+
+/* === RESPONSIVE === */
+@media (min-width: 1025px) {
+  body::before {
+    background-size: cover; /* fill entire viewport */
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  body::before {
+    background-size: contain;
+    background-position: center top;
+  }
+}
+
+@media (max-width: 767px) {
+  body::before {
+    background-size: contain;
+    background-position: center top;
+  }
+}
+
+@media (max-width: 1024px) {
+  body {
+    padding: 1.5rem;
+    font-size: 1rem;
+  }
+
+  h1 { font-size: 2.2rem; padding: 0.75rem 1rem; }
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.3rem; }
+
+  section, .section {
+    padding: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  table th, table td {
+    padding: 0.75rem;
+    font-size: 0.95rem;
+  }
+
+  a, footer a {
+    font-size: 0.95rem;
+    padding: 0.3em 0.65em;
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+
+  h1 { font-size: 1.8rem; padding: 0.6rem 0.8rem; }
+  h2 { font-size: 1.4rem; }
+  h3 { font-size: 1.1rem; }
+
+  section, .section {
+    padding: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  table {
+    font-size: 0.9rem;
+    display: block;
+    overflow-x: auto;
+  }
+
+  table th, table td {
+    padding: 0.5rem;
+    min-width: 120px;
+  }
+
+  ul {
+    padding-left: 1rem;
+  }
+
+  a, footer a {
+    font-size: 0.9rem;
+    padding: 0.25em 0.5em;
+    margin: 0.2rem 0;
+  }
+
+  footer {
+    font-size: 0.8rem;
+    padding: 1.2rem 0.8rem;
+  }
+}
+
+/* === Comic Sans Override (GitHub index.html and README.md only) === */
+body[data-doc-name*="index"],
+body[data-doc-name*="readme"] {
+  font-family: 'Comic Sans MS', cursive, sans-serif !important;
+}
+
+/* === Aza'raan Font Substitution for Individual Words or Phrases === */
+.azaraan-word {
+  font-family: 'Azaraan', cursive;
+  color: #014d4e;
+  text-shadow: 0 0 2px var(--cyan);
+}
+
+/* === Google Apps: Replace Pacifico with Aza'raan in Font Dropdown === */
+/* Affects visible Pacifico items so "Aza'raan" appears in its glyph form */
+div[aria-label="Font"] span[style*="Pacifico"],
+div[aria-label="Font"] div[style*="Pacifico"] {
+  font-family: 'Azaraan', cursive !important;
+  font-size: 18px !important;
+  color: #000000;
+}
+</style>
+
 </head>
 
 <body>
+  <section id="azaraan-font-override-demo">
+    <h2>Aza'raan Font Universal Override Demo</h2>
+
+    <p style="font-family: 'Comic Sans MS', cursive;">
+      This text uses Comic Sans but should be overridden by Aza'raan on GitHub index/README pages.
+    </p>
+
+    <p style="font-family: Pacifico, cursive;">
+      This text uses Pacifico but should be overridden by Aza'raan on Google Apps domains.
+    </p>
+
+    <p>This text uses the default font.</p>
+
+    <!-- FONT DEMO -->
+    <p>
+      <span class="comic-sans-override">(sample word)</span>
+      <span class="times-roman"> — This demonstrates how all Comic Sans text is now rendered using the Aza’raan font due to the applied override.</span>
+    </p>
 <section>
+<section id="Introduction">
+<h1>Welcome To The World Of Aza'ra!</h1>
+<section id="responsive-message" class="responsive-highlight">
+<h2>📱 Aza'raan on Mobile & Tablet</h2>
+<p>This section adjusts beautifully across devices. Try resizing your window to see the responsive effects take place—fonts, padding, and layout all adapt smoothly to your screen.</p>
+</section>
+<h1 class="glow">🌙 Aza’raan Font Google Application</h1>
+<p>This page combines the Aza'raan glyphic font with a Moonpunk–Cyber-Glyphic visual theme, designed for use in both <code>index.html</code> and <code>README.md</code> contexts.</p>
+<h3>📦 Aza’raan Font Resources</h3>
+    <ul>
+      <li><a href="https://github.com/thetransgendertrex/Azaraanlanguage/blob/main/Aza%27raan%20Planet%20Language.ttf" target="_blank">Download Aza'raan.ttf</a></li>
+      <li><a href="https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Language%20Font%20CSS.css" target="_blank">Font CSS</a></li>
+      <li><a href="https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Language%20Font%20Javascript" target="_blank">Font JS</a></li>
+      <li><a href="https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/override.js" target="_blank">Override Script</a></li>
+      <li><a href="https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Manifest.json" target="_blank">Manifest.json</a></li>
+      <li><a href="https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza'ra%20Moonpunk%20Settlement%20(AI%20Generated)" target="_blank">Aza'raa Moonpunk Settlement</a></li>
+    </ul>
+</section>
+
+<section>
+</head>
   <h2>🌍 Welcome to Aza’ra</h2>
 
   <h3>🕰️ Historical Context: The Cataclysm and the Birth of Aza’ra</h3>
@@ -1381,26 +1688,26 @@
         </tr>
       </thead>
       <tbody>
-        <tr><td>A</td><td>Ālaph (א)</td><td><span class="azaraan-word">Alaphii</span></td><td>AH-lah-fee</td><td>A, a, E, e</td><td>Ālaphí</td><td>"A" in "father" or "E" in "echo"</td><td>⚫ Root vowel; ⦿ stabilizer; ⦿ from Aarak "Aii"</td></tr>
-        <tr><td>B</td><td>Bēth (𐡁)</td><td><span class="azaraan-word">Beth'</span></td><td>BAYTH</td><td>B, b</td><td>Bēth</td><td>"B" in "book"</td><td>⦿ Softens to "V"</td></tr>
-        <tr><td>C</td><td>Kāph (𐡊)</td><td><span class="azaraan-word">Kaph</span></td><td>KAHF</td><td>C, c, K, k, X, x</td><td>Kāph</td><td>"K" in "king"</td><td>⦿ "Kh" unstressed</td></tr>
-        <tr><td>D</td><td>Dālath (𐡃)</td><td><span class="azaraan-word">Dala</span></td><td>DAH-lah</td><td>D, d</td><td>Dāla</td><td>"D" in "day"</td><td>⦿ "TH" as in "that"</td></tr>
-        <tr><td>F</td><td>Pē (𐡐)</td><td><span class="azaraan-word">Pe'</span></td><td>PAY-ai</td><td>F, f, P, p</td><td>Pē'ai</td><td>"P" in "pen"</td><td>⦿ "F" mid/final</td></tr>
-        <tr><td>G</td><td>Gāmal (𐡂)</td><td><span class="azaraan-word">Gama</span></td><td>GAH-mah</td><td>G, g</td><td>Gāma</td><td>"G" in "go"</td><td>⦿ "Gh" casual speech</td></tr>
-        <tr><td>H</td><td>Hē / Ḥēth (𐡇/𐡄 )<br>→ Haḥan</td><td><span class="azaraan-word">Hahan</span></td><td>HAH-khahn</td><td>H, h</td><td>Haḥan</td><td>"H" in "house"</td><td>⦿ Poetic emphasis</td></tr>
-        <tr><td>I</td><td>Yodh (𐡉)</td><td><span class="azaraan-word">Yod</span></td><td>Yohd</td><td>I, i, J, j, Y, y</td><td>Yodh</td><td>"Y" in "yes"</td><td>⦿ "I" as vowel</td></tr>
-        <tr><td>L</td><td>Lāmadh (𐡋)</td><td><span class="azaraan-word">Lama</span></td><td>LAH-mah</td><td>L, l</td><td>Lāma</td><td>"L" in "love"</td><td>⦿ Rounds before O</td></tr>
-        <tr><td>M</td><td>Mim (𐡌)</td><td><span class="azaraan-word">Mim</span></td><td>Mihn</td><td>M, m</td><td>Mim</td><td>"M" in "moon"</td><td>⚫ Consistent across dialects</td></tr>
-        <tr><td>N</td><td>Nun (𐡍)</td><td><span class="azaraan-word">Nun</span></td><td>Nuhn</td><td>N, n</td><td>Nun</td><td>"N" in "night"</td><td>⦿ Nasal in lyrical meter</td></tr>
-        <tr><td>O</td><td>Ūrim (Aarak Derived)</td><td><span class="azaraan-word">Urii</span></td><td>OO-rehee-ee</td><td>O, o</td><td>Ūrí</td><td>"O" or "oo"</td><td>⦿ Adds vocal weight</td></tr>
-        <tr><td>Q</td><td>Qoph (𐡒)</td><td><span class="azaraan-word">Qop</span></td><td>KOHP</td><td>Q, q</td><td>Qop</td><td>Deep Arabic "qāl"</td><td>⦿ Formal emphasis</td></tr>
-        <tr><td>R</td><td>Rēs (𐡓)</td><td><span class="azaraan-word">Res</span></td><td>Reh-AYSH</td><td>R, r</td><td>Rēsh</td><td>"R" in "rain"</td><td>⦿ Trilled or softened</td></tr>
-        <tr><td>S</td><td>Sin / Semkath / Ṣādhē<br>→ Ʃaṣek / Ṣaṣek</td><td><span class="azaraan-word">Sasek</span></td><td>SHAH-sehk</td><td>S, s</td><td>Ṣaṣek / Ʃaṣek</td><td>"s" or "sh"</td><td>⦿ Lower = "sh"<br>Upper = "ss"</td></tr>
-        <tr><td>T</td><td>Taw / Ṭēth (𐡈/𐡕)<br>→ Taṭan</td><td><span class="azaraan-word">Tatan</span></td><td>TAH-tahn</td><td>T, t</td><td>Taṭan</td><td>"T" in "top"</td><td>⦿ Emphatic "Ṭ"</td></tr>
-        <tr><td>W</td><td>Waw (𐡅)</td><td><span class="azaraan-word">Waw</span></td><td>WAHV</td><td>U, u, W, w</td><td>Wawv</td><td>"W" or "oo"</td><td>⦿ Glide in compounds</td></tr>
-        <tr><td>V</td><td>Ṭhāmar (Aarak Derived)</td><td><span class="azaraan-word">Tham</span></td><td>T-HAHM</td><td>V, v</td><td>Ṭhām</td><td>"V" in "vine"</td><td>⦿ Migrant-influenced</td></tr>
-        <tr><td>Z</td><td>Zayn (𐡆)</td><td><span class="azaraan-word">Zay</span></td><td>Zay</td><td>Z, z</td><td>Zay</td><td>"Z" in "zebra"</td><td>⚫ Stable pronunciation</td></tr>
-        <tr><td>‘</td><td>ʾAyn (𐡏)</td><td><span class="azaraan-word">‘Ayn</span></td><td>AI-ayn</td><td>', ʾ</td><td>‘Aiayn</td><td>Glottal "Ai"</td><td>⦿ Ritual glottal or adapted</td></tr>
+        <tr><td>A</td><td>Ālaph (א)</td><td><span class="comic-sans-override">;">Alaphii</span></td><td>AH-lah-fee</td><td>A, a, E, e</td><td>Ālaphí</td><td>"A" in "father" or "E" in "echo"</td><td>⚫ Root vowel; ⦿ stabilizer; ⦿ from Aarak "Aii"</td></tr>
+        <tr><td>B</td><td>Bēth (𐡁)</td><td><span class="comic-sans-override">;">Beth'</span></td><td>BAYTH</td><td>B, b</td><td>Bēth</td><td>"B" in "book"</td><td>⦿ Softens to "V"</td></tr>
+        <tr><td>C</td><td>Kāph (𐡊)</td><td><span class="comic-sans-override">;">Kaph</span></td><td>KAHF</td><td>C, c, K, k, X, x</td><td>Kāph</td><td>"K" in "king"</td><td>⦿ "Kh" unstressed</td></tr>
+        <tr><td>D</td><td>Dālath (𐡃)</td><td><span class="comic-sans-override">;">Dala</span></td><td>DAH-lah</td><td>D, d</td><td>Dāla</td><td>"D" in "day"</td><td>⦿ "TH" as in "that"</td></tr>
+        <tr><td>F</td><td>Pē (𐡐)</td><td><span class="comic-sans-override">;">Pe'</span></td><td>PAY-ai</td><td>F, f, P, p</td><td>Pē'ai</td><td>"P" in "pen"</td><td>⦿ "F" mid/final</td></tr>
+        <tr><td>G</td><td>Gāmal (𐡂)</td><td><span class="comic-sans-override">;">Gama</span></td><td>GAH-mah</td><td>G, g</td><td>Gāma</td><td>"G" in "go"</td><td>⦿ "Gh" casual speech</td></tr>
+        <tr><td>H</td><td>Hē / Ḥēth (𐡇/𐡄 )<br>→ Haḥan</td><td><span class="comic-sans-override">;">Hahan</span></td><td>HAH-khahn</td><td>H, h</td><td>Haḥan</td><td>"H" in "house"</td><td>⦿ Poetic emphasis</td></tr>
+        <tr><td>I</td><td>Yodh (𐡉)</td><td><span class="comic-sans-override">;">Yod</span></td><td>Yohd</td><td>I, i, J, j, Y, y</td><td>Yodh</td><td>"Y" in "yes"</td><td>⦿ "I" as vowel</td></tr>
+        <tr><td>L</td><td>Lāmadh (𐡋)</td><td><span class="comic-sans-override">;">Lama</span></td><td>LAH-mah</td><td>L, l</td><td>Lāma</td><td>"L" in "love"</td><td>⦿ Rounds before O</td></tr>
+        <tr><td>M</td><td>Mim (𐡌)</td><td><span class="comic-sans-override">;">Mim</span></td><td>Mihn</td><td>M, m</td><td>Mim</td><td>"M" in "moon"</td><td>⚫ Consistent across dialects</td></tr>
+        <tr><td>N</td><td>Nun (𐡍)</td><td><span class="comic-sans-override">;">Nun</span></td><td>Nuhn</td><td>N, n</td><td>Nun</td><td>"N" in "night"</td><td>⦿ Nasal in lyrical meter</td></tr>
+        <tr><td>O</td><td>Ūrim (Aarak Derived)</td><td><span class="comic-sans-override">;">Urii</span></td><td>OO-rehee-ee</td><td>O, o</td><td>Ūrí</td><td>"O" or "oo"</td><td>⦿ Adds vocal weight</td></tr>
+        <tr><td>Q</td><td>Qoph (𐡒)</td><td><span class="comic-sans-override">;">Qop</span></td><td>KOHP</td><td>Q, q</td><td>Qop</td><td>Deep Arabic "qāl"</td><td>⦿ Formal emphasis</td></tr>
+        <tr><td>R</td><td>Rēs (𐡓)</td><td><span class="comic-sans-override">;">Res</span></td><td>Reh-AYSH</td><td>R, r</td><td>Rēsh</td><td>"R" in "rain"</td><td>⦿ Trilled or softened</td></tr>
+        <tr><td>S</td><td>Sin / Semkath / Ṣādhē<br>→ Ʃaṣek / Ṣaṣek</td><td><span class="comic-sans-override">;">Sasek</span></td><td>SHAH-sehk</td><td>S, s</td><td>Ṣaṣek / Ʃaṣek</td><td>"s" or "sh"</td><td>⦿ Lower = "sh"<br>Upper = "ss"</td></tr>
+        <tr><td>T</td><td>Taw / Ṭēth (𐡈/𐡕)<br>→ Taṭan</td><td><span class="comic-sans-override">;">Tatan</span></td><td>TAH-tahn</td><td>T, t</td><td>Taṭan</td><td>"T" in "top"</td><td>⦿ Emphatic "Ṭ"</td></tr>
+        <tr><td>W</td><td>Waw (𐡅)</td><td><span class="comic-sans-override">;">Waw</span></td><td>WAHV</td><td>U, u, W, w</td><td>Wawv</td><td>"W" or "oo"</td><td>⦿ Glide in compounds</td></tr>
+        <tr><td>V</td><td>Ṭhāmar (Aarak Derived)</td><td><span class="comic-sans-override">;">Tham</span></td><td>T-HAHM</td><td>V, v</td><td>Ṭhām</td><td>"V" in "vine"</td><td>⦿ Migrant-influenced</td></tr>
+        <tr><td>Z</td><td>Zayn (𐡆)</td><td><span class="comic-sans-override">;">Zay</span></td><td>Zay</td><td>Z, z</td><td>Zay</td><td>"Z" in "zebra"</td><td>⚫ Stable pronunciation</td></tr>
+        <tr><td>‘</td><td>ʾAyn (𐡏)</td><td><span class="comic-sans-override">;">‘Ayn</span></td><td>AI-ayn</td><td>', ʾ</td><td>‘Aiayn</td><td>Glottal "Ai"</td><td>⦿ Ritual glottal or adapted</td></tr>
       </tbody>
     </table>
   </div>
@@ -1416,30 +1723,30 @@
         </tr>
       </thead>
       <tbody>
-        <tr><td><span class="azaraan-word">^</span></td><td>Stress next syllable</td><td><span class="azaraan-word">Na’lu</span></td><td>Na’ailu</td><td>NAH-ai-loo</td><td>נעל – to raise</td></tr>
-        <tr><td><span class="azaraan-word"></span></td><td>Stress previous syllable</td><td><span class="azaraan-word">Ra’ama</span></td><td>Ra’aiama</td><td>RAH-ah-mah</td><td>רעם – thunder</td></tr>
-        <tr><td><span class="azaraan-word">~</span></td><td>Fusion / prolongation</td><td><span class="azaraan-word">Sayalu</span></td><td>Shayalu</td><td>SHAH-yah-loo</td><td>שאל – braid</td></tr>
-        <tr><td><span class="azaraan-word">=</span></td><td>Equal / balance</td><td><span class="azaraan-word">Tavari</span></td><td>Tavari</td><td>TAH-vah-ree</td><td>תור – order</td></tr>
-        <tr><td><span class="azaraan-word">-</span></td><td>Name-title linker</td><td><span class="azaraan-word">Hadeka</span></td><td>Hadeka</td><td>HAH-deh-kah</td><td>חדק – bind</td></tr>
-        <tr><td><span class="azaraan-word">.</span></td><td>Sentence stop</td><td><span class="azaraan-word">Sulefa</span></td><td>Sulefa</td><td>SOO-leh-fah</td><td>שלף – pause</td></tr>
-        <tr><td><span class="azaraan-word">:</span></td><td>Ratio / relation</td><td><span class="azaraan-word">Yezara</span></td><td>Yezara</td><td>YEH-zah-rah</td><td>זער – relate</td></tr>
-        <tr><td><span class="azaraan-word">;</span></td><td>Phrase break</td><td><span class="azaraan-word">Yenafa</span></td><td>Yenafa</td><td>YEH-nah-fah</td><td>נפי – ease</td></tr>
-        <tr><td><span class="azaraan-word">,</span></td><td>Transition/comma</td><td><span class="azaraan-word">Safilu</span></td><td>Shafilu</td><td>SHAH-fee-loo</td><td>ספל – shift</td></tr>
-        <tr><td><span class="azaraan-word">\</span></td><td>Formal divider</td><td><span class="azaraan-word">Tamora</span></td><td>Tamora</td><td>TAH-moh-rah</td><td>תמר – delineate</td></tr>
-        <tr><td><span class="azaraan-word">°</span></td><td>Degree/state</td><td><span class="azaraan-word">Gehanu</span></td><td>Gehanu</td><td>GEH-hah-noo</td><td>גהנ – measure</td></tr>
-        <tr><td><span class="azaraan-word">÷</span></td><td>Division/split</td><td><span class="azaraan-word">Pelaka</span></td><td>Pelaka</td><td>PEH-lah-kah</td><td>פלך – segment</td></tr>
-        <tr><td><span class="azaraan-word">%</span></td><td>Fraction</td><td><span class="azaraan-word">Maresu</span></td><td>Mareshu</td><td>MAH-reh-shoo</td><td>מרש – portion</td></tr>
-        <tr><td><span class="azaraan-word">&</span></td><td>Union/connection</td><td><span class="azaraan-word">Waawa</span></td><td>Waawa</td><td>WAAH-wa</td><td>וחד – unite</td></tr>
-        <tr><td><span class="azaraan-word">?</span></td><td>Question</td><td><span class="azaraan-word">Se’ema</span></td><td>She’aiema</td><td>SHEH-ai-mah</td><td>שמע – inquire</td></tr>
-        <tr><td><span class="azaraan-word">!</span></td><td>Exclamation</td><td><span class="azaraan-word">Azmata</span></td><td>Azmata</td><td>AZ-mah-tah</td><td>עזם – cry out</td></tr>
-        <tr><td><span class="azaraan-word">"</span></td><td>Quotation</td><td><span class="azaraan-word">Rokhila</span></td><td>Rokhila</td><td>ROH-khee-lah</td><td>רוח – spirit</td></tr>
-        <tr><td><span class="azaraan-word">( )</span></td><td>Structural framing</td><td><span class="azaraan-word">Talemni</span></td><td>Talemni</td><td>TAH-lehm-nee</td><td>תמן – contain</td></tr>
-        <tr><td><span class="azaraan-word">+</span></td><td>Addition/growth</td><td><span class="azaraan-word">Navaka</span></td><td>Navaka</td><td>NAH-vah-kah</td><td>נבק – expand</td></tr>
-        <tr><td><span class="azaraan-word">@</span></td><td>Copper currency</td><td><span class="azaraan-word">Nugam</span></td><td>Nugam</td><td>NOO-gahm</td><td>נגם – stamp</td></tr>
-        <tr><td><span class="azaraan-word">$</span></td><td>Silver currency</td><td><span class="azaraan-word">Behrum</span></td><td>Behrum</td><td>BEH-room</td><td>ברם – refine</td></tr>
-        <tr><td><span class="azaraan-word">*</span></td><td>Gold currency</td><td><span class="azaraan-word">Guhlor</span></td><td>Guhlor</td><td>GUH-lor</td><td>גלר – gleam</td></tr>
-        <tr><td><span class="azaraan-word">{</span></td><td>Platinum currency</td><td><span class="azaraan-word">Merda</span></td><td>Merda</td><td>MER-dah</td><td>מרד – sanctify</td></tr>
-        <tr><td><span class="azaraan-word">}</span></td><td>Digital currency</td><td><span class="azaraan-word">Zuze</span></td><td>Zuze</td><td>ZOO-zee</td><td>זז / זי – spark / essence</td></tr>
+        <tr><td><span class="comic-sans-override">;">^</span></td><td>Stress next syllable</td><td><span class="comic-sans-override">;">Na’lu</span></td><td>Na’ailu</td><td>NAH-ai-loo</td><td>נעל – to raise</td></tr>
+        <tr><td><span class="comic-sans-override">;"></span></td><td>Stress previous syllable</td><td><span class="comic-sans-override">;">Ra’ama</span></td><td>Ra’aiama</td><td>RAH-ah-mah</td><td>רעם – thunder</td></tr>
+        <tr><td><span class="comic-sans-override">;">~</span></td><td>Fusion / prolongation</td><td><span class="comic-sans-override">;">Sayalu</span></td><td>Shayalu</td><td>SHAH-yah-loo</td><td>שאל – braid</td></tr>
+        <tr><td><span class="comic-sans-override">;">=</span></td><td>Equal / balance</td><td><span class="comic-sans-override">;">Tavari</span></td><td>Tavari</td><td>TAH-vah-ree</td><td>תור – order</td></tr>
+        <tr><td><span class="comic-sans-override">;">-</span></td><td>Name-title linker</td><td><span class="comic-sans-override">;">Hadeka</span></td><td>Hadeka</td><td>HAH-deh-kah</td><td>חדק – bind</td></tr>
+        <tr><td><span class="comic-sans-override">;">.</span></td><td>Sentence stop</td><td><span class="comic-sans-override">;">Sulefa</span></td><td>Sulefa</td><td>SOO-leh-fah</td><td>שלף – pause</td></tr>
+        <tr><td><span class="comic-sans-override">;">:</span></td><td>Ratio / relation</td><td><span class="comic-sans-override">;">Yezara</span></td><td>Yezara</td><td>YEH-zah-rah</td><td>זער – relate</td></tr>
+        <tr><td><span class="comic-sans-override">;">;</span></td><td>Phrase break</td><td><span class="comic-sans-override">;">Yenafa</span></td><td>Yenafa</td><td>YEH-nah-fah</td><td>נפי – ease</td></tr>
+        <tr><td><span class="comic-sans-override">;">,</span></td><td>Transition/comma</td><td><span class="comic-sans-override">;">Safilu</span></td><td>Shafilu</td><td>SHAH-fee-loo</td><td>ספל – shift</td></tr>
+        <tr><td><span class="comic-sans-override">;">\</span></td><td>Formal divider</td><td><span class="comic-sans-override">;">Tamora</span></td><td>Tamora</td><td>TAH-moh-rah</td><td>תמר – delineate</td></tr>
+        <tr><td><span class="comic-sans-override">;">°</span></td><td>Degree/state</td><td><span class="comic-sans-override">;">Gehanu</span></td><td>Gehanu</td><td>GEH-hah-noo</td><td>גהנ – measure</td></tr>
+        <tr><td><span class="comic-sans-override">;">÷</span></td><td>Division/split</td><td><span class="comic-sans-override">;">Pelaka</span></td><td>Pelaka</td><td>PEH-lah-kah</td><td>פלך – segment</td></tr>
+        <tr><td><span class="comic-sans-override">;">%</span></td><td>Fraction</td><td><span class="comic-sans-override">;">Maresu</span></td><td>Mareshu</td><td>MAH-reh-shoo</td><td>מרש – portion</td></tr>
+        <tr><td><span class="comic-sans-override">;">&</span></td><td>Union/connection</td><td><span class="comic-sans-override">;">Waawa</span></td><td>Waawa</td><td>WAAH-wa</td><td>וחד – unite</td></tr>
+        <tr><td><span class="comic-sans-override">;">?</span></td><td>Question</td><td><span class="comic-sans-override">;">Se’ema</span></td><td>She’aiema</td><td>SHEH-ai-mah</td><td>שמע – inquire</td></tr>
+        <tr><td><span class="comic-sans-override">;">!</span></td><td>Exclamation</td><td><span class="comic-sans-override">;">Azmata</span></td><td>Azmata</td><td>AZ-mah-tah</td><td>עזם – cry out</td></tr>
+        <tr><td><span class="comic-sans-override">;">"</span></td><td>Quotation</td><td><span class="comic-sans-override">;">Rokhila</span></td><td>Rokhila</td><td>ROH-khee-lah</td><td>רוח – spirit</td></tr>
+        <tr><td><span class="comic-sans-override">;">( )</span></td><td>Structural framing</td><td><span class="comic-sans-override">;">Talemni</span></td><td>Talemni</td><td>TAH-lehm-nee</td><td>תמן – contain</td></tr>
+        <tr><td><span class="comic-sans-override">;">+</span></td><td>Addition/growth</td><td><span class="comic-sans-override">;">Navaka</span></td><td>Navaka</td><td>NAH-vah-kah</td><td>נבק – expand</td></tr>
+        <tr><td><span class="comic-sans-override">;">@</span></td><td>Copper currency</td><td><span class="comic-sans-override">;">Nugam</span></td><td>Nugam</td><td>NOO-gahm</td><td>נגם – stamp</td></tr>
+        <tr><td><span class="comic-sans-override">;">$</span></td><td>Silver currency</td><td><span class="comic-sans-override">;">Behrum</span></td><td>Behrum</td><td>BEH-room</td><td>ברם – refine</td></tr>
+        <tr><td><span class="comic-sans-override">;">*</span></td><td>Gold currency</td><td><span class="comic-sans-override">;">Guhlor</span></td><td>Guhlor</td><td>GUH-lor</td><td>גלר – gleam</td></tr>
+        <tr><td><span class="comic-sans-override">;">{</span></td><td>Platinum currency</td><td><span class="comic-sans-override">;">Merda</span></td><td>Merda</td><td>MER-dah</td><td>מרד – sanctify</td></tr>
+        <tr><td><span class="comic-sans-override">;">}</span></td><td>Digital currency</td><td><span class="comic-sans-override">;">Zuze</span></td><td>Zuze</td><td>ZOO-zee</td><td>זז / זי – spark / essence</td></tr>
       </tbody>
     </table>
 <section>
@@ -1451,26 +1758,26 @@
 <h2>⚧️ Gender Identities & Pronoun Forms</h2>
 <p>All gendered pronouns in Aza’raan follow a consistent three-part structure:</p>
 <ul>
-  <li><span class="azaraan-word">Subjective</span> → <span class="azaraan-word">Objective</span> → <span class="azaraan-word">Possessive</span></li>
-  <li><span class="azaraan-word">Reflexivity</span> is formed by attaching <strong>“nami”</strong> to the objective form.</li>
-  <li><em>Example:</em> <span class="azaraan-word">Ranam</span> (Demi-Male) → <span class="azaraan-word">Ranth</span> → <span class="azaraan-word">Ranthnami</span></li>
+  <li><span class="comic-sans-override">;">Subjective</span> → <span class="comic-sans-override">;">Objective</span> → <span class="comic-sans-override">;">Possessive</span></li>
+  <li><span class="comic-sans-override">;">Reflexivity</span> is formed by attaching <strong>“nami”</strong> to the objective form.</li>
+  <li><em>Example:</em> <span class="comic-sans-override">;">Ranam</span> (Demi-Male) → <span class="comic-sans-override">;">Ranth</span> → <span class="comic-sans-override">;">Ranthnami</span></li>
 </ul>
-<p>These pronouns are always used once an individual introduces themselves, replacing any prior use of <span class="azaraan-word">Samir</span> (they/them). Once known, pronouns are always gendered in grammar, regardless of social context.</p>
+<p>These pronouns are always used once an individual introduces themselves, replacing any prior use of <span class="comic-sans-override">;">Samir</span> (they/them). Once known, pronouns are always gendered in grammar, regardless of social context.</p>
 
 <h2>🧾 Example Sentences Using Gendered Pronouns</h2>
 
 <div class="sentence-block">
-  <p class="sentence"><span class="azaraan-phrase">Yui Ranam rakhemaeri Ranthnami.</span></p>
+  <p class="sentence"><span class="comic-sans-override">;">Yui Ranam rakhemaeri Ranthnami.</span></p>
   <p class="sentence"><em>→ The demi-male loved himself.</em></p>
 </div>
 
 <div class="sentence-block">
-  <p class="sentence"><span class="azaraan-phrase">Lam hue Alad.</span></p>
+  <p class="sentence"><span class="comic-sans-override">;">Lam hue Alad.</span></p>
   <p class="sentence"><em>→ She is hers.</em></p>
 </div>
 
 <div class="sentence-block">
-  <p class="sentence"><span class="azaraan-phrase">Tas niavada azala laha yui zilomaya.</span></p>
+  <p class="sentence"><span class="comic-sans-override">;">Tas niavada azala laha yui zilomaya.</span></p>
   <p class="sentence"><em>→ She (trans woman) doesn’t go to the river.</em></p>
 <div>
 <h1>⚧️ Gender Identities & Pronouns</h1>
@@ -1489,17 +1796,17 @@
     </tr>
   </thead>
   <tbody>
-    <tr><td>Cis Male</td><td><span class="azaraan-word">Razah</span></td><td>Rah-zah (rolled R)</td><td><span class="azaraan-word">Raz</span></td><td><span class="azaraan-word">Racht</span></td><td>Rahz / Rahcht / Rah-zahd</td><td><span class="azaraan-word">Rachtnami</span></td><td>Rahcht-NAH-mee</td></tr>
-    <tr><td>Cis Female</td><td><span class="azaraan-word">Ala</span></td><td>Ah-lah</td><td><span class="azaraan-word">Al</span></td><td><span class="azaraan-word">Alt</span></td><td>Ahl / Ahl-t / Ah-lad</td><td><span class="azaraan-word">Altnami</span></td><td>Ahl-t-NAH-mee</td></tr>
-    <tr><td>Demi-Male</td><td><span class="azaraan-word">Ranam</span></td><td>Rah-nahm (rolled R)</td><td><span class="azaraan-word">Ran</span></td><td><span class="azaraan-word">Ranth</span></td><td>Rahn / Rahn-th / Rah-nod</td><td><span class="azaraan-word">Ranthnami</span></td><td>Rahn-th-NAH-mee</td></tr>
-    <tr><td>Demi-Female</td><td><span class="azaraan-word">Lanam</span></td><td>Lah-nahm</td><td><span class="azaraan-word">Lam</span></td><td><span class="azaraan-word">Lamth</span></td><td>Lahm / Lahmth / Lah-mod</td><td><span class="azaraan-word">Lamthnami</span></td><td>Lahm-th-NAH-mee</td></tr>
-    <tr><td>Nonbinary</td><td><span class="azaraan-word">Maska</span></td><td>Mah-skah</td><td><span class="azaraan-word">Mak</span></td><td><span class="azaraan-word">Makth</span></td><td>Mahk / Mahk-th / Mah-kahd</td><td><span class="azaraan-word">Makthnami</span></td><td>Mahk-th-NAH-mee</td></tr>
-    <tr><td>Trans Male</td><td><span class="azaraan-word">Dabala</span></td><td>Dah-bah-la</td><td><span class="azaraan-word">Dab</span></td><td><span class="azaraan-word">Dabth</span></td><td>Dahb / Dahb-th / Dah-bahd</td><td><span class="azaraan-word">Dabthnami</span></td><td>Dahb-th-NAH-mee</td></tr>
-    <tr><td>Trans Female</td><td><span class="azaraan-word">Tasen</span></td><td>Tah-sen</td><td><span class="azaraan-word">Tas</span></td><td><span class="azaraan-word">Tasth</span></td><td>Tahs / Tahs-th / Tah-sahd</td><td><span class="azaraan-word">Tasthnami</span></td><td>Tahs-th-NAH-mee</td></tr>
-    <tr><td>Genderfluid</td><td><span class="azaraan-word">Pesma</span></td><td>Pes-mah</td><td><span class="azaraan-word">Pem</span></td><td><span class="azaraan-word">Pemth</span></td><td>Pehm / Pehm-th / Peh-mad</td><td><span class="azaraan-word">Pemthnami</span></td><td>Pehm-th-NAH-mee</td></tr>
-    <tr><td>Bigender</td><td><span class="azaraan-word">Lapsa</span></td><td>Lahp-sah</td><td><span class="azaraan-word">Las</span></td><td><span class="azaraan-word">Last</span></td><td>Lahs / Lahst / Lah-sahd</td><td><span class="azaraan-word">Lastnami</span></td><td>Lahst-NAH-mee</td></tr>
-    <tr><td>Gender-Flexible</td><td><span class="azaraan-word">Pasla</span></td><td>Pah-slah</td><td><span class="azaraan-word">Pas</span></td><td><span class="azaraan-word">Pasth</span></td><td>Pahs / Pahs-th / Pah-sahd</td><td><span class="azaraan-word">Pasthnami</span></td><td>Pahs-th-NAH-mee</td></tr>
-    <tr><td>Genderless</td><td><span class="azaraan-word">Akna</span></td><td>Ahk-nah</td><td><span class="azaraan-word">Ak</span></td><td><span class="azaraan-word">Akth</span></td><td>Ahk / Ahk-th / Ah-kahd</td><td><span class="azaraan-word">Akthnami</span></td><td>Ahk-th-NAH-mee</td></tr>
+    <tr><td>Cis Male</td><td><span class="comic-sans-override">;">Razah</span></td><td>Rah-zah (rolled R)</td><td><span class="comic-sans-override">;">Raz</span></td><td><span class="comic-sans-override">;">Racht</span></td><td>Rahz / Rahcht / Rah-zahd</td><td><span class="comic-sans-override">;">Rachtnami</span></td><td>Rahcht-NAH-mee</td></tr>
+    <tr><td>Cis Female</td><td><span class="comic-sans-override">;">Ala</span></td><td>Ah-lah</td><td><span class="comic-sans-override">;">Al</span></td><td><span class="comic-sans-override">;">Alt</span></td><td>Ahl / Ahl-t / Ah-lad</td><td><span class="comic-sans-override">;">Altnami</span></td><td>Ahl-t-NAH-mee</td></tr>
+    <tr><td>Demi-Male</td><td><span class="comic-sans-override">;">Ranam</span></td><td>Rah-nahm (rolled R)</td><td><span class="comic-sans-override">;">Ran</span></td><td><span class="comic-sans-override">;">Ranth</span></td><td>Rahn / Rahn-th / Rah-nod</td><td><span class="comic-sans-override">;">Ranthnami</span></td><td>Rahn-th-NAH-mee</td></tr>
+    <tr><td>Demi-Female</td><td><span class="comic-sans-override">;">Lanam</span></td><td>Lah-nahm</td><td><span class="comic-sans-override">;">Lam</span></td><td><span class="comic-sans-override">;">Lamth</span></td><td>Lahm / Lahmth / Lah-mod</td><td><span class="comic-sans-override">;">Lamthnami</span></td><td>Lahm-th-NAH-mee</td></tr>
+    <tr><td>Nonbinary</td><td><span class="comic-sans-override">;">Maska</span></td><td>Mah-skah</td><td><span class="comic-sans-override">;">Mak</span></td><td><span class="comic-sans-override">;">Makth</span></td><td>Mahk / Mahk-th / Mah-kahd</td><td><span class="comic-sans-override">;">Makthnami</span></td><td>Mahk-th-NAH-mee</td></tr>
+    <tr><td>Trans Male</td><td><span class="comic-sans-override">;">Dabala</span></td><td>Dah-bah-la</td><td><span class="comic-sans-override">;">Dab</span></td><td><span class="comic-sans-override">;">Dabth</span></td><td>Dahb / Dahb-th / Dah-bahd</td><td><span class="comic-sans-override">;">Dabthnami</span></td><td>Dahb-th-NAH-mee</td></tr>
+    <tr><td>Trans Female</td><td><span class="comic-sans-override">;">Tasen</span></td><td>Tah-sen</td><td><span class="comic-sans-override">;">Tas</span></td><td><span class="comic-sans-override">;">Tasth</span></td><td>Tahs / Tahs-th / Tah-sahd</td><td><span class="comic-sans-override">;">Tasthnami</span></td><td>Tahs-th-NAH-mee</td></tr>
+    <tr><td>Genderfluid</td><td><span class="comic-sans-override">;">Pesma</span></td><td>Pes-mah</td><td><span class="comic-sans-override">;">Pem</span></td><td><span class="comic-sans-override">;">Pemth</span></td><td>Pehm / Pehm-th / Peh-mad</td><td><span class="comic-sans-override">;">Pemthnami</span></td><td>Pehm-th-NAH-mee</td></tr>
+    <tr><td>Bigender</td><td><span class="comic-sans-override">;">Lapsa</span></td><td>Lahp-sah</td><td><span class="comic-sans-override">;">Las</span></td><td><span class="comic-sans-override">;">Last</span></td><td>Lahs / Lahst / Lah-sahd</td><td><span class="comic-sans-override">;">Lastnami</span></td><td>Lahst-NAH-mee</td></tr>
+    <tr><td>Gender-Flexible</td><td><span class="comic-sans-override">;">Pasla</span></td><td>Pah-slah</td><td><span class="comic-sans-override">;">Pas</span></td><td><span class="comic-sans-override">;">Pasth</span></td><td>Pahs / Pahs-th / Pah-sahd</td><td><span class="comic-sans-override">;">Pasthnami</span></td><td>Pahs-th-NAH-mee</td></tr>
+    <tr><td>Genderless</td><td><span class="comic-sans-override">;">Akna</span></td><td>Ahk-nah</td><td><span class="comic-sans-override">;">Ak</span></td><td><span class="comic-sans-override">;">Akth</span></td><td>Ahk / Ahk-th / Ah-kahd</td><td><span class="comic-sans-override">;">Akthnami</span></td><td>Ahk-th-NAH-mee</td></tr>
   </tbody>
 </table>
 <div>
@@ -1522,17 +1829,17 @@
               </tr>
             </thead>
             <tbody>
-              <tr><td><span class="azaraan-word">Rachtnami</span></td><td>Cis Male</td><td>himself</td></tr>
-              <tr><td><span class="azaraan-word">Altnami</span></td><td>Cis Female</td><td>herself</td></tr>
-              <tr><td><span class="azaraan-word">Ranthnami</span></td><td>Demi-Male</td><td>himself</td></tr>
-              <tr><td><span class="azaraan-word">Lamthnami</span></td><td>Demi-Female</td><td>herself</td></tr>
-              <tr><td><span class="azaraan-word">Makthnami</span></td><td>Nonbinary</td><td>themself</td></tr>
-              <tr><td><span class="azaraan-word">Dabthnami</span></td><td>Trans Male</td><td>himself</td></tr>
-              <tr><td><span class="azaraan-word">Tasthnami</span></td><td>Trans Female</td><td>herself</td></tr>
-              <tr><td><span class="azaraan-word">Pemthnami</span></td><td>Genderfluid</td><td>themself</td></tr>
-              <tr><td><span class="azaraan-word">Lastnami</span></td><td>Bigender</td><td>themself</td></tr>
-              <tr><td><span class="azaraan-word">Pasthnami</span></td><td>Gender-Flexible</td><td>themself</td></tr>
-              <tr><td><span class="azaraan-word">Akthnami</span></td><td>Genderless</td><td>themself</td></tr>
+              <tr><td><span class="comic-sans-override">;">Rachtnami</span></td><td>Cis Male</td><td>himself</td></tr>
+              <tr><td><span class="comic-sans-override">;">Altnami</span></td><td>Cis Female</td><td>herself</td></tr>
+              <tr><td><span class="comic-sans-override">;">Ranthnami</span></td><td>Demi-Male</td><td>himself</td></tr>
+              <tr><td><span class="comic-sans-override">;">Lamthnami</span></td><td>Demi-Female</td><td>herself</td></tr>
+              <tr><td><span class="comic-sans-override">;">Makthnami</span></td><td>Nonbinary</td><td>themself</td></tr>
+              <tr><td><span class="comic-sans-override">;">Dabthnami</span></td><td>Trans Male</td><td>himself</td></tr>
+              <tr><td><span class="comic-sans-override">;">Tasthnami</span></td><td>Trans Female</td><td>herself</td></tr>
+              <tr><td><span class="comic-sans-override">;">Pemthnami</span></td><td>Genderfluid</td><td>themself</td></tr>
+              <tr><td><span class="comic-sans-override">;">Lastnami</span></td><td>Bigender</td><td>themself</td></tr>
+              <tr><td><span class="comic-sans-override">;">Pasthnami</span></td><td>Gender-Flexible</td><td>themself</td></tr>
+              <tr><td><span class="comic-sans-override">;">Akthnami</span></td><td>Genderless</td><td>themself</td></tr>
             </tbody>
           </table>
         </li>
@@ -1550,11 +1857,11 @@
       </tr>
     </thead>
     <tbody>
-      <tr><td><span class="azaraan-word">Racht</span> (Cis Male)</td><td><span class="azaraan-word">Rachtnami</span></td><td>himself</td></tr>
-      <tr><td><span class="azaraan-word">Alt</span> (Cis Female)</td><td><span class="azaraan-word">Altnami</span></td><td>herself</td></tr>
-      <tr><td><span class="azaraan-word">Ranth</span> (Demi-Male)</td><td><span class="azaraan-word">Ranthnami</span></td><td>himself</td></tr>
-      <tr><td><span class="azaraan-word">Lamth</span> (Demi-Female)</td><td><span class="azaraan-word">Lamthnami</span></td><td>herself</td></tr>
-      <tr><td><span class="azaraan-word">Makth</span> (Nonbinary)</td><td><span class="azaraan-word">Makthnami</span></td><td>themself</td></tr>
+      <tr><td><span class="comic-sans-override">;">Racht</span> (Cis Male)</td><td><span class="comic-sans-override">;">Rachtnami</span></td><td>himself</td></tr>
+      <tr><td><span class="comic-sans-override">;">Alt</span> (Cis Female)</td><td><span class="comic-sans-override">;">Altnami</span></td><td>herself</td></tr>
+      <tr><td><span class="comic-sans-override">;">Ranth</span> (Demi-Male)</td><td><span class="comic-sans-override">;">Ranthnami</span></td><td>himself</td></tr>
+      <tr><td><span class="comic-sans-override">;">Lamth</span> (Demi-Female)</td><td><span class="comic-sans-override">;">Lamthnami</span></td><td>herself</td></tr>
+      <tr><td><span class="comic-sans-override">;">Makth</span> (Nonbinary)</td><td><span class="comic-sans-override">;">Makthnami</span></td><td>themself</td></tr>
     </tbody>
   </table>
 
@@ -1567,7 +1874,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr><td><span class="azaraan-phrase">Mak ‘Asyaaka Maknami</span>.</td><td>They (nonbinary) healed themself.</td></tr>
+      <tr><td><span class="comic-sans-override">;">Mak ‘Asyaaka Maknami</span>.</td><td>They (nonbinary) healed themself.</td></tr>
     </tbody>
   </table>
 </section>
@@ -1594,11 +1901,11 @@
       </tr>
     </thead>
     <tbody>
-      <tr><td>Parent</td><td>’si</td><td>origin / source</td><td><span class="azaraan-word">Raz’si</span></td><td>cisgender male parent / Father</td></tr>
-      <tr><td>Sibling</td><td>’ven</td><td>equal branch</td><td><span class="azaraan-word">Tas’ven</span></td><td>transgender female sibling / Sister</td></tr>
-      <tr><td>Aunt/Uncle</td><td>’dan</td><td>next-gen elder</td><td><span class="azaraan-word">Dab’dan</span></td><td>transgender male uncle</td></tr>
-      <tr><td>Grandparent</td><td>’mar</td><td>ancestral root</td><td><span class="azaraan-word">Mak’mar</span></td><td>nonbinary grandparent</td></tr>
-      <tr><td>Niece/Nephew</td><td>’lai</td><td>descendant leaf</td><td><span class="azaraan-word">Lam’lai</span></td><td>demi-female niece</td></tr>
+      <tr><td>Parent</td><td>’si</td><td>origin / source</td><td><span class="comic-sans-override">;">Raz’si</span></td><td>cisgender male parent / Father</td></tr>
+      <tr><td>Sibling</td><td>’ven</td><td>equal branch</td><td><span class="comic-sans-override">;">Tas’ven</span></td><td>transgender female sibling / Sister</td></tr>
+      <tr><td>Aunt/Uncle</td><td>’dan</td><td>next-gen elder</td><td><span class="comic-sans-override">;">Dab’dan</span></td><td>transgender male uncle</td></tr>
+      <tr><td>Grandparent</td><td>’mar</td><td>ancestral root</td><td><span class="comic-sans-override">;">Mak’mar</span></td><td>nonbinary grandparent</td></tr>
+      <tr><td>Niece/Nephew</td><td>’lai</td><td>descendant leaf</td><td><span class="comic-sans-override">;">Lam’lai</span></td><td>demi-female niece</td></tr>
     </tbody>
   </table>
 
@@ -1616,25 +1923,25 @@
       </tr>
     </thead>
     <tbody>
-      <tr><td>Parent</td><td>an</td><td>Source of the root</td><td><span class="azaraan-word">Razan</span></td><td>cisgender male parent / father</td></tr>
-      <tr><td>Sibling</td><td>mir</td><td>Mirror / counterpart</td><td><span class="azaraan-word">Almir</span></td><td>cisgender female sibling / sister</td></tr>
-      <tr><td>Aunt/Uncle</td><td>arel</td><td>Branch elder</td><td><span class="azaraan-word">Tasarel</span></td><td>transgender female aunt</td></tr>
-      <tr><td>Grandparent</td><td>ira</td><td>Root elder / foundation</td><td><span class="azaraan-word">Makira</span></td><td>nonbinary grandparent</td></tr>
-      <tr><td>Niece/Nephew</td><td>el</td><td>Leaf / newer shoot</td><td><span class="azaraan-word">Aleel</span></td><td>cisgender female niece</td></tr>
+      <tr><td>Parent</td><td>an</td><td>Source of the root</td><td><span class="comic-sans-override">;">Razan</span></td><td>cisgender male parent / father</td></tr>
+      <tr><td>Sibling</td><td>mir</td><td>Mirror / counterpart</td><td><span class="comic-sans-override">;">Almir</span></td><td>cisgender female sibling / sister</td></tr>
+      <tr><td>Aunt/Uncle</td><td>arel</td><td>Branch elder</td><td><span class="comic-sans-override">;">Tasarel</span></td><td>transgender female aunt</td></tr>
+      <tr><td>Grandparent</td><td>ira</td><td>Root elder / foundation</td><td><span class="comic-sans-override">;">Makira</span></td><td>nonbinary grandparent</td></tr>
+      <tr><td>Niece/Nephew</td><td>el</td><td>Leaf / newer shoot</td><td><span class="comic-sans-override">;">Aleel</span></td><td>cisgender female niece</td></tr>
     </tbody>
   </table>
 
   <h3>🔀 Plural & Collective Forms</h3>
   <p><strong>⚫ Ruk’</strong> — familial collective (“we/us/our kin”)</p>
   <ul>
-    <li><span class="azaraan-word">Ruk’el</span> = our nieces/nephews</li>
-    <li><span class="azaraan-word">Ruk’an</span> = our parents</li>
+    <li><span class="comic-sans-override">;">Ruk’el</span> = our nieces/nephews</li>
+    <li><span class="comic-sans-override">;">Ruk’an</span> = our parents</li>
   </ul>
 
   <p><strong>⚫ Samiran</strong> — plural for ungendered or unknown others</p>
   <ul>
-    <li><span class="azaraan-word">Samiranan</span> = ungendered parents</li>
-    <li><span class="azaraan-word">Samirel</span> = unknown/neutral nieces/nephews</li>
+    <li><span class="comic-sans-override">;">Samiranan</span> = ungendered parents</li>
+    <li><span class="comic-sans-override">;">Samirel</span> = unknown/neutral nieces/nephews</li>
   </ul>
 
   <h3>🌀 Spiritual & Reflexive Use</h3>
@@ -1648,8 +1955,8 @@
       </tr>
     </thead>
     <tbody>
-      <tr><td><span class="azaraan-word">Razanami Raz’si</span></td><td>His own father (cis male), spiritually or introspectively</td></tr>
-      <tr><td><span class="azaraan-word">Makiranami Mak’mar</span></td><td>Their own grandmother (nonbinary), in ritual or memory</td></tr>
+      <tr><td><span class="comic-sans-override">;">Razanami Raz’si</span></td><td>His own father (cis male), spiritually or introspectively</td></tr>
+      <tr><td><span class="comic-sans-override">;">Makiranami Mak’mar</span></td><td>Their own grandmother (nonbinary), in ritual or memory</td></tr>
     </tbody>
   </table>
 <div>
@@ -1663,16 +1970,16 @@
       </tr>
     </thead>
     <tbody>
-      <tr><td><span class="azaraan-word">Raz Raz’si</span> raised <span class="azaraan-word">Racht</span> well.</td><td>His father raised him well.</td></tr>
-      <tr><td><span class="azaraan-word">Alad Mak’mar</span> is wise beyond words.</td><td>Her (cisgender female) grandparent (nonbinary) is full of wisdom.</td></tr>
-      <tr><td><span class="azaraan-word">Tasad Lam’lai</span> loves to draw.</td><td>Her (transgender female) niece (demi-female) loves to draw.</td></tr>
-      <tr><td><span class="azaraan-word">Tas’ven</span> and <span class="azaraan-word">Raz</span> built this home together.</td><td>Trans female sibling and he (cis male) built this home.</td></tr>
-      <tr><td>I learned storytelling from <span class="azaraan-word">Dab’dan</span>.</td><td>My transgender male uncle taught me.</td></tr>
-      <tr><td><span class="azaraan-word">Razira</span> guided <span class="azaraan-word">Raz</span> to the sacred grove.</td><td>The cis male’s grandfather (cis male) led him there.</td></tr>
-      <tr><td><span class="azaraan-word">Alarel</span> and <span class="azaraan-word">Alira</span> told stories to <span class="azaraan-word">Alel</span>.</td><td>Her cis female aunt and grandmother told stories to her niece.</td></tr>
-      <tr><td><span class="azaraan-word">Samiranan</span> blessed <span class="azaraan-word">Ruk’el</span> during the naming ritual.</td><td>Ungendered parents blessed our nieces/nephews.</td></tr>
-      <tr><td><span class="azaraan-word">Pemmir</span> honored <span class="azaraan-word">Akira</span> by speaking <span class="azaraan-word">Akad</span> truth.</td><td>Genderfluid sibling honored their genderless grandparent’s pronouns and identity.</td></tr>
-      <tr><td><span class="azaraan-word">Akarel</span> and <span class="azaraan-word">Akmir</span> journeyed with <span class="azaraan-word">Akel</span> to <span class="azaraan-word">Akira’s</span> resting place.</td><td>Genderless relatives traveled together to a gravesite.</td></tr>
+      <tr><td><span class="comic-sans-override">;">Raz Raz’si</span> raised <span class="comic-sans-override">;">Racht</span> well.</td><td>His father raised him well.</td></tr>
+      <tr><td><span class="comic-sans-override">;">Alad Mak’mar</span> is wise beyond words.</td><td>Her (cisgender female) grandparent (nonbinary) is full of wisdom.</td></tr>
+      <tr><td><span class="comic-sans-override">;">Tasad Lam’lai</span> loves to draw.</td><td>Her (transgender female) niece (demi-female) loves to draw.</td></tr>
+      <tr><td><span class="comic-sans-override">;">Tas’ven</span> and <span class="comic-sans-override">;">Raz</span> built this home together.</td><td>Trans female sibling and he (cis male) built this home.</td></tr>
+      <tr><td>I learned storytelling from <span class="comic-sans-override">;">Dab’dan</span>.</td><td>My transgender male uncle taught me.</td></tr>
+      <tr><td><span class="comic-sans-override">;">Razira</span> guided <span class="comic-sans-override">;">Raz</span> to the sacred grove.</td><td>The cis male’s grandfather (cis male) led him there.</td></tr>
+      <tr><td><span class="comic-sans-override">;">Alarel</span> and <span class="comic-sans-override">;">Alira</span> told stories to <span class="comic-sans-override">;">Alel</span>.</td><td>Her cis female aunt and grandmother told stories to her niece.</td></tr>
+      <tr><td><span class="comic-sans-override">;">Samiranan</span> blessed <span class="comic-sans-override">;">Ruk’el</span> during the naming ritual.</td><td>Ungendered parents blessed our nieces/nephews.</td></tr>
+      <tr><td><span class="comic-sans-override">;">Pemmir</span> honored <span class="comic-sans-override">;">Akira</span> by speaking <span class="comic-sans-override">;">Akad</span> truth.</td><td>Genderfluid sibling honored their genderless grandparent’s pronouns and identity.</td></tr>
+      <tr><td><span class="comic-sans-override">;">Akarel</span> and <span class="comic-sans-override">;">Akmir</span> journeyed with <span class="comic-sans-override">;">Akel</span> to <span class="comic-sans-override">;">Akira’s</span> resting place.</td><td>Genderless relatives traveled together to a gravesite.</td></tr>
     </tbody>
   </table>
 
@@ -1696,22 +2003,22 @@
     <tbody>
       <tr>
         <td>“I” + plural marker (-ri)</td>
-        <td><span class="azaraan-word">Anokiral</span></td>
+        <td><span class="comic-sans-override">;">Anokiral</span></td>
         <td>Possessive plural form</td>
       </tr>
       <tr>
         <td>Our</td>
-        <td><span class="azaraan-word">Anokiral</span></td>
+        <td><span class="comic-sans-override">;">Anokiral</span></td>
         <td>Possessive plural form</td>
       </tr>
       <tr>
         <td>They</td>
-        <td><span class="azaraan-word">Samiran</span></td>
+        <td><span class="comic-sans-override">;">Samiran</span></td>
         <td>Plural form of neutral singular Samir</td>
       </tr>
       <tr>
         <td>Themselves</td>
-        <td><span class="azaraan-word">[Gendered Plural]+nami</span></td>
+        <td><span class="comic-sans-override">;">[Gendered Plural]+nami</span></td>
         <td>e.g., Makrinami for nonbinary plural reflexive</td>
       </tr>
     </tbody>
@@ -1806,110 +2113,110 @@
     <tbody>
       <tr>
         <td>Cis Male</td>
-        <td><span class="azaraan-word">Razahri</span></td>
-        <td><span class="azaraan-word">Razri</span></td>
-        <td><span class="azaraan-word">Rachtri</span></td>
-        <td><span class="azaraan-word">Razadri</span></td>
-        <td><span class="azaraan-word">Rachtrinami</span></td>
+        <td><span class="comic-sans-override">;">Razahri</span></td>
+        <td><span class="comic-sans-override">;">Razri</span></td>
+        <td><span class="comic-sans-override">;">Rachtri</span></td>
+        <td><span class="comic-sans-override">;">Razadri</span></td>
+        <td><span class="comic-sans-override">;">Rachtrinami</span></td>
         <td>“Razah” + -ri</td>
       </tr>
       <tr>
         <td>Cis Female</td>
-        <td><span class="azaraan-word">Alari</span></td>
-        <td><span class="azaraan-word">Alri</span></td>
-        <td><span class="azaraan-word">Altri</span></td>
-        <td><span class="azaraan-word">Aladri</span></td>
-        <td><span class="azaraan-word">Altrinami</span></td>
+        <td><span class="comic-sans-override">;">Alari</span></td>
+        <td><span class="comic-sans-override">;">Alri</span></td>
+        <td><span class="comic-sans-override">;">Altri</span></td>
+        <td><span class="comic-sans-override">;">Aladri</span></td>
+        <td><span class="comic-sans-override">;">Altrinami</span></td>
         <td>“Ala” + -ri</td>
       </tr>
       <tr>
         <td>Demi-Male</td>
-        <td><span class="azaraan-word">Ranamri</span></td>
-        <td><span class="azaraan-word">Ranri</span></td>
-        <td><span class="azaraan-word">Ranthri</span></td>
-        <td><span class="azaraan-word">Ranodri</span></td>
-        <td><span class="azaraan-word">Ranthrinami</span></td>
+        <td><span class="comic-sans-override">;">Ranamri</span></td>
+        <td><span class="comic-sans-override">;">Ranri</span></td>
+        <td><span class="comic-sans-override">;">Ranthri</span></td>
+        <td><span class="comic-sans-override">;">Ranodri</span></td>
+        <td><span class="comic-sans-override">;">Ranthrinami</span></td>
         <td>“Ranam” + -ri</td>
       </tr>
       <tr>
         <td>Demi-Female</td>
-        <td><span class="azaraan-word">Lanamri</span></td>
-        <td><span class="azaraan-word">Lamri</span></td>
-        <td><span class="azaraan-word">Lamthri</span></td>
-        <td><span class="azaraan-word">Lamodri</span></td>
-        <td><span class="azaraan-word">Lamthrinami</span></td>
+        <td><span class="comic-sans-override">;">Lanamri</span></td>
+        <td><span class="comic-sans-override">;">Lamri</span></td>
+        <td><span class="comic-sans-override">;">Lamthri</span></td>
+        <td><span class="comic-sans-override">;">Lamodri</span></td>
+        <td><span class="comic-sans-override">;">Lamthrinami</span></td>
         <td>“Lanam” + -ri</td>
       </tr>
       <tr>
         <td>Nonbinary</td>
-        <td><span class="azaraan-word">Maskari</span></td>
-        <td><span class="azaraan-word">Makri</span></td>
-        <td><span class="azaraan-word">Makthri</span></td>
-        <td><span class="azaraan-word">Makadri</span></td>
-        <td><span class="azaraan-word">Makthrinami</span></td>
+        <td><span class="comic-sans-override">;">Maskari</span></td>
+        <td><span class="comic-sans-override">;">Makri</span></td>
+        <td><span class="comic-sans-override">;">Makthri</span></td>
+        <td><span class="comic-sans-override">;">Makadri</span></td>
+        <td><span class="comic-sans-override">;">Makthrinami</span></td>
         <td>“Maska” + -ri</td>
       </tr>
       <tr>
         <td>Trans Male</td>
-        <td><span class="azaraan-word">Dabalari</span></td>
-        <td><span class="azaraan-word">Dabri</span></td>
-        <td><span class="azaraan-word">Dabthri</span></td>
-        <td><span class="azaraan-word">Dabadri</span></td>
-        <td><span class="azaraan-word">Dabthrinami</span></td>
+        <td><span class="comic-sans-override">;">Dabalari</span></td>
+        <td><span class="comic-sans-override">;">Dabri</span></td>
+        <td><span class="comic-sans-override">;">Dabthri</span></td>
+        <td><span class="comic-sans-override">;">Dabadri</span></td>
+        <td><span class="comic-sans-override">;">Dabthrinami</span></td>
         <td>“Dabala” + -ri</td>
       </tr>
       <tr>
         <td>Trans Female</td>
-        <td><span class="azaraan-word">Taseni</span></td>
-        <td><span class="azaraan-word">Tasri</span></td>
-        <td><span class="azaraan-word">Tasthri</span></td>
-        <td><span class="azaraan-word">Tasadri</span></td>
-        <td><span class="azaraan-word">Tasthrinami</span></td>
+        <td><span class="comic-sans-override">;">Taseni</span></td>
+        <td><span class="comic-sans-override">;">Tasri</span></td>
+        <td><span class="comic-sans-override">;">Tasthri</span></td>
+        <td><span class="comic-sans-override">;">Tasadri</span></td>
+        <td><span class="comic-sans-override">;">Tasthrinami</span></td>
         <td>“Tasen” + -ri</td>
       </tr>
       <tr>
         <td>Genderfluid</td>
-        <td><span class="azaraan-word">Pesmari</span></td>
-        <td><span class="azaraan-word">Pemri</span></td>
-        <td><span class="azaraan-word">Pemthri</span></td>
-        <td><span class="azaraan-word">Pemadri</span></td>
-        <td><span class="azaraan-word">Pemthrinami</span></td>
+        <td><span class="comic-sans-override">;">Pesmari</span></td>
+        <td><span class="comic-sans-override">;">Pemri</span></td>
+        <td><span class="comic-sans-override">;">Pemthri</span></td>
+        <td><span class="comic-sans-override">;">Pemadri</span></td>
+        <td><span class="comic-sans-override">;">Pemthrinami</span></td>
         <td>“Pesma” + -ri</td>
       </tr>
       <tr>
         <td>Bigender</td>
-        <td><span class="azaraan-word">Lapsari</span></td>
-        <td><span class="azaraan-word">Lasri</span></td>
-        <td><span class="azaraan-word">Lasthri</span></td>
-        <td><span class="azaraan-word">Lasadri</span></td>
-        <td><span class="azaraan-word">Lasthrinami</span></td>
+        <td><span class="comic-sans-override">;">Lapsari</span></td>
+        <td><span class="comic-sans-override">;">Lasri</span></td>
+        <td><span class="comic-sans-override">;">Lasthri</span></td>
+        <td><span class="comic-sans-override">;">Lasadri</span></td>
+        <td><span class="comic-sans-override">;">Lasthrinami</span></td>
         <td>“Lapsa” + -ri</td>
       </tr>
       <tr>
         <td>Gender-Flexible</td>
-        <td><span class="azaraan-word">Paslari</span></td>
-        <td><span class="azaraan-word">Pasri</span></td>
-        <td><span class="azaraan-word">Pasthri</span></td>
-        <td><span class="azaraan-word">Pasadri</span></td>
-        <td><span class="azaraan-word">Pasthrinami</span></td>
+        <td><span class="comic-sans-override">;">Paslari</span></td>
+        <td><span class="comic-sans-override">;">Pasri</span></td>
+        <td><span class="comic-sans-override">;">Pasthri</span></td>
+        <td><span class="comic-sans-override">;">Pasadri</span></td>
+        <td><span class="comic-sans-override">;">Pasthrinami</span></td>
         <td>“Pasla” + -ri</td>
       </tr>
       <tr>
         <td>Genderless</td>
-        <td><span class="azaraan-word">Aknari</span></td>
-        <td><span class="azaraan-word">Akri</span></td>
-        <td><span class="azaraan-word">Akthri</span></td>
-        <td><span class="azaraan-word">Akadri</span></td>
-        <td><span class="azaraan-word">Akthrinami</span></td>
+        <td><span class="comic-sans-override">;">Aknari</span></td>
+        <td><span class="comic-sans-override">;">Akri</span></td>
+        <td><span class="comic-sans-override">;">Akthri</span></td>
+        <td><span class="comic-sans-override">;">Akadri</span></td>
+        <td><span class="comic-sans-override">;">Akthrinami</span></td>
         <td>“Akna” + -ri</td>
       </tr>
       <tr>
         <td>Neutral (Mixed)</td>
-        <td><span class="azaraan-word">Samiran</span></td>
-        <td><span class="azaraan-word">Samiran</span></td>
-        <td><span class="azaraan-word">Samiran</span></td>
-        <td><span class="azaraan-word">Samiral</span></td>
-        <td><span class="azaraan-word">Samirnami</span></td>
+        <td><span class="comic-sans-override">;">Samiran</span></td>
+        <td><span class="comic-sans-override">;">Samiran</span></td>
+        <td><span class="comic-sans-override">;">Samiran</span></td>
+        <td><span class="comic-sans-override">;">Samiral</span></td>
+        <td><span class="comic-sans-override">;">Samirnami</span></td>
         <td>Used when gender is unknown or group is mixed</td>
       </tr>
     </tbody>
@@ -1931,42 +2238,42 @@
   <tbody>
     <tr>
       <td>Verb: Present</td>
-      <td><span class="azaraan-fusion-form">tazalna</span></td>
+      <td><span class="comic-sans-override">;">tazalna</span></td>
       <td>tazalna</td>
       <td>tah-ZAHL-nah</td>
       <td></td>
     </tr>
     <tr>
       <td></td>
-      <td><span class="azaraan-fusion-form">tazalka</span></td>
+      <td><span class="comic-sans-override">;">tazalka</span></td>
       <td>tazalka</td>
       <td>tah-ZAHL-kah</td>
       <td>Root + <strong>-ka</strong> (past tense marker)</td>
     </tr>
     <tr>
       <td>Verb: Future</td>
-      <td><span class="azaraan-fusion-form">tazallo</span></td>
+      <td><span class="comic-sans-override">;">tazallo</span></td>
       <td>tazallo</td>
       <td>tah-ZAHL-lo</td>
       <td>Root + <strong>-lo</strong> (future tense marker)</td>
     </tr>
     <tr>
       <td>Verb: Progressive</td>
-      <td><span class="azaraan-fusion-form">tazalne</span></td>
+      <td><span class="comic-sans-override">;">tazalne</span></td>
       <td>tazalne</td>
       <td>tah-ZAHL-nay</td>
       <td>Root + <strong>-ne</strong> (progressive/ongoing)</td>
     </tr>
     <tr>
       <td>Verb: Am</td>
-      <td><span class="azaraan-fusion-form">hue</span></td>
+      <td><span class="comic-sans-override">;">hue</span></td>
       <td>hue</td>
       <td>HOO-eh</td>
       <td>Can be fused with pronouns</td>
     </tr>
     <tr>
       <td>Verb: Have</td>
-      <td><span class="azaraan-fusion-form">itelei</span></td>
+      <td><span class="comic-sans-override">;">itelei</span></td>
       <td>itelei</td>
       <td>EE-teh-lay</td>
       <td>Can be fused with pronouns</td>
@@ -1985,11 +2292,11 @@
   </thead>
   <tbody>
     <tr>
-      <td><span class="azaraan-fusion-form">Anoki~hue</span></td>
+      <td><span class="comic-sans-override">;">Anoki~hue</span></td>
       <td>I am</td>
     </tr>
     <tr>
-      <td><span class="azaraan-fusion-form">Anoki~itelei</span></td>
+      <td><span class="comic-sans-override">;">Anoki~itelei</span></td>
       <td>I have</td>
     </tr>
   </tbody>
@@ -2040,9 +2347,9 @@
     <tr><th>Aza’raan Phrase</th><th>English Translation</th><th>Notes</th></tr>
   </thead>
   <tbody>
-    <tr><td><span class="azaraan-phrase">DoKesrah</span></td><td>“Respected King”</td><td>Honorific before title</td></tr>
-    <tr><td><span class="azaraan-phrase">DoRaethelis</span></td><td>“Respected god”</td><td>Honorific before deity name</td></tr>
-    <tr><td>❌ <span class="azaraan-phrase">DoEtan</span></td><td>Incorrect usage</td><td>Do- cannot prefix pronouns</td></tr>
+    <tr><td><span class="comic-sans-override">;">DoKesrah</span></td><td>“Respected King”</td><td>Honorific before title</td></tr>
+    <tr><td><span class="comic-sans-override">;">DoRaethelis</span></td><td>“Respected god”</td><td>Honorific before deity name</td></tr>
+    <tr><td>❌ <span class="comic-sans-override">;">DoEtan</span></td><td>Incorrect usage</td><td>Do- cannot prefix pronouns</td></tr>
   </tbody>
 </table>
 
@@ -2058,8 +2365,8 @@
     <tr><th>Aza’raan Phrase</th><th>English Translation</th></tr>
   </thead>
   <tbody>
-    <tr><td><span class="azaraan-phrase">Yui DoKesrah ahabaka yani laha Ranod.</span></td><td>“The respected king gave it to him (demi-man).”</td></tr>
-    <tr><td><span class="azaraan-phrase">Anoki sarirava itelei rasa.</span></td><td>“I truly have power.”</td></tr>
+    <tr><td><span class="comic-sans-override">;">Yui DoKesrah ahabaka yani laha Ranod.</span></td><td>“The respected king gave it to him (demi-man).”</td></tr>
+    <tr><td><span class="comic-sans-override">;">Anoki sarirava itelei rasa.</span></td><td>“I truly have power.”</td></tr>
   </tbody>
 </table>
 <p>→ <em>va</em> intensifies the phrase—strong and assertive.</p>
@@ -2078,7 +2385,7 @@
     <tr><th>Aza’raan Phrase</th><th>English Translation</th><th>Note on Tone</th></tr>
   </thead>
   <tbody>
-    <tr><td><span class="azaraan-fusion-form">Anoki~hue</span> <span class="azaraan-phrase">vatubana.</span></td><td>“I am happy.”</td><td>“va” gives joyful emphasis</td></tr>
+    <tr><td><span class="comic-sans-override">;">Anoki~hue</span> <span class="comic-sans-override">;">vatubana.</span></td><td>“I am happy.”</td><td>“va” gives joyful emphasis</td></tr>
   </tbody>
 </table>
 
@@ -2093,8 +2400,8 @@
     <tr><th>Aza’raan Phrase</th><th>English Translation</th><th>Notes</th></tr>
   </thead>
   <tbody>
-    <tr><td><span class="azaraan-phrase">?Eyka jaboe etan minu.</span></td><td>“Where are you from?”</td><td></td></tr>
-    <tr><td><span class="azaraan-phrase">?V’n^sa yui kesrah aza’ra ranth.</span></td><td>“Can the king help him?”</td><td>No honorific = familiarity</td></tr>
+    <tr><td><span class="comic-sans-override">;">?Eyka jaboe etan minu.</span></td><td>“Where are you from?”</td><td></td></tr>
+    <tr><td><span class="comic-sans-override">;">?V’n^sa yui kesrah aza’ra ranth.</span></td><td>“Can the king help him?”</td><td>No honorific = familiarity</td></tr>
   </tbody>
 </table>
 
@@ -2104,8 +2411,8 @@
     <tr><th>Aza’raan Phrase</th><th>English Translation</th></tr>
   </thead>
   <tbody>
-    <tr><td><span class="azaraan-phrase">Avada tubana!</span></td><td>“Create joy!”</td></tr>
-    <tr><td><span class="azaraan-phrase">Rakhema anoki!</span></td><td>“Love me!”</td></tr>
+    <tr><td><span class="comic-sans-override">;">Avada tubana!</span></td><td>“Create joy!”</td></tr>
+    <tr><td><span class="comic-sans-override">;">Rakhema anoki!</span></td><td>“Love me!”</td></tr>
   </tbody>
 </table>
 
@@ -2118,8 +2425,8 @@
     <tr><th>Aza’raan Phrase</th><th>English Translation</th></tr>
   </thead>
   <tbody>
-    <tr><td><span class="azaraan-phrase">Anoki niavada minase`ka.</span></td><td>“I don’t understand.”</td></tr>
-    <tr><td><span class="azaraan-phrase">Tas niavada azala laha yui zilomaya.</span></td><td>“She (trans woman) doesn’t go to the river.”</td></tr>
+    <tr><td><span class="comic-sans-override">;">Anoki niavada minase`ka.</span></td><td>“I don’t understand.”</td></tr>
+    <tr><td><span class="comic-sans-override">;">Tas niavada azala laha yui zilomaya.</span></td><td>“She (trans woman) doesn’t go to the river.”</td></tr>
   </tbody>
 </table>
 
@@ -2130,11 +2437,11 @@
     <tr><th>Fusion Form</th><th>Meaning</th></tr>
   </thead>
   <tbody>
-    <tr><td><span class="azaraan-fusion-form">Anoki~hue</span></td><td>“I am”</td></tr>
-    <tr><td><span class="azaraan-fusion-form">Anoki~itelei</span></td><td>“I have”</td></tr>
+    <tr><td><span class="comic-sans-override">;">Anoki~hue</span></td><td>“I am”</td></tr>
+    <tr><td><span class="comic-sans-override">;">Anoki~itelei</span></td><td>“I have”</td></tr>
   </tbody>
 </table>
-<p><strong>➡️</strong> Object pronouns follow the verb: <br> <span class="azaraan-phrase">Anoki rakhema etan.</span> → “I love you.”</p>
+<p><strong>➡️</strong> Object pronouns follow the verb: <br> <span class="comic-sans-override">;">Anoki rakhema etan.</span> → “I love you.”</p>
 
 <h2>🔠 Politeness, Emphasis, & Respect</h2>
 <table>
@@ -2158,8 +2465,8 @@
     <tr><th>Aza’raan Phrase</th><th>English Translation</th></tr>
   </thead>
   <tbody>
-    <tr><td><span class="azaraan-phrase">?Midam avada etan khashava.</span></td><td>“What do you think?”</td></tr>
-    <tr><td><span class="azaraan-phrase">Anoki niavada itelei yani.</span></td><td>“I do not possess it.” → “I don’t have it.”</td></tr>
+    <tr><td><span class="comic-sans-override">;">?Midam avada etan khashava.</span></td><td>“What do you think?”</td></tr>
+    <tr><td><span class="comic-sans-override">;">Anoki niavada itelei yani.</span></td><td>“I do not possess it.” → “I don’t have it.”</td></tr>
   </tbody>
 </table>
 
@@ -2644,7 +2951,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="azaraan-word">1Ae</span></td>
+        <td><span class="comic-sans-override">;">1Ae</span></td>
         <td>00:40</td>
         <td>17:40</td>
         <td>19:40</td>
@@ -2659,7 +2966,7 @@
         <td>00:40–02:25</td>
       </tr>
       <tr>
-        <td><span class="azaraan-word">2Ae</span></td>
+        <td><span class="comic-sans-override">;">2Ae</span></td>
         <td>02:24</td>
         <td>19:24</td>
         <td>21:24</td>
@@ -2674,7 +2981,7 @@
         <td>02:25–04:10</td>
       </tr>
       <tr>
-        <td><span class="azaraan-word">3Ae</span></td>
+        <td><span class="comic-sans-override">;">3Ae</span></td>
         <td>04:08</td>
         <td>21:08</td>
         <td>23:08</td>
@@ -2689,7 +2996,7 @@
         <td>04:10–05:55</td>
       </tr>
       <tr>
-        <td><span class="azaraan-word">4Ae</span></td>
+        <td><span class="comic-sans-override">;">4Ae</span></td>
         <td>05:52</td>
         <td>22:52</td>
         <td>00:52</td>
@@ -2704,7 +3011,7 @@
         <td>05:55–07:40</td>
       </tr>
       <tr>
-        <td><span class="azaraan-word">5Ae</span></td>
+        <td><span class="comic-sans-override">;">5Ae</span></td>
         <td>07:37</td>
         <td>00:37</td>
         <td>02:37</td>
@@ -2719,7 +3026,7 @@
         <td>07:40–09:25</td>
       </tr>
       <tr>
-        <td><span class="azaraan-word">6Ae</span></td>
+        <td><span class="comic-sans-override">;">6Ae</span></td>
         <td>09:21</td>
         <td>02:21</td>
         <td>04:21</td>
@@ -2734,7 +3041,7 @@
         <td>09:25–11:10</td>
       </tr>
       <tr>
-        <td><span class="azaraan-word">7Ae</span></td>
+        <td><span class="comic-sans-override">;">7Ae</span></td>
         <td>11:05</td>
         <td>04:05</td>
         <td>06:05</td>
@@ -2750,7 +3057,7 @@
       </tr>
 
       <tr>
-        <td><span class="azaraan-word">1W’i</span></td>
+        <td><span class="comic-sans-override">;">1W’i</span></td>
         <td>12:50</td>
         <td>05:50</td>
         <td>07:50</td>
@@ -2765,7 +3072,7 @@
         <td>12:55–14:40</td>
       </tr>
       <tr>
-        <td><span class="azaraan-word">2W’i</span></td>
+        <td><span class="comic-sans-override">;">2W’i</span></td>
         <td>14:34</td>
         <td>07:34</td>
         <td>09:34</td>
@@ -2780,7 +3087,7 @@
         <td>14:40–16:25</td>
       </tr>
       <tr>
-        <td><span class="azaraan-word">3W’i</span></td>
+        <td><span class="comic-sans-override">;">3W’i</span></td>
         <td>16:18</td>
         <td>09:18</td>
         <td>11:18</td>
@@ -2795,7 +3102,7 @@
         <td>16:25–18:10</td>
       </tr>
       <tr>
-        <td><span class="azaraan-word">4W’i</span></td>
+        <td><span class="comic-sans-override">;">4W’i</span></td>
         <td>18:02</td>
         <td>11:02</td>
         <td>13:02</td>
@@ -2810,7 +3117,7 @@
         <td>18:10–19:55</td>
       </tr>
       <tr>
-        <td><span class="azaraan-word">5W’i</span></td>
+        <td><span class="comic-sans-override">;">5W’i</span></td>
         <td>19:47</td>
         <td>12:47</td>
         <td>14:47</td>
@@ -2825,7 +3132,7 @@
         <td>19:55–21:40</td>
       </tr>
       <tr>
-        <td><span class="azaraan-word">6W’i</span></td>
+        <td><span class="comic-sans-override">;">6W’i</span></td>
         <td>21:31</td>
         <td>14:31</td>
         <td>16:31</td>
@@ -2840,7 +3147,7 @@
         <td>21:40–23:25</td>
       </tr>
       <tr>
-        <td><span class="azaraan-word">7W’i</span></td>
+        <td><span class="comic-sans-override">;">7W’i</span></td>
         <td>23:15</td>
         <td>16:15</td>
         <td>18:15</td>
@@ -2856,7 +3163,7 @@
       </tr>
 
       <tr>
-        <td><span class="azaraan-word">1La</span></td>
+        <td><span class="comic-sans-override">;">1La</span></td>
         <td>01:00</td>
         <td>18:00</td>
         <td>20:00</td>
@@ -2871,7 +3178,7 @@
         <td>01:10–02:55</td>
       </tr>
       <tr>
-        <td><span class="azaraan-word">2La</span></td>
+        <td><span class="comic-sans-override">;">2La</span></td>
         <td>02:44</td>
         <td>19:44</td>
         <td>21:44</td>
@@ -2886,7 +3193,7 @@
         <td>02:55–04:40</td>
       </tr>
       <tr>
-        <td><span class="azaraan-word">3La</span></td>
+        <td><span class="comic-sans-override">;">3La</span></td>
         <td>04:28</td>
         <td>21:28</td>
         <td>23:28</td>
@@ -2901,7 +3208,7 @@
         <td>04:40–06:25</td>
       </tr>
       <tr>
-        <td><span class="azaraan-word">4La</span></td>
+        <td><span class="comic-sans-override">;">4La</span></td>
         <td>06:12</td>
         <td>23:12</td>
         <td>01:12</td>
@@ -2916,7 +3223,7 @@
         <td>06:25–08:10</td>
       </tr>
       <tr>
-        <td><span class="azaraan-word">5La</span></td>
+        <td><span class="comic-sans-override">;">5La</span></td>
         <td>07:57</td>
         <td>00:57</td>
         <td>02:57</td>
@@ -2931,7 +3238,7 @@
         <td>08:10–09:55</td>
       </tr>
       <tr>
-        <td><span class="azaraan-word">6La</span></td>
+        <td><span class="comic-sans-override">;">6La</span></td>
         <td>09:41</td>
         <td>02:41</td>
         <td>04:41</td>
@@ -2946,7 +3253,7 @@
         <td>09:55–11:40</td>
       </tr>
       <tr>
-        <td><span class="azaraan-word">7La</span></td>
+        <td><span class="comic-sans-override">;">7La</span></td>
         <td>11:25</td>
         <td>04:25</td>
         <td>06:25</td>
@@ -2976,37 +3283,37 @@
     <tbody>
       <tr>
         <td>1</td>
-        <td><span class="azaraan-word">Raethan</span></td>
+        <td><span class="comic-sans-override">;">Raethan</span></td>
         <td>Rae-than</td>
         <td>Day of Judgment (Dedicated to Raethelis, the Arbiter of Law and Order)</td>
       </tr>
       <tr>
         <td>2</td>
-        <td><span class="azaraan-word">Kaeltharnis</span></td>
+        <td><span class="comic-sans-override">;">Kaeltharnis</span></td>
         <td>Kayl-THAR-nish</td>
         <td>Day of Craftsmanship and Industry (Honoring Kaelthar, The Eternal Forgemaster)</td>
       </tr>
       <tr>
         <td>3</td>
-        <td><span class="azaraan-word">Nyxarion</span></td>
+        <td><span class="comic-sans-override">;">Nyxarion</span></td>
         <td>NICKS-ah-ree-on</td>
         <td>Day of Time and Transition (Dedicated to Nyxariel, The Eternal Gatherer)</td>
       </tr>
       <tr>
         <td>4</td>
-        <td><span class="azaraan-word">Zephiren</span></td>
+        <td><span class="comic-sans-override">;">Zephiren</span></td>
         <td>ZEH-fi-ren</td>
         <td>Day of Wind and Magic (Celebrating Zephyra, The Mistress of the Aether)</td>
       </tr>
       <tr>
         <td>5</td>
-        <td><span class="azaraan-word">Eryndralis</span></td>
+        <td><span class="comic-sans-override">;">Eryndralis</span></td>
         <td>EH-rin-DRAH-lish</td>
         <td>Day of Growth and Renewal (Honoring Eryndria, The Verdant Flame)</td>
       </tr>
       <tr>
         <td>6</td>
-        <td><span class="azaraan-word">Vulkiren</span></td>
+        <td><span class="comic-sans-override">;">Vulkiren</span></td>
         <td>VUHL-kee-ren</td>
         <td>Day of Rebellion and Transformation (Inspired by Vulkiris, The Warden of Discord)</td>
       </tr>
@@ -3028,56 +3335,56 @@
       <tbody>
         <tr>
           <td>1</td>
-          <td><span class="azaraan-word">Eryphiren</span></td>
+          <td><span class="comic-sans-override">;">Eryphiren</span></td>
           <td>Eh-rif-i-ren</td>
           <td>Growth + Wind Magic (Eryndria + Zephyra)</td>
           <td>Celebrating blossoming potential, this month channels the vitality of nature with the breath of arcane transformation. Air and life dance as one.</td>
         </tr>
         <tr>
           <td>2</td>
-          <td><span class="azaraan-word">Kaelvalla</span></td>
+          <td><span class="comic-sans-override">;">Kaelvalla</span></td>
           <td>Kayl-val-la</td>
           <td>Forge + Storm (Kaelthar + Arvalla)</td>
           <td>A time for creation under pressure. Storms spark inspiration as flame shapes form—this month honors craftsmanship, innovation, and elemental change.</td>
         </tr>
         <tr>
           <td>3</td>
-          <td><span class="azaraan-word">Morrkhanis</span></td>
+          <td><span class="comic-sans-override">;">Morrkhanis</span></td>
           <td>Mor-kha-nish</td>
           <td>Ocean Depth + Fate (Morrigaen + Selkhanis)</td>
           <td>Known as the Tide of Truth, this month governs intuition, transitions, and hidden wisdom. Dreams swell with destiny as tides shift the soul’s direction.</td>
         </tr>
         <tr>
           <td>4</td>
-          <td><span class="azaraan-word">Wiosaneth</span></td>
+          <td><span class="comic-sans-override">;">Wiosaneth</span></td>
           <td>Wee-o-san-eth</td>
           <td>Balance + Strife (W’iosamn + Vulkiris)</td>
           <td>The Month of Duality. Harmony and discord hold equal sway. A time to weigh rebellion against order, with the moon casting calm light on internal conflict.</td>
         </tr>
         <tr>
           <td>5</td>
-          <td><span class="azaraan-word">Myktheron</span></td>
+          <td><span class="comic-sans-override">;">Myktheron</span></td>
           <td>My-kthay-ron</td>
           <td>Secrets + Cosmic Equilibrium (Myrekh + Aetheron)</td>
           <td>Dedicated to the unseen and the in-between. This month fosters introspection, spiritual alignment, and the veiled balance between opposing forces.</td>
         </tr>
         <tr>
           <td>6</td>
-          <td><span class="azaraan-word">Nyxarion</span></td>
+          <td><span class="comic-sans-override">;">Nyxarion</span></td>
           <td>Nicks-ah-ree-on</td>
           <td>Time + Endings (Nyxariel)</td>
           <td>The Cycle’s Shadow. Marked by reflection, closure, and renewal, this month encourages preparation for what follows the end.</td>
         </tr>
         <tr>
           <td>7</td>
-          <td><span class="azaraan-word">Raevulkis</span></td>
+          <td><span class="comic-sans-override">;">Raevulkis</span></td>
           <td>Rae-vuhl-kis</td>
           <td>Judgment + Rebellion (Raethelis + Vulkiris)</td>
           <td>The Month of Reckoning. Righteous fury meets divine law—change through accountability, revolution tempered by clarity.</td>
         </tr>
         <tr>
           <td>8</td>
-          <td><span class="azaraan-word">Zephkhaelis</span></td>
+          <td><span class="comic-sans-override">;">Zephkhaelis</span></td>
           <td>Zeph-kay-lish</td>
           <td>Wind + Craft (Zephyra + Kaelthar)</td>
           <td>A season of brilliant invention. Inspired by arcane winds and artisanship, this month marks magical creation and imaginative expansion.</td>
@@ -3139,9 +3446,9 @@
 
       <h3>✨ Teen Numbers (11–19)</h3>
       <p>
-        Teen numbers are formed by prefixing the base unit with <strong><span class="azaraan-word">Za</span>-</strong>, which denotes “ten and…”
+        Teen numbers are formed by prefixing the base unit with <strong><span class="comic-sans-override">;">Za</span>-</strong>, which denotes “ten and…”
       </p>
-      <p><em>Example:</em> <strong><span class="azaraan-word">Zaneh</span></strong> = 12 (“ten and two”)</p>
+      <p><em>Example:</em> <strong><span class="comic-sans-override">;">Zaneh</span></strong> = 12 (“ten and two”)</p>
       <p><strong>Pronounced:</strong> Zah-neh</p>
 
       <h3>🔟 Tens (20–90)</h3>
@@ -3158,49 +3465,49 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td>20</td><td><span class="azaraan-word">‘neh</span></td><td><span class="azaraan-word">‘</span> + neh</td><td>ai-neh</td></tr>
-          <tr><td>30</td><td><span class="azaraan-word">Bduh</span></td><td><span class="azaraan-word">B</span> + duh</td><td>Buh-duh</td></tr>
-          <tr><td>40</td><td><span class="azaraan-word">Hmeh</span></td><td><span class="azaraan-word">H</span> + meh</td><td>Heh-meh</td></tr>
-          <tr><td>50</td><td><span class="azaraan-word">Gohd</span></td><td>goh + <span class="azaraan-word">D</span> (suffix)</td><td>Gowd</td></tr>
-          <tr><td>60</td><td><span class="azaraan-word">Mohm</span></td><td><span class="azaraan-word">M</span> + ohm</td><td>Moh-mm</td></tr>
-          <tr><td>70</td><td><span class="azaraan-word">Vreh</span></td><td><span class="azaraan-word">V</span> + reh</td><td>Vah-reh</td></tr>
-          <tr><td>80</td><td><span class="azaraan-word">Zahf</span></td><td>zah + <span class="azaraan-word">F</span> (suffix)</td><td>Zah-ff</td></tr>
-          <tr><td>90</td><td><span class="azaraan-word">Pshah</span></td><td><span class="azaraan-word">P</span> + shah</td><td>Puh-shah</td></tr>
+          <tr><td>20</td><td><span class="comic-sans-override">;">‘neh</span></td><td><span class="comic-sans-override">;">‘</span> + neh</td><td>ai-neh</td></tr>
+          <tr><td>30</td><td><span class="comic-sans-override">;">Bduh</span></td><td><span class="comic-sans-override">;">B</span> + duh</td><td>Buh-duh</td></tr>
+          <tr><td>40</td><td><span class="comic-sans-override">;">Hmeh</span></td><td><span class="comic-sans-override">;">H</span> + meh</td><td>Heh-meh</td></tr>
+          <tr><td>50</td><td><span class="comic-sans-override">;">Gohd</span></td><td>goh + <span class="comic-sans-override">;">D</span> (suffix)</td><td>Gowd</td></tr>
+          <tr><td>60</td><td><span class="comic-sans-override">;">Mohm</span></td><td><span class="comic-sans-override">;">M</span> + ohm</td><td>Moh-mm</td></tr>
+          <tr><td>70</td><td><span class="comic-sans-override">;">Vreh</span></td><td><span class="comic-sans-override">;">V</span> + reh</td><td>Vah-reh</td></tr>
+          <tr><td>80</td><td><span class="comic-sans-override">;">Zahf</span></td><td>zah + <span class="comic-sans-override">;">F</span> (suffix)</td><td>Zah-ff</td></tr>
+          <tr><td>90</td><td><span class="comic-sans-override">;">Pshah</span></td><td><span class="comic-sans-override">;">P</span> + shah</td><td>Puh-shah</td></tr>
         </tbody>
       </table>
 
       <h3>💯 Hundreds (100–900)</h3>
       <p>
-        All hundreds begin with the root <strong><span class="azaraan-word">Janu</span>-</strong>, signifying the "century" base. The unit number follows directly.
+        All hundreds begin with the root <strong><span class="comic-sans-override">;">Janu</span>-</strong>, signifying the "century" base. The unit number follows directly.
       </p>
-      <p><em>Example:</em> <strong><span class="azaraan-word">Janu^ih</span></strong> = 100 (one hundred)</p>
-      <p><em>Example:</em> <strong><span class="azaraan-word">Janu^duh</span></strong> = 300 (three hundred)</p>
+      <p><em>Example:</em> <strong><span class="comic-sans-override">;">Janu^ih</span></strong> = 100 (one hundred)</p>
+      <p><em>Example:</em> <strong><span class="comic-sans-override">;">Janu^duh</span></strong> = 300 (three hundred)</p>
       <p><strong>Pronounced:</strong> Jah-new-IH, Jah-new-DUH</p>
 
       <h3>🌄 Thousands (1,000–9,000)</h3>
       <p>
-        Thousands are constructed by placing the unit number before the suffix <strong>-<span class="azaraan-word">chab</span></strong>, the Aza’raan marker of the thousand tier.
+        Thousands are constructed by placing the unit number before the suffix <strong>-<span class="comic-sans-override">;">chab</span></strong>, the Aza’raan marker of the thousand tier.
       </p>
-      <p><em>Example:</em> <strong><span class="azaraan-word">Ih`chab</span></strong> = 1,000</p>
-      <p><em>Example:</em> <strong><span class="azaraan-word">Reh`chab</span></strong> = 7,000</p>
+      <p><em>Example:</em> <strong><span class="comic-sans-override">;">Ih`chab</span></strong> = 1,000</p>
+      <p><em>Example:</em> <strong><span class="comic-sans-override">;">Reh`chab</span></strong> = 7,000</p>
       <p><strong>Pronounced:</strong> IH-chahb, REH-chahb</p>
 
       <h3>🌌 Millions</h3>
       <p>
-        Million-level numbers conclude with the suffix <strong>-<span class="azaraan-word">Ailakur</span></strong>, an elevated term evoking vastness and significance.
+        Million-level numbers conclude with the suffix <strong>-<span class="comic-sans-override">;">Ailakur</span></strong>, an elevated term evoking vastness and significance.
       </p>
-      <p><em>Example:</em> <strong><span class="azaraan-word">Neh`ailakur</span></strong> = 2,000,000</p>
+      <p><em>Example:</em> <strong><span class="comic-sans-override">;">Neh`ailakur</span></strong> = 2,000,000</p>
       <p><strong>Pronounced:</strong> NEH-ail-ah-kur</p>
 
       <h3>📜 General Formation Rules</h3>
       <ul>
         <li><strong>Descending Order:</strong> Numbers are always constructed from largest to smallest unit.
-          <br>→ <em>Example:</em> <strong><span class="azaraan-word">Janu^duh‘neh</span></strong> = 320 (“three hundred and twenty”)
+          <br>→ <em>Example:</em> <strong><span class="comic-sans-override">;">Janu^duh‘neh</span></strong> = 320 (“three hundred and twenty”)
           <br><strong>Pronounced:</strong> Jah-nu-DUH-ai-neh
         </li>
         <li><strong>No Connective Markers:</strong> Number segments are joined directly without conjunctions.</li>
         <li><strong>Phonological Harmony:</strong> Components are designed to flow fluidly together, preserving Aza’raan’s musical quality in both casual and formal speech.</li>
-        <li><strong>Glottal &amp; Tonal Sensitivity:</strong> Glottal stops and consonant emphasis (e.g., <span class="azaraan-word">‘ai-</span>, <span class="azaraan-word">-f</span>, <span class="azaraan-word">-chab</span>) reflect shifts in magnitude and semantic resonance.</li>
+        <li><strong>Glottal &amp; Tonal Sensitivity:</strong> Glottal stops and consonant emphasis (e.g., <span class="comic-sans-override">;">‘ai-</span>, <span class="comic-sans-override">;">-f</span>, <span class="comic-sans-override">;">-chab</span>) reflect shifts in magnitude and semantic resonance.</li>
       </ul>
     <div>
     <h3>General Rules for Number Formation</h3>
