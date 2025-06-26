@@ -1,6 +1,24 @@
-/* 🌑 Unified Moonpunk + Cyber-Glyphic Theme */
+/* ==UserStyle==
+@name         Aza'raan Font & Moonpunk Theme
+@namespace    github.com/thetransgendertrex
+@version      5.0
+@description  Merged Azaraan font + Moonpunk visual theme for Google Apps and index.html/README.md rendering.
+==/UserStyle==
 
-/* ===== VARIABLES ===== */
+/* === Azaraan Font === */
+@font-face {
+  font-family: 'Azaraan';
+  src: url('https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Planet%20Language.ttf') format('truetype');
+  font-display: swap;
+}
+
+.azaraan-word,
+.azaraan-phrase,
+.azaraan-fusion-form {
+  font-family: 'Azaraan', cursive !important;
+}
+
+/* === Variables === */
 :root {
   --moonlight: #c0f7f2;
   --dreamlight: #b59fff;
@@ -16,9 +34,9 @@
   --prism: linear-gradient(135deg, #b59fff, #c0f7f2, #7ec98d, #f2b8a0);
 }
 
-/* ===== BODY ===== */
+/* === Universal Styling === */
 body {
-  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+  font-family: 'Times New Roman', serif;
   background: radial-gradient(circle at top, var(--obsidian) 0%, #0b0b0b 100%),
               url('https://gallery.yopriceville.com/var/resizes/Free-Clipart-Pictures/Decorative-Elements-PNG/Silver_Gear_Transparent_PNG_Clip_Art.png?m=1507171942'),
               url('https://gallery.yopriceville.com/var/resizes/Free-Clipart-Pictures/Decorative-Elements-PNG/Gear_Transparent_Clip_Art.png?m=1507171935'),
@@ -34,7 +52,6 @@ body {
   scroll-behavior: smooth;
 }
 
-/* ===== HEADINGS ===== */
 h1, h2, h3 {
   font-family: 'Cinzel', serif;
   color: var(--dreamlight);
@@ -43,6 +60,12 @@ h1, h2, h3 {
 h1 {
   font-size: 2.8rem;
   margin-bottom: 1rem;
+  background: white;
+  border: 2px solid var(--cyan);
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  color: var(--cyan);
+  font-weight: bold;
 }
 h2 {
   font-size: 2rem;
@@ -52,29 +75,52 @@ h2 {
 }
 h3 {
   font-size: 1.5rem;
-  color: var(--silver);
   margin-top: 1.5rem;
+  color: var(--silver);
 }
 
-/* ===== PARAGRAPH & TEXT ===== */
+p, li {
+  color: var(--silver);
+}
 p {
   margin-bottom: 1.2rem;
-  color: var(--silver);
 }
 li {
-  color: var(--silver);
+  margin-bottom: 0.5rem;
 }
-a {
-  color: var(--ember);
-  text-decoration: none;
-  border-bottom: 1px dotted var(--coral);
+ul {
+  padding-left: 1.5rem;
+  list-style-type: none;
 }
-a:hover {
-  color: var(--coral);
-  border-bottom-style: solid;
+ul li::before {
+  content: "🌙";
+  color: var(--dreamlight);
+  margin-right: 0.5rem;
 }
 
-/* ===== BLOCKQUOTE ===== */
+a, footer a {
+  display: inline-block;
+  background-color: black;
+  color: var(--cyan);
+  font-family: 'Times New Roman', serif;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.35em 0.75em;
+  border-radius: 5px;
+  border: 2px solid var(--cyan);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-size: 1rem;
+  user-select: none;
+  margin: 0.3rem 0;
+}
+a:hover, a:focus,
+footer a:hover, footer a:focus {
+  background-color: var(--cyan);
+  color: black;
+  outline: none;
+}
+
 blockquote {
   font-style: italic;
   color: var(--moss);
@@ -85,7 +131,6 @@ blockquote {
   border-radius: 6px;
 }
 
-/* ===== CODE ===== */
 code, pre {
   background: #111;
   color: var(--glacial);
@@ -99,18 +144,6 @@ pre {
   overflow-x: auto;
 }
 
-/* ===== LISTS ===== */
-ul {
-  padding-left: 1.5rem;
-  list-style-type: none;
-}
-ul li::before {
-  content: "🌙";
-  color: var(--dreamlight);
-  margin-right: 0.5rem;
-}
-
-/* ===== SECTION ===== */
 section, .section {
   margin-bottom: 3rem;
   border-left: 4px solid var(--moss);
@@ -118,6 +151,7 @@ section, .section {
   background: rgba(255, 255, 255, 0.02);
   border-radius: 12px;
   box-shadow: inset 0 0 12px rgba(120, 255, 247, 0.1);
+  font-family: 'Times New Roman', serif;
 }
 .section .block {
   background: rgba(0, 0, 0, 0.5);
@@ -133,23 +167,55 @@ section, .section {
   color: var(--highlight);
 }
 
-/* ===== HORIZONTAL RULE ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  background-color: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+  border: 1px solid var(--glacial);
+  border-radius: 8px;
+  /* overflow: hidden;  Removed for compatibility */
+}
+th, td {
+  padding: 1rem;
+  text-align: left;
+  color: var(--silver);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-family: 'Times New Roman', serif;
+}
+th {
+  background-color: rgba(181, 159, 255, 0.1);
+  color: var(--dreamlight);
+  font-weight: bold;
+  text-shadow: 0 0 4px var(--dreamlight);
+}
+td {
+  background-color: rgba(255, 255, 255, 0.015);
+}
+tr:hover {
+  background-color: rgba(0, 255, 255, 0.05);
+}
+
 hr {
   border: none;
   border-top: 1px solid var(--moss);
   margin: 3rem 0;
 }
 
-/* ===== FOOTER ===== */
 footer {
-  margin-top: 5rem;
-  font-size: 0.9rem;
-  color: var(--glacial);
+  background: white;
+  border-top: 2px solid var(--cyan);
+  color: var(--cyan);
   text-align: center;
-  opacity: 0.5;
+  font-family: 'Times New Roman', serif;
+  font-size: 0.9rem;
+  padding: 2rem 1rem;
+  margin-top: 5rem;
+  border-radius: 0 0 8px 8px;
+  font-weight: bold;
 }
 
-/* ===== ANIMATIONS ===== */
 @keyframes pulse-glow {
   0% { text-shadow: 0 0 4px var(--dreamlight); }
   50% { text-shadow: 0 0 12px var(--dreamlight), 0 0 24px var(--moss); }
@@ -166,13 +232,7 @@ footer {
   font-weight: bold;
 }
 
-/* ===== AZARAAN FONT OVERRIDE ===== */
-@font-face {
-  font-family: 'Azaraan';
-  src: url('https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Aza%27raan%20Planet%20Language.ttf') format('truetype');
-  font-display: swap;
-}
-
+/* === Pacifico Font Override in Google Apps === */
 @-moz-document url-prefix("https://docs.google.com/"),
                url-prefix("https://slides.google.com/"),
                url-prefix("https://sheets.google.com/"),
@@ -214,11 +274,92 @@ footer {
     font-family: inherit !important;
   }
 }
-/*
-  Aza’ra™ and Aza’raan™ are original works by William Blake Saville (aka #TheTransgenderTRex).
-  Learn more about the language's lore: 
-  https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/refs/heads/main/README.md
+/* === Tablet Styles (768px–1024px) === */
+@media (max-width: 1024px) and (min-width: 768px) {
+  body {
+    padding: 1.5rem;
+    font-size: 1rem;
+  }
 
-  For project updates and ways to support the creator—an autistic, bedridden, low-income trans man—visit:
-  http://www.linktr.ee/thetransgendertrex
-*/
+  h1 {
+    font-size: 2.2rem;
+    padding: 0.75rem 1rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+  }
+
+  section, .section {
+    padding: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  table th,
+  table td {
+    padding: 0.75rem;
+    font-size: 0.95rem;
+  }
+
+  a, footer a {
+    font-size: 0.95rem;
+    padding: 0.3em 0.65em;
+  }
+}
+
+/* === Mobile Styles (below 768px) === */
+@media (max-width: 767px) {
+  body {
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    padding: 0.6rem 0.8rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+  }
+
+  section, .section {
+    padding: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  table {
+    font-size: 0.9rem;
+    display: block;
+    overflow-x: auto;
+  }
+
+  table th,
+  table td {
+    padding: 0.5rem;
+    min-width: 120px;
+  }
+
+  ul {
+    padding-left: 1rem;
+  }
+
+  a, footer a {
+    font-size: 0.9rem;
+    padding: 0.25em 0.5em;
+    margin: 0.2rem 0;
+  }
+
+  footer {
+    font-size: 0.8rem;
+    padding: 1.2rem 0.8rem;
+  }
+}
