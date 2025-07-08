@@ -193,17 +193,146 @@
     style.type = "text/css";
 
     style.textContent = `
-      @font-face {
-        font-family: '${FONT_INTERNAL_NAME}';
-        src: url('${GITHUB_FONT_URL}') format('truetype');
-        font-display: swap;
-      }
+/* ======================================================================== */
+/* === Aza'raan Font Declaration & Usage =================================== */
+/* ======================================================================== */
 
-      @font-face {
-        font-family: '${FONT_VISIBLE_NAME.replace(/'/g, "\\'")}';
-        src: url('${GITHUB_FONT_URL}') format('truetype');
-        font-display: swap;
-      }
+/* 
+  @font-face declaration for the Aza'raan font.
+  This specifies multiple sources for the font:
+  1. Local font file (relative to the user's environment or extension).
+  2. Remote fallback hosted on GitHub raw content for reliability.
+  
+  The font-display: swap ensures text is immediately rendered with a fallback font,
+  and swapped with Aza'raan font as soon as it loads, preventing invisible text.
+*/
+
+/* === Override Pacifico font by redefining it with Azaraan font files === */
+@font-face {
+  font-family: 'Pacifico';  /* Override the original Pacifico name */
+  src: url('./Azaraanlanguageprojectfont.ttf') format('truetype'),
+       url('https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Azaraanlanguageprojectfont.ttf') format('truetype');
+  font-display: swap;
+}
+
+/* === Define Azaraan font family as well for explicit use === */
+@font-face {
+  font-family: 'Azaraan';
+  src: url('./Azaraanlanguageprojectfont.ttf') format('truetype'),
+       url('https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Azaraanlanguageprojectfont.ttf') format('truetype');
+  font-display: swap;
+}
+
+/* === Force all UI elements or text using Pacifico to render Azaraan instead === */
+.azaraan-word,
+div[aria-label="Font"] span[style*="Pacifico"],
+div[aria-label="Font"] div[style*="Pacifico"],
+[style*="font-family:Pacifico"] {
+  font-family: 'Azaraan', cursive !important;
+  color: #000000 !important;
+}
+
+
+
+/* ======================================================================== */
+/* === Custom Font Usage Classes =========================================== */
+/* ======================================================================== */
+
+/* 
+  .azaraan-word
+  This class explicitly applies the Azaraan font to any element.
+  It uses the 'cursive' fallback to maintain cursive styling if font fails to load.
+  Color is set to pure black (#000000) for optimal readability on light backgrounds.
+  !important declarations ensure these styles override competing rules.
+*/
+
+.azaraan-word {
+  font-family: 'Azaraan', cursive !important;
+  color: #000000 !important;
+
+  /* Improve font smoothing for better rendering on different platforms */
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+
+  /* Ensure normal font weight and style for consistent appearance */
+  font-weight: normal !important;
+  font-style: normal !important;
+
+  /* Prevent user text selection to avoid accidental highlights (optional) */
+  /* user-select: none !important; */
+}
+
+/* ======================================================================== */
+/* === Google Apps Font Dropdown Override ================================== */
+/* ======================================================================== */
+
+/* 
+  Target the Google Apps font selection dropdown elements
+  that display Pacifico font, to replace their font-family with Azaraan.
+
+  Selectors:
+    - div[aria-label="Font"] locates the font picker UI container.
+    - span[style*="Pacifico"] and div[style*="Pacifico"] find any direct child 
+      elements styled with the Pacifico font in their inline styles.
+  
+  Styles applied:
+    - Force font-family to Azaraan using !important.
+    - Font size increased to 18px for improved legibility.
+    - Font color forced to black (#000000) for consistency.
+    - Additional font smoothing for crisp UI rendering.
+*/
+
+div[aria-label="Font"] span[style*="Pacifico"],
+div[aria-label="Font"] div[style*="Pacifico"] {
+  font-family: 'Azaraan', cursive !important;
+  font-size: 18px !important;
+  color: #000000 !important;
+
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+
+  /* Override any line height or spacing from Google to keep UI consistent */
+  line-height: 1.2 !important;
+  letter-spacing: normal !important;
+}
+
+/* ======================================================================== */
+/* === Accessibility & UX Enhancements ==================================== */
+/* ======================================================================== */
+
+/* 
+  For all Azaaraan font usage, ensure good contrast and disable any
+  unwanted text shadows or outlines that may conflict with the font rendering.
+*/
+
+.azaraan-word,
+div[aria-label="Font"] span[style*="Pacifico"],
+div[aria-label="Font"] div[style*="Pacifico"] {
+  text-shadow: none !important;
+  text-decoration: none !important;
+  outline: none !important;
+}
+
+/* ======================================================================== */
+/* === Additional Optional UI Tweaks ====================================== */
+/* ======================================================================== */
+
+/* 
+  If you want to highlight the presence of Azaaraan font usage (debugging or style),
+  you could add subtle background or borders here (commented out by default).
+*/
+
+/*
+.azaraan-word {
+  background-color: rgba(0, 255, 255, 0.05) !important;
+  border-bottom: 1px dotted cyan !important;
+}
+*/
+
+/* ======================================================================== */
+/* === End of Aza'raan Font CSS Overrides ================================== */
+/* ======================================================================== */
+
     `;
 
     document.head.appendChild(style);
@@ -243,6 +372,3 @@
 
   init();
 })();
-
-
-
