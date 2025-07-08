@@ -12,14 +12,32 @@
   and swapped with Aza'raan font as soon as it loads, preventing invisible text.
 */
 
+/* === Override Pacifico font by redefining it with Azaraan font files === */
+@font-face {
+  font-family: 'Pacifico';  /* Override the original Pacifico name */
+  src: url('./Azaraanlanguageprojectfont.ttf') format('truetype'),
+       url('https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Azaraanlanguageprojectfont.ttf') format('truetype');
+  font-display: swap;
+}
+
+/* === Define Azaraan font family as well for explicit use === */
 @font-face {
   font-family: 'Azaraan';
   src: url('./Azaraanlanguageprojectfont.ttf') format('truetype'),
        url('https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Azaraanlanguageprojectfont.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
   font-display: swap;
 }
+
+/* === Force all UI elements or text using Pacifico to render Azaraan instead === */
+.azaraan-word,
+div[aria-label="Font"] span[style*="Pacifico"],
+div[aria-label="Font"] div[style*="Pacifico"],
+[style*="font-family:Pacifico"] {
+  font-family: 'Azaraan', cursive !important;
+  color: #000000 !important;
+}
+
+
 
 /* ======================================================================== */
 /* === Custom Font Usage Classes =========================================== */
