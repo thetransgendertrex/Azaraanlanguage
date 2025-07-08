@@ -1,0 +1,14 @@
+/* === Aza'raan Font Substitution for Pacifico on Google Applications ONLY === */
+.azaraan-word {
+  font-family: 'Azaraan', cursive;
+  color: #000000;
+}
+
+/* === Google Apps: Replace Pacifico with Aza'raan in Font Dropdown === */
+/* Affects visible Pacifico items so "Aza'raan" appears in its glyph form */
+div[aria-label="Font"] span[style*="Pacifico"],
+div[aria-label="Font"] div[style*="Pacifico"] {
+  font-family: 'Azaraan', cursive !important;
+  font-size: 18px !important;
+  color: #000000;
+}

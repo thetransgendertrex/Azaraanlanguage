@@ -1,0 +1,73 @@
+<!--
+  ==Aza'raan Project==
+  @name         Aza'raan Font Google Apps Override
+  @namespace    https://github.com/thetransgendertrex/Azaraanlanguage
+  @version      1.5
+  @description  Loads Aza'raan font override for Google Apps ONLY (Docs, Slides, Sheets, Forms, Drive, Drawings). Aza'raan appears in font dropdown and applies to Pacifico replacements.
+  @author       William Blake Saville AKA #TheTransgenderTRex (™)
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Aza'raan Font Google Apps Override</title>
+
+  <script>
+    // Function to load CSS with fallback
+    function loadCssWithFallback(localHref, fallbackHref) {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = localHref;
+      link.onerror = () => {
+        console.warn(`Local CSS failed to load: ${localHref}, loading fallback...`);
+        const fallbackLink = document.createElement('link');
+        fallbackLink.rel = 'stylesheet';
+        fallbackLink.href = fallbackHref;
+        document.head.appendChild(fallbackLink);
+      };
+      document.head.appendChild(link);
+    }
+
+    // Function to load JS with fallback
+    function loadScriptWithFallback(localSrc, fallbackSrc) {
+      const script = document.createElement('script');
+      script.src = localSrc;
+      script.type = 'text/javascript';
+      script.onerror = () => {
+        console.warn(`Local script failed to load: ${localSrc}, loading fallback...`);
+        const fallbackScript = document.createElement('script');
+        fallbackScript.src = fallbackSrc;
+        fallbackScript.type = 'text/javascript';
+        document.body.appendChild(fallbackScript);
+      };
+      document.body.appendChild(script);
+    }
+
+    // Load CSS
+    loadCssWithFallback(
+      'languageprojectstyle.css',
+      'https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/languageprojectstyle.css'
+    );
+
+    // Load JS files with fallback
+    loadScriptWithFallback(
+      'languageprojectoverride.js',
+      'https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/languageprojectoverride.js'
+    );
+
+    loadScriptWithFallback(
+      'languageprojectjava.js',
+      'https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/languageprojectjava.js'
+    );
+  </script>
+</head>
+<body>
+  <h1>
+    Aza'raan Google Apps Font Override ©Aza’ra™ and ©Aza'raan language™ are copyright and trademark protected by William Blake Saville AKA #TheTransgenderTRex
+  </h1>
+  <p>This page loads the Aza'raan override scripts for Google Apps only.</p>
+</body>
+</html>
+
+
+

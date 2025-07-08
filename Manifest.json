@@ -1,0 +1,34 @@
+{
+  "_comment": "==Aza'raan Project== | @name: Aza'raan Font Google Apps Override | @namespace: https://github.com/thetransgendertrex/Azaraanlanguage | @version: 1.5 | @description: Chrome Extension version that applies the Aza'raan font override for Google Apps ONLY (Docs, Slides, Sheets, Forms, Drive, Drawings). | @author: William Blake Saville",
+  "manifest_version": 3,
+  "name": "Aza'raan Font Google Apps Override",
+  "description": "Override Pacifico with Aza'raan on Google Apps ONLY (Docs, Slides, Sheets, etc.). Aza'raan fully usable font in Google apps dropdown and typing.",
+  "version": "1.5",
+  "icons": {
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://docs.google.com/*",
+        "https://slides.google.com/*",
+        "https://sheets.google.com/*",
+        "https://forms.google.com/*",
+        "https://drive.google.com/*",
+        "https://drawings.google.com/*"
+      ],
+      "js": ["languageprojectjava.js"],
+      "css": ["languageprojectstyle.css"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["Azaraan Planet Language.ttf", "languageprojectoverride.js", "languageprojectstyle.css"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
+
+
+
