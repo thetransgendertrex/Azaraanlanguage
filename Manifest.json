@@ -17,7 +17,7 @@
         "https://drive.google.com/*",
         "https://drawings.google.com/*"
       ],
-      "js": ["languageprojectjava.js"],
+      "js": ["languageprojectjava.js", "languageprojectoverride.js"],
       "css": ["languageprojectstyle.css"]
     }
   ],
