@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aza'raan Font Google Apps Override</title>
+
+  <!--
+    Metadata
+    @name         Aza'raan Font Google Apps Override
+    @version      1.5
+    @description  Loads Aza'raan font override for Google Apps ONLY (Docs, Slides, Sheets, Forms, Drive, Drawings).
+                  Overrides Pacifico font with Aza'raan in Google Apps font dropdown.
+    @author       William Blake Saville AKA #TheTransgenderTRex (™)
+    @license      https://github.com/thetransgendertrex/Azaraanlanguage
+  -->
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/icon48.png" sizes="48x48" />
+
+  <!-- Load font-face with local and GitHub fallback -->
+  <style>
+    @font-face {
+      font-family: 'Azaraan';
+      src: url('./Azaraanlanguageprojectfont.ttf') format('truetype'),
+           url('https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/Azaraanlanguageprojectfont.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+  </style>
+
+  <!-- Load CSS with fallback via JS -->
+  <script>
+    // Helper to load CSS with fallback to GitHub raw URL
+    function loadCSSWithFallback(localHref, fallbackHref) {
+      return new Promise((resolve, reject) => {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = localHref;
+
+        link.onload = () => resolve();
+        link.onerror = () => {
+          console.warn(`Failed to load local CSS (${localHref}). Falling back to GitHub.`);
+          const fallbackLink = document.createElement('link');
+          fallbackLink.rel = 'stylesheet';
+          fallbackLink.href = fallbackHref;
+          fallbackLink.onload = () => resolve();
+          fallbackLink.onerror = () => reject(new Error('Failed to load fallback CSS'));
+          document.head.appendChild(fallbackLink);
+        };
+
+        document.head.appendChild(link);
+      });
+    }
+  </script>
+
+  <!-- Basic styles for accessibility and layout -->
+  <style>
+    body {
+      font-family: 'Azaraan', cursive, sans-serif;
+      margin: 2rem;
+      background: #f9f9f9;
+      color: #111;
+      line-height: 1.5;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 1rem;
+    }
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 1.25rem;
+    }
+    a {
+      color: #0066cc;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    a:hover,
+    a:focus {
+      text-decoration: underline;
+      outline: none;
+    }
+    .warning {
+      color: #cc0000;
+      font-weight: 700;
+      margin-top: 2rem;
+      background: #ffe6e6;
+      padding: 1rem;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <main role="main" aria-labelledby="pageTitle">
+    <h1 id="pageTitle" tabindex="0">
+      Aza'raan Font Google Apps Override
+    </h1>
+    <p>
+      This page loads the <strong>Aza'raan</strong> font override scripts and styles for Google Apps ONLY.
+      It replaces the Pacifico font with the <em>Aza'raan</em> font in Google Docs, Slides, Sheets, Forms, Drive, and Drawings.
+    </p>
+    <p>
+      The <strong>Aza'raan</strong> font and scripts are copyright and trademark protected by
+      <a href="https://linktr.ee/thetransgendertrex" target="_blank" rel="noopener noreferrer" aria-label="More information about William Blake Saville and the Aza'raan project on Linktree">
+        William Blake Saville AKA #TheTransgenderTRex
+      </a>.
+    </p>
+
+    <section aria-label="Project and Usage Information">
+      <h2>About This Project</h2>
+      <p>
+        The override scripts are designed to seamlessly integrate the Aza'raan font into Google Apps interfaces,
+        making it visible in font dropdowns and replacing the Pacifico font dynamically for a consistent experience.
+      </p>
+      <p>
+        The project uses locally stored font files with fallbacks to GitHub-hosted resources to ensure
+        availability across different environments.
+      </p>
+    </section>
+
+    <section aria-label="Resources and Links">
+      <h2>Resources</h2>
+      <ul>
+        <li><a href="https://github.com/thetransgendertrex/Azaraanlanguage/blob/main/languageprojectoverride.js" target="_blank" rel="noopener noreferrer">languageprojectoverride.js</a></li>
+        <li><a href="https://github.com/thetransgendertrex/Azaraanlanguage/blob/main/languageprojectjava.js" target="_blank" rel="noopener noreferrer">languageprojectjava.js</a></li>
+        <li><a href="https://github.com/thetransgendertrex/Azaraanlanguage/blob/main/languageprojectstyle.css" target="_blank" rel="noopener noreferrer">languageprojectstyle.css</a></li>
+        <li><a href="https://github.com/thetransgendertrex/Azaraanlanguage/blob/main/Azaraanlanguageprojectfont.ttf" target="_blank" rel="noopener noreferrer">Azaraanlanguageprojectfont.ttf</a></li>
+        <li><a href="https://linktr.ee/thetransgendertrex" target="_blank" rel="noopener noreferrer">More about the creator & project</a></li>
+      </ul>
+    </section>
+
+    <noscript>
+      <p class="warning" role="alert">
+        Warning: JavaScript is required to load the override scripts and styles correctly. Please enable JavaScript.
+      </p>
+    </noscript>
+  </main>
+
+  <script>
+    // Restrict page access: Only allow if hosted on GitHub (github.io or raw.githubusercontent.com)
+    // Otherwise, show warning and hide content.
+    (function () {
+      const allowedHosts = [
+        "raw.githubusercontent.com",
+        "github.io",
+        "thetransgendertrex.github.io"
+      ];
+
+      if (!allowedHosts.some(host => location.hostname.endsWith(host))) {
+        document.body.innerHTML = `
+          <main role="main" aria-live="polite" style="max-width:600px; margin:auto; padding:2rem; font-family:sans-serif;">
+            <h1>Access Denied</h1>
+            <p>Sorry, this landing page is accessible only on GitHub Pages or GitHub raw URLs.</p>
+            <p>Please visit the project repository or Linktree for more information:</p>
+            <ul>
+              <li><a href="https://github.com/thetransgendertrex/Azaraanlanguage" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
+              <li><a href="https://linktr.ee/thetransgendertrex" target="_blank" rel="noopener noreferrer">Linktree - TheTransgenderTRex</a></li>
+            </ul>
+          </main>
+        `;
+      }
+    })();
+
+    // Load CSS with fallback
+    loadCSSWithFallback('languageprojectstyle.css', 'https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/languageprojectstyle.css')
+      .catch(() => console.error("Failed to load Aza'raan CSS"));
+
+    // Load JS files local with fallback to GitHub raw URLs
+    function loadScriptWithFallback(localSrc, fallbackSrc) {
+      return new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = localSrc;
+        script.async = false;
+        script.onload = () => resolve();
+        script.onerror = () => {
+          console.warn(`Failed to load local script ${localSrc}, trying GitHub fallback.`);
+          const fallbackScript = document.createElement('script');
+          fallbackScript.src = fallbackSrc;
+          fallbackScript.async = false;
+          fallbackScript.onload = () => resolve();
+          fallbackScript.onerror = () => reject(new Error(`Failed to load fallback script: ${fallbackSrc}`));
+          document.body.appendChild(fallbackScript);
+        };
+        document.body.appendChild(script);
+      });
+    }
+
+    Promise.all([
+      loadScriptWithFallback('languageprojectoverride.js', 'https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/languageprojectoverride.js'),
+      loadScriptWithFallback('languageprojectjava.js', 'https://raw.githubusercontent.com/thetransgendertrex/Azaraanlanguage/main/languageprojectjava.js'),
+    ]).catch(e => {
+      console.error("Error loading override scripts:", e);
+    });
+  </script>
+</body>
+</html>
