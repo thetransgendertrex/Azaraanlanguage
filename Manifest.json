@@ -1,12 +1,17 @@
 {
   "manifest_version": 3,
   "name": "Aza'raan Font Google Apps Override",
-  "description": "Override Pacifico with Aza'raan on Google Apps ONLY (Docs, Slides, Sheets, etc.). Aza'raan fully usable font in Google apps dropdown and typing.",
+  "description": "Override Pacifico with Aza'raan on Google Apps ONLY (Docs, Slides, Sheets, etc.). Aza'raan fully usable font in Google apps dropdown and typing, force Pacifico https://fonts.google.com/specimen/Pacifico // to become Aza'raan https://fonts.google.com/specimen/Azaraanlanguageprojectfont",
+  
   "version": "1.5",
-  "author": "William Blake Saville",
+  "author": "William Blake Saville AKA #TheTransgenderTRex",
   "icons": {
     "48": "icon48.png"
   },
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
   "content_scripts": [
     {
       "matches": [
@@ -18,7 +23,8 @@
         "https://drawings.google.com/*"
       ],
       "js": ["languageprojectjava.js", "languageprojectoverride.js"],
-      "css": ["languageprojectstyle.css"]
+      "css": ["languageprojectstyle.css"],
+      "run_at": "document_start"
     }
   ],
   "web_accessible_resources": [
